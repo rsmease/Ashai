@@ -2,6 +2,6 @@ import React from 'react';
 
 export default () => (
   <div>
-    Asshaii React Overlay Mainframe
+    <h1>TEST</h1>
   </div>
 );

@@ -20,4 +20,4 @@ export const deleteSession = () => (
     url: '/api/session',
     method: 'DELETE'
   })
-)
+);

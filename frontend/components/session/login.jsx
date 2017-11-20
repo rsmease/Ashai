@@ -19,21 +19,23 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/'));
+    this.props.login(this.state)
+      .then(() => this.props.history.push('/app'));
   }
 
   render() {
     return (
-      <div className="session-form-existing-user">
+      <div className="session-form-container">
         <h2 className="session-form-header">Log In</h2>
-        <form>
+        <br></br>
+        <form className="session-form-existing-user">
           <label>Email
             <input
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
               />
+            <br></br>
           </label>
           <label>Password
             <input
@@ -42,6 +44,7 @@ class Login extends React.Component {
               onChange={this.handleInput('password')}
               />
           </label>
+          <br></br>
           <button className="session-form-submit"
             onClick={this.handleSubmit}>Log In</button>
         </form>

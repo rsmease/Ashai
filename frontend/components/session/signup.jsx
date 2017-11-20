@@ -26,9 +26,9 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="session-form-new-user">
+      <div className="session-form-container">
         <h2 className="session-form-header">Sign Up</h2>
-        <form>
+        <form className="session-form-new-user">
           <label>Name
             <input
               type="text"
@@ -36,6 +36,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('name')}
               />
           </label>
+          <br></br>
           <label>Email
             <input
               type="text"
@@ -43,6 +44,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('email')}
               />
           </label>
+          <br></br>
           <label>Password
             <input
               type="password"
@@ -50,6 +52,7 @@ class Signup extends React.Component {
               onChange={this.handleInput('password')}
               />
           </label>
+          <br></br>
           <button className="session-form-submit"
             onClick={this.handleSubmit}>Sign Up</button>
         </form>

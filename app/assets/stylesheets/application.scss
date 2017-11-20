@@ -1,1 +1,62 @@
+@import 'colors.scss';
+@import 'reset.scss';
 
+
+html, body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: $lannister-gold;
+  background: -webkit-linear-gradient($login-gradient);
+  background: -o-linear-gradient($login-gradient);
+  background: -moz-linear-gradient($login-gradient);
+  background: linear-gradient($login-gradient);
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: $winter-white;
+}
+
+.session-form-container {
+  height: 450px;
+  width: 400px;
+  background-color: $winter-white;
+  border-radius: 2px;
+
+  position: relative;
+
+}
+
+.session-form-existing-user {
+  width: 100%;
+  text-align: center;
+
+  font-size: 13px;
+
+  position: absolute;
+  top: 200px;
+}
+
+.session-form-header {
+  width: 100%;
+  text-align: center;
+
+  font-size: 24px;
+
+  position: absolute;
+  top: 75px;
+}
+
+.session-form-submit {
+
+}

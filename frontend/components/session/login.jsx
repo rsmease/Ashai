@@ -29,14 +29,14 @@ class Login extends React.Component {
         <h2 className="session-form-header">Log In</h2>
         <br></br>
         <form className="session-form-existing-user">
-          <label>Email
+          <label>Email</label>
             <input
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
               />
-            <br></br>
-          </label>
+          <br></br>
+
           <label>Password
             <input
               type="password"

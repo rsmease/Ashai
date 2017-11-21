@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PlaceholderComponent from './placeholder';
 import LoginContainer from './session/login_container';
 import SignupContainer from './session/signup_container';
-import LogoHeader from './headers/splash_header/logo_header';
+import HorizontalLogoNamed from './headers/horizontal_logo_named';
 
 
 export default () => (
@@ -15,10 +15,10 @@ export default () => (
 
     <Route exact path="/" component={PlaceholderComponent}/>
 
-    <AuthRoute path="/signup" component={LogoHeader}/>
+    <AuthRoute path="/signup" component={HorizontalLogoNamed}/>
     <AuthRoute path="/signup" component={SignupContainer}/>
 
-    <AuthRoute path="/login" component={LogoHeader}/>
+    <AuthRoute path="/login" component={HorizontalLogoNamed}/>
     <AuthRoute path="/login" component={LoginContainer}/>
   </div>
 );

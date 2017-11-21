@@ -1,0 +1,11 @@
+@import 'colors.scss';
+@import 'reset.scss';
+
+.placeholder-div {
+  width: 500px;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+}

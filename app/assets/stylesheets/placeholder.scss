@@ -1,0 +1,55 @@
+@import 'colors.scss';
+@import 'reset.scss';
+
+.placeholder-div {
+  width: 500px;
+  height: auto;
+
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  flex-direction: column;
+
+  margin-bottom: 8%;
+}
+
+.placeholder-img {
+  width: 200px;
+  height: auto;
+}
+
+.placeholder-div h1 {
+  font-size: 48px;
+}
+
+.placeholder-links {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+}
+
+.login-link {
+  margin: 10px;
+}
+
+.signup-link {
+  margin: 10px;
+}
+
+.session-link {
+  border: 1px solid $winter-white;
+  border-radius: 3px;
+  color: $winter-white;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+}
+
+.session-link:hover {
+  background: $winter-white;
+  color: $targ-silver-dark;
+}

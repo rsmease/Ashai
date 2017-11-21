@@ -28,8 +28,11 @@ class Login extends React.Component {
       <div className="session-form-container">
         <h2 className="session-form-header">Log In</h2>
         <br></br>
-        <form className="session-form-existing-user">
-          <label>Email</label>
+        <form className="session-form">
+
+          <label>EMAIL ADDRESS</label>
+          <br></br>
+
             <input
               type="text"
               value={this.state.email}
@@ -37,14 +40,15 @@ class Login extends React.Component {
               />
           <br></br>
 
-          <label>Password
+          <label>PASSWORD</label>
+          <br></br>
             <input
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
               />
-          </label>
           <br></br>
+
           <button className="session-form-submit"
             onClick={this.handleSubmit}>Log In</button>
         </form>

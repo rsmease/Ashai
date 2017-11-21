@@ -1,0 +1,21 @@
+.horizontal-logo-div {
+  width: 585px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+
+  margin-bottom: 15px;
+}
+
+.horizontal-logo {
+  height: 50px;
+  width: auto;
+  margin: 25px;
+  margin-left: 35%;
+}
+
+.horizontal-logo-div {
+  font-size: 40px;
+}

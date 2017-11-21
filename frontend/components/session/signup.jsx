@@ -28,8 +28,8 @@ class Signup extends React.Component {
     return (
       <div className="session-form-container">
         <h2 className="session-form-header">Sign Up</h2>
-        <form className="session-form-new-user">
-          <label>Name
+        <form className="session-form">
+          <label>NAME
             <input
               type="text"
               value={this.state.name}
@@ -37,7 +37,7 @@ class Signup extends React.Component {
               />
           </label>
           <br></br>
-          <label>Email
+          <label>EMAIL
             <input
               type="text"
               value={this.state.email}
@@ -45,7 +45,7 @@ class Signup extends React.Component {
               />
           </label>
           <br></br>
-          <label>Password
+          <label>PASSWORD
             <input
               type="password"
               value={this.state.password}

@@ -1,35 +1,66 @@
-.session-form-existing-user {
-  width: 100%;
-  text-align: center;
+.session-form-container {
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  background: $winter-white;
+  display: flex;
+  flex-direction: column;
+  width: 585px;
 
-  font-size: 13px;
-
-  position: absolute;
-  top: 200px;
 }
 
 .session-form-header {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  font-size: 48px;
+}
+
+.session-form {
+  margin: 0 auto;
   width: 100%;
-  text-align: center;
+  margin-bottom: 60px;
+}
 
-  font-size: 24px;
+.session-form input {
+  border: 1px $targ-silver-light solid;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 40px;
+  margin-bottom: 5px;
+  margin-left: 12.5%;
+  margin-top: 5px;
+  padding-left: 10px;
+  width: 75%;
+}
 
-  position: absolute;
-  top: 75px;
+.session-form input:focus, .session-form input:active {
+  border: 1px $targ-silver-dark solid;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.session-form label {
+  color: $targ-silver-dark;
+  font-size: 11px;
+  margin-bottom: 5px;
+  margin-left: 12.5%;
+  margin-top: 5px;
+  width: 100%;
 }
 
 .session-form-submit {
-
-}
-
-.splash-logo-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 50px;
-}
-
-.splash-img {
- width: 350px;
- height: auto;
+  border: 1px solid $winter-white;
+  border-radius: 3px;
+  color: $winter-white;
+  background-color: $targ-silver-light;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  margin-top: 60px;
+  margin-left: 72.5%
 }

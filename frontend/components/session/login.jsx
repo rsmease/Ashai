@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
+import HorizontalLogoNamed from '../headers/horizontal_logo_named';
+import { LoginFooter } from '../footers/footer';
 
 class Login extends React.Component {
   constructor(props) {
@@ -35,21 +37,23 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="session-form-container">
-        <h2 className="session-form-header">Log In</h2>
-        <br></br>
+      <div className="root-container">
+        <HorizontalLogoNamed />
+        <div className="session-form-container">
+          <h2 className="session-form-header">Log In</h2>
+          <br></br>
           <div className="demo-div">
             <input
               type="submit"
               className = "session-form-submit session-demo"
               value="View Demo"
-            />
+              />
           </div>
           <br></br>
-        <form className="session-form">
+          <form className="session-form">
 
-          <label>EMAIL ADDRESS</label>
-          <br></br>
+            <label>EMAIL ADDRESS</label>
+            <br></br>
 
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
@@ -57,23 +61,25 @@ class Login extends React.Component {
               value={this.state.email}
               onChange={this.handleInput('email')}
               />
-          <br></br>
+            <br></br>
 
-          <label>PASSWORD</label>
-          <br></br>
+            <label>PASSWORD</label>
+            <br></br>
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
               />
-          <br></br>
+            <br></br>
 
-          <button className={
-              this.keyUp === true ? "session-form-submit session-form-submit-valid" :
-              "session-form-submit"}
-            onClick={this.handleSubmit}>Log In</button>
-        </form>
+            <button className={
+                this.keyUp === true ? "session-form-submit session-form-submit-valid" :
+                "session-form-submit"}
+                onClick={this.handleSubmit}>Log In</button>
+            </form>
+          </div>
+          <LoginFooter />
       </div>
     );
   }

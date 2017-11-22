@@ -15,18 +15,14 @@ import AppContainer from './app_container';
 
 
 export default () => (
-  <div className="root-container">
+  <main>
 
     <Route exact path="/" component={PlaceholderComponent}/>
 
-    <AuthRoute path="/signup" component={HorizontalLogoNamed}/>
     <AuthRoute path="/signup" component={SignupContainer}/>
-    <AuthRoute path="/signup" component={SignupFooter}/>
 
-    <AuthRoute path="/login" component={HorizontalLogoNamed}/>
     <AuthRoute path="/login" component={LoginContainer}/>
-    <AuthRoute path="/login" component={LoginFooter}/>
 
     <ProtectedRoute path="/app" component={AppContainer}/>
-  </div>
+  </main>
 );

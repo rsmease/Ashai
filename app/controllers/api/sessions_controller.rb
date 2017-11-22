@@ -8,11 +8,9 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:email],params[:user][:password])
     if @user
       login(@user)
-      #not sure what to do here just yet
-      redirect_to api_user_url(@user)
+      render "api/users/show"
     else
-      flash.now[:errors] = ['Invalid username or password.']
-      render :new
+      render json: ["Invalid username or password"], status: 401
     end
   end
 
@@ -20,8 +18,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout!
-      #not sure what to do here just yet
-      redirect_to root_url
+      render "api/users/show"
     else
       render json: ["No one is signed in"], status: 404
     end

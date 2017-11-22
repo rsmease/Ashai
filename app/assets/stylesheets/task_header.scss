@@ -27,6 +27,148 @@
   height: 40px;
   border-top: 1px solid $targ-silver-light;
   background-color: $winter-white;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-links {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 280px;
+  width: 33%;
+  margin-left: 15px;
+}
+
+.add-task-header-container {
+  background: $melisandre-red;
+  background: -webkit-linear-gradient($add-task-gradient);
+  background: -o-linear-gradient($add-task-gradient);
+  background: -moz-linear-gradient($add-task-gradient);
+  background: linear-gradient($add-task-gradient);
+
+  border-radius: 12px;
+  height: 24px;
+  width: 24px;
+  margin-right: 15px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.add-task-header-container:hover {
+  -webkit-box-shadow: 0 0 5px 1px $melisandre-red;
+  -moz-box-shadow: 0 0 5px 1px $melisandre-red;
+  box-shadow: 0 0 5px 1px $melisandre-red;
+}
+
+.add-task-header-button {
+  color: $winter-white;
+  font-size: 20px;
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  margin-bottom: 10%;
+}
+
+.header-link {
+  text-decoration: none;
+  color: $nights-watch-black;
+  font-size: 13px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.header-link:hover {
+  color: $viserion-blue;
+}
+
+.search-bar-container {
+  height: 100%;
+  width: 33%;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.search-field {
+  height: 70%;
+  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid $targ-silver-light;
+  border-radius: 15px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  padding-left: 15px;
+}
+
+//colors the search icon
+.search-field {
+  color: $targ-silver-dark;
+  font-size: 20px;
+}
+
+.search-field p {
+  font-size: 14px;
+  color: $targ-silver-dark;
+  margin-left: 5px;
+}
+
+.right-links {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 280px;
+  width: 33%;
+  margin-right: 15px;
+}
+
+.upgrade-button {
+  border-radius: 3px;
+  color: $winter-white;
+  background-color: $lannister-gold;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+}
+
+.upgrade-button:hover {
+  background-color: #ffe01b;
+  box-shadow: 0 0 0 3px #fff78f;
 }
 
 //TaskHeaderSecondary: holds 'My Tasks' or 'Project Tasks' or 'Team Members' header, based on path

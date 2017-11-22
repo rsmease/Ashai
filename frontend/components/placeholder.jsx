@@ -13,7 +13,7 @@ class PlaceHolder extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="root-container">
         <div className="placeholder-div">
           <img className="placeholder-img"
             src={"https://i.imgur.com/WcrVoLW.png"} />

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
+import HorizontalLogoNamed from '../headers/horizontal_logo_named';
+import { SignupFooter } from '../footers/footer';
 
 class Signup extends React.Component {
   constructor(props) {
@@ -37,6 +39,8 @@ class Signup extends React.Component {
 
   render() {
     return (
+      <div className="root-container">
+      <HorizontalLogoNamed />
       <div className="session-form-container">
         <h2 className="session-form-header">Sign Up</h2>
         <br></br>
@@ -45,7 +49,7 @@ class Signup extends React.Component {
             type="submit"
             className = "session-form-submit session-demo"
             value="View Demo"
-          />
+            />
         </div>
         <br></br>
         <form className="session-form">
@@ -80,9 +84,11 @@ class Signup extends React.Component {
           <button className={
               this.keyUp === true ? "session-form-submit session-form-submit-valid" :
               "session-form-submit"}
-            onClick={this.handleSubmit}>Sign Up</button>
-        </form>
-        <Link to="/login" className="login-link session-link">Log In</Link>
+              onClick={this.handleSubmit}>Sign Up</button>
+          </form>
+          <Link to="/login" className="login-link session-link">Log In</Link>
+        </div>
+        <SignupFooter/>
       </div>
     );
   }

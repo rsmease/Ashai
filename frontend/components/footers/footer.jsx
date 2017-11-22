@@ -8,10 +8,12 @@ export const LoginFooter = () => (
       <Link to="/signup" className="signup-link session-link">Sign Up</Link>
     </div>
     <ul>
-      <li><a href="https://github.com/rsmease">
+      <li><a href="https://github.com/rsmease"
+        target="_blank">
         Github</a></li>
       <li>-</li>
-      <li><a href="https://www.linkedin.com/in/ryan-mease-140b473a/">
+      <li><a href="https://www.linkedin.com/in/ryan-mease-140b473a/"
+        target="_blank">
         LinkedIn</a></li>
     </ul>
   </div>

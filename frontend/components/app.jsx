@@ -11,6 +11,9 @@ import LoginContainer from './session/login_container';
 import SignupContainer from './session/signup_container';
 import HorizontalLogoNamed from './headers/horizontal_logo_named';
 import { LoginFooter, SignupFooter } from './footers/footer';
+import MainAppHeader from './headers/main_header';
+import MainSidebar from './sidebar/main_sidebar';
+import TaskList from './tasks/task_list';
 
 
 export default () => (
@@ -25,5 +28,9 @@ export default () => (
     <AuthRoute path="/login" component={HorizontalLogoNamed}/>
     <AuthRoute path="/login" component={LoginContainer}/>
     <AuthRoute path="/login" component={LoginFooter}/>
+
+    <ProtectedRoute path="/app" component={MainAppHeader}/>
+    <ProtectedRoute path="/app" component={MainSidebar}/>
+    <ProtectedRoute path="/app" component={TaskList}/>
   </div>
 );

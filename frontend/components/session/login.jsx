@@ -6,9 +6,9 @@ class Login extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
-
+    this.keyUp = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,6 +22,11 @@ class Login extends React.Component {
     e.preventDefault();
     this.props.login(this.state)
       .then(() => this.props.history.push('/app'));
+  }
+
+  handleKeyUp(e) {
+    this.keyUp = true;
+    console.log("Key Up Event Working");
   }
 
   render() {
@@ -43,6 +48,7 @@ class Login extends React.Component {
           <br></br>
 
             <input
+              onKeyUp={(e) => this.handleKeyUp(e)}
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
@@ -52,13 +58,16 @@ class Login extends React.Component {
           <label>PASSWORD</label>
           <br></br>
             <input
+              onKeyUp={(e) => this.handleKeyUp(e)}
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
               />
           <br></br>
 
-          <button className="session-form-submit"
+          <button className={
+              this.keyUp === true ? "session-form-submit session-form-submit-valid" :
+              "session-form-submit"}
             onClick={this.handleSubmit}>Log In</button>
         </form>
       </div>

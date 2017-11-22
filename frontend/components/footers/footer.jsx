@@ -10,6 +10,7 @@ export const LoginFooter = () => (
     <ul>
       <li><a href="https://github.com/rsmease">
         Github</a></li>
+      <li>-</li>
       <li><a href="https://www.linkedin.com/in/ryan-mease-140b473a/">
         LinkedIn</a></li>
     </ul>
@@ -26,6 +27,7 @@ export const SignupFooter = () => (
       <li>
         <a href="https://github.com/rsmease">
         Github</a></li>
+      <li>-</li>
       <li>
         <a href="https://www.linkedin.com/in/ryan-mease-140b473a/">
         LinkedIn</a></li>

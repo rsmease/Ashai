@@ -7,9 +7,9 @@ class Signup extends React.Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
     };
-
+    this.keyUp = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,8 +22,14 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/app'));
   }
+
+  handleKeyUp(e) {
+    this.keyUp = true;
+    console.log("Key Up Event Working");
+  }
+
 
   render() {
     return (
@@ -41,6 +47,7 @@ class Signup extends React.Component {
         <form className="session-form">
           <label>NAME
             <input
+              onKeyUp={(e) => this.handleKeyUp(e)}
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
@@ -49,6 +56,7 @@ class Signup extends React.Component {
           <br></br>
           <label>EMAIL
             <input
+              onKeyUp={(e) => this.handleKeyUp(e)}
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
@@ -57,13 +65,17 @@ class Signup extends React.Component {
           <br></br>
           <label>PASSWORD
             <input
+              onKeyUp={(e) => this.handleKeyUp(e)}
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
               />
           </label>
           <br></br>
-          <button className="session-form-submit"
+
+          <button className={
+              this.keyUp === true ? "session-form-submit session-form-submit-valid" :
+              "session-form-submit"}
             onClick={this.handleSubmit}>Sign Up</button>
         </form>
         <Link to="/login" className="login-link session-link">Log In</Link>

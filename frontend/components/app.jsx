@@ -17,7 +17,7 @@ import TaskList from './tasks/task_list';
 
 
 export default () => (
-  <div>
+  <div className="main-container">
 
     <Route exact path="/" component={PlaceholderComponent}/>
 
@@ -31,6 +31,6 @@ export default () => (
 
     <ProtectedRoute path="/app" component={MainAppHeader}/>
     <ProtectedRoute path="/app" component={MainSidebar}/>
-    <ProtectedRoute path="/app" component={TaskList}/>
+    <ProtectedRoute path="/app" component={TaskList}/>    
   </div>
 );

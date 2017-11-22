@@ -1,6 +1,19 @@
+//stateless container for TaskHeader + TaskList
+.task-with-header {
+  height: 100%;
+  background-color: $lord-of-light-white;
+
+  width: -moz-calc(100% - 244px);
+  width: -webkit-calc(100% - 244px);
+  width: -o-calc(100% - 244px);
+  width: calc(100% - 244px);
+
+}
+
+//stateless container for TaskHeaderPrimary and TaskHeaderSecondary
+
 .task-header {
-  background: $targ-silver-light;
-  height: 200px;
+  background-color: $winter-white;
   width: 100%;
 }
 
@@ -8,11 +21,20 @@
   color: $tarth-sapphire;
 }
 
-.task-with-header {
-  height: 100%;
+//TaskHeaderPrimary: holds core links, help tab, upgrade button, user profile edit panel
 
-  width: -moz-calc(100% - 244px);
-  width: -webkit-calc(100% - 244px);
-  width: -o-calc(100% - 244px);
-  width: calc(100% - 244px);
+.task-header-primary {
+  height: 40px;
+  border-top: 1px solid $targ-silver-light;
+  background-color: $winter-white;
+}
+
+//TaskHeaderSecondary: holds 'My Tasks' or 'Project Tasks' or 'Team Members' header, based on path
+
+.task-header-secondary {
+  height: 65px;
+  border-top: 1px solid $targ-silver-light;
+  border-bottom: 1px solid $targ-silver-light;
+  background-color: $winter-white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }

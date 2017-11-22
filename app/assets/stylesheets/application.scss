@@ -1,8 +1,12 @@
+//utils
 @import 'colors.scss';
 @import 'reset.scss';
+
+//components
 @import 'placeholder.scss';
 @import 'session-form.scss';
 @import 'logos.scss';
+@import 'footer.scss';
 
 html, body {
   height: 100%;

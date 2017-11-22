@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Router } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -28,6 +29,14 @@ class Login extends React.Component {
       <div className="session-form-container">
         <h2 className="session-form-header">Log In</h2>
         <br></br>
+          <div className="demo-div">
+            <input
+              type="submit"
+              className = "session-form-submit session-demo"
+              value="View Demo"
+            />
+          </div>
+          <br></br>
         <form className="session-form">
 
           <label>EMAIL ADDRESS</label>

@@ -10,7 +10,7 @@
 }
 
 .session-form-header {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   margin-top: 60px;
   font-size: 48px;
 }
@@ -63,4 +63,12 @@
   width: 80px;
   margin-top: 60px;
   margin-left: 72.5%
+}
+
+.session-demo {
+  background-color: $night-king-blue;
+  width: 120px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  margin-left: 0;
 }

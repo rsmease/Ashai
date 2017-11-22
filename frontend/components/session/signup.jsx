@@ -19,6 +19,10 @@ class Signup extends React.Component {
     };
   }
 
+  componentWillMount () {
+    document.title = "Ashai - Sign Up";
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)

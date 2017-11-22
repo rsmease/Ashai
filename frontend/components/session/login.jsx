@@ -18,6 +18,10 @@ class Login extends React.Component {
     };
   }
 
+  componentWillMount () {
+    document.title = "Ashai - Log In";
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state)

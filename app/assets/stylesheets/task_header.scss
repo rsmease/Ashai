@@ -1,0 +1,18 @@
+.task-header {
+  background: $targ-silver-light;
+  height: 200px;
+  width: 100%;
+}
+
+.task-header h1 {
+  color: $tarth-sapphire;
+}
+
+.task-with-header {
+  height: 100%;
+
+  width: -moz-calc(100% - 244px);
+  width: -webkit-calc(100% - 244px);
+  width: -o-calc(100% - 244px);
+  width: calc(100% - 244px);
+}

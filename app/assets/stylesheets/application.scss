@@ -7,9 +7,9 @@
 @import 'session-form.scss';
 @import 'logos.scss';
 @import 'footer.scss';
-@import 'main_header.scss';
+@import 'task_header.scss';
 @import 'task_list.scss';
-@import 'main_sidebar.scss';
+@import 'sidebar.scss';
 
 html, body {
   height: 100%;
@@ -21,7 +21,7 @@ main {
   height: 100%;
 }
 
-.main-container {
+.root-container {
   width: 100%;
   height: 100%;
   background: $lannister-gold;
@@ -44,8 +44,12 @@ h1 {
   color: $winter-white;
 }
 
-.main-app-container {
+.app-container {
   width: 100%;
   height: 100%;
   background-color: $winter-white;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }

@@ -1,8 +1,10 @@
-
-
 .task-list {
   background: $targ-silver-dark;
   height: 200px;
-  width: 80%;
+  width: 100%;
+  color: $tarth-sapphire;
+}
+
+.task-list h1 {
   color: $tarth-sapphire;
 }

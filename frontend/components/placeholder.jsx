@@ -21,7 +21,8 @@ class PlaceHolder extends React.Component {
           <h1>Ashai</h1>
           <div className="placeholder-links">
             <Link to="/login" className="login-link session-link">Log In</Link>
-            <Link to="/signup" className="signup-link session-link">Sign Up</Link>
+            <Link to="/signup"
+               className="signup-link session-link">Sign Up</Link>
           </div>
         </div>
       </div>

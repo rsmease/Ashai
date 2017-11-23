@@ -32,8 +32,9 @@ class Signup extends React.Component {
   }
 
   handleKeyUp(e) {
-    this.keyUp = true;
-    console.log("Key Up Event Working");
+    if (this.state.password.length >= 6) {
+      this.keyUp = true;
+    }
   }
 
 
@@ -43,14 +44,6 @@ class Signup extends React.Component {
       <HorizontalLogoNamed />
       <div className="session-form-container">
         <h2 className="session-form-header">Sign Up</h2>
-        <br></br>
-        <div className="demo-div">
-          <input
-            type="submit"
-            className = "session-form-submit session-demo"
-            value="View Demo"
-            />
-        </div>
         <br></br>
         <form className="session-form">
           <label>NAME

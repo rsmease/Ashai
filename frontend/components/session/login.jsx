@@ -10,18 +10,45 @@ class Login extends React.Component {
       email: '',
       password: '',
     };
-    this.keyUp = false;
+    this.validLogin = false;
+    this.loginSpeed = 100;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
+  }
+
+  componentWillMount () {
+    document.title = "Ashai - Log In";
+  }
+
+  autoLogin(field, demoName, cb) {
+    let typedText = "";
+    const _type = () => {
+      typedText = demoName.substring(0, typedText.length + 1);
+      this.setState({[field]:typedText});
+      if (typedText === demoName) {
+        setTimeout(() => cb(), this.loginSpeed);
+      } else {
+        if (this.state.password.length >= 6) {
+          this.validLogin = true;
+        }
+        setTimeout(() => _type(), this.loginSpeed);
+      }
+    };
+    _type();
+  }
+
+  demoLogin(e) {
+    this.autoLogin("email", "jsnow@thewall.got", (
+      () => this.autoLogin("password", "jonsnowcorgicorgi", (
+        () => this.handleSubmit(e)
+      ))
+    ));
   }
 
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
-  }
-
-  componentWillMount () {
-    document.title = "Ashai - Log In";
   }
 
   handleSubmit(e) {
@@ -31,8 +58,9 @@ class Login extends React.Component {
   }
 
   handleKeyUp(e) {
-    this.keyUp = true;
-    console.log("Key Up Event Working");
+    if (this.state.password.length >= 6) {
+      this.validLogin = true;
+    }
   }
 
   render() {
@@ -47,6 +75,7 @@ class Login extends React.Component {
               type="submit"
               className = "session-form-submit session-demo"
               value="View Demo"
+              onClick={this.demoLogin}
               />
           </div>
           <br></br>
@@ -74,7 +103,7 @@ class Login extends React.Component {
             <br></br>
 
             <button className={
-                this.keyUp === true ? "session-form-submit session-form-submit-valid" :
+                this.validLogin === true ? "session-form-submit session-form-submit-valid" :
                 "session-form-submit"}
                 onClick={this.handleSubmit}>Log In</button>
             </form>

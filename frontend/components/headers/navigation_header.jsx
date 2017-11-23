@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router, Redirect } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
 
 class NavigationHeader extends React.Component {
   constructor(props) {
     super(props);
-    this.logout = this.props.logout;
   }
+
   render() {
     return (
       <div className="task-header-primary">
@@ -28,10 +28,11 @@ class NavigationHeader extends React.Component {
             className="upgrade-button"
             target="_blank">
             Upgrade</a>
-          <Link to="/app"
-            onClick={this.logout}
-            className="header-link">
-            Log Out</Link>
+          <a
+            className="header-link"
+            onClick={this.props.logout}>
+            Log Out
+          </a>
         </div>
       </div>
     );

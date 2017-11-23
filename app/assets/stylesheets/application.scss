@@ -23,6 +23,12 @@ main {
   overflow: scroll;
 }
 
+a {
+  text-decoration: none;
+  cursor: default;
+}
+
+
 .root-container {
   width: 100%;
   height: inherit;

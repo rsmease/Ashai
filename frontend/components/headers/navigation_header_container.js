@@ -8,4 +8,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(null, null)(NavigationHeader);
+export default connect(null, mapDispatchToProps)(NavigationHeader);

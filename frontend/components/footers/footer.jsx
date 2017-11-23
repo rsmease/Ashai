@@ -3,7 +3,7 @@ import { Link, Router } from 'react-router-dom';
 
 export const LoginFooter = () => (
   <div className="footer">
-    <div className="placeholder-links">
+    <div className="placeholder-links-upper">
       <h3>New User?</h3>
       <Link to="/signup" className="signup-link session-link">Sign Up</Link>
     </div>
@@ -21,7 +21,7 @@ export const LoginFooter = () => (
 
 export const SignupFooter = () => (
   <div className="footer">
-    <div className="placeholder-links">
+    <div className="placeholder-links-upper">
       <h3>Already Have an Account?</h3>
       <Link to="/login" className="login-link session-link">Log In</Link>
     </div>

@@ -3,7 +3,7 @@ import { Link, Router } from 'react-router-dom';
 import HorizontalLogoNamed from '../headers/horizontal_logo_named';
 import { LoginFooter } from '../footers/footer';
 
-class Login extends React.Component {
+class Demo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +17,11 @@ class Login extends React.Component {
   }
 
   componentWillMount () {
-    document.title = "Ashai - Log In";
+    document.title = "Ashai - Demo";
+  }
+
+  componentDidMount () {
+    this.demoLogin();
   }
 
   autoLogin(field, demoName, cb) {
@@ -40,7 +44,7 @@ class Login extends React.Component {
   demoLogin(e) {
     this.autoLogin("email", "jsnow@thewall.got", (
       () => this.autoLogin("password", "jonsnowcorgicorgi", (
-        () => this.handleSubmit(e)
+        () => this.handleAutoLogin()
       ))
     ));
   }
@@ -49,6 +53,11 @@ class Login extends React.Component {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
+  }
+
+  handleAutoLogin() {
+    this.props.login(this.state)
+      .then(() => this.props.history.push('/app'));
   }
 
   handleSubmit(e) {
@@ -71,8 +80,10 @@ class Login extends React.Component {
           <h2 className="session-form-header">Log In</h2>
           <br></br>
           <div className="demo-div">
-            <Link className="session-form-submit session-demo"
-              to="/demo">View Demo</Link>
+            <div className="demo-div">
+              <Link className="session-form-submit session-demo demo-active disabled-a"
+                to="/demo">Loading Demo</Link>
+            </div>
           </div>
           <br></br>
           <form className="session-form">
@@ -99,7 +110,7 @@ class Login extends React.Component {
             <br></br>
 
             <button className={
-                this.validLogin === true ? "session-form-submit session-form-submit-valid" :
+                this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
                 "session-form-submit"}
                 onClick={this.handleSubmit}>Log In</button>
             </form>
@@ -110,18 +121,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
-
-
-
-
-
-
-
-
-// <input
-//   type="submit"
-//   className = "session-form-submit session-demo"
-//   value="View Demo"
-//   onClick={this.demoLogin}
-//   />
+export default Demo;

@@ -19,6 +19,7 @@
   margin: 0 auto;
   width: 100%;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .session-form input {
@@ -71,8 +72,24 @@
 
 .session-demo {
   background-color: $night-king-blue;
-  width: 120px;
   margin-bottom: 30px;
   margin-top: 0;
   margin-left: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+}
+
+.session-demo:hover {
+  background-color: $night-king-blue-hover;
+}
+
+.demo-active {
+  background-color: $cersei-green;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.demo-active:hover {
+  background-color: $cersei-green;
 }

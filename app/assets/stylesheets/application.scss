@@ -28,6 +28,10 @@ a {
   cursor: default;
 }
 
+.disabled-a {
+  pointer-events: none;
+}
+
 
 .root-container {
   width: 100%;

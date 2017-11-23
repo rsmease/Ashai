@@ -26,11 +26,22 @@
   color: $winter-white;
 }
 
-.placeholder-links {
+.placeholder-links-upper {
   margin-top: 10px;
   display: flex;
   align-items: center;
   align-content: space-around;
+}
+
+.placeholder-links-lower {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+}
+
+.placeholder-links-upper h3, .placeholder-links-lower h3 {
+  color: $winter-white;
 }
 
 .login-link {

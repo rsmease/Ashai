@@ -19,10 +19,14 @@ class PlaceHolder extends React.Component {
             src={"https://i.imgur.com/WcrVoLW.png"} />
           <br></br>
           <h1 className="placeholder-title">Ashai</h1>
-          <div className="placeholder-links">
+          <div className="placeholder-links-upper">
             <Link to="/login" className="login-link session-link">Log In</Link>
             <Link to="/signup"
                className="signup-link session-link">Sign Up</Link>
+          </div>
+          <div className="placeholder-links-lower">
+            <Link className="session-form-submit session-demo"
+              to="/demo">View Demo</Link>
           </div>
         </div>
       </div>

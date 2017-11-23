@@ -11,14 +11,16 @@
   justify-content: center;
 
   margin-bottom: 15px;
+  margin-top: 30px;
+}
+
+.horizontal-logo-div h1 {
+  color: $winter-white;
+  font-size: 40px;
 }
 
 .horizontal-logo {
   height: 50px;
   width: auto;
   margin: 25px;
-}
-
-.horizontal-logo-div {
-  font-size: 40px;
 }

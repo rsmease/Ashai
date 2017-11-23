@@ -10,7 +10,6 @@
   align-content: space-around;
   flex-direction: column;
 
-  margin-bottom: 8%;
 }
 
 .placeholder-img {
@@ -20,6 +19,7 @@
 
 .placeholder-div h1 {
   font-size: 48px;
+  color: $winter-white;
 }
 
 .placeholder-title {

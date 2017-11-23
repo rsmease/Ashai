@@ -32,7 +32,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 gem 'font-awesome-sass', '~> 4.7.0'
-
 gem 'jquery-rails'
 
 group :development, :test do

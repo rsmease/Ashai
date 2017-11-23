@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   width: 585px;
-
+  overflow: auto;
 }
 
 .session-form-header {
@@ -18,7 +18,7 @@
 .session-form {
   margin: 0 auto;
   width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .session-form input {
@@ -27,7 +27,7 @@
   font-size: 14px;
   height: 40px;
   margin-bottom: 5px;
-  margin-left: 12.5%;
+  margin-left: 12%;
   margin-top: 5px;
   padding-left: 10px;
   width: 75%;
@@ -45,8 +45,7 @@
   color: $targ-silver-dark;
   font-size: 11px;
   margin-bottom: 5px;
-  margin-left: 12.5%;
-  margin-top: 5px;
+  margin-left: 12%;
   width: 100%;
 }
 
@@ -61,7 +60,8 @@
   text-align: center;
   text-decoration: none;
   width: 80px;
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   margin-left: 72.5%
 }
 

@@ -14,16 +14,18 @@
 html, body {
   height: 100%;
   font-family: 'Lato', sans-serif;
+  overflow: scroll;
 }
 
 main {
   width: 100%;
   height: 100%;
+  overflow: scroll;
 }
 
 .root-container {
   width: 100%;
-  height: 100%;
+  height: inherit;
   background: $lannister-gold;
   background: -webkit-linear-gradient($login-gradient);
   background: -o-linear-gradient($login-gradient);
@@ -38,9 +40,10 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: scroll;
 }
 
-button:active, button:focus {
+button:active, button:focus, input:active, input:focus {
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;

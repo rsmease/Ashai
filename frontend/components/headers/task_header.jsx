@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
-import TaskHeaderPrimary from './task_header_primary';
-import TaskHeaderSecondary from './task_header_secondary';
+import * as MaterialDesign from 'react-icons/lib/md';
 
-export default  () => (
-  <div className="task-header">
-    <TaskHeaderPrimary />
-    <TaskHeaderSecondary />
-  </div>
-);
+class TaskHeader extends React.Component {
+  render() {
+    return (
+      <div className="task-header-secondary">
+        I am the task header!
+      </div>
+    );
+  }
+}
+
+export default TaskHeader;

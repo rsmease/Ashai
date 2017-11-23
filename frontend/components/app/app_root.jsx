@@ -18,11 +18,9 @@ export default () => (
   <main>
 
     <Route exact path="/" component={PlaceholderComponent}/>
-
-    <AuthRoute path="/signup" component={SignupContainer}/>
-
     <AuthRoute path="/login" component={LoginContainer}/>
 
+    <AuthRoute path="/signup" component={SignupContainer}/>
     <ProtectedRoute path="/app" component={AppContainer}/>
   </main>
 );

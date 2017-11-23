@@ -40,8 +40,10 @@ main {
   flex-direction: column;
 }
 
-h1 {
-  color: $winter-white;
+button:active, button:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .app-container {

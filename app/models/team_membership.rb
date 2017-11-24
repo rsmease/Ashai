@@ -10,4 +10,5 @@ class TeamMembership < ApplicationRecord
     class_name: 'Team',
     foreign_key: :team_id,
     primary_key: :id)
+    
 end

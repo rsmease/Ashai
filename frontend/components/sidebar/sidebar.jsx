@@ -9,7 +9,7 @@ class Sidebar extends React.Component {
         <MiniHorizontalLogoNamed />
         <div fixed-sidebar-container>
           <div className="sidebar-team-list">
-            <h3>My Team</h3>
+            <h3>My Teams</h3>
           </div>
           <div className="sidebar-projects-list">
             <h3>My Projects</h3>

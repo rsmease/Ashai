@@ -7,10 +7,17 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  #has_many :tasks
-  #has_many :subtasks through: :tasks
-  #has_many :projects, through: :tasks
-  #TODO: should :teams be a database model?
+  has_many(:owned_teams,
+    class_name: 'Team',
+    foreign_key: :team_owner_id,
+    primary_key: :id)
+
+  has_many(:team_memberships,
+    class_name: 'TeamMembership',
+    foreign_key: :member_id,
+    primary_key: :id)
+
+  has_many :teams, through: :team_memberships, source: :team
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

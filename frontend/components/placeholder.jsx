@@ -26,7 +26,7 @@ class PlaceHolder extends React.Component {
           </div>
           <div className="placeholder-links-lower">
             <Link className="session-form-submit session-demo"
-              to="/demo">View Demo</Link>
+              to="/demo">Demo Login</Link>
           </div>
         </div>
       </div>

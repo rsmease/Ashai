@@ -61,9 +61,7 @@
   text-align: center;
   text-decoration: none;
   width: 80px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 72.5%
+  margin-right: 15%;
 }
 
 .session-form-submit-valid {
@@ -72,12 +70,26 @@
 
 .session-demo {
   background-color: $night-king-blue;
-  margin-bottom: 30px;
-  margin-top: 0;
-  margin-left: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  color: $winter-white;
   border: none;
+  width: 120px;
+  margin-right: 15px;
+}
+
+.session-demo a {
+  color: $winter-white;
+}
+
+.submit-options {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .session-demo:hover {
@@ -92,4 +104,53 @@
 
 .demo-active:hover {
   background-color: $cersei-green;
+}
+
+.session-errors-list {
+  background-color: rgba(255, 133, 133, .3);
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  border-radius: 2px;
+  padding: 10px 20px 10px 20px;
+}
+
+.session-error {
+  color: $melisandre-red;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.errors-fixed-container-signup {
+  width: 75%;
+  height: 20px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.errors-fixed-container-login {
+  width: 75%;
+  height: 15px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
 }

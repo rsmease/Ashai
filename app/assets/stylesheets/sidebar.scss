@@ -1,9 +1,59 @@
-
-
 .sidebar {
   background-color: $tarth-sapphire;
   height: 100%;
   width: 244px;
   color: $winter-white;
   float: left;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar-team-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px $targ-silver-dark solid;
+}
+
+.sidebar-projects-list {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px $targ-silver-dark solid;
+}
+
+.fixed-sidebar-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }

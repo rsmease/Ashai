@@ -10,7 +10,6 @@ const _nullSession = {
 };
 
 export default (state = _nullSession, action) => {
-  console.log(action);
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

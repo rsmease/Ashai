@@ -11,7 +11,7 @@ class Signup extends React.Component {
       email: '',
       password: '',
     };
-    this.keyUp = false;
+    this.validSignup = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,6 +23,7 @@ class Signup extends React.Component {
 
   componentWillMount () {
     document.title = "Ashai - Sign Up";
+    this.props.removeAllErrors();
   }
 
   handleSubmit(e) {
@@ -32,8 +33,23 @@ class Signup extends React.Component {
   }
 
   handleKeyUp(e) {
-    if (this.state.password.length >= 6) {
-      this.keyUp = true;
+    if (this.state.email.length > 0) {
+      this.validSignup = true;
+    }
+  }
+
+  renderErrors() {
+    if (this.props.errors.session.length > 0) {
+      return(
+        <div className="session-errors-list">
+          {this.props.errors.session.map((error, i) => (
+            <p className="session-error"
+              key={`error-${i}`}>
+              {error}
+            </p>
+          ))}
+        </div>
+      );
     }
   }
 
@@ -45,6 +61,9 @@ class Signup extends React.Component {
       <div className="session-form-container">
         <h2 className="session-form-header">Sign Up</h2>
         <br></br>
+        <div className="errors-fixed-container-signup">
+          {this.renderErrors()}
+        </div>
         <form className="session-form">
           <label>NAME
             <input
@@ -73,11 +92,14 @@ class Signup extends React.Component {
               />
           </label>
           <br></br>
-
-          <button className={
-              this.keyUp === true ? "session-form-submit session-form-submit-valid" :
-              "session-form-submit"}
-              onClick={this.handleSubmit}>Sign Up</button>
+          <div className="submit-options">
+            <button className="session-form-submit session-demo">
+              <Link to="/demo">Demo Login</Link></button>
+            <button className={
+                this.validSignup === true ? "session-form-submit session-form-submit-valid" :
+                "session-form-submit"}
+                onClick={this.handleSubmit}>Sign Up</button>
+          </div>
           </form>
         </div>
         <SignupFooter/>

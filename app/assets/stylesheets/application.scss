@@ -4,7 +4,7 @@
 
 //components
 @import 'placeholder.scss';
-@import 'session-form.scss';
+@import 'session_form.scss';
 @import 'logos.scss';
 @import 'footer.scss';
 @import 'task_header.scss';
@@ -25,11 +25,16 @@ main {
 
 a {
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
 }
 
 .disabled-a {
   pointer-events: none;
+  cursor: none;
 }
 
 

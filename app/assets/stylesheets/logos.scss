@@ -24,3 +24,33 @@
   width: auto;
   margin: 25px;
 }
+
+.mini-horizontal-logo-div {
+  width: 75%;
+  height: 50px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px $targ-silver-dark solid;
+}
+
+.mini-horizontal-logo-div h1 {
+  color: $winter-white;
+  font-size: 36px;
+}
+
+.mini-horizontal-logo {
+  height: 40px;
+  width: auto;
+  margin-right: 15px;
+}

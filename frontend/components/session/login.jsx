@@ -11,14 +11,29 @@ class Login extends React.Component {
       password: '',
     };
     this.validLogin = false;
-    this.loginSpeed = 100;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillMount () {
     document.title = "Ashai - Log In";
+    this.props.removeAllErrors();
   }
+
+  renderErrors() {
+    if (this.props.errors.session.length > 0) {
+      return(
+        <div className="session-errors-list">
+          {this.props.errors.session.map((error, i) => (
+            <p className="session-error"
+              key={`error-${i}`}>
+              {error}
+            </p>
+          ))}
+        </div>
+      );
+    }
+  }
+
 
   autoLogin(field, demoName, cb) {
     let typedText = "";
@@ -58,7 +73,7 @@ class Login extends React.Component {
   }
 
   handleKeyUp(e) {
-    if (this.state.password.length >= 6) {
+    if (this.state.email.length > 0) {
       this.validLogin = true;
     }
   }
@@ -70,11 +85,9 @@ class Login extends React.Component {
         <div className="session-form-container">
           <h2 className="session-form-header">Log In</h2>
           <br></br>
-          <div className="demo-div">
-            <Link className="session-form-submit session-demo"
-              to="/demo">View Demo</Link>
+          <div className="errors-fixed-container-login">
+            {this.renderErrors()}
           </div>
-          <br></br>
           <form className="session-form">
 
             <label>EMAIL ADDRESS</label>
@@ -97,11 +110,14 @@ class Login extends React.Component {
               onChange={this.handleInput('password')}
               />
             <br></br>
-
-            <button className={
-                this.validLogin === true ? "session-form-submit session-form-submit-valid" :
-                "session-form-submit"}
-                onClick={this.handleSubmit}>Log In</button>
+            <div className="submit-options">
+              <button className="session-form-submit session-demo">
+                <Link to="/demo">Demo Login</Link></button>
+              <button className={
+                  this.validLogin === true ? "session-form-submit session-form-submit-valid" :
+                  "session-form-submit"}
+                  onClick={this.handleSubmit}>Log In</button>
+            </div>
             </form>
           </div>
           <LoginFooter />

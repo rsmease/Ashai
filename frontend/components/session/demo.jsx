@@ -32,7 +32,7 @@ class Demo extends React.Component {
       if (typedText === demoName) {
         setTimeout(() => cb(), this.loginSpeed);
       } else {
-        if (this.state.password.length >= 6) {
+        if (this.state.email.length > 0) {
           this.validLogin = true;
         }
         setTimeout(() => _type(), this.loginSpeed);
@@ -67,7 +67,7 @@ class Demo extends React.Component {
   }
 
   handleKeyUp(e) {
-    if (this.state.password.length >= 6) {
+    if (this.state.email.length > 0) {
       this.validLogin = true;
     }
   }
@@ -77,7 +77,7 @@ class Demo extends React.Component {
       <div className="root-container">
         <HorizontalLogoNamed />
         <div className="session-form-container">
-          <h2 className="session-form-header">Log In</h2>
+          <h2 className="session-form-header">Demo</h2>
           <br></br>
           <div className="demo-div">
             <div className="demo-div">
@@ -108,11 +108,12 @@ class Demo extends React.Component {
               onChange={this.handleInput('password')}
               />
             <br></br>
-
-            <button className={
-                this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
-                "session-form-submit"}
-                onClick={this.handleSubmit}>Log In</button>
+            <div className="submit-options">
+              <button className={
+                  this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
+                  "session-form-submit"}
+                  onClick={this.handleSubmit}>Log In</button>
+            </div>
             </form>
           </div>
           <LoginFooter />

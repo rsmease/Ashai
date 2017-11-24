@@ -7,15 +7,15 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many(:owned_teams,
+  has_many :owned_teams,
     class_name: 'Team',
     foreign_key: :team_owner_id,
-    primary_key: :id)
+    primary_key: :id
 
-  has_many(:team_memberships,
+  has_many :team_memberships,
     class_name: 'TeamMembership',
     foreign_key: :member_id,
-    primary_key: :id)
+    primary_key: :id
 
   has_many :teams, through: :team_memberships, source: :team
 

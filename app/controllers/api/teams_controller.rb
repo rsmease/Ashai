@@ -11,7 +11,12 @@ class Api::TeamsController < ApplicationController
   end
 
   def destroy
-
+    @team = Team.find(params[:id])
+    if @team.destroy
+      redirect_to root_url
+    else
+      render plain: "You can't destroy what's not tere."
+    end
   end
 
   private

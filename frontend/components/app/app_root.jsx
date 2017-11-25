@@ -14,6 +14,8 @@ import SidebarContainer from '../sidebar/sidebar_container';
 import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
 
+import MainAppView from './main_app_view';
+
 
 export default () => (
   <main>
@@ -24,11 +26,7 @@ export default () => (
     <AuthRoute path="/signup" component={SignupContainer}/>
     <AuthRoute path="/demo" component={DemoContainer}/>
 
-    <ProtectedRoute path="/app" component={SidebarContainer}/>
-    <div className="task-with-header">
-      <ProtectedRoute path="/app" component={NavigationHeaderContainer}/>
-      <ProtectedRoute path="/app" component={TaskHeaderContainer}/>
-    </div>
+    <ProtectedRoute path="/app" component={MainAppView}/>
 
   </main>
 );

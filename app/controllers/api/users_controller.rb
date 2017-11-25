@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-def create
+  def create
     @user = User.new(user_params)
 
     if @user.save
@@ -12,10 +12,15 @@ def create
     end
   end
 
-  def edit
+  def show
     @user = User.find(params[:id])
-    render "api/users/edit"
+    render "api/users/show"
   end
+
+  # def edit
+  #   @user = User.find(params[:id])
+  #   render "api/users/edit"
+  # end
 
   def destroy
     @user = User.find(params[:id])

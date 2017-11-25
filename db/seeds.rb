@@ -32,3 +32,31 @@ user18 = User.create(name: "Joffrey Baratheon", email: "jbaratheon@kingslanding.
 user19 = User.create(name: "Tommen Baratheon", email: "tbaratheon@kingslanding.got", password: "tommenbaratheoncorgicorgi", profile_image_url: "https://i.imgur.com/6DjiNFi.jpg")
 user20 = User.create(name: "Gregor Clegane", email: "gclegane@kingslanding.got", password: "gregorcleganecorgicorgi", profile_image_url: "https://i.imgur.com/6DjiNFi.jpg")
 user21 = User.create(name: "Euron Greyjoy", email: "egreyjoy@kingslanding.got", password: "eurongreyjoycorgicorgi", profile_image_url: "https://i.imgur.com/6DjiNFi.jpg")
+
+team1 = Team.create(team_owner_id: user1.id, name: "House Targaryen", description: "Welcome to House Targaryen");
+team2 = Team.create(team_owner_id: user8.id, name: "House Stark", description: "Welcome to House Stark")
+team3 = Team.create(team_owner_id: user15.id, name: "House Lannister", description: "Welcome to House Lannister");
+
+team_membership1 = TeamMembership.create(member_id: user1.id, team_id: team1.id)
+team_membership2 = TeamMembership.create(member_id: user2.id, team_id: team1.id)
+team_membership3 = TeamMembership.create(member_id: user3.id, team_id: team1.id)
+team_membership4 = TeamMembership.create(member_id: user4.id, team_id: team1.id)
+team_membership5 = TeamMembership.create(member_id: user5.id, team_id: team1.id)
+team_membership6 = TeamMembership.create(member_id: user6.id, team_id: team1.id)
+team_membership7 = TeamMembership.create(member_id: user7.id, team_id: team1.id)
+
+team_membership8 = TeamMembership.create(member_id: user8.id, team_id: team2.id)
+team_membership9 = TeamMembership.create(member_id: user9.id, team_id: team2.id)
+team_membership10 = TeamMembership.create(member_id: user10.id, team_id: team2.id)
+team_membership11 = TeamMembership.create(member_id: user11.id, team_id: team2.id)
+team_membership12 = TeamMembership.create(member_id: user12.id, team_id: team2.id)
+team_membership13 = TeamMembership.create(member_id: user13.id, team_id: team2.id)
+team_membership14 = TeamMembership.create(member_id: user14.id, team_id: team2.id)
+
+team_membership15 = TeamMembership.create(member_id: user15.id, team_id: team3.id)
+team_membership16 = TeamMembership.create(member_id: user16.id, team_id: team3.id)
+team_membership17 = TeamMembership.create(member_id: user17.id, team_id: team3.id)
+team_membership18 = TeamMembership.create(member_id: user18.id, team_id: team3.id)
+team_membership19 = TeamMembership.create(member_id: user19.id, team_id: team3.id)
+team_membership20 = TeamMembership.create(member_id: user20.id, team_id: team3.id)
+team_membership21 = TeamMembership.create(member_id: user21.id, team_id: team3.id)

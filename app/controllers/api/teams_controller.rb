@@ -1,5 +1,10 @@
 class Api::TeamsController < ApplicationController
 
+  def index
+    @teams = Team.all
+    render "api/teams/index"
+  end
+
   def create
     @team = Team.new(team_params)
 
@@ -8,6 +13,11 @@ class Api::TeamsController < ApplicationController
     else
       render json: @team.full_messages, status: 422
     end
+  end
+
+  def show
+    @team = Team.find(params[:id])
+    render "api/teams/show"
   end
 
   def destroy

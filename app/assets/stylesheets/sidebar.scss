@@ -23,12 +23,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
 
   margin-bottom: 15px;
   margin-top: 15px;
   padding-bottom: 15px;
 
   border-bottom: 1px $targ-silver-dark solid;
+}
+
+.teams-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sidebar-link-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sidebar-header-primary {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.sidebar-nav-link {
+  width: 100%;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: $winter-white;
+  font-size: 13px;
+}
+
+.sidebar-nav-link:hover {
+  background-color: $targ-silver-dark;
 }
 
 .sidebar-projects-list {
@@ -56,4 +103,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  width: 100%;
 }

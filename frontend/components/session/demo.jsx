@@ -12,7 +12,6 @@ class Demo extends React.Component {
     };
     this.validLogin = false;
     this.loginSpeed = 100;
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
 
@@ -61,14 +60,7 @@ class Demo extends React.Component {
   }
 
   handleAutoLogin() {
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/app'));
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/app'));
+    this.props.login(this.state);
   }
 
   handleKeyUp(e) {
@@ -114,8 +106,7 @@ class Demo extends React.Component {
             <div className="submit-options">
               <button className={
                   this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
-                  "session-form-submit"}
-                  onClick={this.handleSubmit}>Log In</button>
+                  "session-form-submit"}>Log In</button>
             </div>
             </form>
           </div>

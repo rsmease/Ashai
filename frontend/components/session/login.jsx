@@ -40,31 +40,6 @@ class Login extends React.Component {
   }
 
 
-  autoLogin(field, demoName, cb) {
-    let typedText = "";
-    const _type = () => {
-      typedText = demoName.substring(0, typedText.length + 1);
-      this.setState({[field]:typedText});
-      if (typedText === demoName) {
-        setTimeout(() => cb(), this.loginSpeed);
-      } else {
-        if (this.state.password.length >= 6) {
-          this.validLogin = true;
-        }
-        setTimeout(() => _type(), this.loginSpeed);
-      }
-    };
-    _type();
-  }
-
-  demoLogin(e) {
-    this.autoLogin("email", "jsnow@thewall.got", (
-      () => this.autoLogin("password", "jonsnowcorgicorgi", (
-        () => this.handleSubmit(e)
-      ))
-    ));
-  }
-
   handleInput(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
@@ -73,8 +48,7 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state)
-      .then(() => this.props.history.push('/app'));
+    this.props.login(this.state);
   }
 
   handleKeyUp(e) {

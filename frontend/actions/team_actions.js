@@ -16,5 +16,5 @@ const receiveAllTeams = (teams) => ({
 export const requestTeam = (teamId) => (dispatch) => fetchTeam(teamId)
   .then(fetchedTeam => dispatch(receiveTeam(fetchedTeam)));
 
-export const requestAllTeams = (teams) => (dispatch) => fetchAllTeams(teams)
+export const requestAllTeams = () => (dispatch) => fetchAllTeams()
   .then(fetchedTeams => dispatch(receiveAllTeams(fetchedTeams)));

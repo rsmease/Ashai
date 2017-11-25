@@ -9,7 +9,7 @@ export default (state = {}, action) => {
       return _.merge({}, state, { [receivedTeam.id]: receivedTeam });
     case RECEIVE_ALL_TEAMS:
       const allTeams = action.teams;
-      return _.merge({}, state, { allTeams });
+      return _.merge({}, state, allTeams);
     default:
       return state;
   }

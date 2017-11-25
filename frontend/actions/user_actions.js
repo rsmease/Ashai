@@ -1,4 +1,4 @@
-import { fetchUsers } from '../util/user_util';
+import { fetchAllUsers } from '../util/user_util';
 
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
@@ -7,5 +7,5 @@ const receiveAllUsers = (users) => ({
   users
 });
 
-export const requestAllUsers = (users) => (dispatch) => fetchUsers(users)
-  .then(fetchedUsers => dispatch(receiveAllUsers(users)));
+export const requestAllUsers = () => (dispatch) => fetchAllUsers()
+  .then(fetchedUsers => dispatch(receiveAllUsers(fetchedUsers)));

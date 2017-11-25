@@ -3,6 +3,22 @@ import { Link, Router } from 'react-router-dom';
 import MiniHorizontalLogoNamed from './mini_logo';
 
 class Sidebar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      myTeams: []
+    };
+  }
+
+  componentWillMount() {
+    this.props.requestAllUsers();
+    this.props.requestAllTeams();
+    this.setState(
+      { myTeams: this.props.myTeamsArray(
+                  this.state.allTeams, this.state.myTeamIds)}
+    );
+  }
+
   render () {
     return (
       <div className="sidebar">

@@ -6,7 +6,7 @@ export default (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_USERS:
       const users = action.users;
-      return _.merge({}, state, { users });
+      return _.merge({}, state, users);
     default:
       return state;
   }

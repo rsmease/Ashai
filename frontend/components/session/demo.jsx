@@ -80,10 +80,8 @@ class Demo extends React.Component {
           <h2 className="session-form-header">Demo</h2>
           <br></br>
           <div className="demo-div">
-            <div className="demo-div">
-              <Link className="session-form-submit session-demo demo-active disabled-a"
-                to="/demo">Loading Demo</Link>
-            </div>
+            <Link className="session-form-submit session-demo demo-active disabled-a"
+              to="/demo">Loading Demo</Link>
           </div>
           <br></br>
           <form className="session-form">

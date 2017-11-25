@@ -5,3 +5,11 @@ export const fetchTeam = (teamId) => (
     data: { teamId }
   })
 );
+
+export const fetchAllTeams = (teams) => (
+  $.ajax({
+    url: `api/teams/`,
+    method: 'GET',
+    data: { teams }
+  })
+);

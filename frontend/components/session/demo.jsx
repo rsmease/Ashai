@@ -24,6 +24,11 @@ class Demo extends React.Component {
     this.demoLogin();
   }
 
+  componentWillUnmount () {
+    this.props.requestAllUsers();
+    this.props.requestAllTeams();
+  }
+
   autoLogin(field, demoName, cb) {
     let typedText = "";
     const _type = () => {

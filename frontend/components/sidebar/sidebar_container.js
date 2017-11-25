@@ -7,8 +7,6 @@ import { myTeamsArray } from '../../reducers/selectors';
 import Sidebar from './sidebar';
 
 const mapStateToProps = (state, ownProps) => ({
-  errors: state.errors,
-  allTeams: state.teams,
   id: state.session.currentUser.id,
   name: state.session.currentUser.name,
   profileImgURL: state.session.currentUser.profile_image_url,

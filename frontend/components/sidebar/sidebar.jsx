@@ -11,12 +11,7 @@ class Sidebar extends React.Component {
   }
 
   componentWillMount() {
-    this.props.requestAllUsers();
-    this.props.requestAllTeams();
-    this.setState(
-      { myTeams: this.props.myTeamsArray(
-                  this.state.allTeams, this.state.myTeamIds)}
-    );
+    console.log(this.props);
   }
 
   render () {

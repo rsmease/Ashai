@@ -7,3 +7,5 @@ class TaskIndexGutter extends React.Component {
     </div>);
   }
 }
+
+export default TaskIndexGutter;

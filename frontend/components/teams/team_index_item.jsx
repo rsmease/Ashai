@@ -15,7 +15,7 @@ class TeamIndexItem extends React.Component {
         <img className="team-index-card-image"
           src={this.props.member.profile_image_url}/>
         <Link className="team-index-card-link"
-          to="/users/:userId"
+          to={`/users/${this.props.member.id}`}
           >View Profile</Link>
       </div>
     );

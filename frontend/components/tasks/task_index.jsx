@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
-import TeamIndexItem from './team_index_item';
-import TaskListHeader from '../headers/task_list_header';
-import TaskListGutter from '../footers/task_list_gutter';
+import TaskIndexHeader from '../headers/task_index_header';
+import TaskIndexGutter from '../footers/task_index_gutter';
 
 class TaskIndex extends React.Component {
   constructor(props) {
@@ -35,11 +34,11 @@ class TaskIndex extends React.Component {
 
   render() {
     return (
-      <div className="flex-container">
-        <TaskListHeader />
+      <div className="task-panel-container">
+        <TaskIndexHeader />
         <div className="task-panel">
-          <TaskListGutter />
-          <div className="task-list-container"></div>
+          <TaskIndexGutter />
+          <div className="task-index-container"></div>
         </div>
       </div>
     );

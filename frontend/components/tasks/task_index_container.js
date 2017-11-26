@@ -24,6 +24,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({});
 
+//REMEMBER TO ADD THESE BACK SOON
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(TaskIndex)
+  connect(null, null)(TaskIndex)
 );

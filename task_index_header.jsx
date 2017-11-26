@@ -9,3 +9,5 @@ class TaskIndexHeader extends React.Component {
     </div>);
   }
 }
+
+export default TaskIndexHeader;

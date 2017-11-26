@@ -16,7 +16,9 @@ import TaskHeaderContainer from '../headers/task_header_container';
 
 import {
   MainAppViewCurrentUser,
-  MainAppViewTeam
+  MainAppViewTeam,
+  MainAppViewUser,
+  MainAppViewProject
 } from './main_app_views';
 
 
@@ -31,6 +33,9 @@ export default () => (
 
       <ProtectedRoute path="/app" component={MainAppViewCurrentUser}/>
       <ProtectedRoute path="/teams/:teamId" component={MainAppViewTeam}/>
+      <ProtectedRoute path="/users/:userId" component={MainAppViewUser}/>
+      <ProtectedRoute path="/projects/:projectId"
+        component={MainAppViewProject}/>
 
       <AuthRoute component={LoginContainer}/>
       <ProtectedRoute component={MainAppViewCurrentUser}/>

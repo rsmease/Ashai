@@ -6,7 +6,7 @@ export default (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_TEAM:
       const receivedTeam = action.team;
-      return _.merge({}, state, { [receivedTeam.id]: receivedTeam });
+      return _.merge({}, state, {[receivedTeam.id]: receivedTeam} );
     case RECEIVE_ALL_TEAMS:
       const allTeams = action.teams;
       return _.merge({}, state, allTeams);

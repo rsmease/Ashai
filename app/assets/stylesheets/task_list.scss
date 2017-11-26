@@ -1,9 +1,43 @@
-.task-list {
-  height: 100%;
-  width: 100%;
-  color: $tarth-sapphire;
+.task-list-header{
+  width: 80%;
+  height: 50px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  border-radius: 3px 3px 0 0;
+  padding-left: 30px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.task-list h1 {
-  color: $tarth-sapphire;
+.add-task-task-list {
+  border: 1px solid $night-king-blue;
+  border-radius: 3px;
+  color: $night-king-blue;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+}
+
+.add-task-task-list:hover {
+  box-shadow: 0 0 10px 3px $night-king-blue
+}
+
+.task-panel {
+
+}
+
+.task-list-gutter {
+
+}
+
+.task-list-container {
+
 }

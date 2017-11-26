@@ -19,6 +19,18 @@ class User < ApplicationRecord
 
   has_many :teams, through: :team_memberships, source: :team
 
+  has_many :owned_projects,
+    class_name: 'Project',
+    foreign_key: :project_owner_id,
+    primary_key: :id
+
+  has_many :project_memberships,
+    class_name: 'ProjectMembership',
+    foreign_key: :member_id,
+    primary_key: :id
+
+  has_many :projects, through: :project_memberships, source: :project
+
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil if user.nil?

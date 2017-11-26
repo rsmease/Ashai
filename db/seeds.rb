@@ -8,6 +8,9 @@
 
 User.destroy_all
 Team.destroy_all
+Project.destroy_all
+TeamMembership.destroy_all
+ProjectMembership.destroy_all
 
 user1 = User.create(name: "Jon Snow", email: "jsnow@thewall.got", password: "jonsnowcorgicorgi", profile_image_url: "https://i.imgur.com/vqXRTKt.jpg", bio: "elit sed vulputate mi sit amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc consequat interdum varius sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut")
 user2 = User.create(name: "Danaerys Targaryen", email: "dtargaryen@dragonstone.got", password: "danaerystargaryencorgicorgi", profile_image_url: "https://i.imgur.com/EIW9JXm.jpg", bio: "ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget")
@@ -60,3 +63,21 @@ team_membership18 = TeamMembership.create(member_id: user18.id, team_id: team3.i
 team_membership19 = TeamMembership.create(member_id: user19.id, team_id: team3.id)
 team_membership20 = TeamMembership.create(member_id: user20.id, team_id: team3.id)
 team_membership21 = TeamMembership.create(member_id: user21.id, team_id: team3.id)
+
+project1 = Project.create(project_owner_id: user13.id, name: "Wedding for Robb", description: "Tiger team for planning Robb's wedding. So proud!")
+project2 = Project.create(project_owner_id: user20.id, name: "Jousting Tournament", description: "Planning committee for Jousting Tournament at King's Landing.")
+project3 = Project.create(project_owner_id: user4.id, name: "Weekly Book Club", description: "Logistics and planning for Seven Kingdom's Weekly Book Club.")
+
+project_membership1 = ProjectMembership.create(member_id: user1.id, project_id: project1.id)
+project_membership2 = ProjectMembership.create(member_id: user10.id, project_id: project1.id)
+project_membership3 = ProjectMembership.create(member_id: user12.id, project_id: project1.id)
+project_membership4 = ProjectMembership.create(member_id: user13.id, project_id: project1.id)
+project_membership5 = ProjectMembership.create(member_id: user8.id, project_id: project2.id)
+project_membership6 = ProjectMembership.create(member_id: user5.id, project_id: project2.id)
+project_membership7 = ProjectMembership.create(member_id: user20.id, project_id: project2.id)
+project_membership8 = ProjectMembership.create(member_id: user21.id, project_id: project2.id)
+project_membership9 = ProjectMembership.create(member_id: user16.id, project_id: project2.id)
+project_membership10 = ProjectMembership.create(member_id: user3.id, project_id: project3.id)
+project_membership12 = ProjectMembership.create(member_id: user4.id, project_id: project3.id)
+project_membership13 = ProjectMembership.create(member_id: user8.id, project_id: project3.id)
+project_membership14 = ProjectMembership.create(member_id: user19.id, project_id: project3.id)

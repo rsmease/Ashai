@@ -1,6 +1,6 @@
 //import
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 //placeholder components
@@ -14,19 +14,29 @@ import SidebarContainer from '../sidebar/sidebar_container';
 import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
 
-import MainAppView from './main_app_view';
+import {
+  MainAppViewCurrentUser,
+  MainAppViewTeam
+} from './main_app_views';
 
 
 export default () => (
   <main>
+    <Switch>
 
-    <Route exact path="/" component={PlaceholderComponent}/>
+      <AuthRoute exact path="/" component={PlaceholderComponent}/>
+      <AuthRoute path="/login" component={LoginContainer}/>
+      <AuthRoute path="/signup" component={SignupContainer}/>
+      <AuthRoute path="/demo" component={DemoContainer}/>
 
-    <AuthRoute path="/login" component={LoginContainer}/>
-    <AuthRoute path="/signup" component={SignupContainer}/>
-    <AuthRoute path="/demo" component={DemoContainer}/>
+      <ProtectedRoute path="/app" component={MainAppViewCurrentUser}/>
+      <ProtectedRoute path="/teams/:teamId" component={MainAppViewTeam}/>
 
-    <ProtectedRoute path="/app" component={MainAppView}/>
+      <AuthRoute component={LoginContainer}/>
+      <ProtectedRoute component={MainAppViewCurrentUser}/>
+
+    </Switch>
+
 
   </main>
 );

@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import createStore from './store/store';
 import Root from './components/root';
+import { logout } from './actions/session_actions';
 
 //testing modules
 import { fetchTeam, fetchAllTeams } from './util/team_util';

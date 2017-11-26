@@ -26,11 +26,6 @@ class Signup extends React.Component {
     this.props.removeAllErrors();
   }
 
-  componentWillUnmount () {
-    this.props.requestAllUsers();
-    this.props.requestAllTeams();
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state);

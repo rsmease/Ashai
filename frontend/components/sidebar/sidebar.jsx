@@ -8,16 +8,12 @@ class Sidebar extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    console.log(this.props);
-  }
-
   renderTeams() {
     return(
       <div className="teams-container">
         {
           this.props.currentUser.teams.map(
-            team => <TeamSidebarIndex team={team} />
+            team => <TeamSidebarIndex key={Math.random()} team={team} />
           )
         }
       </div>

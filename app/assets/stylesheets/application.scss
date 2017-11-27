@@ -19,11 +19,16 @@ html, body {
   height: 100%;
   font-family: 'Lato', sans-serif;
   overflow: scroll;
+
+  background: $lannister-gold;
+  background: -webkit-linear-gradient($login-gradient);
+  background: -o-linear-gradient($login-gradient);
+  background: -moz-linear-gradient($login-gradient);
+  background: linear-gradient($login-gradient);
 }
 
 main {
   width: 100%;
-  min-height: 100%;
   display: flex;
 }
 
@@ -44,12 +49,6 @@ button {
 
 .root-container {
   width: 100%;
-  min-height: inherit;
-  background: $lannister-gold;
-  background: -webkit-linear-gradient($login-gradient);
-  background: -o-linear-gradient($login-gradient);
-  background: -moz-linear-gradient($login-gradient);
-  background: linear-gradient($login-gradient);
 
   display: -webkit-box;
   display: -moz-box;
@@ -60,6 +59,7 @@ button {
   justify-content: center;
   flex-direction: column;
   overflow: scroll;
+  padding-bottom: 50px;
 }
 
 .flex-container {
@@ -74,7 +74,7 @@ button:active, button:focus, input:active, input:focus {
 
 .app-container {
   width: 100%;
-  min-height: inherit;
+  min-height: 1000px;
   background-color: $winter-white;
   display: -moz-box;
   display: -ms-flexbox;

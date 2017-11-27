@@ -71,6 +71,11 @@
   margin-bottom: 5px;
   color: $winter-white;
   font-size: 13px;
+  -webkit-transition: background-color 300ms ease-in;
+  -moz-transition: background-color 300ms ease-in;
+  -ms-transition: background-color 300ms ease-in;
+  -o-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
 }
 
 .sidebar-nav-link:hover {

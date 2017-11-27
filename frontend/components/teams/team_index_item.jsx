@@ -9,16 +9,16 @@ class TeamIndexItem extends React.Component {
 
   render() {
     return(
-      <div className="team-index-card">
+      <div className="team-index-card w3-animate-opacity">
         <h4 className="team-index-card-title">
           {this.props.member.name}
         </h4>
         <div className="bio-card-hover-container">
           <img className="team-index-card-image"
             src={this.props.member.profile_image_url}/>
-          <span className="bio-card-container">
+          <div className="bio-card-container">
             <TeamBioCard member={this.props.member}/>
-          </span>
+          </div>
         </div>
         <Link className="team-index-card-link"
           to={`/users/${this.props.member.id}`}

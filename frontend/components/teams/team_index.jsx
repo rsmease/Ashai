@@ -12,6 +12,13 @@ class TeamIndex extends React.Component {
     this.props.requestTeam(this.props.currentTeamId);
   }
 
+  componentWillReceiveProps(newProps) {
+    if (this.props.currentTeamId !== newProps.currentTeamId) {
+      this.props.requestTeam(newProps.currentTeamId);
+
+    }
+  }
+
   renderTeamCards() {
     if (this.props.team) {
       return (<div className="team-index-container">

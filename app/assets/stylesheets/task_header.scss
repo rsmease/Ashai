@@ -180,3 +180,31 @@
   background-color: $winter-white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
+
+.home-header {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-header-content-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 17px;
+  border-bottom: 3px solid $night-king-blue;
+}
+
+.secondary-header-title {
+  font-size: 24px;
+  font-weight: 800;
+}

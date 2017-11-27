@@ -42,6 +42,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
+  margin-top: 15px;
 }
 
 .sidebar-link-list {
@@ -70,8 +71,6 @@
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
   color: $winter-white;
   font-size: 13px;
   -webkit-transition: background-color 300ms ease-in;

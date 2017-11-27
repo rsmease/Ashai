@@ -49,23 +49,107 @@
 
 .team-index-card-image {
   border-radius: 50%;
-  height: 40%;
-  width: auto;
+  max-height: 120px;
 }
 
 .team-index-card-image:hover {
   box-shadow: 0 0 10px 3px $night-king-blue
 }
 
-.team-index-card-bio {
-  color: $nights-watch-black;
-}
-
 .team-index-card-link {
-  margin-top: 15px;
+  margin-top: 35px;
   color: $nights-watch-black
 }
 
 .team-index-card-link:hover {
   color: $night-king-blue
+}
+
+.bio-card-hover-container {
+  position: relative;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.bio-card-hover-container > span {
+  position: absolute;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.bio-card-hover-container:hover > span {
+  z-index: 150;
+  visibility: visible;
+  bottom: 0.5px;
+}
+
+.team-index-bio-card {
+  height: 300px;
+  width: 400px;
+  border-radius: 4px;
+  background-position: center;
+  background-size: cover;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,0.15);
+}
+
+.team-index-bio-card-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.team-index-bio-card-title {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% - 15px);
+  color: $winter-white;
+  font-weight: bold;
+  font-size: 24px;
+  padding-left: 15px;
+}
+
+.team-index-bio-card-bio {
+  color: $winter-white;
+  font-size: 11px;
+  margin: 15px;
+}
+
+.team-index-bio-about-me {
+  margin-right: 15px;
+  color: $cersei-green;
+  font-style: italic;
+  font-size: 11px;
+  float: right;
+  margin-top: 10px;
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Router } from 'react-router-dom';
 import MiniHorizontalLogoNamed from './mini_logo';
 import TeamSidebarIndex from './team_sidebar_index';
+import ProjectSidebarIndex from './project_sidebar_index';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -10,10 +11,23 @@ class Sidebar extends React.Component {
 
   renderTeams() {
     return(
-      <div className="teams-container">
+      <div className="sidebar-list-container">
         {
           this.props.currentUser.teams.map(
             team => <TeamSidebarIndex key={Math.random()} team={team} />
+          )
+        }
+      </div>
+    );
+  }
+
+  renderProjects() {
+    return(
+      <div className="sidebar-list-container">
+        {
+          this.props.currentUser.projects.map(
+            project => <ProjectSidebarIndex key={Math.random()}
+             project={project} />
           )
         }
       </div>
@@ -25,12 +39,13 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <MiniHorizontalLogoNamed />
         <div className="fixed-sidebar-container">
-          <div className="sidebar-team-list">
+          <div className="sidebar-section">
             <h3 className="sidebar-header-primary">My Teams</h3>
             {this.renderTeams()}
           </div>
-          <div className="sidebar-projects-list">
+          <div className="sidebar-section">
             <h3 className="sidebar-header-primary">My Projects</h3>
+            {this.renderProjects()}
           </div>
         </div>
       </div>

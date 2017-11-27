@@ -20,7 +20,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 
@@ -30,7 +30,6 @@
   margin-top: 15px;
   padding-bottom: 15px;
 
-  border-bottom: 1px $targ-silver-dark solid;
 }
 
 .sidebar-list-container {
@@ -40,8 +39,8 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -52,21 +51,25 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
 .sidebar-header-primary {
-  margin-bottom: 15px;
   font-size: 16px;
+  color: $targ-silver-dark;
+  margin-left: 15px;
+  width: 90%;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $targ-silver-dark;
 }
 
 .sidebar-nav-link {
   width: 100%;
-  text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
+  padding-left: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
   color: $winter-white;
@@ -79,7 +82,31 @@
 }
 
 .sidebar-nav-link:hover {
-  background-color: $targ-silver-dark;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-profiles {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  padding-left: 15px;
+}
+
+.sidebar-profile-image {
+  border-radius: 50%;
+  max-height: 24px;
+  margin-right: 10px;
+}
+
+.sidebar-profile-image:hover {
+  box-shadow: 0 0 3px 3px $night-king-blue
 }
 
 .sidebar-projects-list {
@@ -107,6 +134,5 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
   width: 100%;
 }

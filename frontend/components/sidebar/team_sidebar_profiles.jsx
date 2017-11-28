@@ -12,7 +12,8 @@ class TeamSidebarProfiles extends React.Component {
       <div className="sidebar-profiles">
         {
           this.props.members.slice(0, 6).map(
-            member => <Link to={`/users/${member.id}`}>
+            member => <Link to={`/users/${member.id}`}
+            key={Math.random()}>
             <img className="sidebar-profile-image"
               key={Math.random()}
               src={member.profile_image_url}/>

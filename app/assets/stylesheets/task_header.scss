@@ -202,9 +202,22 @@
   padding-top: 20px;
   padding-bottom: 17px;
   border-bottom: 3px solid $night-king-blue;
+  background: transparent;
 }
 
 .secondary-header-title {
   font-size: 24px;
   font-weight: 800;
+}
+
+.team-header {
+  background: $cersei-green;
+  background: -webkit-linear-gradient($team-header-gradient);
+  background: -o-linear-gradient($team-header-gradient);
+  background: -moz-linear-gradient($team-header-gradient);
+  background: linear-gradient($team-header-gradient);
+}
+
+.team-header-title {
+  color: $winter-white;
 }

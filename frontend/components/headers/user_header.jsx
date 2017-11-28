@@ -7,9 +7,27 @@ class UserHeader extends React.Component {
     super(props);
   }
 
+  renderUserHeader() {
+    if (this.props.user) {
+      return (<div className="home-header task-header-secondary">
+        <div className="home-header-content-container">
+          <img className="sidebar-profile-image"
+            key={Math.random()}
+            src={this.props.user.profile_image_url}/>
+          <h1 className="secondary-header-title">
+            {this.props.user.name}{"'"}s Tasks</h1>
+        </div>
+      </div>);
+    } else {
+      return(
+        <div className="home-header task-header-secondary"></div>
+      );
+    }
+  }
+
   componentDidMount() {
     this.props.requestUser(this.props.userId);
-    console.log(this.props)
+    console.log(this.props);
   }
 
   componentWillReceiveProps(newProps) {
@@ -20,8 +38,8 @@ class UserHeader extends React.Component {
 
   render() {
     return (
-      <div className="home-header task-header-secondary">
-        ELEPHANT
+      <div>
+        {this.renderUserHeader()}
       </div>
     );
   }

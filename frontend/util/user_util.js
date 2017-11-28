@@ -7,7 +7,7 @@ export const fetchAllUsers = () => (
 
 export const fetchUser = (userId) => (
   $.ajax({
-    url: `api/projects/${userId}`,
+    url: `api/users/${userId}`,
     method: 'GET',
     data: { userId }
   })

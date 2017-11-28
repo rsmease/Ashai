@@ -7,11 +7,6 @@ class TaskIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   // renderTeamCards() {
   //   if (this.props.team) {
   //     return (<div className="team-index-container">
@@ -34,11 +29,13 @@ class TaskIndex extends React.Component {
 
   render() {
     return (
-      <div className="task-panel-container">
-        <TaskIndexHeader />
-        <div className="task-panel">
-          <TaskIndexGutter />
-          <div className="task-index-container"></div>
+      <div className="hot-fix-task">
+        <div className="task-index-placeholder">
+          <TaskIndexHeader />
+          <div className="task-panel">
+            <TaskIndexGutter />
+            <div className="task-index-container"></div>
+          </div>
         </div>
       </div>
     );

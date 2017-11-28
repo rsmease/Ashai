@@ -52,7 +52,9 @@ class Sidebar extends React.Component {
   closeNewProjectModal() {
     this.setState({ newProjectModalOpen: false });
     document.title = "Ashai";
+    this.renderProjects();
   }
+
 
   render () {
     return (

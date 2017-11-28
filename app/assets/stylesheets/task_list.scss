@@ -144,7 +144,7 @@
   height: 100%;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   border-radius: 3px;
-
+  min-width: 200px;
   flex-direction: column;
 }
 
@@ -188,6 +188,7 @@
   background: $winter-white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
   border-radius: 3px;
+  min-width: 200px;
 }
 
 .project-description > p {

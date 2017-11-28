@@ -44,11 +44,19 @@ class Sidebar extends React.Component {
         <MiniHorizontalLogoNamed />
         <div className="fixed-sidebar-container">
           <div className="sidebar-section">
-            <h3 className="sidebar-header-primary">My Teams</h3>
+            <div className="header-with-add-button">
+              <h3 className="sidebar-header-primary">My Teams</h3>
+                <Link to="/viewmodal"
+                  className="sidebar-new-project-button">+</Link>
+            </div>
             {this.renderTeams()}
           </div>
           <div className="sidebar-section">
-            <h3 className="sidebar-header-primary">My Projects</h3>
+            <div className="header-with-add-button">
+              <h3 className="sidebar-header-primary">My Projects</h3>
+                <Link to="/viewmodal"
+                  className="sidebar-new-project-button">+</Link>
+            </div>
             {this.renderProjects()}
           </div>
         </div>

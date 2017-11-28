@@ -60,10 +60,7 @@
 .sidebar-header-primary {
   font-size: 16px;
   color: $targ-silver-dark;
-  margin-left: 15px;
-  width: 90%;
   padding-bottom: 5px;
-  border-bottom: 1px solid $targ-silver-dark;
 }
 
 .sidebar-nav-link {
@@ -106,6 +103,45 @@
 
 .sidebar-profile-image:hover {
   box-shadow: 0 0 3px 3px $night-king-blue
+}
+
+.header-with-add-button {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 90%;
+  border-bottom: 1px solid $targ-silver-dark;
+  margin-left: 15px;
+  min-height: 35px;
+}
+
+.sidebar-new-project-button {
+  border-radius: 12px;
+  height: 18px;
+  width: 18px;
+  padding-left: 0.5px;
+  padding-bottom: 1px;
+  border: 1px solid $winter-white;
+  color: $winter-white;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-new-project-button:hover {
+  border: 3px solid $winter-white;
+  margin-bottom: 4px;
+  margin-right: 3px;
 }
 
 .sidebar-projects-list {

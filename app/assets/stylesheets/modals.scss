@@ -1,0 +1,128 @@
+.root-modal-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  z-index: 500;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  min-height: 100%;
+}
+
+.modal-form-container {
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  background: $winter-white;
+  display: flex;
+  flex-direction: column;
+  width: 585px;
+  overflow: auto;
+  color: white;
+}
+
+.modal-form-header {
+  margin-bottom: 30px;
+  margin-top: 60px;
+  font-size: 48px;
+  color: $nights-watch-black;
+}
+
+.modal-form {
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.modal-form input {
+  border: 1px $targ-silver-light solid;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 40px;
+  margin-bottom: 5px;
+  margin-left: 12%;
+  margin-top: 5px;
+  padding-left: 10px;
+  width: 75%;
+}
+
+.modal-form input:focus, .modal-form input:active {
+  border: 1px $targ-silver-dark solid;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.modal-form textarea {
+  padding-top: 10px;
+  border: 1px $targ-silver-light solid;
+  border-radius: 3px;
+  font-size: 14px;
+  height: 40px;
+  margin-bottom: 5px;
+  margin-left: 12%;
+  margin-top: 5px;
+  padding-left: 10px;
+  width: 75%;
+  min-height: 100px;
+}
+
+.modal-form textarea:focus, .modal-form textarea:active {
+  border: 1px $targ-silver-dark solid;
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.modal-form label {
+  color: $targ-silver-dark;
+  font-size: 11px;
+  margin-bottom: 5px;
+  margin-left: 12%;
+  width: 100%;
+}
+
+.modal-form-submit {
+  border: none;
+  border-radius: 3px;
+  color: $winter-white;
+  background-color: $targ-silver-light;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  margin-right: 15%;
+}
+
+.modal-form-submit-valid {
+  background-color: $night-king-blue;
+}
+
+.modal-cancel {
+  background-color: $melisandre-red;
+  color: $winter-white;
+  border: none;
+  width: 120px;
+  border-radius: 3px;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  margin-right: 15px;
+}
+
+.modal-cancel a {
+  color: $winter-white;
+}

@@ -14,6 +14,9 @@ import SidebarContainer from '../sidebar/sidebar_container';
 import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
 
+//modals
+import NewProjectModalContainer from '../modals/new_project_modal_container';
+
 import {
   MainAppViewCurrentUser,
   MainAppViewTeam,
@@ -36,6 +39,10 @@ export default () => (
       <ProtectedRoute path="/users/:userId" component={MainAppViewUser}/>
       <ProtectedRoute path="/projects/:projectId"
         component={MainAppViewProject}/>
+
+      <ProtectedRoute path="/viewmodal"
+          component={NewProjectModalContainer}/>
+
 
       <AuthRoute component={LoginContainer}/>
       <ProtectedRoute component={MainAppViewCurrentUser}/>

@@ -23,7 +23,7 @@ class NavigationHeader extends React.Component {
         </div>
         <div className="right-links">
           <a href="https://www.stackoverflow.com"
-            className="header-link">Help</a>
+            className="header-link" target="_blank">Help</a>
           <a href="https://www.linkedin.com/in/ryan-mease-140b473a/"
             className="upgrade-button"
             target="_blank">

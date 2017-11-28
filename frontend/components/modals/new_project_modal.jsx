@@ -10,6 +10,7 @@ class NewProjectModal extends React.Component {
       name: '',
       description: '',
     };
+    this.validNewProject = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -28,31 +29,10 @@ class NewProjectModal extends React.Component {
     this.props.login(this.state);
   }
 
-  render() {
-    return (
-      <div className="root-container">
-      </div>
-    );
-  }
-}
-
-
-
-
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-      password: '',
-    };
-    this.validLogin = false;
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillMount () {
-    document.title = "Ashai - Log In";
-    this.props.removeAllErrors();
+  handleKeyUp(e) {
+    if (this.state.name.length > 0) {
+      this.validNewProject = true;
+    }
   }
 
   renderErrors() {
@@ -70,68 +50,148 @@ class Login extends React.Component {
     }
   }
 
-
-  handleInput(type) {
-    return (e) => {
-      this.setState({ [type]: e.target.value });
-    };
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.login(this.state);
-  }
-
-  handleKeyUp(e) {
-    if (this.state.email.length > 0) {
-      this.validLogin = true;
-    }
-  }
-
   render() {
     return (
-      <div className="root-container">
-        <HorizontalLogoNamed />
-        <div className="session-form-container">
-          <h2 className="session-form-header">Log In</h2>
+      <div className="root-modal-container">
+        <div className="modal-form-container">
+          <h2 className="modal-form-header">New Project</h2>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}
           </div>
-          <form className="session-form">
+          <form className="modal-form">
 
-            <label>EMAIL ADDRESS</label>
+            <label>PROJECT NAME</label>
             <br></br>
 
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
               type="text"
-              value={this.state.email}
-              onChange={this.handleInput('email')}
+              value={this.state.name}
+              onChange={this.handleInput('name')}
               />
             <br></br>
 
-            <label>PASSWORD</label>
+            <label>DESCRIPTION</label>
             <br></br>
-            <input
+            <textarea
               onKeyUp={(e) => this.handleKeyUp(e)}
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput('password')}
+              type="textarea"
+              value={this.state.description}
+              onChange={this.handleInput('description')}
               />
             <br></br>
             <div className="submit-options">
-              <button className="session-form-submit session-demo">
-                <Link to="/demo">Demo Login</Link></button>
+              <button className="modal-cancel">
+                <Link to="/app">Cancel</Link></button>
               <button className={
-                  this.validLogin === true ? "session-form-submit session-form-submit-valid" :
-                  "session-form-submit"}
-                  onClick={this.handleSubmit}>Log In</button>
+                  this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
+                  "modal-form-submit"}
+                  onClick={this.handleSubmit}>Create</button>
             </div>
-            </form>
-          </div>
-          <LoginFooter />
+          </form>
+        </div>
       </div>
     );
   }
 }
+
+export default NewProjectModal;
+
+
+// class Login extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       email: '',
+//       password: '',
+//     };
+//     this.validNewProject = false;
+//     this.handleSubmit = this.handleSubmit.bind(this);
+//   }
+//
+//   componentWillMount () {
+//     document.title = "Ashai - Log In";
+//     this.props.removeAllErrors();
+//   }
+//
+//   renderErrors() {
+//     if (this.props.errors.session.length > 0) {
+//       return(
+//         <div className="session-errors-list">
+//           {this.props.errors.session.map((error, i) => (
+//             <p className="session-error"
+//               key={`error-${i}`}>
+//               {error}
+//             </p>
+//           ))}
+//         </div>
+//       );
+//     }
+//   }
+//
+//
+//   handleInput(type) {
+//     return (e) => {
+//       this.setState({ [type]: e.target.value });
+//     };
+//   }
+//
+//   handleSubmit(e) {
+//     e.preventDefault();
+//     this.props.login(this.state);
+//   }
+//
+//   handleKeyUp(e) {
+//     if (this.state.email.length > 0) {
+//       this.validNewProject = true;
+//     }
+//   }
+//
+//   render() {
+//     return (
+//       <div className="root-container">
+//         <HorizontalLogoNamed />
+//         <div className="modal-form-container">
+//           <h2 className="modal-form-header">Log In</h2>
+//           <br></br>
+//           <div className="errors-fixed-container-login">
+//             {this.renderErrors()}
+//           </div>
+//           <form className="modal-form">
+//
+//             <label>EMAIL ADDRESS</label>
+//             <br></br>
+//
+//             <input
+//               onKeyUp={(e) => this.handleKeyUp(e)}
+//               type="text"
+//               value={this.state.email}
+//               onChange={this.handleInput('email')}
+//               />
+//             <br></br>
+//
+//             <label>PASSWORD</label>
+//             <br></br>
+//             <input
+//               onKeyUp={(e) => this.handleKeyUp(e)}
+//               type="password"
+//               value={this.state.password}
+//               onChange={this.handleInput('password')}
+//               />
+//             <br></br>
+//             <div className="submit-options">
+//               <button className="modal-form-submit session-demo">
+//                 <Link to="/demo">Demo Login</Link></button>
+//               <button className={
+//                   this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
+//                   "modal-form-submit"}
+//                   onClick={this.handleSubmit}>Log In</button>
+//             </div>
+//             </form>
+//           </div>
+//           <LoginFooter />
+//       </div>
+//     );
+//   }
+// }

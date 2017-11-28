@@ -1,4 +1,7 @@
-import { fetchProject, fetchAllProjects } from '../util/project_util';
+import { fetchProject,
+         fetchAllProjects,
+         postProject
+} from '../util/project_util';
 
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
@@ -19,3 +22,7 @@ export const requestProject = (projectId) => (dispatch) =>
 
 export const requestAllProjects = () => (dispatch) => fetchAllProjects()
   .then(fetchedProjects => dispatch(receiveAllProjects(fetchedProjects)));
+
+export const createNewProject = (formProject) => (dispatch) =>
+  postProject(formProject).then(createdProject =>
+    receiveProject(createdProject));

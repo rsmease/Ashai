@@ -9,6 +9,10 @@ class Sidebar extends React.Component {
     super(props);
   }
 
+  componentWillMount() {
+    console.log(this.props);
+  }
+
   renderTeams() {
     return(
       <div className="sidebar-list-container">

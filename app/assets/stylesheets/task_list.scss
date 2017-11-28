@@ -117,13 +117,8 @@
 }
 
 .project-detail-wrapper {
-  width: 20%;
   margin-top: 10px;
-  background: $winter-white;
-  padding: 10px;
-  height: 100%;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
-  border-radius: 3px;
+  width: 20%;
   z-index: 50;
 
   display: -webkit-box;
@@ -131,16 +126,55 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project-members {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  background: $winter-white;
+  height: 100%;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  border-radius: 3px;
+
+  flex-direction: column;
 }
 
+.project-members-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px;
+  margin-bottom: 30px;
+}
+
+.project-member-image {
+  border-radius: 50%;
+  max-height: 64px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.project-member-image:hover {
+  box-shadow: 0 0 3px 3px $night-king-blue
+}
+
+
 .project-description {
-  min-height: 100px;
+  margin-top: 10px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -149,16 +183,23 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+
+  background: $winter-white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  border-radius: 3px;
 }
 
 .project-description > p {
   margin: 15px;
   font-size: 13px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .project-description-title {
   font-size: 13px;
   font-weight: bold;
   margin-bottom: 0px;
+  margin-top: 30px;
 }

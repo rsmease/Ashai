@@ -8,10 +8,17 @@
   justify-content: center;
   flex-direction: column;
   overflow: scroll;
-  z-index: 500;
+  z-index: 200;
   background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.override-content-default {
+  background: transparent;
 }
 
 .modal-form-container {

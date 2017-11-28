@@ -5,7 +5,7 @@ class Api::TeamMembershipsController < ApplicationController
     if @team_membership.save
       render "api/team_memberships/show"
     else
-      render json: @team.full_messages, status: 422
+      render json: @team_membership.errors.full_messages, status: 422
     end
   end
 

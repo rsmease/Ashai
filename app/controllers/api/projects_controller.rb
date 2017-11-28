@@ -12,7 +12,7 @@ class Api::ProjectsController < ApplicationController
       if @project.save
         render "api/projects/show"
       else
-        render json: @project.full_messages, status: 422
+        render json: @project.errors.full_messages, status: 422
       end
     end
 

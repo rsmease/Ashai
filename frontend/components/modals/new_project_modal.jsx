@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router, Redirect, withRouter } from 'react-router-dom';
 import HorizontalLogoNamed from '../headers/horizontal_logo_named';
 import { LoginFooter } from '../footers/footer';
 
@@ -16,6 +16,7 @@ class NewProjectModal extends React.Component {
 
   componentWillMount () {
     document.title = "Ashai - New Project";
+    this.props.removeAllModalErrors();
   }
 
   handleInput(type) {
@@ -26,7 +27,8 @@ class NewProjectModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.createNewProject(this.state)
+    .then(this.props.closeNewProjectModal);
   }
 
   handleKeyUp(e) {
@@ -36,10 +38,10 @@ class NewProjectModal extends React.Component {
   }
 
   renderErrors() {
-    if (this.props.errors.session.length > 0) {
+    if (this.props.errors.modal.length > 0) {
       return(
         <div className="session-errors-list">
-          {this.props.errors.session.map((error, i) => (
+          {this.props.errors.modal.map((error, i) => (
             <p className="session-error"
               key={`error-${i}`}>
               {error}
@@ -53,6 +55,8 @@ class NewProjectModal extends React.Component {
   render() {
     return (
       <div className="root-modal-container">
+        <img className="new-modal-logo"
+          src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
           <h2 className="modal-form-header">New Project</h2>
           <br></br>
@@ -82,8 +86,9 @@ class NewProjectModal extends React.Component {
               />
             <br></br>
             <div className="submit-options">
-              <button className="modal-cancel">
-                <Link to="/app">Cancel</Link></button>
+              <button className="modal-cancel"
+                onClick={this.props.closeNewProjectModal}>
+                Cancel</button>
               <button className={
                   this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
                   "modal-form-submit"}
@@ -96,7 +101,7 @@ class NewProjectModal extends React.Component {
   }
 }
 
-export default NewProjectModal;
+export default withRouter(NewProjectModal);
 
 
 // class Login extends React.Component {

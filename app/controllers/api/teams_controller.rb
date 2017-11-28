@@ -11,7 +11,7 @@ class Api::TeamsController < ApplicationController
     if @team.save
       render "api/teams/show"
     else
-      render json: @team.full_messages, status: 422
+      render json: @team.errors.full_messages, status: 422
     end
   end
 

@@ -27,7 +27,7 @@ class Api::ProjectsController < ApplicationController
     def destroy
       @project = Project.find(params[:id])
       if @project.destroy
-        redirect_to root_url
+        render "api/projects/show"
       else
         render plain: "You can't destroy what's not there."
       end

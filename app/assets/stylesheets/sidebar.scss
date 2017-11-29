@@ -57,6 +57,17 @@
   flex-direction: column;
 }
 
+.sidebar-link-list-project {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .sidebar-header-primary {
   font-size: 16px;
   color: $targ-silver-dark;
@@ -75,6 +86,47 @@
   -ms-transition: background-color 300ms ease-in;
   -o-transition: background-color 300ms ease-in;
   transition: background-color 300ms ease-in;
+}
+
+.sidebar-link-list-item {
+  width: 100%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 15px;
+  color: $winter-white;
+  font-size: 13px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-link-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: background-color 300ms ease-in;
+  -moz-transition: background-color 300ms ease-in;
+  -ms-transition: background-color 300ms ease-in;
+  -o-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
+}
+
+.sidebar-link-list-item:hover > a {
+  -webkit-transition: opacity 300ms ease-in;
+  -moz-transition: opacity 300ms ease-in;
+  -ms-transition: opacity 300ms ease-in;
+  -o-transition: opacity 300ms ease-in;
+  transition: opacity 300ms ease-in;
+  opacity: 1;
+}
+
+.sidebar-link-project {
+  width: 100%;
+  color: $winter-white;
+  font-size: 13px;
 }
 
 .sidebar-nav-link:hover {
@@ -170,4 +222,14 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+.sidebar-ellipsis {
+  margin-right: 15px;
+  opacity: 0
+}
+
+.sidebar-ellipsis-team {
+  margin-right: 30px;
+  opacity: 0
 }

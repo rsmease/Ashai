@@ -29,7 +29,7 @@ class Api::ProjectsController < ApplicationController
       if @project.destroy
         redirect_to root_url
       else
-        render plain: "You can't destroy what's not tere."
+        render plain: "You can't destroy what's not there."
       end
     end
 

@@ -12,3 +12,11 @@ export const fetchAllTeams = () => (
     method: 'GET'
   })
 );
+
+export const postTeam = (team) => (
+  $.ajax({
+    url: 'api/teams',
+    method: 'Post',
+    data: { team }
+  })
+);

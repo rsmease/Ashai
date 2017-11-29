@@ -7,8 +7,12 @@ class Api::TeamsController < ApplicationController
 
   def create
     @team = Team.new(team_params)
+    @team.team_owner_id = current_user.id
 
     if @team.save
+      TeamMembership.create(
+        member_id: current_user.id, team_id: @team.id
+      )
       render "api/teams/show"
     else
       render json: @team.errors.full_messages, status: 422

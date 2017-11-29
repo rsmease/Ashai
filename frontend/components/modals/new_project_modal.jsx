@@ -16,7 +16,7 @@ class NewProjectModal extends React.Component {
 
   componentWillMount () {
     document.title = "Ashai - New Project";
-    this.props.removeAllModalErrors();
+    this.props.removeAllProjectModalErrors();
   }
 
   handleInput(type) {

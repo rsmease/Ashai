@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createNewProject } from '../../actions/project_actions';
+import { requestToDeleteProject } from '../../actions/project_actions';
 
 import Sidebar from './sidebar';
 
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createNewProject: formProject => dispatch(createNewProject(formProject))
+  requestToDeleteProject: projectId =>
+    dispatch(requestToDeleteProject(projectId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

@@ -114,7 +114,7 @@
   transition: background-color 300ms ease-in;
 }
 
-.sidebar-link-list-item:hover > a {
+.sidebar-link-list-item:hover > div {
   -webkit-transition: opacity 300ms ease-in;
   -moz-transition: opacity 300ms ease-in;
   -ms-transition: opacity 300ms ease-in;
@@ -224,12 +224,32 @@
   width: 100%;
 }
 
-.sidebar-ellipsis {
+.sidebar-tools {
+  opacity: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
   margin-right: 15px;
-  opacity: 0
 }
 
-.sidebar-ellipsis-team {
+.sidebar-tools-team {
   margin-right: 30px;
-  opacity: 0
+  opacity: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-tool {
+  margin-left: 5px;
+}
+
+.sidebar-tool:hover {
+  color: $night-king-blue
 }

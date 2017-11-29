@@ -42,8 +42,11 @@ class Sidebar extends React.Component {
       <div className="sidebar-list-container">
         {
           this.props.currentUser.projects.map(
-            project => <ProjectSidebarIndex key={Math.random()}
-             project={project} />
+            project =>
+            <ProjectSidebarIndex
+              key={Math.random()}
+              project={project}
+              requestToDeleteProject={this.props.requestToDeleteProject} />
           )
         }
       </div>

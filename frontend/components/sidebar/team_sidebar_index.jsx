@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
 import TeamSidebarProfiles from './team_sidebar_profiles';
-import * as FaIconPack from 'react-icons/lib/fa';
+import * as MaterialDesign from 'react-icons/lib/md';
 
 class TeamSidebarIndex extends React.Component {
   constructor(props) {
@@ -18,7 +18,12 @@ class TeamSidebarIndex extends React.Component {
             to={`/teams/${this.props.team.id}`}>
             {this.props.team.name}
           </Link>
-          <a className="sidebar-ellipsis-team"><FaIconPack.FaEllipsisH/></a>
+          <div className="sidebar-tools-team">
+            <MaterialDesign.MdCreate
+              className="sidebar-tool"/>
+            <MaterialDesign.MdDelete
+              className="sidebar-tool"/>
+          </div>
         </div>
       </div>
     );

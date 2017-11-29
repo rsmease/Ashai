@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
 import SidebarOptionsPopup from './sidebar_options_popup';
-import * as FaIconPack from 'react-icons/lib/fa';
+import * as MaterialDesign from 'react-icons/lib/md';
 
 class ProjectSidebarIndex extends React.Component {
   constructor(props) {
@@ -17,7 +17,16 @@ class ProjectSidebarIndex extends React.Component {
             to={`/projects/${this.props.project.id}`}>
             {this.props.project.name}
           </Link>
-          <a className="sidebar-ellipsis"><FaIconPack.FaEllipsisH/></a>
+          <div className="sidebar-tools">
+            <MaterialDesign.MdCreate
+              className="sidebar-tool"/>
+            <MaterialDesign.MdDelete
+              className="sidebar-tool"
+              onClick={
+                this.props.requestToDeleteProject(this.props.project.id)
+              }
+            />
+          </div>
         </div>
       </div>
     );

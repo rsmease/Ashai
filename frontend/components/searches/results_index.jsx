@@ -1,5 +1,6 @@
 import React from 'react';
 import ResultsIndexUserItem from './results_index_user_item';
+import SearchIndexHeader from './search_index_header';
 
 class ResultsIndex extends React.Component  {
   constructor(props) {
@@ -29,6 +30,7 @@ class ResultsIndex extends React.Component  {
     } else {
       return (
         <div className="nav-search-results">
+          <SearchIndexHeader searchVal={this.props.searchVal}/>
           {this.renderFoundUsers()}
         </div>
       );

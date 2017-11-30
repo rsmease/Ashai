@@ -52,6 +52,13 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def self.search_results(query, current_user_id)
+    param = '%' + query.downcase + '%'
+    User.where.not(id: current_user_id)
+      .where('lower(name) LIKE ? or lower(email) LIKE ?', param, param)
+      .limit(5)
+  end
+
   private
 
   def ensure_session_token

@@ -7,6 +7,7 @@ import { logout } from './actions/session_actions';
 
 //testing modules
 import { fetchTeam, fetchAllTeams } from './util/team_util';
+import { searchUsers } from './actions/search_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   //bootstrap user
@@ -21,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //testing
   window.store = store;
-  window.fetchTeam = fetchTeam;
-  window.fetchAllTeams = fetchAllTeams;
 
   //execution
   const root = document.getElementById('root');

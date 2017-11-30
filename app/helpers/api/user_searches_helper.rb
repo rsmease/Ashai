@@ -1,0 +1,2 @@
+module Api::UserSearchesHelper
+end

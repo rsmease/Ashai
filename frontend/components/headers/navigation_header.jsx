@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Router, Redirect } from 'react-router-dom';
-import * as MaterialDesign from 'react-icons/lib/md';
+import NavBarSearchContainer from '../searches/nav_bar_search_container';
 
 class NavigationHeader extends React.Component {
   constructor(props) {
@@ -15,12 +15,7 @@ class NavigationHeader extends React.Component {
           <div className="add-task-header-container">
             <button className="add-task-header-button">+</button></div>
         </div>
-        <div className="search-bar-container">
-          <div className="search-field">
-            <MaterialDesign.MdSearch/>
-            <p>Search</p>
-          </div>
-        </div>
+        <NavBarSearchContainer />
         <div className="right-links">
           <a href="https://www.stackoverflow.com"
             className="header-link" target="_blank">Help</a>

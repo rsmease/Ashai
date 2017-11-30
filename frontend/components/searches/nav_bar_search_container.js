@@ -4,7 +4,7 @@ import { searchUsers } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  searchResults: state.entities.searches
+  userSearchResults: state.entities.searches.users
 });
 
 const mapDispatchToProps = (dispatch) => ({

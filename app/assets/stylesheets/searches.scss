@@ -1,0 +1,110 @@
+.search-bar-container {
+  height: 100%;
+  width: 33%;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  align-content: center;
+
+  position: relative;
+}
+
+.search-field {
+  height: 70%;
+  width: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid $targ-silver-light;
+  border-radius: 15px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  padding-left: 15px;
+}
+
+//colors the search icon
+.search-field {
+  color: $targ-silver-dark;
+  font-size: 20px;
+}
+
+.search-field input {
+  font-size: 14px;
+  color: $targ-silver-dark;
+  margin-left: 5px;
+  width: 80%;
+  border: none;
+}
+
+.nav-search-results {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  z-index: 200;
+  background-color: $winter-white;
+  position: fixed;
+  bottom: 0px;
+  width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+.results-index-item-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
+  border: 1px solid $targ-silver-light;
+  width: 500px;
+}
+
+.results-index-item-container:hover {
+  background-color: $night-king-blue;
+}
+
+.results-index-image {
+  border-radius: 50%;
+  max-height: 40px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.results-index-right-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.results-index-name {
+  font-size: 13px;
+  color: $nights-watch-black;
+}
+
+.results-index-context {
+  font-size: 11px;
+  color: $targ-silver-dark;
+}

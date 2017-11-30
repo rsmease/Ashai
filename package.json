@@ -15,7 +15,8 @@
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
     "webpack": "^3.8.1",
-    "react-modal": "^3.1.5"
+    "react-modal": "^3.1.5",
+    "react-onclickoutside": "^6.7.0"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",

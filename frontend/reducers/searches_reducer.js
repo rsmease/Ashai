@@ -6,7 +6,7 @@ export default (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_USER_SEARCH_RESULTS:
       const foundUsers = action.foundUsers;
-      return _.merge({}, state, foundUsers);
+      return _.merge({}, state, { users: foundUsers });
     default:
       return state;
   }

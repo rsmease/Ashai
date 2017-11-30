@@ -1,4 +1,6 @@
-import { RECEIVE_TEAM, RECEIVE_ALL_TEAMS } from '../actions/team_actions';
+import { RECEIVE_TEAM,
+         RECEIVE_ALL_TEAMS,
+         REMOVE_TEAM } from '../actions/team_actions';
 import _ from 'lodash';
 
 export default (state = {}, action) => {
@@ -10,6 +12,10 @@ export default (state = {}, action) => {
     case RECEIVE_ALL_TEAMS:
       const allTeams = action.teams;
       return _.merge({}, state, allTeams);
+    case REMOVE_TEAM:
+      let newState = _.merge({}, state);
+      delete newState[action.teamId];
+      return newState;
     default:
       return state;
   }

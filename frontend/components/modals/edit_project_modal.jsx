@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link, Router, Redirect, withRouter } from 'react-router-dom';
 
-class NewProjectModal extends React.Component {
+class EditProjectModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      description: '',
+      id: this.props.project.id,
+      name: this.props.project.name,
+      description: this.props.project.description,
     };
-    this.validNewProject = false;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount () {
-    document.title = "Ashai - New Project";
+    document.title = "Ashai - Edit Project";
     this.props.removeAllProjectModalErrors();
   }
 
@@ -25,14 +25,8 @@ class NewProjectModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewProject(this.state)
-    .then(this.props.closeNewProjectModal);
-  }
-
-  handleKeyUp(e) {
-    if (this.state.name.length > 0) {
-      this.validNewProject = true;
-    }
+    this.props.requestUpdateToProject(this.state)
+    .then(this.props.closeEditProjectModal);
   }
 
   renderErrors() {
@@ -53,10 +47,8 @@ class NewProjectModal extends React.Component {
   render() {
     return (
       <div className="root-modal-container">
-        <img className="new-modal-logo"
-          src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
-          <h2 className="modal-form-header">New Project</h2>
+          <h2 className="modal-form-header">Update Project</h2>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}
@@ -67,7 +59,6 @@ class NewProjectModal extends React.Component {
             <br></br>
 
             <input
-              onKeyUp={(e) => this.handleKeyUp(e)}
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
@@ -77,7 +68,6 @@ class NewProjectModal extends React.Component {
             <label>DESCRIPTION</label>
             <br></br>
             <textarea
-              onKeyUp={(e) => this.handleKeyUp(e)}
               type="textarea"
               value={this.state.description}
               onChange={this.handleInput('description')}
@@ -85,12 +75,10 @@ class NewProjectModal extends React.Component {
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
-                onClick={this.props.closeNewProjectModal}>
+                onClick={this.props.closeEditProjectModal}>
                 Cancel</button>
-              <button className={
-                  this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
-                  "modal-form-submit"}
-                  onClick={this.handleSubmit}>Create</button>
+              <button className="modal-form-submit modal-form-submit-valid"
+                  onClick={this.handleSubmit}>Update</button>
             </div>
           </form>
         </div>
@@ -99,4 +87,4 @@ class NewProjectModal extends React.Component {
   }
 }
 
-export default withRouter(NewProjectModal);
+export default withRouter(EditProjectModal);

@@ -24,6 +24,15 @@ class Api::ProjectsController < ApplicationController
       render "api/projects/show"
     end
 
+    def update
+      @project = Project.find(params[:id])
+      if @project.update(project_params)
+        render "api/projects/show"
+      else
+        render json: @project.errors.full_messages, status: 422
+      end
+    end
+
     def destroy
       @project = Project.find(params[:id])
       if @project.destroy

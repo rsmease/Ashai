@@ -1,6 +1,7 @@
 import { fetchProject,
          fetchAllProjects,
          postProject,
+         updateProject,
          deleteProject
 } from '../util/project_util';
 
@@ -31,7 +32,7 @@ const receiveProjectModalErrors = (errors) => ({
 });
 
 const removeProjectModalErrors = () => ({
-  type: REMOVE_MODAL_ERRORS,
+  type: REMOVE_MODAL_ERRORS
 });
 
 export const requestProject = (projectId) => (dispatch) =>
@@ -45,6 +46,12 @@ export const createNewProject = (formProject) => (dispatch) =>
   postProject(formProject).then(createdProject =>
     dispatch(receiveProject(createdProject)),
     err => (dispatch(receiveProjectModalErrors(err.responseJSON))));
+
+export const requestUpdateToProject = (projectFormData) => (dispatch) => (
+  updateProject(projectFormData)
+  .then(updatedProject => dispatch(receiveProject(updatedProject)),
+  err => (dispatch(receiveProjectModalErrors(err.responseJSON))))
+);
 
 export const requestToDeleteProject = (projectId) => (dispatch) =>
   deleteProject(projectId).then((deletedProject) =>

@@ -24,10 +24,19 @@ class Api::TeamsController < ApplicationController
     render "api/teams/show"
   end
 
+  def update
+    @team = Team.find(params[:id])
+    if @team.update(team_params)
+      render "api/teams/show"
+    else
+      render json: @team.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @team = Team.find(params[:id])
     if @team.destroy
-      redirect_to root_url
+      render "api/teams/show"
     else
       render plain: "You can't destroy what's not tere."
     end

@@ -20,3 +20,19 @@ export const postTeam = (team) => (
     data: { team }
   })
 );
+
+export const updateTeam = (teamFormData) => (
+  $.ajax({
+    url: `api/teams/${teamFormData.id}`,
+    method: 'PATCH',
+    data: { team: teamFormData}
+  })
+);
+
+export const deleteTeam = (teamId) => (
+  $.ajax({
+    url: `api/teams/${teamId}`,
+    method: 'DELETE',
+    data: { teamId }
+  })
+);

@@ -1,9 +1,14 @@
-import { fetchTeam, fetchAllTeams, postTeam } from '../util/team_util';
+import { fetchTeam,
+         fetchAllTeams,
+         postTeam,
+         updateTeam,
+         deleteTeam } from '../util/team_util';
 
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';
 export const RECEIVE_TEAM_MODAL_ERRORS = 'RECEIVE_TEAM_MODAL_ERRORS';
 export const REMOVE_MODAL_ERRORS = 'REMOVE_MODAL_ERRORS';
+export const REMOVE_TEAM = 'REMOVE_TEAM';
 
 const receiveTeam = (team) => ({
   type: RECEIVE_TEAM,
@@ -13,6 +18,11 @@ const receiveTeam = (team) => ({
 const receiveAllTeams = (teams) => ({
   type: RECEIVE_ALL_TEAMS,
   teams
+});
+
+const removeTeam = (team) => ({
+  type: REMOVE_TEAM,
+  teamId: team.id
 });
 
 const receiveTeamModalErrors = (errors) => ({
@@ -34,6 +44,16 @@ export const createNewTeam = (formTeam) => (dispatch) =>
   postTeam(formTeam).then(createdTeam =>
     dispatch(receiveTeam(createdTeam)),
     err => (dispatch(receiveTeamModalErrors(err.responseJSON))));
+
+export const requestUpdateToTeam = (teamFormData) => (dispatch) => (
+  updateTeam(teamFormData)
+  .then(updatedTeam => dispatch(receiveTeam(updatedTeam)),
+  err => (dispatch(receiveTeamModalErrors(err.responseJSON))))
+);
+
+export const requestToDeleteTeam = (teamId) => (dispatch) =>
+  deleteTeam(teamId).then((deletedTeam) =>
+    dispatch(removeTeam(deletedTeam)));
 
 export const removeAllTeamModalErrors = () => (dispatch) =>
   dispatch(removeTeamModalErrors());

@@ -30,7 +30,11 @@ class Sidebar extends React.Component {
       <div className="sidebar-list-container">
         {
           this.props.currentUser.teams.map(
-            team => <TeamSidebarIndex key={Math.random()} team={team} />
+            team =>
+            <TeamSidebarIndex
+              key={Math.random()}
+              team={team}
+              requestToDeleteTeam={this.props.requestToDeleteTeam} />
           )
         }
       </div>

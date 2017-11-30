@@ -9,8 +9,6 @@
   display: flex;
   align-items: center;
   align-content: center;
-
-  position: relative;
 }
 
 .search-field {
@@ -35,6 +33,7 @@
 .search-field {
   color: $targ-silver-dark;
   font-size: 20px;
+  position: relative;
 }
 
 .search-field input {
@@ -55,10 +54,10 @@
   justify-content: center;
   flex-direction: column;
   overflow: scroll;
-  z-index: 200;
+  z-index: 300;
   background-color: $winter-white;
-  position: fixed;
-  bottom: 0px;
+  position: absolute;
+  top: 30px;
   width: 500px;
   border-radius: 4px;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
@@ -79,6 +78,20 @@
 
 .results-index-item-container:hover {
   background-color: $night-king-blue;
+  -webkit-transition: background-color 300ms ease-in;
+  -moz-transition: background-color 300ms ease-in;
+  -ms-transition: background-color 300ms ease-in;
+  -o-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
+}
+
+.results-index-item-container:hover .results-index-context {
+  color: $winter-white;
+  -webkit-transition: color 300ms ease-in;
+  -moz-transition: color 300ms ease-in;
+  -ms-transition: color 300ms ease-in;
+  -o-transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
 }
 
 .results-index-image {
@@ -99,12 +112,36 @@
   flex-direction: column;
 }
 
+.results-index-bold {
+  font-weight: 900;
+  background-color: inherit;
+}
+
+.results-index-underline {
+  text-decoration: underline;
+  text-decoration-color: $cersei-green;
+}
+
 .results-index-name {
   font-size: 13px;
   color: $nights-watch-black;
+  margin-bottom: 2px;
 }
 
 .results-index-context {
   font-size: 11px;
   color: $targ-silver-dark;
+}
+
+.search-result-clickable {
+  display: inline-block;
+  width: 500px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 60px;
 }

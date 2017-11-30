@@ -4,43 +4,26 @@ import ResultsIndexUserItem from './results_index_user_item';
 class ResultsIndex extends React.Component  {
   constructor(props) {
     super(props);
-
-    this.state = {
-      users: []
-    };
-  }
-
-
-  componentWillReceiveProps(nextProps) {
-    //add user results to users array;
-    if (!(nextProps.userSearchResults === undefined)) {
-      Object.keys(nextProps.userSearchResults)
-      .forEach(userKey =>
-        this.state.users.push(nextProps.userSearchResults[userKey]));
-    }
   }
 
   renderFoundUsers() {
-    if (this.state.users.length > 0) {
       return (
         <ul>
-          {
-            this.state.users.map(
+          {this.props.userSearchResults.map(
               (user) =>
               (<ResultsIndexUserItem
                 currentUser={this.props.currentUser}
-                user={user}/>)
-            )
-          }
+                key={Math.random()}
+                user={user}
+                clearState={this.props.clearState}
+                searchVal={this.props.searchVal}/>)
+            )}
         </ul>
       );
-    } else {
-      return (<ul></ul>);
-    }
   }
 
 
-  render () {
+  render() {
     if (this.props.searchVal === "") {
       return <div></div>;
     } else {

@@ -27,6 +27,7 @@ class NavBarSearch extends React.Component {
   }
 
   handleClickOutside() {
+    console.log("cleared");
     this.clearState();
   }
 
@@ -41,7 +42,7 @@ class NavBarSearch extends React.Component {
           </input>
           <ResultsIndex
             firstTime={this.state.firstTime}
-            userSearchResults={this.props.userSearchResults}
+            userSearchResults={Object.values(this.props.userSearchResults)}
             currentUser={this.props.currentUser}
             searchVal={this.state.searchVal}
             clearState={this.clearState}/>

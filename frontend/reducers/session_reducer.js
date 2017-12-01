@@ -4,6 +4,10 @@ import {
 } from '../actions/session_actions';
 
 import {
+  RECEIVE_USER
+} from '../actions/user_actions';
+
+import {
   RECEIVE_PROJECT,
   REMOVE_PROJECT
 } from '../actions/project_actions';
@@ -27,8 +31,13 @@ const _nullSession = {
 export default (state = _nullSession, action) => {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      const currentUser = action.user;
+      let currentUser = action.user;
       return _.merge({}, state, { currentUser });
+    case RECEIVE_USER:
+      if (action.user.id === state.currentUser.id) {
+        state.currentUser = action.user;
+      }
+      return _.merge({}, state);
     case RECEIVE_PROJECT:
       state.currentUser.projects =
         addUniqueToArray(action.project, state.currentUser.projects);

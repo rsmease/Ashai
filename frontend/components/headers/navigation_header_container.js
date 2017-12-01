@@ -4,8 +4,12 @@ import NavigationHeader from './navigation_header';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 
+const mapStateToProps = (state, ownProps) => ({
+  currentUser: state.session.currentUser
+});
+
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(null, mapDispatchToProps)(NavigationHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(NavigationHeader);

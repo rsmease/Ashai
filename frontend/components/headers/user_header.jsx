@@ -11,7 +11,7 @@ class UserHeader extends React.Component {
     if (this.props.user) {
       return (<div className="home-header task-header-secondary">
         <div className="home-header-content-container">
-          <img className="sidebar-profile-image"
+          <img className="secondary-header-profile"
             key={Math.random()}
             src={this.props.user.profile_image_url}/>
           <h1 className="secondary-header-title">

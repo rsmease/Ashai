@@ -23,11 +23,14 @@ class NavigationHeader extends React.Component {
             className="upgrade-button"
             target="_blank">
             Upgrade</a>
-          <a
-            className="header-link"
+          <div className="toggle-user-options-panel"
             onClick={this.props.logout}>
-            Log Out
-          </a>
+            <a className="header-link
+              name-link"> {this.props.currentUser.name} </a>
+            <img
+              src={this.props.currentUser.profile_image_url}
+              className="nav-header-profile"></img>
+          </div>
         </div>
       </div>
     );

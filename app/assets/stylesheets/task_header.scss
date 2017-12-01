@@ -133,6 +133,33 @@
   background-color: #ffe01b;
 }
 
+.toggle-user-options-panel {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-user-options-panel:hover > .name-link {
+  color: $night-king-blue
+}
+
+.toggle-user-options-panel:hover > .nav-header-profile {
+  box-shadow: 0 0 3px 3px $night-king-blue
+}
+
+.name-link {
+  margin-right: 5px;
+}
+
+.nav-header-profile {
+  border-radius: 50%;
+  max-height: 30px;
+}
+
 //TaskHeaderSecondary: holds 'My Tasks' or 'Project Tasks' or 'Team Members' header, based on path
 
 .task-header-secondary {
@@ -162,7 +189,7 @@
   align-items: center;
   justify-content: center;
   padding-top: 20px;
-  padding-bottom: 17px;
+  padding-bottom: 14px;
   border-bottom: 3px solid $night-king-blue;
   background: transparent;
 }
@@ -182,4 +209,14 @@
 
 .team-header-title {
   color: $winter-white;
+}
+
+.secondary-header-profile {
+  border-radius: 50%;
+  max-height: 30px;
+  margin-right: 10px;
+}
+
+.secondary-header-profile:hover {
+  box-shadow: 0 0 3px 3px $night-king-blue
 }

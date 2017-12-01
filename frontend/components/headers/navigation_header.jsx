@@ -13,8 +13,11 @@ class NavigationHeader extends React.Component {
     this.closeUserOptions = this.closeUserOptions.bind(this);
   }
 
-  openUserOptions() {
-    if (this.state.toggleClicked === false) {
+  openUserOptions(e) {
+    if (this.state.toggleClicked === false &&
+        e.target.className === "user-options-panel-hover" ||
+        e.target.className === "header-link name-link" ||
+        e.target.className === "nav-header-profile") {
       this.setState({ toggleClicked: true });
     }
   }
@@ -25,7 +28,7 @@ class NavigationHeader extends React.Component {
 
   render() {
     const userOptionsViewState =
-      this.state.toggleClicked ? "nav-user-options-container-visible" :
+      this.state.toggleClicked === true ? "nav-user-options-container-visible" :
         "nav-user-options-container";
     return (
       <div className="task-header-primary">

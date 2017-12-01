@@ -172,11 +172,11 @@
 }
 
 .nav-user-options-container {
-  opacity: 0;
+  display: none;
 }
 
 .nav-user-options-container-visible {
-  opacity: 1;
+  display: flex;
 }
 
 
@@ -190,7 +190,7 @@
   justify-content: center;
   flex-direction: column;
   overflow: scroll;
-  z-index: 300;
+  z-index: 175;
   background-color: $winter-white;
   position: absolute;
   top: 35px;

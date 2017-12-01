@@ -23,10 +23,6 @@ class Sidebar extends React.Component {
     this.closeNewTeamModal = this.closeNewTeamModal.bind(this);
   }
 
-  componentWillMount() {
-    console.log("Sidebar is remounting");
-  }
-
   renderTeams() {
     return(
       <div className="sidebar-list-container">

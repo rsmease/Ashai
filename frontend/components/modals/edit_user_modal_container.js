@@ -1,21 +1,20 @@
 import { connect } from 'react-redux';
-import { removeAllTeamModalErrors,
-         requestUpdateToTeam
-       } from '../../actions/team_actions';
+import { removeAllUserModalErrors,
+         requestUpdateToUser
+       } from '../../actions/user_actions';
 import { withRouter } from 'react-router-dom';
-import EditTeamModal from './edit_team_modal';
+import EditUserModal from './edit_user_modal';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   errors: state.errors,
-  team: ownProps.team,
-  closeEditTeamModal: ownProps.closeEditTeamModal
+  closeEditUserModal: ownProps.closeEditUserModal
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  requestUpdateToTeam: formTeam =>
-    dispatch(requestUpdateToTeam(formTeam)),
-  removeAllTeamModalErrors: () => dispatch(removeAllTeamModalErrors())
+  requestUpdateToUser: formUser =>
+    dispatch(requestUpdateToUser(formUser)),
+  removeAllUserModalErrors: () => dispatch(removeAllUserModalErrors())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditTeamModal);
+export default connect(mapStateToProps, mapDispatchToProps)(EditUserModal);

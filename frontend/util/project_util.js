@@ -6,7 +6,7 @@ export const fetchProject = (projectId) => (
   })
 );
 
-export const fetchAllTeams = () => (
+export const fetchAllProjects = () => (
   $.ajax({
     url: `api/projects/`,
     method: 'GET'

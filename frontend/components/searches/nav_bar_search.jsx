@@ -27,7 +27,6 @@ class NavBarSearch extends React.Component {
   }
 
   handleClickOutside() {
-    console.log("cleared");
     this.clearState();
   }
 

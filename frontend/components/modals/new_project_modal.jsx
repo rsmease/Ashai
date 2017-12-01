@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Router, Redirect, withRouter } from 'react-router-dom';
+import OnClickOutside from 'react-onclickoutside';
 
 class NewProjectModal extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class NewProjectModal extends React.Component {
     };
     this.validNewProject = false;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOff = this.handleClickOff.bind(this);
   }
 
   componentWillMount () {
@@ -50,9 +52,18 @@ class NewProjectModal extends React.Component {
     }
   }
 
+  handleClickOff(e) {
+    if (e.target.className === "root-modal-container" ||
+        e.target.className === "modal-cancel") {
+      e.preventDefault();
+      this.props.closeNewProjectModal();
+    }
+  }
+
   render() {
     return (
-      <div className="root-modal-container">
+      <div className="root-modal-container"
+        onClick={this.handleClickOff}>
         <img className="new-modal-logo"
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
@@ -85,7 +96,7 @@ class NewProjectModal extends React.Component {
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
-                onClick={this.props.closeNewProjectModal}>
+                onClick={this.handleClickOff}>
                 Cancel</button>
               <button className={
                   this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :

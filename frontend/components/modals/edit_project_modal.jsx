@@ -10,6 +10,7 @@ class EditProjectModal extends React.Component {
       description: this.props.project.description,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOff = this.handleClickOff.bind(this);
   }
 
   componentWillMount () {
@@ -29,6 +30,14 @@ class EditProjectModal extends React.Component {
     .then(this.props.closeEditProjectModal);
   }
 
+  handleClickOff(e) {
+    if (e.target.className === "root-modal-container" ||
+        e.target.className === "modal-cancel") {
+      e.preventDefault();
+      this.props.closeEditProjectModal();
+    }
+  }
+
   renderErrors() {
     if (this.props.errors.modal.length > 0) {
       return(
@@ -46,7 +55,8 @@ class EditProjectModal extends React.Component {
 
   render() {
     return (
-      <div className="root-modal-container">
+      <div className="root-modal-container"
+        onClick={this.handleClickOff}>
         <div className="modal-form-container">
           <h2 className="modal-form-header">Update Project</h2>
           <br></br>
@@ -75,7 +85,7 @@ class EditProjectModal extends React.Component {
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
-                onClick={this.props.closeEditProjectModal}>
+                onClick={this.handleClickOff}>
                 Cancel</button>
               <button className="modal-form-submit modal-form-submit-valid"
                   onClick={this.handleSubmit}>Update</button>

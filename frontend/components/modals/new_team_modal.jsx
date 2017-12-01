@@ -10,6 +10,7 @@ class NewTeamModal extends React.Component {
     };
     this.validNewTeam = false;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClickOff = this.handleClickOff.bind(this);
   }
 
   componentWillMount () {
@@ -35,6 +36,14 @@ class NewTeamModal extends React.Component {
     }
   }
 
+  handleClickOff(e) {
+    if (e.target.className === "root-modal-container" ||
+        e.target.className === "modal-cancel") {
+      e.preventDefault();
+      this.props.closeNewTeamModal();
+    }
+  }
+
   renderErrors() {
     if (this.props.errors.modal.length > 0) {
       return(
@@ -52,8 +61,10 @@ class NewTeamModal extends React.Component {
 
   render() {
     return (
-      <div className="root-modal-container">
+      <div className="root-modal-container"
+        onClick={this.handleClickOff}>
         <img className="new-modal-logo"
+          onClick={this.stopPropagation}
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
           <h2 className="modal-form-header">New Team</h2>
@@ -85,7 +96,7 @@ class NewTeamModal extends React.Component {
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
-                onClick={this.props.closeNewTeamModal}>
+                onClick={this.handleClickOff}>
                 Cancel</button>
               <button className={
                   this.validNewTeam === true ? "modal-form-submit modal-form-submit-valid" :

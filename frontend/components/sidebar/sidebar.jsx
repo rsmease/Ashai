@@ -12,7 +12,8 @@ class Sidebar extends React.Component {
     super(props);
     this.state = {
       newProjectModalOpen: false,
-      newTeamModalOpen: false
+      newTeamModalOpen: false,
+      foo: 0
     };
 
     this.openNewProjectModal = this.openNewProjectModal.bind(this);
@@ -23,6 +24,7 @@ class Sidebar extends React.Component {
   }
 
   componentWillMount() {
+    console.log("Sidebar is remounting");
   }
 
   renderTeams() {

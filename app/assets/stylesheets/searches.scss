@@ -100,6 +100,24 @@
   transition: color 300ms ease-in;
 }
 
+.results-index-item-container:hover .results-index-name {
+  color: $winter-white;
+  -webkit-transition: color 300ms ease-in;
+  -moz-transition: color 300ms ease-in;
+  -ms-transition: color 300ms ease-in;
+  -o-transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
+}
+
+.results-index-item-container:hover .results-index-bold {
+  color: $winter-white;
+  -webkit-transition: color 300ms ease-in;
+  -moz-transition: color 300ms ease-in;
+  -ms-transition: color 300ms ease-in;
+  -o-transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
+}
+
 .results-index-image {
   border-radius: 50%;
   max-height: 40px;
@@ -159,7 +177,7 @@
 
 .results-index-context {
   font-size: 11px;
-  color: $targ-silver-dark;
+  color: $nights-watch-black;
 }
 
 .search-result-clickable {

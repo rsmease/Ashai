@@ -141,13 +141,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.toggle-user-options-panel:hover > .name-link {
+.user-options-panel-hover {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-options-panel-hover:hover > .name-link {
   color: $night-king-blue
 }
 
-.toggle-user-options-panel:hover > .nav-header-profile {
+.user-options-panel-hover:hover > .nav-header-profile {
   box-shadow: 0 0 3px 3px $night-king-blue
 }
 
@@ -158,6 +169,64 @@
 .nav-header-profile {
   border-radius: 50%;
   max-height: 30px;
+}
+
+.nav-user-options-container {
+  opacity: 0;
+}
+
+.nav-user-options-container-visible {
+  opacity: 1;
+}
+
+
+.nav-user-options {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  z-index: 300;
+  background-color: $winter-white;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  width: 250px;
+  border-radius: 4px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.nav-user-options-item-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  border: 1px solid $targ-silver-light;
+  width: 250px;
+  cursor: pointer;
+}
+
+.nav-user-options-item-container:hover {
+  color: $winter-white;
+  background-color: $night-king-blue;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+.nav-user-option-name {
+  font-size: 13px;
+  margin-left: 15px;
 }
 
 //TaskHeaderSecondary: holds 'My Tasks' or 'Project Tasks' or 'Team Members' header, based on path

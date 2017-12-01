@@ -2,6 +2,7 @@ import React from 'react';
 import ResultsIndexUserItem from './results_index_user_item';
 import SearchIndexHeader from './search_index_header';
 
+
 class ResultsIndex extends React.Component  {
   constructor(props) {
     super(props);

@@ -9,6 +9,11 @@ import {
 } from '../actions/project_actions';
 
 import {
+  RECEIVE_TEAM,
+  REMOVE_TEAM
+} from '../actions/team_actions';
+
+import {
   addUniqueToArray,
   removeDeleted
 } from './selectors';
@@ -27,10 +32,16 @@ export default (state = _nullSession, action) => {
     case RECEIVE_PROJECT:
       addUniqueToArray(action.project, state.currentUser.projects);
       return _.merge({}, state);
+    case RECEIVE_TEAM:
+      addUniqueToArray(action.team, state.currentUser.teams);
+      return _.merge({}, state);
     case REMOVE_PROJECT:
       state.currentUser.projects =
         removeDeleted(action.projectId, state.currentUser.projects);
-        console.log(state);
+      return _.merge({}, state);
+    case REMOVE_TEAM:
+      state.currentUser.teams =
+        removeDeleted(action.teamId, state.currentUser.teams);
       return _.merge({}, state);
     case LOGOUT_CURRENT_USER:
       return _nullSession;

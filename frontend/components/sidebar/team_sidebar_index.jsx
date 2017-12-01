@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router, withRouter } from 'react-router-dom';
 import TeamSidebarProfiles from './team_sidebar_profiles';
 import * as MaterialDesign from 'react-icons/lib/md';
 import Modal from 'react-modal';
@@ -14,6 +14,8 @@ class TeamSidebarIndex extends React.Component {
 
     this.openEditTeamModal = this.openEditTeamModal.bind(this);
     this.closeEditTeamModal = this.closeEditTeamModal.bind(this);
+
+    this.returnToHome = this.returnToHome.bind(this);
   }
 
   openEditTeamModal() {
@@ -22,6 +24,13 @@ class TeamSidebarIndex extends React.Component {
   closeEditTeamModal() {
     this.setState({ editTeamModalOpen: false });
     document.title = "Ashai";
+  }
+
+  returnToHome(deletedTeamId) {
+    if (this.props.history.location.pathname ===
+      `/teams/${deletedTeamId}`) {
+      this.props.history.push("/app");
+    }
   }
 
   render() {
@@ -59,6 +68,7 @@ class TeamSidebarIndex extends React.Component {
                 className="sidebar-tool"
                 onClick={
                   () => this.props.requestToDeleteTeam(this.props.team.id)
+                  .then(this.returnToHome(this.props.team.id))
                 }
               />
           </div>
@@ -68,4 +78,4 @@ class TeamSidebarIndex extends React.Component {
   }
 }
 
-export default TeamSidebarIndex;
+export default withRouter(TeamSidebarIndex);

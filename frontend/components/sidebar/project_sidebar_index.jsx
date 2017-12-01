@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Router } from 'react-router-dom';
+import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
 import Modal from 'react-modal';
 import EditProjectModalContainer from '../modals/edit_project_modal_container';
@@ -13,6 +13,7 @@ class ProjectSidebarIndex extends React.Component {
 
     this.openEditProjectModal = this.openEditProjectModal.bind(this);
     this.closeEditProjectModal = this.closeEditProjectModal.bind(this);
+    this.returnToHome = this.returnToHome.bind(this);
   }
 
   openEditProjectModal() {
@@ -21,6 +22,13 @@ class ProjectSidebarIndex extends React.Component {
   closeEditProjectModal() {
     this.setState({ editProjectModalOpen: false });
     document.title = "Ashai";
+  }
+
+  returnToHome(deletedProjectId) {
+    if (this.props.history.location.pathname ===
+      `/projects/${deletedProjectId}`) {
+      this.props.history.push("/app");
+    }
   }
 
   render() {
@@ -57,6 +65,7 @@ class ProjectSidebarIndex extends React.Component {
               className="sidebar-tool"
               onClick={
                 () => this.props.requestToDeleteProject(this.props.project.id)
+                .then(this.returnToHome(this.props.project.id))
               }
             />
           </div>
@@ -66,4 +75,4 @@ class ProjectSidebarIndex extends React.Component {
   }
 }
 
-export default ProjectSidebarIndex;
+export default withRouter(ProjectSidebarIndex);

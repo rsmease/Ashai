@@ -24,7 +24,6 @@ class TeamHeader extends React.Component {
 
   componentDidMount() {
     this.props.requestTeam(this.props.teamId);
-    console.log(this.props);
   }
 
   componentWillReceiveProps(newProps) {

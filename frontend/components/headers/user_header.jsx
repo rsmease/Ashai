@@ -27,7 +27,6 @@ class UserHeader extends React.Component {
 
   componentDidMount() {
     this.props.requestUser(this.props.userId);
-    console.log(this.props);
   }
 
   componentWillReceiveProps(newProps) {

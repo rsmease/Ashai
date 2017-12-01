@@ -16,7 +16,6 @@ export default (state = {}, action) => {
       const allTeams = action.teams;
       return _.merge({}, state, allTeams);
     case RECEIVE_USER:
-      // console.log(updateMember(action.user, state));
       return _.merge({}, state);
     case REMOVE_TEAM:
       let newState = _.merge({}, state);

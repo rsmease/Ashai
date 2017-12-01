@@ -24,3 +24,18 @@ export const removeDeleted = (removedItemId, existingItems) => {
     return item.id !== removedItemId;
   });
 };
+// 
+// export const updateMember = (updatedMember, existingGroups) => {
+//   const newGroups = {};
+//   for (const group in existingGroups) {
+//     const members = group.members;
+//     members = members.map(function(member) {
+//       if (member.id === updateMember.id) {
+//         member = updatedMember;
+//       }
+//       return member;
+//     });
+//     newGroups[group.id] = group;
+//   }
+//   return newGroups;
+// };

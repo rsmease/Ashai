@@ -1,10 +1,13 @@
 import { RECEIVE_TEAM,
          RECEIVE_ALL_TEAMS,
          REMOVE_TEAM } from '../actions/team_actions';
+
+import { RECEIVE_USER } from '../actions/user_actions';
+import { updateMember } from './selectors';
+
 import _ from 'lodash';
 
 export default (state = {}, action) => {
-  Object.freeze(state);
   switch (action.type) {
     case RECEIVE_TEAM:
       const receivedTeam = action.team;
@@ -12,6 +15,9 @@ export default (state = {}, action) => {
     case RECEIVE_ALL_TEAMS:
       const allTeams = action.teams;
       return _.merge({}, state, allTeams);
+    case RECEIVE_USER:
+      // console.log(updateMember(action.user, state));
+      return _.merge({}, state);
     case REMOVE_TEAM:
       let newState = _.merge({}, state);
       delete newState[action.teamId];

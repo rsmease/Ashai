@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   let projectId = ownProps.match.params.projectId;
   return {
     projectId: projectId,
-    project: state.entities.projects[projectId]
+    project: state.entities.projects[projectId],
+    currentUser: state.session.currentUser
   };
 };
 

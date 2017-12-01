@@ -135,7 +135,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   padding-top: 5px;
   padding-bottom: 5px;
-  width: calc(100% - 15px);
+  width: 385px;
   color: $winter-white;
   font-weight: bold;
   font-size: 24px;
@@ -146,6 +146,7 @@
   color: $winter-white;
   font-size: 11px;
   margin: 15px;
+  display: inline-block;
 }
 
 .team-index-bio-about-me {

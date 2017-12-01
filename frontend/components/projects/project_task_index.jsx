@@ -22,7 +22,9 @@ class ProjectTaskIndex extends React.Component {
 
   renderProjectDetail() {
     if (this.props.project) {
-      return (<ProjectDetail project={this.props.project}/>);
+      return (<ProjectDetail
+         project={this.props.project}
+         currentUser={this.props.currentUser}/>);
     } else {
       return (<div></div>);
     }

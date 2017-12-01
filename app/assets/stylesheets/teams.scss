@@ -85,16 +85,16 @@
 .bio-card-container {
   position: absolute;
   opacity: 0;
-  bottom: -30px;
+  bottom: -96px;
 }
 
 .bio-card-hover-container:hover > .bio-card-container {
   z-index: 150;
   opacity: 1;
-  -webkit-transition: opacity 0.2s ease-in-out;
-   -moz-transition: opacity 0.2s ease-in-out;
-   -o-transition: opacity 0.2s ease-in-out;
-   transition: opacity 0.2s ease-in-out;
+  -webkit-transition: opacity 0.3s ease-in-out;
+   -moz-transition: opacity 0.3s ease-in-out;
+   -o-transition: opacity 0.3s ease-in-out;
+   transition: opacity 0.3s ease-in-out;
 }
 
 .team-index-bio-card {
@@ -155,4 +155,15 @@
   font-size: 11px;
   float: right;
   margin-top: 10px;
+}
+
+.team-index-bio-card-link {
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 300px;
 }

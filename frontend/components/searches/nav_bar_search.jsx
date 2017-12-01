@@ -8,10 +8,12 @@ class NavBarSearch extends React.Component {
     super(props);
     this.state = {
       searchVal: '',
+      placeholderVal: 'Search',
       firstTime: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.clearState = this.clearState.bind(this);
+    this.removePlaceholderVal = this.removePlaceholderVal.bind(this);
   }
 
   handleChange(e) {
@@ -23,11 +25,19 @@ class NavBarSearch extends React.Component {
   }
 
   clearState() {
-    this.setState({ searchVal: '', firstTime: false });
+    this.setState({
+      searchVal: '',
+      firstTime: false,
+      placeholderVal: 'Search'
+    });
   }
 
   handleClickOutside() {
     this.clearState();
+  }
+
+  removePlaceholderVal() {
+    this.setState({ placeholderVal: ''});
   }
 
   render() {
@@ -36,8 +46,9 @@ class NavBarSearch extends React.Component {
         <div className="search-field">
           <MaterialDesign.MdSearch/>
           <input onChange={this.handleChange} type="text"
-           placeholder="Search"
-           value={this.state.searchVal}>
+           placeholder={this.state.placeholderVal}
+           value={this.state.searchVal}
+           onFocus={this.removePlaceholderVal}>
           </input>
           <ResultsIndex
             firstTime={this.state.firstTime}

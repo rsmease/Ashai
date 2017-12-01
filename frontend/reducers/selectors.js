@@ -8,6 +8,13 @@ export const addUniqueToArray = (newItem, existingItems) => {
   const itemIds = existingItems.map(item => item.id);
   if (itemIds.indexOf(newItem.id) === -1) {
     existingItems.push(newItem);
+  } else {
+    existingItems = existingItems.map(item => {
+      if (item.id === newItem.id) {
+        item = newItem;
+      }
+      return item;
+    });
   }
   return existingItems;
 };

@@ -121,11 +121,16 @@
   text-align: center;
   text-decoration: none;
   width: 80px;
+
+  -webkit-transition: background-color 300ms ease-in;
+  -moz-transition: background-color 300ms ease-in;
+  -ms-transition: background-color 300ms ease-in;
+  -o-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
 }
 
 .upgrade-button:hover {
   background-color: #ffe01b;
-  box-shadow: 0 0 0 3px #fff78f;
 }
 
 //TaskHeaderSecondary: holds 'My Tasks' or 'Project Tasks' or 'Team Members' header, based on path

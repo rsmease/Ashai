@@ -30,10 +30,12 @@ export default (state = _nullSession, action) => {
       const currentUser = action.user;
       return _.merge({}, state, { currentUser });
     case RECEIVE_PROJECT:
-      addUniqueToArray(action.project, state.currentUser.projects);
+      state.currentUser.projects =
+        addUniqueToArray(action.project, state.currentUser.projects);
       return _.merge({}, state);
     case RECEIVE_TEAM:
-      addUniqueToArray(action.team, state.currentUser.teams);
+      state.currentUser.teams =
+        addUniqueToArray(action.team, state.currentUser.teams);
       return _.merge({}, state);
     case REMOVE_PROJECT:
       state.currentUser.projects =

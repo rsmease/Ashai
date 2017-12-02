@@ -31,6 +31,7 @@ class Sidebar extends React.Component {
             team =>
             <TeamSidebarIndex
               key={Math.random()}
+              currentUser={this.props.currentUser}
               team={team}
               requestToDeleteTeam={this.props.requestToDeleteTeam} />
           )
@@ -47,6 +48,7 @@ class Sidebar extends React.Component {
             project =>
             <ProjectSidebarIndex
               key={Math.random()}
+              currentUser={this.props.currentUser}
               project={project}
               requestToDeleteProject={this.props.requestToDeleteProject} />
           )

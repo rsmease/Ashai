@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Router, Redirect, withRouter } from 'react-router-dom';
 import OnClickOutside from 'react-onclickoutside';
+import * as MaterialDesign from 'react-icons/lib/md';
 
 class NewProjectModal extends React.Component {
   constructor(props) {
@@ -54,6 +55,7 @@ class NewProjectModal extends React.Component {
 
   handleClickOff(e) {
     if (e.target.className === "root-modal-container" ||
+        e.target.className === "modal-close" ||
         e.target.className === "modal-cancel") {
       e.preventDefault();
       this.props.closeNewProjectModal();
@@ -67,7 +69,9 @@ class NewProjectModal extends React.Component {
         <img className="new-modal-logo"
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
-          <h2 className="modal-form-header">New Project</h2>
+          <div className="modal-header-container">
+            <h2 className="modal-form-header">New Project</h2>
+          </div>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}

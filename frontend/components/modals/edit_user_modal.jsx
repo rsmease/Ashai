@@ -61,7 +61,13 @@ class EditUserModal extends React.Component {
       <div className="root-modal-container"
         onClick={this.handleClickOff}>
         <div className="modal-form-container">
-          <h2 className="modal-form-header">Update Profile</h2>
+          <div className="modal-header-container-user-update">
+            <h2 className="modal-form-header
+              modal-edit-header">Update Profile</h2>
+            <img
+              src={this.props.currentUser.profile_image_url}
+              className="modal-header-profile"></img>
+          </div>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}

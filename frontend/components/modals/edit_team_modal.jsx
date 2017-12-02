@@ -58,7 +58,9 @@ class EditTeamModal extends React.Component {
       <div className="root-modal-container"
         onClick={this.handleClickOff}>
         <div className="modal-form-container">
-          <h2 className="modal-form-header">Update Project</h2>
+          <div className="modal-header-container">
+            <h2 className="modal-form-header modal-edit-header">Update Team</h2>
+          </div>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}

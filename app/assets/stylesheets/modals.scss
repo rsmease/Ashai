@@ -28,16 +28,64 @@
   background: $winter-white;
   display: flex;
   flex-direction: column;
+  overflow: scroll;
   width: 585px;
-  overflow: auto;
   color: white;
 }
 
+.modal-header-container {
+  width: 585px;
+  height: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid $targ-silver-light;
+  margin-bottom: 20px;
+}
+
+.modal-header-container-user-update {
+  width: 585px;
+  height: 50px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $targ-silver-light;
+  margin-bottom: 20px;
+}
+
+.modal-header-profile {
+  border-radius: 50%;
+  max-height: 30px;
+  margin-right: 15px;
+}
+
+.modal-close {
+  font-size: 24px;
+  display: inline-flex;
+  color: $targ-silver-dark;
+  margin-top: 12px;
+  margin-right: 10px;
+}
+
 .modal-form-header {
-  margin-bottom: 30px;
-  margin-top: 60px;
-  font-size: 48px;
+  margin-left: 15px;
+  margin-top: 10px;
+  padding-bottom: 12px;
+  font-size: 24px;
   color: $nights-watch-black;
+  border-bottom: 3px solid $night-king-blue;
+}
+
+.modal-edit-header {
+  padding-bottom: 13px;
 }
 
 .modal-upper-header {
@@ -53,7 +101,7 @@
   margin: 0 auto;
   width: 100%;
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .modal-form input {
@@ -69,7 +117,7 @@
 }
 
 .modal-form input:focus, .modal-form input:active {
-  border: 1px $targ-silver-dark solid;
+  border: 1px $cersei-green solid;
   background-image: none;
   outline: 0;
   -webkit-box-shadow: none;
@@ -91,7 +139,7 @@
 }
 
 .modal-form textarea:focus, .modal-form textarea:active {
-  border: 1px $targ-silver-dark solid;
+  border: 1px $cersei-green solid;
   background-image: none;
   outline: 0;
   -webkit-box-shadow: none;

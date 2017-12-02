@@ -14,6 +14,7 @@ class ProjectSidebarIndex extends React.Component {
     this.openEditProjectModal = this.openEditProjectModal.bind(this);
     this.closeEditProjectModal = this.closeEditProjectModal.bind(this);
     this.returnToHome = this.returnToHome.bind(this);
+    this.renderSidebarTools = this.renderSidebarTools.bind(this);
   }
 
   openEditProjectModal() {
@@ -31,6 +32,42 @@ class ProjectSidebarIndex extends React.Component {
     }
   }
 
+  renderSidebarTools() {
+    if (this.props.currentUser.id === this.props.project.project_owner_id) {
+      return <div className="sidebar-tools">
+        <MaterialDesign.MdCreate
+          className="sidebar-tool"
+          onClick={this.openEditProjectModal}/>
+        <Modal
+          isOpen={this.state.editProjectModalOpen}
+          onRequestClose={this.closeEditProjectModal}
+          overlayClassName={
+            {base: "root-modal-container",
+              afterOpen: "root-modal-container",
+              beforeClose: "root-modal-container"}
+            }
+          className={
+            { base: "override-content-default",
+              afterOpen: "override-content-default",
+              beforeClose: "override-content-default"}
+            }>
+          <EditProjectModalContainer
+            project={this.props.project}
+            closeEditProjectModal={this.closeEditProjectModal}/>
+        </Modal>
+        <MaterialDesign.MdDelete
+          className="sidebar-tool"
+          onClick={
+            () => this.props.requestToDeleteProject(this.props.project.id)
+            .then(this.returnToHome(this.props.project.id))
+          }
+        />
+      </div>;
+    } else {
+      return <div></div>;
+    }
+  }
+
   render() {
     return (
       <div className="sidebar-link-list-project">
@@ -40,35 +77,7 @@ class ProjectSidebarIndex extends React.Component {
             to={`/projects/${this.props.project.id}`}>
             {this.props.project.name}
           </Link>
-          <div className="sidebar-tools">
-            <MaterialDesign.MdCreate
-              className="sidebar-tool"
-              onClick={this.openEditProjectModal}/>
-            <Modal
-              isOpen={this.state.editProjectModalOpen}
-              onRequestClose={this.closeEditProjectModal}
-              overlayClassName={
-                {base: "root-modal-container",
-                  afterOpen: "root-modal-container",
-                  beforeClose: "root-modal-container"}
-                }
-              className={
-                { base: "override-content-default",
-                  afterOpen: "override-content-default",
-                  beforeClose: "override-content-default"}
-                }>
-              <EditProjectModalContainer
-                project={this.props.project}
-                closeEditProjectModal={this.closeEditProjectModal}/>
-            </Modal>
-            <MaterialDesign.MdDelete
-              className="sidebar-tool"
-              onClick={
-                () => this.props.requestToDeleteProject(this.props.project.id)
-                .then(this.returnToHome(this.props.project.id))
-              }
-            />
-          </div>
+          {this.renderSidebarTools()}
         </div>
       </div>
     );

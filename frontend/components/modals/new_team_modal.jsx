@@ -67,7 +67,9 @@ class NewTeamModal extends React.Component {
           onClick={this.stopPropagation}
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
-          <h2 className="modal-form-header">New Team</h2>
+          <div className="modal-header-container">
+            <h2 className="modal-form-header">New Team</h2>
+          </div>
           <br></br>
           <div className="errors-fixed-container-login">
             {this.renderErrors()}

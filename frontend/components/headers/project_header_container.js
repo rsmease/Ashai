@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     projectId: projectId,
-    project: state.entities.projects[projectId]
+    project: state.entities.projects[projectId],
+    currentUser: state.session.currentUser
   };
 };
 

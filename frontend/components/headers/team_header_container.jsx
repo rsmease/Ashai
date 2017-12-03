@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     teamId: teamId,
-    team: state.entities.teams[teamId]
+    team: state.entities.teams[teamId],
+    currentUser: state.session.currentUser
   };
 };
 

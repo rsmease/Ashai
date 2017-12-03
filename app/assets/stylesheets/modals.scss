@@ -17,6 +17,25 @@
   bottom: 0;
 }
 
+.root-modal-container-invisible {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  z-index: 200;
+  position: fixed;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .override-content-default {
   background: transparent;
 }
@@ -172,11 +191,55 @@
   background-color: $night-king-blue;
 }
 
+.modal-form-container-delete {
+  align-items: center;
+  align-content: center;
+  border-radius: 4px;
+  background: $winter-white;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  color: white;
+}
+
+.modal-form-header-delete {
+  margin-top: 30px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  font-size: 24px;
+  color: $nights-watch-black;
+  border-bottom: 3px solid $night-king-blue;
+}
+
+.modal-form-warnings-container {
+  background-color: rgba(255, 133, 133, .3);
+  padding: 10px 20px 10px 20px;
+  margin-top: 15px;
+}
+
+.modal-form-warning {
+  color: $melisandre-red;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.submit-options-delete {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
 .modal-cancel {
   background-color: $melisandre-red;
   color: $winter-white;
   border: none;
-  width: 120px;
   border-radius: 3px;
   font-size: 13px;
   padding-top: 10px;
@@ -189,4 +252,32 @@
 
 .modal-cancel a {
   color: $winter-white;
+}
+
+.modal-cancel-delete {
+  background-color: $night-king-blue;
+  margin-right: 0px;
+}
+
+.modal-form-delete {
+  border: none;
+  border-radius: 3px;
+  color: $winter-white;
+  background-color: $targ-silver-light;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+  margin-left: 15px;
+  -webkit-transition: background-color 300ms ease-in;
+  -moz-transition: background-color 300ms ease-in;
+  -ms-transition: background-color 300ms ease-in;
+  -o-transition: background-color 300ms ease-in;
+  transition: background-color 300ms ease-in;
+}
+
+.modal-form-delete:hover {
+  background-color: $melisandre-red;
 }

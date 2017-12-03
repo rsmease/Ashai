@@ -210,6 +210,7 @@
   justify-content: flex-start;
   height: 40px;
   border: 1px solid $targ-silver-light;
+  border-bottom: none;
   width: 250px;
   cursor: pointer;
 }
@@ -257,27 +258,68 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 14px;
+  height: 63px;
   border-bottom: 3px solid $night-king-blue;
   background: transparent;
 }
 
+.home-header-options {
+  width: 33%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 65px;
+}
+
+.home-header-options-dropdown {
+  margin-top: 20px;
+  font-size: 20px;
+  color: $targ-silver-dark;
+  position: relative;
+}
+
+.home-header-options-dropdown:hover {
+  color: $cersei-green;
+}
+
+.home-header-options-modal {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
+  z-index: 200;
+  background-color: $winter-white;
+  top: 90px;
+  position: absolute;
+  width: 250px;
+  border-radius: 4px;
+  border-top: 3px solid $cersei-green;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.header-options-delete:hover {
+  color: $winter-white;
+  background-color: $melisandre-red;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
+}
+
+
 .secondary-header-title {
   font-size: 24px;
   font-weight: 800;
-}
-
-.team-header {
-  background: $cersei-green;
-  background: -webkit-linear-gradient($team-header-gradient);
-  background: -o-linear-gradient($team-header-gradient);
-  background: -moz-linear-gradient($team-header-gradient);
-  background: linear-gradient($team-header-gradient);
-}
-
-.team-header-title {
-  color: $winter-white;
 }
 
 .secondary-header-profile {

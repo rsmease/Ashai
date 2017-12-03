@@ -22,7 +22,7 @@ class TeamIndexItem extends React.Component {
         </div>
         <Link className="team-index-card-link"
           to={`/users/${this.props.member.id}`}
-          >View Profile</Link>
+          >Click To View Profile</Link>
       </div>
     );
   }

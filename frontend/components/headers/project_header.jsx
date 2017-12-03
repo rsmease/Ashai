@@ -51,6 +51,7 @@ class ProjectHeader extends React.Component {
               beforeClose: "override-content-default"}
             }>
             <OptionsModal
+              requestToDeleteProject={this.props.requestToDeleteProject}
               closeOptionsModal={this.closeOptionsModal}
               project={this.props.project}
               currentUser={this.props.currentUser}/>

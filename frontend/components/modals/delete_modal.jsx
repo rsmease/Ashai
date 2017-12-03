@@ -5,8 +5,7 @@ class DeleteModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
-      entity: this.props.entity,
+      entity: this.props.entity
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickOff = this.handleClickOff.bind(this);

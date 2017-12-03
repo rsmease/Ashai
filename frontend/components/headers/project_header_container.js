@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { Router, Link, withRouter } from 'react-router-dom';
 import { requestProject,
-  requestToDeleteProject
+  requestToDeleteProject,
+  requestUpdateToProject
 } from '../../actions/project_actions';
 import ProjectHeader from './project_header';
 
@@ -18,7 +19,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   requestProject: (projectId) => dispatch(requestProject(projectId)),
   requestToDeleteProject: (projectId) =>
-    dispatch(requestToDeleteProject(projectId))
+    dispatch(requestToDeleteProject(projectId)),
+  requestUpdateToProject: (projectId) =>
+    dispatch(requestUpdateToProject(projectId))
 });
 
 export default withRouter(connect(mapStateToProps,

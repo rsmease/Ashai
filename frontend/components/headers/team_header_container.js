@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { Router, Link, withRouter } from 'react-router-dom';
 import { requestTeam,
-requestToDeleteTeam } from '../../actions/team_actions';
+requestToDeleteTeam,
+requestUpdateToTeam } from '../../actions/team_actions';
 import TeamHeader from './team_header';
 
 const mapStateToProps = (state, ownProps) => {
@@ -16,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   requestTeam: (teamId) => dispatch(requestTeam(teamId)),
-  requestToDeleteTeam: (teamId) => dispatch(requestToDeleteTeam(teamId))
+  requestToDeleteTeam: (teamId) => dispatch(requestToDeleteTeam(teamId)),
+  requestUpdateToTeam: (teamId) => dispatch(requestUpdateToTeam(teamId))
 });
 
 export default withRouter(connect(mapStateToProps,

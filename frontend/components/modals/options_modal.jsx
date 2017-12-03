@@ -2,6 +2,8 @@ import React from 'react';
 import UserOptionsIndexItem from '../headers/user_options_index_item';
 import Modal from 'react-modal';
 import DeleteModal from './delete_modal';
+import EditTeamModalContainer from './edit_team_modal_container';
+import EditProjectModalContainer from './edit_project_modal_container';
 import { withRouter } from 'react-router-dom';
 
 class OptionsModal extends React.Component  {
@@ -15,6 +17,9 @@ class OptionsModal extends React.Component  {
       deleteModalOpen: false
     };
 
+    this.openEditModal = this.openEditModal.bind(this);
+    this.closeEditModal = this.closeEditModal.bind(this);
+
     this.toggleEntityAndOwnership = this.toggleEntityAndOwnership.bind(this);
 
     this.openDeleteModal = this.openDeleteModal.bind(this);
@@ -27,6 +32,15 @@ class OptionsModal extends React.Component  {
   }
   closeDeleteModal() {
     this.setState({ deleteModalOpen: false });
+    this.props.closeOptionsModal();
+    document.title = "Ashai";
+  }
+
+  openEditModal() {
+    this.setState({ editModalOpen: true });
+  }
+  closeEditModal() {
+    this.setState({ editModalOpen: false });
     this.props.closeOptionsModal();
     document.title = "Ashai";
   }
@@ -67,12 +81,53 @@ class OptionsModal extends React.Component  {
     }
   }
 
+  renderEditModal() {
+    if (this.state.entity === "Project") {
+      return <Modal
+        isOpen={this.state.editModalOpen}
+        onRequestClose={this.closeEditModal}
+        overlayClassName={
+          {base: "root-modal-container",
+            afterOpen: "root-modal-container",
+            beforeClose: "root-modal-container"}
+          }
+        className={
+          { base: "override-content-default",
+            afterOpen: "override-content-default",
+            beforeClose: "override-content-default"}
+          }>
+        <EditProjectModalContainer
+          project={this.props.project}
+          closeEditProjectModal={this.closeEditModal}/>
+      </Modal>;
+    } else {
+      return <Modal
+        isOpen={this.state.editModalOpen}
+        onRequestClose={this.closeEditModal}
+        overlayClassName={
+          {base: "root-modal-container",
+            afterOpen: "root-modal-container",
+            beforeClose: "root-modal-container"}
+          }
+        className={
+          { base: "override-content-default",
+            afterOpen: "override-content-default",
+            beforeClose: "override-content-default"}
+          }>
+          <EditTeamModalContainer
+            closeEditTeamModal={this.closeEditModal}
+            team={this.props.team}/>
+      </Modal>;
+    }
+  }
+
   renderOptions() {
     if (this.state.isOwner === true) {
       return <div>
         <UserOptionsIndexItem
-          action={() => undefined}
+          action={this.openEditModal}
           actionName={`Manage ${this.state.entity} Settings`}/>
+        {this.renderEditModal()}
         <UserOptionsIndexItem
           action={() => this.openDeleteModal}
           actionName={`Transfer ${this.state.entity} Ownership`}/>

@@ -50,6 +50,7 @@ class TeamHeader extends React.Component {
                   beforeClose: "override-content-default"}
                 }>
                 <OptionsModal
+                  requestUpdateToTeam={this.props.requestUpdateToTeam}
                   requestToDeleteTeam={this.props.requestToDeleteTeam}
                   closeOptionsModal={this.closeOptionsModal}
                   team={this.props.team}

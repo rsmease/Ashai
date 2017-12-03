@@ -145,6 +145,7 @@
   flex-wrap: wrap;
   margin-top: 15px;
   padding-left: 15px;
+  height: 30px;
 }
 
 .sidebar-profile-image {
@@ -195,6 +196,33 @@
   border: 3px solid $winter-white;
   margin-bottom: 4px;
   margin-right: 3px;
+}
+
+.sidebar-new-member-button {
+  border-radius: 12px;
+  height: 18px;
+  width: 18px;
+  padding-left: 0.5px;
+  padding-bottom: 1px;
+  margin-left: 3px;
+  margin-top: 3px;
+  border: 1px solid $winter-white;
+  color: $winter-white;
+  margin-bottom: 5px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-new-member-button:hover {
+  border: 3px solid $winter-white;
+
+  margin-bottom: 4px;
+  margin-left: 1px;
 }
 
 .sidebar-projects-list {

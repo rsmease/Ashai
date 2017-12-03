@@ -109,7 +109,9 @@ class TeamSidebarIndex extends React.Component {
   render() {
     return (
       <div className="sidebar-link-list">
-        <TeamSidebarProfiles members={this.props.team.members}/>
+        <TeamSidebarProfiles
+          team={this.props.team}
+          members={this.props.team.members}/>
         <div className="sidebar-link-list-item">
           <Link
             className="sidebar-link-project"

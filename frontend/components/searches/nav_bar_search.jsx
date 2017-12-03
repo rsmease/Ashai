@@ -51,6 +51,7 @@ class NavBarSearch extends React.Component {
            onFocus={this.removePlaceholderVal}>
           </input>
           <ResultsIndex
+            parent={"NavBar"}
             firstTime={this.state.firstTime}
             userSearchResults={Object.values(this.props.userSearchResults)}
             currentUser={this.props.currentUser}

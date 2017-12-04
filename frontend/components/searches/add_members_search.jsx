@@ -16,8 +16,19 @@ class AddMembersSearch extends React.Component {
   }
 
   componentWillMount() {
-    if (this.props.group.team_owner_id === undefined)
-    if (this.props.currentUser.id ==)
+      this.toggleOwnership();
+  }
+
+  toggleOwnership() {
+    if (this.props.group.team_owner_id === undefined) {
+      if (this.props.currentUser.id === this.props.group.project_owner_id) {
+        this.setState({ isOwner: true });
+      }
+    } else {
+      if (this.props.currentUser.id === this.props.group.team_owner_id) {
+        this.setState({ isOwner: true });
+      }
+    }
   }
 
   handleChange(e) {
@@ -60,7 +71,10 @@ class AddMembersSearch extends React.Component {
               onFocus={this.removePlaceholderVal}>
             </input>
             <ResultsIndex
+              createNewTeamMembership={this.props.createNewTeamMembership}
               parent={this.props.parent}
+              group={this.props.group}
+              isOwner={this.state.isOwner}
               userSearchResults={Object.values(this.props.userSearchResults)}
               currentUser={this.props.currentUser}
               searchVal={this.state.searchVal}

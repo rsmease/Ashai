@@ -35,9 +35,12 @@ class ResultsIndex extends React.Component  {
           {this.props.userSearchResults.map(
             (user) =>
             (<SidebarResultsUserItem
+              createNewTeamMembership={this.props.createNewTeamMembership}
+              isOwner={this.props.isOwner}
               currentUser={this.props.currentUser}
               key={Math.random()}
               user={user}
+              group={this.props.group}
               clearState={this.props.clearState}
               searchVal={this.props.searchVal}/>)
             )}

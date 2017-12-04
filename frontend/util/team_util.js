@@ -36,3 +36,11 @@ export const deleteTeam = (teamId) => (
     data: { teamId }
   })
 );
+
+export const postTeamMembership = (teamMembership) => (
+  $.ajax({
+    url: 'api/team_memberships/',
+    method: 'POST',
+    data: { team_membership: teamMembership }
+  })
+);

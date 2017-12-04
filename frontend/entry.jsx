@@ -8,9 +8,14 @@ import { logout } from './actions/session_actions';
 //testing modules
 import { fetchTeam, fetchAllTeams } from './util/team_util';
 import { searchUsers } from './actions/search_actions';
+import { postTeamMembership, postTeam } from './util/team_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   //bootstrap user
+
+  window.postTeam = postTeam;
+  window.postTeamMembership = postTeamMembership;
+
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };

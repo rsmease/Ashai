@@ -6,14 +6,48 @@ import Highlighter from 'react-highlight-words';
 class SidebarResultsUserItem extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleAddMember = this.handleAddMember.bind(this);
+  }
+
+  renderActionButton() {
+    if (this.userIsMember()) {
+      return <div></div>;
+    } else {
+      return <div>
+        <MaterialDesign.MdPersonAdd
+          className="member-add-button"
+          onClick={this.handleAddMember}/>
+      </div>;
+    }
+  }
+
+  userIsMember() {
+    if (this.props.group.members_by_id.indexOf(this.props.user.id) >= 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  handleAddMember(e) {
+    if (this.props.group.project_owner_id === undefined ) {
+      this.props.createNewTeamMembership(
+        { member_id: this.props.user.id, team_id: this.props.group.id }
+      );
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log("Receiving new props!");
+    console.log(nextProps);
   }
 
 
   render() {
     return(<div className="results-index-item-container
     add-members-item-container">
-        <div className="search-result-clickable"
-          onClick={this.props.clearState}>
+        <div className="search-result-unclickable">
           <img
             className="results-index-image"
             src={this.props.user.profile_image_url}></img>
@@ -30,6 +64,9 @@ class SidebarResultsUserItem extends React.Component {
               searchWords={[this.props.searchVal]}
               autoEscape={true}
               textToHighlight={this.props.user.email}/>
+          </div>
+          <div className="member-action-div">
+            {this.renderActionButton()}
           </div>
         </div>
     </div>);

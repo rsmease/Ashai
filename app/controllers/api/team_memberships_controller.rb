@@ -3,7 +3,8 @@ class Api::TeamMembershipsController < ApplicationController
     @team_membership = TeamMembership.new(team_membership_params)
 
     if @team_membership.save
-      render "api/team_memberships/show"
+      @team = @team_membership.team
+      render "api/teams/show"
     else
       render json: @team_membership.errors.full_messages, status: 422
     end

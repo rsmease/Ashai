@@ -36,3 +36,11 @@ export const deleteProject = (projectId) => (
     data: { projectId }
   })
 );
+
+export const postProjectMembership = (projectMembership) => (
+  $.ajax({
+    url: 'api/project_memberships/',
+    method: 'POST',
+    data: { project_membership: projectMembership }
+  })
+);

@@ -41,9 +41,9 @@ class TeamSidebarProfiles extends React.Component {
           isOpen={this.state.addMembersModalOpen}
           onRequestClose={this.closeAddMembersModal}
           overlayClassName={
-            {base: "root-modal-container",
-              afterOpen: "root-modal-container",
-              beforeClose: "root-modal-container"}
+            {base: "root-modal-container-invisible",
+              afterOpen: "root-modal-container-invisible",
+              beforeClose: "root-modal-container-invisible"}
             }
           className={
             { base: "override-content-default",

@@ -57,11 +57,11 @@ class AddMembersSearch extends React.Component {
 
   render() {
     return (
-      <div className="add-members-form">
+      <form className="add-members-form">
         <h2 className="add-members-header-primary">
           {`${this.props.group.name}`}</h2>
         <h2 className="add-members-header-secondary">
-          Add Members</h2>
+          Add a New Member</h2>
         <div className="sidebar-members-search-container">
           <div className="search-field">
             <MaterialDesign.MdSearch/>
@@ -81,7 +81,7 @@ class AddMembersSearch extends React.Component {
               clearState={this.clearState}/>
           </div>
       </div>
-      </div>
+    </form>
     );
   }
 

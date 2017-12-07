@@ -196,7 +196,8 @@
 .add-members-form {
   align-items: center;
   align-content: center;
-  border-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
   background: $winter-white;
   display: flex;
   display: -webkit-box;
@@ -208,7 +209,23 @@
   overflow: visible;
   padding-left: 50px;
   padding-right: 50px;
-  margin-bottom: 200px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  position: absolute;
+  top: 118px;
+  left: 244px;
+
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
 }
 
 .add-members-header-primary {

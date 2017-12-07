@@ -2,10 +2,12 @@ import { fetchProject,
          fetchAllProjects,
          postProject,
          updateProject,
-         deleteProject
+         deleteProject,
+         postProjectMembership
 } from '../util/project_util';
 
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
+export const RECEIVE_PROJECT_MEMBERSHIP = 'RECEIVE_PROJECT_MEMBERSHIP'
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT_MODAL_ERRORS = 'RECEIVE_PROJECT_MODAL_ERRORS';
 export const REMOVE_MODAL_ERRORS = 'REMOVE_MODAL_ERRORS';
@@ -14,6 +16,12 @@ export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 const receiveProject = (project) => ({
   type: RECEIVE_PROJECT,
   project
+});
+
+const receiveProjectMembership = (projectMembership) => ({
+  type: RECEIVE_TEAM_MEMBERSHIP,
+  memberId: projectMembership.member_id,
+  project_id: projectMembership.project_id
 });
 
 const receiveAllProjects = (projects) => ({
@@ -56,6 +64,10 @@ export const requestUpdateToProject = (projectFormData) => (dispatch) => (
 export const requestToDeleteProject = (projectId) => (dispatch) =>
   deleteProject(projectId).then((deletedProject) =>
     dispatch(removeProject(deletedProject)));
+
+export const createNewProjectMembership = (projectMembershipRequest) => (dispatch) =>
+  postProjectMembership(projectMembershipRequest).then(updatedProject =>
+  dispatch(receiveProject(updatedProject)));
 
 
 export const removeAllProjectModalErrors = () => (dispatch) =>

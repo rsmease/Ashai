@@ -35,12 +35,11 @@ class SidebarResultsUserItem extends React.Component {
       this.props.createNewTeamMembership(
         { member_id: this.props.user.id, team_id: this.props.group.id }
       );
+    } else {
+      this.props.createNewProjectMembership(
+        { member_id: this.props.user.id, project_id: this.props.group.id }
+      );
     }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log("Receiving new props!");
-    console.log(nextProps);
   }
 
 

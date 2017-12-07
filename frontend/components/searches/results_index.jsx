@@ -49,11 +49,34 @@ class ResultsIndex extends React.Component  {
     );
   }
 
+  renderProjectDetailResults() {
+    return (
+      <div className="add-members-results-container">
+        <ul className="add-members-results">
+          {this.props.userSearchResults.map(
+            (user) =>
+            (<SidebarResultsUserItem
+              createNewProjectMembership={this.props.createNewProjectMembership}
+              isOwner={this.props.isOwner}
+              currentUser={this.props.currentUser}
+              key={Math.random()}
+              user={user}
+              group={this.props.group}
+              clearState={this.props.clearState}
+              searchVal={this.props.searchVal}/>)
+            )}
+          </ul>
+      </div>
+    );
+  }
+
   renderIndex() {
     if (this.props.parent === "Sidebar") {
       return this.renderSidebarResults();
     } else if (this.props.parent === "NavBar") {
       return this.renderFoundUsers();
+    } else if (this.props.parent === "ProjectDetail") {
+      return this.renderProjectDetailResults();
     }
   }
 

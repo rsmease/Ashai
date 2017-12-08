@@ -3,12 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .project-new-member-button {
+  border: 1px solid $targ-silver-dark;
   border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  border: 1px solid $tarth-sapphire;
-  color: $tarth-sapphire;
+  height: 36px;
+  width: 36px;
+  padding: 12px;
+  color: $targ-silver-dark;
   margin-bottom: 30px;
+  margin-right: 10px;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -16,9 +18,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
 }
 
 .project-new-member-button:hover {
-  border: 3px solid $tarth-sapphire;
-  margin-bottom: 32px;
+  border: 1px solid $cersei-green;
+  background-color: $cersei-green;
+  color: $winter-white;
 }

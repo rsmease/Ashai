@@ -4,6 +4,7 @@ import ProjectMembersIndex from './project_members_index';
 import AddMembersSearchContainer from
   '../searches/add_members_search_container';
 import Modal from 'react-modal';
+import * as MaterialDesign from 'react-icons/lib/md'
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -39,8 +40,11 @@ class ProjectDetail extends React.Component {
           <ProjectMembersIndex
             currentUser={this.props.currentUser}
             members={this.projectMembersWithoutCurrentUser()}/>
-          <a className="project-new-member-button"
-            onClick={this.openAddMembersModal}>+</a>
+            <div>
+                <MaterialDesign.MdPersonAdd
+                  className="project-new-member-button"
+                  onClick={this.openAddMembersModal}/>
+            </div>
           <Modal
             isOpen={this.state.addMembersModalOpen}
             onRequestClose={this.closeAddMembersModal}

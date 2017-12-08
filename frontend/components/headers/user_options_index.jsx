@@ -29,7 +29,7 @@ class UserOptionsIndex extends React.Component  {
   handleClickOutside() {
     this.props.closeUserOptions();
   }
-  
+
   render() {
     return(<div className="nav-user-options">
     <UserOptionsIndexItem

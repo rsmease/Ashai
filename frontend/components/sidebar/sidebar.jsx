@@ -23,6 +23,10 @@ class Sidebar extends React.Component {
     this.closeNewTeamModal = this.closeNewTeamModal.bind(this);
   }
 
+  componentWillMount() {
+    Modal.setAppElement('#root');
+  }
+
   renderTeams() {
     return(
       <div className="sidebar-list-container">
@@ -90,7 +94,6 @@ class Sidebar extends React.Component {
             <Modal
               isOpen={this.state.newTeamModalOpen}
               onRequestClose={this.closeNewTeamModal}
-              appElement={"#root"}
               overlayClassName={
                 {base: "root-modal-container",
                   afterOpen: "root-modal-container",

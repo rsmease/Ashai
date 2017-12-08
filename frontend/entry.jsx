@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import createStore from './store/store';
 import Root from './components/root';
 import { logout } from './actions/session_actions';
+import Modal from 'react-modal';
 
 //testing modules
 import { fetchTeam, fetchAllTeams } from './util/team_util';

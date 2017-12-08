@@ -72,6 +72,7 @@ class AddMembersSearch extends React.Component {
             </input>
             <ResultsIndex
               createNewTeamMembership={this.props.createNewTeamMembership}
+              createNewProjectMembership={this.props.createNewProjectMembership}
               parent={this.props.parent}
               group={this.props.group}
               isOwner={this.state.isOwner}

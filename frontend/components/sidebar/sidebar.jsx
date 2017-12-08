@@ -90,6 +90,7 @@ class Sidebar extends React.Component {
             <Modal
               isOpen={this.state.newTeamModalOpen}
               onRequestClose={this.closeNewTeamModal}
+              appElement={"#root"}
               overlayClassName={
                 {base: "root-modal-container",
                   afterOpen: "root-modal-container",

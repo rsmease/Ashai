@@ -39,6 +39,7 @@ class ProjectHeader extends React.Component {
         </div>
         <Modal
           isOpen={this.state.optionsModalOpen}
+          appElement={"#root"}
           onRequestClose={this.closeOptionsModal}
           overlayClassName={
             {base: "root-modal-container-invisible",

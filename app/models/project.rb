@@ -12,4 +12,10 @@ class Project < ApplicationRecord
     primary_key: :id
 
   has_many :members, through: :memberships
+
+  def self.search_results(query)
+    param = '%' + query.downcase + '%'
+    Project.where('lower(name) LIKE ? or lower(description) LIKE ?', param, param)
+      .limit(5)
+  end
 end

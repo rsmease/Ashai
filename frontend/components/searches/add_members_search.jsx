@@ -13,9 +13,12 @@ class AddMembersSearch extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.clearState = this.clearState.bind(this);
     this.removePlaceholderVal = this.removePlaceholderVal.bind(this);
+    this.formType = this.formType.bind(this);
+    this.addType = this.addType.bind(this);
   }
 
   componentWillMount() {
+      console.log(this.props);
       this.toggleOwnership();
   }
 
@@ -55,13 +58,29 @@ class AddMembersSearch extends React.Component {
     this.setState({ placeholderVal: ''});
   }
 
+  formType(){
+    if (this.props.parent === "Sidebar") {
+      return "add-members-form-sidebar";
+    } else if (this.props.parent === "ProjectDetail") {
+      return "add-members-form-project-detail";
+    }
+  }
+
+  addType() {
+    if (this.props.parent === "Sidebar") {
+      return <div><MaterialDesign.MdFlashOn/> Fast Add</div>;
+    } else if (this.props.parent === "ProjectDetail") {
+      return "Add New Members";
+    }
+  }
+
   render() {
     return (
-      <form className="add-members-form">
+      <form className={this.formType()}>
         <h2 className="add-members-header-primary">
           {`${this.props.group.name}`}</h2>
         <h2 className="add-members-header-secondary">
-          Add a New Member</h2>
+          {this.addType()}</h2>
         <div className="sidebar-members-search-container">
           <div className="search-field">
             <MaterialDesign.MdSearch/>

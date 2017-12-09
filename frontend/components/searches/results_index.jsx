@@ -9,6 +9,7 @@ class ResultsIndex extends React.Component  {
     super(props);
   }
 
+
   renderFoundUsers() {
       return (
         <div className="nav-search-results">
@@ -40,6 +41,7 @@ class ResultsIndex extends React.Component  {
               currentUser={this.props.currentUser}
               key={Math.random()}
               user={user}
+              parent={this.props.parent}
               group={this.props.group}
               clearState={this.props.clearState}
               searchVal={this.props.searchVal}/>)

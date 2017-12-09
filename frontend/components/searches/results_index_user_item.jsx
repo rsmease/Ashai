@@ -7,7 +7,6 @@ class SearchIndexUserItem extends React.Component {
     super(props);
   }
 
-
   render() {
     return(<div className="results-index-item-container">
         <Link className="search-result-clickable"

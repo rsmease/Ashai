@@ -52,9 +52,8 @@
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  overflow: scroll;
   z-index: 300;
   background-color: $winter-white;
   position: absolute;
@@ -74,7 +73,7 @@
   align-items: center;
   justify-content: flex-start;
   height: 60px;
-  border: 1px solid $targ-silver-light;
+  border-top: 1px solid $targ-silver-light;
   width: 500px;
 }
 
@@ -90,6 +89,7 @@
 .results-index-header-wrapper:hover {
   background-color: $winter-white;
 }
+
 
 .results-index-item-container:hover .results-index-context {
   color: $winter-white;
@@ -111,6 +111,27 @@
 
 .results-index-item-container:hover .results-index-bold {
   color: $winter-white;
+  -webkit-transition: color 300ms ease-in;
+  -moz-transition: color 300ms ease-in;
+  -ms-transition: color 300ms ease-in;
+  -o-transition: color 300ms ease-in;
+  transition: color 300ms ease-in;
+}
+
+.results-index-header-wrapper:hover .results-index-context {
+  color: $nights-watch-black
+}
+
+.results-index-header-wrapper:hover .results-index-name {
+  color: $nights-watch-black
+}
+
+.results-index-header-wrapper:hover .results-index-bold {
+  color: $nights-watch-black
+}
+
+.results-index-item-container:hover .results-index-subheader-icon {
+  color: $targ-silver-light;
   -webkit-transition: color 300ms ease-in;
   -moz-transition: color 300ms ease-in;
   -ms-transition: color 300ms ease-in;
@@ -147,9 +168,16 @@
 }
 
 .results-index-header-search-icon {
-  font-size: 48px;
+  font-size: 40px;
   margin-left: 15px;
   color: $cersei-green;
+}
+
+.results-index-subheader-icon {
+  font-size: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: $targ-silver-dark;
 }
 
 .results-index-bold {

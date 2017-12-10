@@ -1,36 +1,60 @@
 import React from 'react';
 import ResultsIndexUserItem from './results_index_user_item';
+import ResultsIndexProjectItem from './results_index_project_item';
 import SidebarResultsUserItem from './sidebar_results_user_item';
 import SearchIndexHeader from './search_index_header';
+import SearchIndexSubheader from './search_index_subheader';
 
 
 class ResultsIndex extends React.Component  {
   constructor(props) {
     super(props);
+
+    this.renderFoundUsers = this.renderFoundUsers.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-
-
-  // {this.props.userSearchResults.map(
-  //   (user) =>
-  //   (<ResultsIndexUserItem
-  //     currentUser={this.props.currentUser}
-  //     key={Math.random()}
-  //     user={user}
-  //     clearState={this.props.clearState}
-  //     searchVal={this.props.searchVal}/>)
-  //   )}
   renderFoundUsers() {
       return (
-        <div className="nav-search-results">
         <ul>
-          <SearchIndexHeader searchVal={this.props.searchVal}/>
+          {this.props.userSearchResults.slice(0,2).map(
+            (user) =>
+            (<ResultsIndexUserItem
+              currentUser={this.props.currentUser}
+              key={Math.random()}
+              user={user}
+              clearState={this.props.clearState}
+              searchVal={this.props.searchVal}/>)
+            )}
         </ul>
-      </div>
       );
+  }
+
+  renderFoundProjects() {
+      return (
+        <ul>
+          {this.props.projectSearchResults.slice(0,2).map(
+            (project) =>
+            (<ResultsIndexProjectItem
+              currentUser={this.props.currentUser}
+              key={Math.random()}
+              project={project}
+              clearState={this.props.clearState}
+              searchVal={this.props.searchVal}/>)
+            )}
+        </ul>
+      );
+  }
+
+  renderNavBarResults() {
+    return (
+      <div className="nav-search-results">
+      <ul>
+        <SearchIndexHeader searchVal={this.props.searchVal}/>
+        {this.renderFoundUsers()}
+        {this.renderFoundProjects()}
+      </ul>
+    </div>
+    );
   }
 
   renderSidebarResults() {
@@ -80,7 +104,7 @@ class ResultsIndex extends React.Component  {
     if (this.props.parent === "Sidebar") {
       return this.renderSidebarResults();
     } else if (this.props.parent === "NavBar") {
-      return this.renderFoundUsers();
+      return this.renderNavBarResults();
     } else if (this.props.parent === "ProjectDetail") {
       return this.renderProjectDetailResults();
     }

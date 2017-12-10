@@ -54,8 +54,9 @@ class NavBarSearch extends React.Component {
           <ResultsIndex
             parent={"NavBar"}
             firstTime={this.state.firstTime}
-            userSearchResults={this.props.userSearchResults}
-            projectSearchResults={this.props.projectSearchResults}
+            userSearchResults={Object.values(this.props.userSearchResults)}
+            projectSearchResults={
+              Object.values(this.props.projectSearchResults)}
             currentUser={this.props.currentUser}
             searchVal={this.state.searchVal}
             clearState={this.clearState}/>

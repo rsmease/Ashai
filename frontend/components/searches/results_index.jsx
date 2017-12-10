@@ -1,6 +1,7 @@
 import React from 'react';
 import ResultsIndexUserItem from './results_index_user_item';
 import ResultsIndexProjectItem from './results_index_project_item';
+import ResultsIndexTeamItem from './results_index_team_item';
 import SidebarResultsUserItem from './sidebar_results_user_item';
 import SearchIndexHeader from './search_index_header';
 import SearchIndexSubheader from './search_index_subheader';
@@ -45,6 +46,22 @@ class ResultsIndex extends React.Component  {
       );
   }
 
+  renderFoundTeams() {
+    return (
+      <ul>
+        {this.props.teamSearchResults.slice(0,2).map(
+          (team) =>
+          (<ResultsIndexTeamItem
+            currentUser={this.props.currentUser}
+            key={Math.random()}
+            team={team}
+            clearState={this.props.clearState}
+            searchVal={this.props.searchVal}/>)
+          )}
+      </ul>
+    );
+  }
+
   renderNavBarResults() {
     return (
       <div className="nav-search-results">
@@ -52,6 +69,7 @@ class ResultsIndex extends React.Component  {
         <SearchIndexHeader searchVal={this.props.searchVal}/>
         {this.renderFoundUsers()}
         {this.renderFoundProjects()}
+        {this.renderFoundTeams()}
       </ul>
     </div>
     );

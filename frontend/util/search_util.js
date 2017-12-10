@@ -13,3 +13,11 @@ export const fetchProjectSearchResults = (query) => (
     data: {search: { query }}
   })
 );
+
+export const fetchTeamSearchResults = (query) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/team_searches',
+    data: {search: { query }}
+  })
+);

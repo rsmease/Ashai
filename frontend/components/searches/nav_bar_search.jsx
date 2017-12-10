@@ -22,6 +22,7 @@ class NavBarSearch extends React.Component {
     this.setState({ searchVal: newVal, firstTime: false }, () => {
       this.props.searchUsers(this.state.searchVal);
       this.props.searchProjects(this.state.searchVal);
+      this.props.searchTeams(this.state.searchVal);
     });
   }
 
@@ -57,6 +58,8 @@ class NavBarSearch extends React.Component {
             userSearchResults={Object.values(this.props.userSearchResults)}
             projectSearchResults={
               Object.values(this.props.projectSearchResults)}
+            teamSearchResults={
+              Object.values(this.props.teamSearchResults)}
             currentUser={this.props.currentUser}
             searchVal={this.state.searchVal}
             clearState={this.clearState}/>

@@ -7,13 +7,6 @@ class ProjectMembersIndex extends React.Component {
     super(props);
   }
 
-
-  // <Link to={`/users/${this.props.currentUser.id}`}
-  //   key={Math.random()}>
-  //   <img className="project-member-image"
-  //     key={Math.random()}
-  //     src={this.props.currentUser.profile_image_url}/>
-  // </Link>
   render() {
     return (
       <div className="project-members-wrapper">

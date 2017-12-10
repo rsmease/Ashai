@@ -7,8 +7,8 @@ class TeamIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.teamMembersWithoutCurrentUser =
-      this.teamMembersWithoutCurrentUser.bind(this);
+    // this.teamMembersWithoutCurrentUser =
+    //   this.teamMembersWithoutCurrentUser.bind(this);
   }
 
   componentDidMount() {
@@ -22,20 +22,11 @@ class TeamIndex extends React.Component {
     }
   }
 
-  teamMembersWithoutCurrentUser() {
-    return this.props.team.members.filter(member => {
-      return member.id !== this.props.currentUser.id;
-    });
-  }
-
   renderTeamCards() {
     if (this.props.team) {
       return (<div className="team-index-container">
-        <TeamIndexItem
-          key={Math.random()}
-          member={this.props.currentUser}/>
         {
-          this.teamMembersWithoutCurrentUser().map(function(member) {
+          this.props.team.members.map(function(member) {
               return <TeamIndexItem
                 key={Math.random()}
                 member={member}

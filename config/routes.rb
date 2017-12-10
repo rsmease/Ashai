@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :user_searches, only: [:index]
 
     resources :teams
+    resources :team_searches, only: [:index]
     resources :team_memberships, only: [:create, :show, :destroy]
 
     resources :projects

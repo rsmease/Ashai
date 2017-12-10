@@ -11,9 +11,9 @@ class ProjectDetail extends React.Component {
     super(props);
     this.state = {
       addMembersModalOpen: false
-    }
-    this.projectMembersWithoutCurrentUser =
-      this.projectMembersWithoutCurrentUser.bind(this);
+    };
+    // this.projectMembersWithoutCurrentUser =
+    //   this.projectMembersWithoutCurrentUser.bind(this);
     this.openAddMembersModal = this.openAddMembersModal.bind(this);
     this.closeAddMembersModal = this.closeAddMembersModal.bind(this);
   }
@@ -26,11 +26,11 @@ class ProjectDetail extends React.Component {
   }
 
 
-  projectMembersWithoutCurrentUser() {
-    return this.props.project.members.filter(member => {
-      return member.id !== this.props.currentUser.id;
-    });
-  }
+  // projectMembersWithoutCurrentUser() {
+  //   return this.props.project.members.filter(member => {
+  //     return member.id !== this.props.currentUser.id;
+  //   });
+  // }
 
   render() {
     return(
@@ -39,7 +39,8 @@ class ProjectDetail extends React.Component {
           <h4 className="project-description-title">Members</h4>
           <ProjectMembersIndex
             currentUser={this.props.currentUser}
-            members={this.projectMembersWithoutCurrentUser()}/>
+            members={this.props.project.members}
+            project={this.props.project}/>
             <div>
                 <MaterialDesign.MdPersonAdd
                   className="project-new-member-button"

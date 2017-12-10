@@ -27,6 +27,11 @@ class Sidebar extends React.Component {
     Modal.setAppElement('#root');
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log("Update to sidebar state.")
+    console.log(nextProps);
+  }
+
   renderTeams() {
     return(
       <div className="sidebar-list-container">

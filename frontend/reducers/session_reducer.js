@@ -40,11 +40,17 @@ export default (state = _nullSession, action) => {
       return _.merge({}, state);
     case RECEIVE_PROJECT:
       state.currentUser.projects =
-        addUniqueToArray(action.project, state.currentUser.projects);
+        addUniqueToArray(
+          action.project,
+          state.currentUser.projects,
+          state.currentUser);
       return _.merge({}, state);
     case RECEIVE_TEAM:
       state.currentUser.teams =
-        addUniqueToArray(action.team, state.currentUser.teams);
+        addUniqueToArray(
+          action.team,
+          state.currentUser.teams,
+          state.currentUser);
       return _.merge({}, state);
     case REMOVE_PROJECT:
       state.currentUser.projects =

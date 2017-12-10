@@ -18,7 +18,6 @@ class AddMembersSearch extends React.Component {
   }
 
   componentWillMount() {
-      console.log(this.props);
       this.toggleOwnership();
   }
 

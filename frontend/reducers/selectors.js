@@ -4,10 +4,12 @@ export const myTeamsArray = (teams, myTeamIds) => {
   return myTeamIds.map(id => teams[id]);
 };
 
-export const addUniqueToArray = (newItem, existingItems) => {
+export const addUniqueToArray = (newItem, existingItems, currentUser) => {
   const itemIds = existingItems.map(item => item.id);
   if (itemIds.indexOf(newItem.id) === -1) {
-    existingItems.push(newItem);
+    if (newItem.members_by_id.indexOf(currentUser.id) >= 0) {
+      existingItems.push(newItem);
+    }
   } else {
     existingItems = existingItems.map(item => {
       if (item.id === newItem.id) {
@@ -24,7 +26,7 @@ export const removeDeleted = (removedItemId, existingItems) => {
     return item.id !== removedItemId;
   });
 };
-// 
+//
 // export const updateMember = (updatedMember, existingGroups) => {
 //   const newGroups = {};
 //   for (const group in existingGroups) {

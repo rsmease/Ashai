@@ -7,15 +7,14 @@ import { logout } from './actions/session_actions';
 import Modal from 'react-modal';
 
 //testing modules
-import { fetchTeam, fetchAllTeams } from './util/team_util';
-import { searchUsers } from './actions/search_actions';
-import { postTeamMembership, postTeam } from './util/team_util';
+import { searchProjects } from './actions/search_actions';
+import { fetchProjectSearchResults } from './util/search_util';
 
 document.addEventListener('DOMContentLoaded', () => {
-  //bootstrap user
 
-  window.postTeam = postTeam;
-  window.postTeamMembership = postTeamMembership;
+  window.store = createStore();
+  window.searchProjects = searchProjects;
+  window.fetchProjectSearchResults = fetchProjectSearchResults;
 
   let store;
   if (window.currentUser) {

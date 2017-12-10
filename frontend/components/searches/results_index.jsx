@@ -9,21 +9,25 @@ class ResultsIndex extends React.Component  {
     super(props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
 
+
+  // {this.props.userSearchResults.map(
+  //   (user) =>
+  //   (<ResultsIndexUserItem
+  //     currentUser={this.props.currentUser}
+  //     key={Math.random()}
+  //     user={user}
+  //     clearState={this.props.clearState}
+  //     searchVal={this.props.searchVal}/>)
+  //   )}
   renderFoundUsers() {
       return (
         <div className="nav-search-results">
         <ul>
           <SearchIndexHeader searchVal={this.props.searchVal}/>
-          {this.props.userSearchResults.map(
-              (user) =>
-              (<ResultsIndexUserItem
-                currentUser={this.props.currentUser}
-                key={Math.random()}
-                user={user}
-                clearState={this.props.clearState}
-                searchVal={this.props.searchVal}/>)
-            )}
         </ul>
       </div>
       );

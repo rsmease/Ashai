@@ -4,7 +4,7 @@ import ProjectMembersIndex from './project_members_index';
 import AddMembersSearchContainer from
   '../searches/add_members_search_container';
 import Modal from 'react-modal';
-import * as MaterialDesign from 'react-icons/lib/md'
+import * as MaterialDesign from 'react-icons/lib/md';
 
 class ProjectDetail extends React.Component {
   constructor(props) {

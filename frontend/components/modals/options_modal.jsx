@@ -4,6 +4,8 @@ import Modal from 'react-modal';
 import DeleteModal from './delete_modal';
 import EditTeamModalContainer from './edit_team_modal_container';
 import EditProjectModalContainer from './edit_project_modal_container';
+import TransferOwnershipModalContainer from
+  './transfer_ownership_modal_container';
 import { withRouter } from 'react-router-dom';
 
 class OptionsModal extends React.Component  {
@@ -14,7 +16,8 @@ class OptionsModal extends React.Component  {
       entity: undefined,
       isOwner: false,
       editModalOpen: false,
-      deleteModalOpen: false
+      deleteModalOpen: false,
+      transferOwnershipModalOpen: false
     };
 
     this.openEditModal = this.openEditModal.bind(this);
@@ -25,6 +28,11 @@ class OptionsModal extends React.Component  {
     this.openDeleteModal = this.openDeleteModal.bind(this);
     this.closeDeleteModal = this.closeDeleteModal.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+
+    this.openTransferOwnershipModal =
+      this.openTransferOwnershipModal.bind(this);
+    this.closeTransferOwnershipModal =
+      this.closeTransferOwnershipModal.bind(this);
   }
 
   openDeleteModal() {
@@ -41,6 +49,15 @@ class OptionsModal extends React.Component  {
   }
   closeEditModal() {
     this.setState({ editModalOpen: false });
+    this.props.closeOptionsModal();
+    document.title = "Ashai";
+  }
+
+  openTransferOwnershipModal() {
+    this.setState({ transferOwnershipModalOpen: true });
+  }
+  closeTransferOwnershipModal() {
+    this.setState({ transferOwnershipModalOpen: false });
     this.props.closeOptionsModal();
     document.title = "Ashai";
   }
@@ -121,6 +138,46 @@ class OptionsModal extends React.Component  {
     }
   }
 
+  renderTransferOwnershipModal() {
+    if (this.state.entity === "Project") {
+      return <Modal
+        isOpen={this.state.transferOwnershipModalOpen}
+        onRequestClose={this.closeTransferOwnershipModal}
+        overlayClassName={
+          {base: "root-modal-container",
+            afterOpen: "root-modal-container",
+            beforeClose: "root-modal-container"}
+          }
+        className={
+          { base: "override-content-default",
+            afterOpen: "override-content-default",
+            beforeClose: "override-content-default"}
+          }>
+        <TransferOwnershipModalContainer
+          group={this.props.project}
+          closeTransferOwnershipModal={this.closeTransferOwnershipModal}/>
+      </Modal>;
+    } else {
+      return <Modal
+        isOpen={this.state.transferOwnershipModalOpen}
+        onRequestClose={this.closeTransferOwnershipModal}
+        overlayClassName={
+          {base: "root-modal-container",
+            afterOpen: "root-modal-container",
+            beforeClose: "root-modal-container"}
+          }
+        className={
+          { base: "override-content-default",
+            afterOpen: "override-content-default",
+            beforeClose: "override-content-default"}
+          }>
+          <TransferOwnershipModalContainer
+            closeTransferOwnershipModal={this.closeTransferOwnershipModal}
+            group={this.props.team}/>
+      </Modal>;
+    }
+  }
+
   renderOptions() {
     if (this.state.isOwner === true) {
       return <div>
@@ -129,8 +186,9 @@ class OptionsModal extends React.Component  {
           actionName={`Manage ${this.state.entity} Settings`}/>
         {this.renderEditModal()}
         <UserOptionsIndexItem
-          action={() => this.openDeleteModal}
+          action={this.openTransferOwnershipModal}
           actionName={`Transfer ${this.state.entity} Ownership`}/>
+        {this.renderTransferOwnershipModal()}
         <UserOptionsIndexItem
           className="header-options-delete"
           action={this.openDeleteModal}
@@ -164,10 +222,7 @@ class OptionsModal extends React.Component  {
 
   render() {
     return(<div className="home-header-options-modal">
-    <UserOptionsIndexItem
-      action={() => undefined}
-      actionName="Add Members"/>
-    {this.renderOptions()}
+      {this.renderOptions()}
     </div>);
   }
 }

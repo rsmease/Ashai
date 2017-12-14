@@ -25,7 +25,7 @@ export const MainAppViewCurrentUser = () => (
     <div className="task-with-header">
       <NavigationHeaderContainer/>
       <HomeHeaderContainer/>
-      <TaskIndexContainer />
+      <TaskIndexContainer/>
     </div>
   </main>
 );

@@ -99,17 +99,19 @@ class ResultsIndex extends React.Component  {
 
   renderTransferOwnershipResults() {
     return (
-      <div className="add-members-results-container">
+      <div className="view-members-results-container">
         <ul className="add-members-results">
           {this.props.group.members.map(
             (user) =>
             (<SidebarResultsUserItem
               requestUpdateToTeam={this.props.requestUpdateToTeam}
+              closeTransferOwnershipModal=
+              {this.props.closeTransferOwnershipModal()}
               requestUpdateToProject={this.props.requestUpdateToProject}
+              parent={"TransferOwnership"}
               searchVal={""}
               key={Math.random()}
               user={user}
-              parent={this.props.parent}
               group={this.props.group}/>)
             )}
           </ul>
@@ -154,6 +156,12 @@ class ResultsIndex extends React.Component  {
   render() {
     if (this.props.searchVal === "") {
       return <div></div>;
+    } else if (this.props.parent === "TransferOwnership") {
+      return (
+        <div className="group-members-view-container">
+          {this.renderIndex()}
+        </div>
+      );
     } else {
       return (
         <div className="">

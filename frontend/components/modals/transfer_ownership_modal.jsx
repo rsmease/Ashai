@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Router, Redirect, withRouter } from 'react-router-dom';
 import AddMembersSearchContainer from
   '../searches/add_members_search_container';
+import ResultsIndex from '../searches/results_index';
 
 class TransferOwnershipModal extends React.Component {
   constructor(props) {
@@ -21,9 +22,6 @@ class TransferOwnershipModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("Submitted");
-    // this.props.requestUpdateToProject(this.state)
-    // .then(this.props.closeTransferOwnershipModal);
   }
 
   handleClickOff(e) {
@@ -48,14 +46,14 @@ class TransferOwnershipModal extends React.Component {
             group={this.props.group}
             parent={this.props.parent}
             requestUpdateToTeam={this.props.requestUpdateToTeam}
-            requestUpdateToProject={this.props.requestUpdateToProject}/>
+            requestUpdateToProject={this.props.requestUpdateToProject}
+            closeTransferOwnershipModal=
+            {this.props.closeTransferOwnershipModal()}/>
           <form className="modal-form">
             <div className="submit-options">
               <button className="modal-cancel"
                 onClick={this.handleClickOff}>
                 Cancel</button>
-              <button className="modal-form-submit modal-form-submit-valid"
-                  onClick={this.handleSubmit}>Update</button>
             </div>
           </form>
         </div>

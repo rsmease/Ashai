@@ -44,6 +44,11 @@ class TransferOwnershipModal extends React.Component {
             <h2 className="modal-form-header
               modal-edit-header">Transfer Ownership</h2>
           </div>
+          <ResultsIndex
+            group={this.props.group}
+            parent={this.props.parent}
+            requestUpdateToTeam={this.props.requestUpdateToTeam}
+            requestUpdateToProject={this.props.requestUpdateToProject}/>
           <form className="modal-form">
             <div className="submit-options">
               <button className="modal-cancel"

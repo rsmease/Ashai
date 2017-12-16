@@ -97,6 +97,26 @@ class ResultsIndex extends React.Component  {
     );
   }
 
+  renderTransferOwnershipResults() {
+    return (
+      <div className="add-members-results-container">
+        <ul className="add-members-results">
+          {this.props.group.members.map(
+            (user) =>
+            (<SidebarResultsUserItem
+              requestUpdateToTeam={this.props.requestUpdateToTeam}
+              requestUpdateToProject={this.props.requestUpdateToProject}
+              searchVal={""}
+              key={Math.random()}
+              user={user}
+              parent={this.props.parent}
+              group={this.props.group}/>)
+            )}
+          </ul>
+      </div>
+    );
+  }
+
   renderProjectDetailResults() {
     return (
       <div className="add-members-results-container">
@@ -125,6 +145,8 @@ class ResultsIndex extends React.Component  {
       return this.renderNavBarResults();
     } else if (this.props.parent === "ProjectDetail") {
       return this.renderProjectDetailResults();
+    } else if (this.props.parent === "TransferOwnership") {
+      return this.renderTransferOwnershipResults();
     }
   }
 

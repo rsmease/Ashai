@@ -3,11 +3,14 @@ import { requestUpdateToTeam } from '../../actions/team_actions';
 import { requestUpdateToProject } from '../../actions/project_actions';
 import { withRouter } from 'react-router-dom';
 import TransferOwnershipModal from './transfer_ownership_modal';
+import { searchUsers } from '../../actions/search_actions';
+
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   group: ownProps.group,
-  closeTransferOwnershipModal: ownProps.closeTransferOwnershipModal
+  closeTransferOwnershipModal: ownProps.closeTransferOwnershipModal,
+  parent: "TransferOwnership"
 });
 
 const mapDispatchToProps = (dispatch) => ({

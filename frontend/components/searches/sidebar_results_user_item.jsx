@@ -8,9 +8,24 @@ class SidebarResultsUserItem extends React.Component {
     super(props);
 
     this.handleAddMember = this.handleAddMember.bind(this);
+    this.handleTransferOwnership = this.handleTransferOwnership.bind(this);
   }
 
   renderActionButton() {
+    if (this.props.parent === "TransferOwnership") {
+      this.renderTransferActionButton();
+    } else {
+      this.renderAddActionButton();
+    }
+  }
+
+  renderTransferActionButton() {
+    return <MaterialDesign.MdSwapHoriz
+      className="member-add-button"
+      onClick={this.handleTransferOwnership}/>;
+  }
+
+  renderAddActionButton() {
     if (this.userIsMember()) {
       return <div></div>;
     } else {
@@ -38,6 +53,18 @@ class SidebarResultsUserItem extends React.Component {
     } else {
       this.props.createNewProjectMembership(
         { member_id: this.props.user.id, project_id: this.props.group.id }
+      );
+    }
+  }
+
+  handleTransferOwnership(e) {
+    if (this.props.group.project_owner_id === undefined ) {
+      this.props.requestUpdateToTeam(
+        { id: this.props.group.id, team_owner_id: this.props.user.id }
+      );
+    } else {
+      this.props.requestUpdateToProject(
+        { id: this.props.group.id, project_owner_id: this.props.user.id }
       );
     }
   }

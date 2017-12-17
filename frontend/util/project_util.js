@@ -44,3 +44,11 @@ export const postProjectMembership = (projectMembership) => (
     data: { project_membership: projectMembership }
   })
 );
+
+export const deleteProjectMembership = (projectMembershipId) => (
+  $.ajax({
+    url: `api/project_memberships/${projectMembershipId}`,
+    method: 'DELETE',
+    data: { projectMembershipId }
+  })
+);

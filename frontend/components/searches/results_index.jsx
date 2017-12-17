@@ -106,7 +106,7 @@ class ResultsIndex extends React.Component  {
             (<SidebarResultsUserItem
               requestUpdateToTeam={this.props.requestUpdateToTeam}
               closeTransferOwnershipModal=
-              {this.props.closeTransferOwnershipModal()}
+              {this.props.closeTransferOwnershipModal}
               requestUpdateToProject={this.props.requestUpdateToProject}
               parent={"TransferOwnership"}
               searchVal={""}

@@ -3,7 +3,8 @@ import { fetchTeam,
          postTeam,
          updateTeam,
          deleteTeam,
-         postTeamMembership } from '../util/team_util';
+         postTeamMembership,
+         deleteTeamMembership } from '../util/team_util';
 
 export const RECEIVE_TEAM = 'RECEIVE_TEAM';
 export const RECEIVE_ALL_TEAMS = 'RECEIVE_ALL_TEAMS';

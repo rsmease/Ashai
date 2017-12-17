@@ -253,7 +253,24 @@
   margin-right: 15px;
 }
 
+.modal-cancel-centered {
+  background-color: $melisandre-red;
+  color: $winter-white;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 80px;
+}
+
 .modal-cancel a {
+  color: $winter-white;
+}
+
+.modal-cancel-centered a {
   color: $winter-white;
 }
 

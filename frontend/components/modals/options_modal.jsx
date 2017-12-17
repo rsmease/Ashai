@@ -214,7 +214,7 @@ class OptionsModal extends React.Component  {
       </div>;
     } else {
         return <UserOptionsIndexItem
-          action={() => undefined}
+          action={() => console.log("This feature is not yet implemented.")}
           actionName={`Leave ${this.state.entity}`}/>;
       }
   }

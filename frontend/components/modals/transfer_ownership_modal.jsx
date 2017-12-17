@@ -48,10 +48,10 @@ class TransferOwnershipModal extends React.Component {
             requestUpdateToTeam={this.props.requestUpdateToTeam}
             requestUpdateToProject={this.props.requestUpdateToProject}
             closeTransferOwnershipModal=
-            {this.props.closeTransferOwnershipModal()}/>
+            {this.props.closeTransferOwnershipModal}/>
           <form className="modal-form">
-            <div className="submit-options">
-              <button className="modal-cancel"
+            <div className="submit-options-centered">
+              <button className="modal-cancel-centered"
                 onClick={this.handleClickOff}>
                 Cancel</button>
             </div>

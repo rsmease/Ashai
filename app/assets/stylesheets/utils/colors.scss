@@ -1,22 +1,31 @@
-$winter-white: #FFFFFF;
+$winter-white: #ffffff;
 $lord-of-light-white: #f4f4f4;
+
 $targ-silver-light: #e0e6e8;
 $targ-silver-dark: #9ca6af;
+
 $tarth-sapphire: #222b37;
 $nights-watch-black: #151b26;
+
 $sansa-pink-light: #ff8585;
 $sansa-pink-dark: #ff5263;
 $melisandre-red: #ed4758;
+
 $lannister-gold: #fcbd01;
+
 $cersei-green: #25e8c8;
+
 $night-king-blue: #14aaf5;
 $night-king-blue-hover: #24baf6;
 $viserion-blue: #32c1ff;
 
-
 $login-gradient: to top right, $sansa-pink-dark 10%, $sansa-pink-light 35%, $lannister-gold;
-
 $add-task-gradient: to top right, $melisandre-red 20%, $lannister-gold;
 
-$team-header-gradient: to top right, $cersei-green 20%, $night-king-blue;
-$team-header-gradient-hover: to top right, $night-king-blue 20%, $cersei-green;
+@mixin background-gradient($default, $gradient) {
+    background: $default;
+    background: -webkit-linear-gradient($gradient);
+    background: -o-linear-gradient($gradient);
+    background: -moz-linear-gradient($gradient);
+    background: linear-gradient($gradient);
+}

@@ -1,70 +1,67 @@
-@import 'colors.scss';
-@import 'reset.scss';
-
 .placeholder-div {
-  width: 500px;
-  height: auto;
+    width: 500px;
+    height: auto;
 
-  display: flex;
-  align-items: center;
-  align-content: space-around;
-  flex-direction: column;
-
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    flex-direction: column;
 }
 
 .placeholder-img {
-  width: 200px;
-  height: auto;
+    width: 200px;
+    height: auto;
 }
 
 .placeholder-div h1 {
-  font-size: 48px;
-  color: $winter-white;
+    font-size: 48px;
+    color: $winter-white;
 }
 
 .placeholder-title {
-  color: $winter-white;
+    color: $winter-white;
 }
 
 .placeholder-links-upper {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  align-content: space-around;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
 }
 
 .placeholder-links-lower {
-  margin-top: 5px;
-  display: flex;
-  align-items: center;
-  align-content: space-around;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    align-content: space-around;
 }
 
-.placeholder-links-upper h3, .placeholder-links-lower h3 {
-  color: $winter-white;
+.placeholder-links-upper h3,
+.placeholder-links-lower h3 {
+    color: $winter-white;
 }
 
 .login-link {
-  margin: 10px;
+    margin: 10px;
 }
 
 .signup-link {
-  margin: 10px;
+    margin: 10px;
 }
 
 .session-link {
-  border: 1px solid $winter-white;
-  border-radius: 3px;
-  color: $winter-white;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
+    border: 1px solid $winter-white;
+    border-radius: 3px;
+    color: $winter-white;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
 }
 
 .session-link:hover {
-  background: $winter-white;
-  color: $targ-silver-dark;
+    background: $winter-white;
+    color: $targ-silver-dark;
 }

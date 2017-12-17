@@ -1,303 +1,305 @@
 .root-modal-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: scroll;
-  z-index: 200;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .root-modal-container-invisible {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: scroll;
-  z-index: 200;
-  position: fixed;
-  background-color: transparent;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    z-index: 200;
+    position: fixed;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .override-content-default {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  outline: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
 }
 
 .modal-form-container {
-  align-items: center;
-  align-content: center;
-  border-radius: 4px;
-  background: $winter-white;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  width: 585px;
-  color: white;
+    align-items: center;
+    align-content: center;
+    border-radius: 4px;
+    background: $winter-white;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 585px;
+    color: white;
 }
 
 .modal-header-container {
-  width: 585px;
-  height: 50px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  border-bottom: 1px solid $targ-silver-light;
-  margin-bottom: 20px;
+    width: 585px;
+    height: 50px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid $targ-silver-light;
+    margin-bottom: 20px;
 }
 
 .modal-header-container-user-update {
-  width: 585px;
-  height: 50px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid $targ-silver-light;
-  margin-bottom: 20px;
+    width: 585px;
+    height: 50px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $targ-silver-light;
+    margin-bottom: 20px;
 }
 
 .modal-header-profile {
-  border-radius: 50%;
-  max-height: 30px;
-  margin-right: 15px;
+    border-radius: 50%;
+    max-height: 30px;
+    margin-right: 15px;
 }
 
 .modal-close {
-  font-size: 24px;
-  display: inline-flex;
-  color: $targ-silver-dark;
-  margin-top: 12px;
-  margin-right: 10px;
+    font-size: 24px;
+    display: inline-flex;
+    color: $targ-silver-dark;
+    margin-top: 12px;
+    margin-right: 10px;
 }
 
 .modal-form-header {
-  margin-left: 15px;
-  margin-top: 10px;
-  padding-bottom: 12px;
-  font-size: 24px;
-  color: $nights-watch-black;
-  border-bottom: 3px solid $night-king-blue;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-bottom: 12px;
+    font-size: 24px;
+    color: $nights-watch-black;
+    border-bottom: 3px solid $night-king-blue;
 }
 
 .modal-edit-header {
-  padding-bottom: 13px;
+    padding-bottom: 13px;
 }
 
 .modal-upper-header {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 .modal-lower-header {
-  margin-top: 0px;
-  color: $cersei-green
+    margin-top: 0px;
+    color: $cersei-green
 }
 
 .modal-form {
-  margin: 0 auto;
-  width: 100%;
-  margin-bottom: 30px;
-  margin-top: 20px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .modal-form input {
-  border: 1px $targ-silver-light solid;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 40px;
-  margin-bottom: 5px;
-  margin-left: 12%;
-  margin-top: 5px;
-  padding-left: 10px;
-  width: 75%;
+    border: 1px $targ-silver-light solid;
+    border-radius: 3px;
+    font-size: 14px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 12%;
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 75%;
 }
 
-.modal-form input:focus, .modal-form input:active {
-  border: 1px $cersei-green solid;
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.modal-form input:focus,
+.modal-form input:active {
+    border: 1px $cersei-green solid;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .modal-form textarea {
-  padding-top: 10px;
-  border: 1px $targ-silver-light solid;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 40px;
-  margin-bottom: 5px;
-  margin-left: 12%;
-  margin-top: 5px;
-  padding-left: 10px;
-  width: 75%;
-  min-height: 100px;
+    padding-top: 10px;
+    border: 1px $targ-silver-light solid;
+    border-radius: 3px;
+    font-size: 14px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 12%;
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 75%;
+    min-height: 100px;
 }
 
-.modal-form textarea:focus, .modal-form textarea:active {
-  border: 1px $cersei-green solid;
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.modal-form textarea:focus,
+.modal-form textarea:active {
+    border: 1px $cersei-green solid;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .modal-form label {
-  color: $targ-silver-dark;
-  font-size: 11px;
-  margin-bottom: 5px;
-  margin-left: 12%;
-  width: 100%;
+    color: $targ-silver-dark;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: 12%;
+    width: 100%;
 }
 
 .modal-form-submit {
-  border: none;
-  border-radius: 3px;
-  color: $winter-white;
-  background-color: $targ-silver-light;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  margin-right: 15%;
+    border: none;
+    border-radius: 3px;
+    color: $winter-white;
+    background-color: $targ-silver-light;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+    margin-right: 15%;
 }
 
 .modal-form-submit-valid {
-  background-color: $night-king-blue;
+    background-color: $night-king-blue;
 }
 
 .modal-form-container-delete {
-  align-items: center;
-  align-content: center;
-  border-radius: 4px;
-  background: $winter-white;
-  display: flex;
-  flex-direction: column;
-  overflow: scroll;
-  color: white;
+    align-items: center;
+    align-content: center;
+    border-radius: 4px;
+    background: $winter-white;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    color: white;
 }
 
 .modal-form-header-delete {
-  margin-top: 30px;
-  font-size: 24px;
-  padding-bottom: 12px;
-  font-size: 24px;
-  color: $nights-watch-black;
-  border-bottom: 3px solid $night-king-blue;
+    margin-top: 30px;
+    font-size: 24px;
+    padding-bottom: 12px;
+    font-size: 24px;
+    color: $nights-watch-black;
+    border-bottom: 3px solid $night-king-blue;
 }
 
 .modal-form-warnings-container {
-  background-color: rgba(255, 133, 133, .3);
-  padding: 10px 20px 10px 20px;
-  margin-top: 15px;
+    background-color: rgba(255, 133, 133, .3);
+    padding: 10px 20px 10px 20px;
+    margin-top: 15px;
 }
 
 .modal-form-warning {
-  color: $melisandre-red;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin: 5px;
+    color: $melisandre-red;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 5px;
 }
 
 .submit-options-delete {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 30px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .modal-cancel {
-  background-color: $melisandre-red;
-  color: $winter-white;
-  border: none;
-  border-radius: 3px;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  margin-right: 15px;
+    background-color: $melisandre-red;
+    color: $winter-white;
+    border: none;
+    border-radius: 3px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+    margin-right: 15px;
 }
 
 .modal-cancel-centered {
-  background-color: $melisandre-red;
-  color: $winter-white;
-  border: none;
-  border-radius: 3px;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
+    background-color: $melisandre-red;
+    color: $winter-white;
+    border: none;
+    border-radius: 3px;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
 }
 
 .modal-cancel a {
-  color: $winter-white;
+    color: $winter-white;
 }
 
 .modal-cancel-centered a {
-  color: $winter-white;
+    color: $winter-white;
 }
 
 .modal-cancel-delete {
-  background-color: $night-king-blue;
-  margin-right: 0px;
+    background-color: $night-king-blue;
+    margin-right: 0px;
 }
 
 .modal-form-delete {
-  border: none;
-  border-radius: 3px;
-  color: $winter-white;
-  background-color: $targ-silver-light;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  margin-left: 15px;
-  -webkit-transition: background-color 300ms ease-in;
-  -moz-transition: background-color 300ms ease-in;
-  -ms-transition: background-color 300ms ease-in;
-  -o-transition: background-color 300ms ease-in;
-  transition: background-color 300ms ease-in;
+    border: none;
+    border-radius: 3px;
+    color: $winter-white;
+    background-color: $targ-silver-light;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+    margin-left: 15px;
+    -webkit-transition: background-color 300ms ease-in;
+    -moz-transition: background-color 300ms ease-in;
+    -ms-transition: background-color 300ms ease-in;
+    -o-transition: background-color 300ms ease-in;
+    transition: background-color 300ms ease-in;
 }
 
 .modal-form-delete:hover {
-  background-color: $melisandre-red;
+    background-color: $melisandre-red;
 }

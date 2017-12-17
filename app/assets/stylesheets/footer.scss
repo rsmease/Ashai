@@ -1,50 +1,50 @@
 //for other placeholder styles, see placeholder.scss
 .placeholder-links h3 {
-  color: $winter-white;
-  font-size: 16px;
+    color: $winter-white;
+    font-size: 16px;
 }
 
 .footer {
-  align-items: center;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-top: 15px;
-  margin-bottom: 30px;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .footer ul {
-  align-items: center;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
+    align-items: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
 }
 
 .footer li {
-  color: $winter-white;
+    color: $winter-white;
 }
 
 .footer li a {
-  color: $winter-white;
-  text-decoration: none;
-  font-size: 13px;
-  margin-right: 10px;
-  margin-left: 10px;
+    color: $winter-white;
+    text-decoration: none;
+    font-size: 13px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .footer li a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .footer-icon {
-  height: 30px;
-  width: auto;
+    height: 30px;
+    width: auto;
 }

@@ -1,20 +1,18 @@
-//core utils
+//utils
 import React from 'react';
+import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import createStore from './store/store';
+
+//root component
 import Root from './components/root';
-import { logout } from './actions/session_actions';
-import Modal from 'react-modal';
 
 //testing modules
-import { searchProjects } from './actions/search_actions';
-import { fetchProjectSearchResults } from './util/search_util';
+//...
 
 document.addEventListener('DOMContentLoaded', () => {
 
   window.store = createStore();
-  window.searchProjects = searchProjects;
-  window.fetchProjectSearchResults = fetchProjectSearchResults;
 
   let store;
   if (window.currentUser) {
@@ -25,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     store = createStore();
   }
 
-  //execution
+  //render components
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={ store }/>, root);
+  ReactDOM.render(<Root store={store} />, root);
 
 });

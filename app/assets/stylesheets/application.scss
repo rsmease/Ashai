@@ -1,87 +1,84 @@
 //third-parties
-@import url('https://fonts.googleapis.com/css?family=Lato');
-
+@import url("https://fonts.googleapis.com/css?family=Lato");
 //utils
-@import 'colors.scss';
-@import 'reset.scss';
+@import "utils/colors";
+@import "utils/reset";
+@import "utils/flex";
 
 //components
-@import 'placeholder.scss';
-@import 'session_form.scss';
-@import 'logos.scss';
-@import 'footer.scss';
-@import 'task_header.scss';
-@import 'task_list.scss';
-@import 'sidebar.scss';
-@import 'teams.scss';
-@import 'modals.scss';
-@import 'searches.scss';
-@import 'projects.scss';
+@import "placeholder.scss";
+@import "session_form.scss";
+@import "logos.scss";
+@import "footer.scss";
+@import "task_header.scss";
+@import "task_list.scss";
+@import "sidebar.scss";
+@import "teams.scss";
+@import "modals.scss";
+@import "searches.scss";
+@import "projects.scss";
 
-html, body {
-  height: 100%;
-  font-family: 'Lato', sans-serif;
-  overflow: scroll;
-
-  background: $lannister-gold;
-  background: -webkit-linear-gradient($login-gradient);
-  background: -o-linear-gradient($login-gradient);
-  background: -moz-linear-gradient($login-gradient);
-  background: linear-gradient($login-gradient);
+html,
+body {
+    height: 100%;
+    font-family: "Lato", sans-serif;
+    overflow: scroll;
+    @include background-gradient($lannister-gold, $login-gradient);
 }
 
 main {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
 }
 
 a {
-  text-decoration: none;
-  cursor: pointer;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .disabled-a {
-  pointer-events: none;
-  cursor: none;
+    pointer-events: none;
+    cursor: none;
 }
 
-
 .root-container {
-  width: 100%;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  overflow: scroll;
-  padding-bottom: 50px;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: scroll;
+    padding-bottom: 50px;
 }
 
 .flex-container {
-  width: 100%;
+    width: 100%;
 }
 
-button:active, button:focus, input:active, input:focus {
-  outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+button:active,
+button:focus,
+input:active,
+input:focus {
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .app-container {
-  width: 100%;
-  min-height: 1000px;
-  background-color: $winter-white;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
+    width: 100%;
+    min-height: 1000px;
+    background-color: $winter-white;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
 }

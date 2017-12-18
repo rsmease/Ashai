@@ -1,12 +1,35 @@
+.splash-div {
+    @include space-around-flex(column);
+    height: 50vh;
+}
+
+.splash-div img {
+    height: 20vh;
+    width: auto;
+}
+
+.splash-div h1 {
+    font-size: 4.8rem;
+    color: $winter-white;
+}
+
+.splash-links {
+    width: 30rem;
+    flex-wrap: wrap;
+
+    @include center-flex(row)
+}
+
+.splash-links p {
+    font-size: 1.6rem;
+    color: $winter-white;
+}
+
 .session-form-container {
-    align-items: center;
-    align-content: center;
+    @include center-flex(column);
     border-radius: 4px;
     background: $winter-white;
-    display: flex;
-    flex-direction: column;
     width: 585px;
-    overflow: auto;
 }
 
 .session-form-header {
@@ -164,4 +187,22 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 10px;
+}
+
+.session-link {
+    margin: 10px;
+    border: 1px solid $winter-white;
+    border-radius: 3px;
+    color: $winter-white;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
+}
+
+.session-link:hover {
+    background: $winter-white;
+    color: $targ-silver-dark;
 }

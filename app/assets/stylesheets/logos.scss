@@ -2,14 +2,7 @@
     width: 585px;
     height: 75px;
 
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+    @include center-flex(row);
     margin-bottom: 15px;
 }
 

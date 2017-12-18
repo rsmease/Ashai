@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import PlaceholderComponent from '../placeholder';
 
 //session form components
-import LoginContainer from '../session/login_container';
+import SessionFormContainer from '../session/session_form_container';
 import SignupContainer from '../session/signup_container';
 import DemoContainer from '../session/demo_container';
 import SidebarContainer from '../sidebar/sidebar_container';
@@ -26,29 +26,18 @@ import {
 
 
 export default () => (
-  <main>
-    <Switch>
+  <Switch>
 
-      <AuthRoute exact path="/" component={PlaceholderComponent}/>
-      <AuthRoute path="/login" component={LoginContainer}/>
-      <AuthRoute path="/signup" component={SignupContainer}/>
-      <AuthRoute path="/demo" component={DemoContainer}/>
+    <AuthRoute exact path="/" component={PlaceholderComponent} />
+    <AuthRoute path="/login" component={SessionFormContainer} />
+    <AuthRoute path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/demo" component={SessionFormContainer} />
 
-      <ProtectedRoute path="/app" component={MainAppViewCurrentUser}/>
-      <ProtectedRoute path="/teams/:teamId" component={MainAppViewTeam}/>
-      <ProtectedRoute path="/users/:userId" component={MainAppViewUser}/>
-      <ProtectedRoute path="/projects/:projectId"
-        component={MainAppViewProject}/>
+    <ProtectedRoute path="/app" component={MainAppViewCurrentUser} />
+    <ProtectedRoute path="/teams/:teamId" component={MainAppViewTeam} />
+    <ProtectedRoute path="/users/:userId" component={MainAppViewUser} />
+    <ProtectedRoute path="/projects/:projectId"
+      component={MainAppViewProject} />
 
-      <ProtectedRoute path="/viewmodal"
-          component={NewProjectModalContainer}/>
-
-
-      <AuthRoute component={LoginContainer}/>
-      <ProtectedRoute component={MainAppViewCurrentUser}/>
-
-    </Switch>
-
-
-  </main>
+  </Switch>
 );

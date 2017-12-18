@@ -18,20 +18,34 @@
 @import "searches.scss";
 @import "projects.scss";
 
+//containers
 html,
 body {
     height: 100%;
     font-family: "Lato", sans-serif;
     overflow: scroll;
-    @include background-gradient($lannister-gold, $login-gradient);
+    font-size: 62.5%;
 }
 
 main {
     width: 100%;
     min-height: 100%;
-    display: flex;
+    @include flex(row);
+    @include background-gradient($lannister-gold, $login-gradient);
 }
 
+.session-container {
+    width: 100%;
+    @include center-flex(column);
+    padding: 30px 0px 30px 0px;
+}
+
+.app-container {
+    @include flex(row);
+    flex: auto;
+}
+
+// links and buttons
 a {
     text-decoration: none;
     cursor: pointer;
@@ -39,29 +53,6 @@ a {
 
 button {
     cursor: pointer;
-}
-
-.disabled-a {
-    pointer-events: none;
-    cursor: none;
-}
-
-.root-container {
-    width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: scroll;
-    padding-bottom: 50px;
-}
-
-.flex-container {
-    width: 100%;
 }
 
 button:active,
@@ -73,12 +64,8 @@ input:focus {
     box-shadow: none;
 }
 
-.app-container {
-    width: 100%;
-    min-height: 1000px;
-    background-color: $winter-white;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+// submit buttons on forms without valid input
+.disabled-a {
+    pointer-events: none;
+    cursor: none;
 }

@@ -1,55 +1,32 @@
-.placeholder-div {
-    width: 500px;
-    height: auto;
-
-    display: flex;
-    align-items: center;
-    align-content: space-around;
-    flex-direction: column;
+.splash-div {
+    @include space-around-flex(column);
+    height: 50%;
 }
 
-.placeholder-img {
+.splash-div img {
     width: 200px;
     height: auto;
 }
 
-.placeholder-div h1 {
-    font-size: 48px;
+.splash-div h1 {
+    font-size: 4.8rem;
     color: $winter-white;
 }
 
-.placeholder-title {
+.splash-links {
+    width: 300px;
+    flex-wrap: wrap;
+
+    @include center-flex(row)
+}
+
+.splash-links p {
+    font-size: 1.6rem;
     color: $winter-white;
-}
-
-.placeholder-links-upper {
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    align-content: space-around;
-}
-
-.placeholder-links-lower {
-    margin-top: 5px;
-    display: flex;
-    align-items: center;
-    align-content: space-around;
-}
-
-.placeholder-links-upper h3,
-.placeholder-links-lower h3 {
-    color: $winter-white;
-}
-
-.login-link {
-    margin: 10px;
-}
-
-.signup-link {
-    margin: 10px;
 }
 
 .session-link {
+    margin: 10px;
     border: 1px solid $winter-white;
     border-radius: 3px;
     color: $winter-white;

@@ -26,16 +26,16 @@ class TeamIndex extends React.Component {
     if (this.props.team) {
       return (<div className="team-index-container">
         {
-          this.props.team.members.map(function(member) {
-              return <TeamIndexItem
-                key={Math.random()}
-                member={member}
-                />;
+          this.props.team.members.map(function (member) {
+            return <TeamIndexItem
+              key={Math.random()}
+              member={member}
+            />;
           })
         }
       </div>);
     } else {
-      return(
+      return (
         <div>
         </div>
       );
@@ -44,7 +44,7 @@ class TeamIndex extends React.Component {
 
   render() {
     return (
-      <div className="flex-container">
+      <div>
         {this.renderTeamCards()}
       </div>
     );

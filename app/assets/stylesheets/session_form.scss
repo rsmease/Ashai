@@ -1,169 +1,167 @@
 .session-form-container {
-  align-items: center;
-  align-content: center;
-  border-radius: 4px;
-  background: $winter-white;
-  display: flex;
-  flex-direction: column;
-  width: 585px;
-  overflow: auto;
+    align-items: center;
+    align-content: center;
+    border-radius: 4px;
+    background: $winter-white;
+    display: flex;
+    flex-direction: column;
+    width: 585px;
+    overflow: auto;
 }
 
 .session-form-header {
-  margin-bottom: 30px;
-  margin-top: 60px;
-  font-size: 48px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    font-size: 48px;
 }
 
 .session-form {
-  margin: 0 auto;
-  width: 100%;
-  margin-bottom: 30px;
-  margin-top: 30px;
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .session-form input {
-  border: 1px $targ-silver-light solid;
-  border-radius: 3px;
-  font-size: 14px;
-  height: 40px;
-  margin-bottom: 5px;
-  margin-left: 12%;
-  margin-top: 5px;
-  padding-left: 10px;
-  width: 75%;
+    border: 1px $targ-silver-light solid;
+    border-radius: 3px;
+    font-size: 14px;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-left: 12%;
+    margin-top: 5px;
+    padding-left: 10px;
+    width: 75%;
 }
 
 .session-form input:focus, .session-form input:active {
-  border: 1px $targ-silver-dark solid;
-  background-image: none;
-  outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+    border: 1px $targ-silver-dark solid;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
 }
 
 .session-form label {
-  color: $targ-silver-dark;
-  font-size: 11px;
-  margin-bottom: 5px;
-  margin-left: 12%;
-  width: 100%;
+    color: $targ-silver-dark;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: 12%;
+    width: 100%;
 }
 
 .session-form-submit {
-  border: 1px solid $winter-white;
-  border-radius: 3px;
-  color: $winter-white;
-  background-color: $targ-silver-light;
-  font-size: 13px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  text-align: center;
-  text-decoration: none;
-  width: 80px;
-  margin-right: 15%;
+    border: 1px solid $winter-white;
+    border-radius: 3px;
+    color: $winter-white;
+    background-color: $targ-silver-light;
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    width: 80px;
 }
 
 .session-form-submit-valid {
-  background-color: $night-king-blue;
+    background-color: $night-king-blue;
 }
 
 .session-demo {
-  background-color: $night-king-blue;
-  color: $winter-white;
-  border: none;
-  width: 120px;
-  margin-right: 15px;
+    background-color: $night-king-blue;
+    color: $winter-white;
+    border: none;
+    width: 120px;
 }
 
 .session-demo a {
-  color: $winter-white;
+    color: $winter-white;
 }
 
 .submit-options {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .submit-options-centered {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .session-demo:hover {
-  background-color: $night-king-blue-hover;
+    background-color: $night-king-blue-hover;
 }
 
 .demo-active {
-  background-color: $cersei-green;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-right: 0;
+    background-color: $cersei-green;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 0;
 }
 
 .demo-active:hover {
-  background-color: $cersei-green;
+    background-color: $cersei-green;
 }
 
 .session-errors-list {
-  background-color: rgba(255, 133, 133, .3);
+    background-color: rgba(255, 133, 133, .3);
 
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-  border-radius: 2px;
-  padding: 10px 20px 10px 20px;
+    border-radius: 2px;
+    padding: 10px 20px 10px 20px;
 }
 
 .session-error {
-  color: $melisandre-red;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin: 5px;
+    color: $melisandre-red;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 5px;
 }
 
 .errors-fixed-container-signup {
-  width: 75%;
-  height: 20px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+    width: 75%;
+    height: 20px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .errors-fixed-container-login {
-  width: 75%;
-  height: 15px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+    width: 75%;
+    height: 15px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }

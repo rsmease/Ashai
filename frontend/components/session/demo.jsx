@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
 import HorizontalLogoNamed from '../headers/horizontal_logo_named';
-import { LoginFooter } from '../footers/footer';
+import SessionFooter from './session_footer';
 
 class Demo extends React.Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class Demo extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     document.title = "Ashai - Demo";
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.demoLogin();
   }
 
@@ -27,7 +27,7 @@ class Demo extends React.Component {
     let typedText = "";
     const _type = () => {
       typedText = demoName.substring(0, typedText.length + 1);
-      this.setState({[field]:typedText});
+      this.setState({ [field]: typedText });
       if (typedText === demoName) {
         setTimeout(() => cb(), this.loginSpeed);
       } else {
@@ -66,7 +66,7 @@ class Demo extends React.Component {
 
   render() {
     return (
-      <div className="root-container">
+      <div className="session-container">
         <HorizontalLogoNamed />
         <div className="session-form-container">
           <h2 className="session-form-header">Demo</h2>
@@ -86,7 +86,7 @@ class Demo extends React.Component {
               type="text"
               value={this.state.email}
               onChange={this.handleInput('email')}
-              />
+            />
             <br></br>
 
             <label>PASSWORD</label>
@@ -96,16 +96,16 @@ class Demo extends React.Component {
               type="password"
               value={this.state.password}
               onChange={this.handleInput('password')}
-              />
+            />
             <br></br>
             <div className="submit-options">
               <button className={
-                  this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
+                this.validLogin === true ? "session-form-submit disable-a session-form-submit-valid disabled-a" :
                   "session-form-submit"}>Log In</button>
             </div>
-            </form>
-          </div>
-          <LoginFooter />
+          </form>
+        </div>
+        <SessionFooter />
       </div>
     );
   }

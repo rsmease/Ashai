@@ -16,49 +16,49 @@ import ProjectHeaderContainer from '../headers/project_header_container';
 import TeamIndexContainer from '../teams/team_index_container';
 import TaskIndexContainer from '../tasks/task_index_container';
 import ProjectTaskIndexContainer from
- '../projects/project_task_index_container';
+  '../projects/project_task_index_container';
 
 
 export const MainAppViewCurrentUser = () => (
-  <main className="app-container">
-    <SidebarContainer/>
+  <div className="app-container">
+    <SidebarContainer />
     <div className="task-with-header">
-      <NavigationHeaderContainer/>
-      <HomeHeaderContainer/>
-      <TaskIndexContainer/>
+      <NavigationHeaderContainer />
+      <HomeHeaderContainer />
+      <TaskIndexContainer />
     </div>
-  </main>
+  </div>
 );
 
 export const MainAppViewTeam = () => (
-  <main className="app-container">
-    <SidebarContainer/>
+  <div className="app-container">
+    <SidebarContainer />
     <div className="task-with-header">
-      <NavigationHeaderContainer/>
-      <TeamHeaderContainer/>
-      <TeamIndexContainer/>
+      <NavigationHeaderContainer />
+      <TeamHeaderContainer />
+      <TeamIndexContainer />
     </div>
-  </main>
+  </div>
 );
 
 export const MainAppViewUser = () => (
-  <main className="app-container">
-    <SidebarContainer/>
+  <div className="app-container">
+    <SidebarContainer />
     <div className="task-with-header">
-      <NavigationHeaderContainer/>
-      <UserHeaderContainer/>
+      <NavigationHeaderContainer />
+      <UserHeaderContainer />
       <TaskIndexContainer />
     </div>
-  </main>
+  </div>
 );
 
 export const MainAppViewProject = () => (
-  <main className="app-container">
-    <SidebarContainer/>
+  <div className="app-container">
+    <SidebarContainer />
     <div className="task-with-header">
-      <NavigationHeaderContainer/>
-      <ProjectHeaderContainer/>
+      <NavigationHeaderContainer />
+      <ProjectHeaderContainer />
       <ProjectTaskIndexContainer />
     </div>
-  </main>
+  </div>
 );

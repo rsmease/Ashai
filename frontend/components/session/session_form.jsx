@@ -151,7 +151,6 @@ class SessionForm extends React.Component {
       <div className="session-container">
         <SessionLogo />
         <div className="session-form-container">
-
           <h2 className="session-form-header">{this.getTitle().slice(3)}</h2>
 
           <div className="errors-fixed-container-login">

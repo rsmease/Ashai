@@ -1,24 +1,3 @@
-.horizontal-logo-div {
-    width: 585px;
-    height: 75px;
-
-    @include center-flex(row);
-    margin-bottom: 15px;
-}
-
-.horizontal-logo-div h1 {
-    color: $winter-white;
-    font-size: 40px;
-}
-
-.horizontal-logo {
-    height: 50px;
-    width: auto;
-    margin-right: 25px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
 .mini-horizontal-logo-div {
     width: 100%;
     height: 50px;

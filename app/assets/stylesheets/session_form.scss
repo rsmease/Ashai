@@ -1,46 +1,65 @@
+//splash page
 .splash-div {
     @include space-around-flex(column);
-    height: 50vh;
+    height: 60%;
 }
 
 .splash-div img {
-    height: 20vh;
+    height: 200px;
     width: auto;
 }
 
 .splash-div h1 {
-    font-size: 4.8rem;
+    font-size: $header;
     color: $winter-white;
 }
 
 .splash-links {
-    width: 30rem;
+    width: 300px;
     flex-wrap: wrap;
-
     @include center-flex(row)
 }
 
 .splash-links p {
-    font-size: 1.6rem;
+    font-size: 16px;
     color: $winter-white;
 }
 
+//session form logo
+.horizontal-logo-div {
+    width: 200px;
+    height: 75px;
+    @include space-around-flex(row);
+    margin: 0 0 15px 0;
+}
+
+.horizontal-logo-div h1 {
+    color: $winter-white;
+    font-size: $header;
+}
+
+.horizontal-logo {
+    height: 50px;
+    width: auto;
+}
+
+
 .session-form-container {
-    @include center-flex(column);
+    @include space-around-flex(column);
+    padding: 30px 60px;
     border-radius: 4px;
     background: $winter-white;
-    width: 585px;
+    height: 500px;
+    width: 560px;
 }
 
 .session-form-header {
-    margin-bottom: 30px;
-    margin-top: 60px;
-    font-size: 48px;
+    margin: 30px 0 30px 0;
+    font-size: $header;
 }
 
 .session-form {
-    margin: 0 auto;
-    width: 100%;
+    width: 600px;
     margin-bottom: 30px;
     margin-top: 30px;
 }

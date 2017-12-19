@@ -1,9 +1,10 @@
 //third-parties
-@import url("https://fonts.googleapis.com/css?family=Lato");
+// @import url("https://fonts.googleapis.com/css?family=Lato");
 //utils
 @import "utils/colors";
 @import "utils/reset";
 @import "utils/flex";
+@import "utils/fonts";
 
 //components
 @import "placeholder.scss";
@@ -22,9 +23,8 @@
 html,
 body {
     height: 100%;
-    font-family: "Lato", sans-serif;
+    font-family: $lato;
     overflow: scroll;
-    font-size: 62.5%;
 }
 
 main {

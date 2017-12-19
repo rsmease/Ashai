@@ -36,7 +36,7 @@ main {
 
 .session-container {
     width: 100%;
-    @include center-flex(column);
+    @include flex-center(column);
     padding: 30px 0px 30px 0px;
 }
 
@@ -55,6 +55,7 @@ button {
     cursor: pointer;
 }
 
+//remove ugly browser defaults
 button:active,
 button:focus,
 input:active,
@@ -62,6 +63,7 @@ input:focus {
     outline: 0;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-image: none;
 }
 
 // submit buttons on forms without valid input

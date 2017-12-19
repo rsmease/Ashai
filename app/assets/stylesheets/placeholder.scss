@@ -1,5 +1,5 @@
 .splash-div {
-    @include space-around-flex(column);
+    @include flex-space-around(column);
     height: 50%;
 }
 
@@ -17,7 +17,7 @@
     width: 300px;
     flex-wrap: wrap;
 
-    @include center-flex(row)
+    @include flex-center(row)
 }
 
 .splash-links p {

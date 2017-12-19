@@ -1,6 +1,6 @@
 //splash page
 .splash-div {
-    @include space-around-flex(column);
+    @include flex-space-around(column);
     height: 60%;
 }
 
@@ -17,7 +17,7 @@
 .splash-links {
     width: 300px;
     flex-wrap: wrap;
-    @include center-flex(row)
+    @include flex-center(row)
 }
 
 .splash-links p {
@@ -29,7 +29,7 @@
 .horizontal-logo-div {
     width: 200px;
     height: 75px;
-    @include space-around-flex(row);
+    @include flex-space-around(row);
     margin: 0 0 15px 0;
 }
 
@@ -45,134 +45,93 @@
 
 
 .session-form-container {
-    @include space-around-flex(column);
-    padding: 30px 60px;
+    @include flex-space-between(column);
+    padding: 60px 30px;
     border-radius: 4px;
     background: $winter-white;
-    height: 500px;
-    width: 560px;
+    height: 440px;
+    width: 540px;
 }
 
 .session-form-header {
-    margin: 30px 0 30px 0;
     font-size: $header;
 }
 
 .session-form {
-    width: 600px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    @include flex-space-between(column);
+    width: 500px;
+}
+
+.session-form label {
+    //occupy entire line and align left
+    display: block;
+    width: 75%;
+
+    color: $targ-silver-dark;
+    font-size: $detail;
+    margin-bottom: 10px;
 }
 
 .session-form input {
     border: 1px $targ-silver-light solid;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: $text;
     height: 40px;
-    margin-bottom: 5px;
-    margin-left: 12%;
-    margin-top: 5px;
-    padding-left: 10px;
+    text-indent: 10px;
+    margin-bottom: 10px;
     width: 75%;
 }
 
 .session-form input:focus, .session-form input:active {
     border: 1px $targ-silver-dark solid;
-    background-image: none;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.session-form label {
-    color: $targ-silver-dark;
-    font-size: 11px;
-    margin-bottom: 5px;
-    margin-left: 12%;
-    width: 100%;
-}
-
-.session-form-submit {
-    border: 1px solid $winter-white;
-    border-radius: 3px;
-    color: $winter-white;
-    background-color: $targ-silver-light;
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    width: 80px;
-}
-
-.session-form-submit-valid {
-    background-color: $night-king-blue;
-}
-
-.session-demo {
-    background-color: $night-king-blue;
-    color: $winter-white;
-    border: none;
-    width: 120px;
-}
-
-.session-demo a {
-    color: $winter-white;
 }
 
 .submit-options {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    @include flex(row);
+    width: 500px;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 60px 0 0 0;
 }
 
-.submit-options-centered {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
+.session-form-submit {
+    border: none;
+    border-radius: 3px;
+    color: $winter-white;
+    background-color: $targ-silver-light;
+    margin: 0 15px 0 0;
+    font-size: $text;
+    height: 40px;
+    width: 80px;
+    text-align: center;
 }
 
-.session-demo:hover {
+.session-form-submit-valid {
+    @extend .session-form-submit;
+    background-color: $night-king-blue;
+}
+
+.session-form-link {
+    @extend .session-form-submit;
+    line-height: 40px;
+    width: 120px;
+    background-color: $night-king-blue;
+}
+
+.session-form-submit-valid:hover, .session-form-link:hover {
     background-color: $night-king-blue-hover;
 }
 
-.demo-active {
+.demo-loading {
+    @extend .session-form-link;
     background-color: $cersei-green;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-right: 0;
-}
-
-.demo-active:hover {
-    background-color: $cersei-green;
+    margin: 0 0 0 0;
 }
 
 .session-errors-list {
     background-color: rgba(255, 133, 133, .3);
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
+    @include flex-center(column);
     border-radius: 2px;
-    padding: 10px 20px 10px 20px;
 }
 
 .session-error {

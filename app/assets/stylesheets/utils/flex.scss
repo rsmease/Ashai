@@ -1,4 +1,4 @@
-@mixin center-flex($direction) {
+@mixin flex-center($direction) {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -9,7 +9,7 @@
     flex-direction: $direction
 }
 
-@mixin space-around-flex($direction) {
+@mixin flex-space-around($direction) {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -19,6 +19,18 @@
     justify-content: space-around;
     flex-direction: $direction
 }
+
+@mixin flex-space-between($direction) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: $direction
+}
+
 
 @mixin flex($direction) {
     display: -webkit-box;

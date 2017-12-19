@@ -16,7 +16,7 @@ class TransferOwnershipModal extends React.Component {
     this.handleClickOff = this.handleClickOff.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     document.title = "Ashai - Transfer Ownership";
   }
 
@@ -26,7 +26,7 @@ class TransferOwnershipModal extends React.Component {
 
   handleClickOff(e) {
     if (e.target.className === "root-modal-container" ||
-        e.target.className === "modal-cancel") {
+      e.target.className === "modal-cancel") {
       e.preventDefault();
       this.props.closeTransferOwnershipModal();
     }
@@ -48,9 +48,9 @@ class TransferOwnershipModal extends React.Component {
             requestUpdateToTeam={this.props.requestUpdateToTeam}
             requestUpdateToProject={this.props.requestUpdateToProject}
             closeTransferOwnershipModal=
-            {this.props.closeTransferOwnershipModal}/>
+            {this.props.closeTransferOwnershipModal} />
           <form className="modal-form">
-            <div className="submit-options-centered">
+            <div className="submit-options">
               <button className="modal-cancel-centered"
                 onClick={this.handleClickOff}>
                 Cancel</button>

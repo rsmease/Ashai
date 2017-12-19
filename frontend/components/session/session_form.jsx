@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
   toggleDemoButton() {
     if (this.props.match.path !== "/demo") {
       return <Link
-        className="session-form-submit session-demo"
+        className="session-form-link"
         to="/demo">View Demo</Link>;
     }
   }
@@ -57,14 +57,14 @@ class SessionForm extends React.Component {
   //show name input only on signup page
   toggleNameInput() {
     if (this.props.match.path === "/signup") {
-      return <label>NAME
-            <input
+      return <div>
+        <label>NAME</label>
+        <input
           onKeyUp={(e) => this.handleKeyUp(e)}
           type="text"
           value={this.state.name}
           onChange={this.handleInput('name')}
-        />
-      </label>;
+        /></div >;
     }
   }
 
@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
   toggleDemoLoad() {
     if (this.props.match.path === "/demo") {
       return <Link
-        className="session-form-submit session-demo demo-active disabled-a"
+        className="demo-loading disabled-a"
         to="/demo">Loading Demo</Link>;
     }
   }
@@ -153,13 +153,24 @@ class SessionForm extends React.Component {
         <div className="session-form-container">
           <h2 className="session-form-header">{this.getTitle().slice(3)}</h2>
 
-          <div className="errors-fixed-container-login">
-            {this.showErrors()}
-            {this.toggleDemoLoad()}
-          </div>
+          {this.showErrors()}
+          {this.toggleDemoLoad()}
 
           <form className="session-form">
-            {this.toggleNameInput()}
+            {
+              this.props.match.path === "/signup" ?
+                <label>NAME</label> : undefined
+            }
+            {
+              this.props.match.path === "/signup" ?
+                <input
+                  onKeyUp={(e) => this.handleKeyUp(e)}
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleInput('name')}
+                /> : undefined
+            }
+
             <label>EMAIL ADDRESS</label>
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
@@ -177,7 +188,7 @@ class SessionForm extends React.Component {
             <div className="submit-options">
               {this.toggleDemoButton()}
               <button className={
-                this.validLogin === true ? "session-form-submit session-form-submit-valid" :
+                this.validLogin === true ? "session-form-submit-valid" :
                   "session-form-submit"}
                 onClick={this.handleSubmit}>Log In</button>
             </div>

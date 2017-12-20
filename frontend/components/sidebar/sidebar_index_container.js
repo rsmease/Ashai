@@ -17,11 +17,13 @@ import SidebarIndex from './sidebar_index';
 const mapStateToProps = (state, ownProps) => {
     if (ownProps.group === "team") {
         return {
+            group: ownProps.group,
             currentUser: state.session.currentUser,
             teams: state.entities.teams
         };
     } else {
         return {
+            group: ownProps.group,
             currentUser: state.session.currentUser,
             projects: state.entities.projects
         };

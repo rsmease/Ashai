@@ -1,4 +1,10 @@
 //splash page
+.splash-container {
+    width: 100%;
+    @include flex-center(column);
+    padding: 60px 0;
+}
+
 .splash-div {
     @include flex-space-around(column);
     height: 60%;
@@ -25,6 +31,17 @@
     color: $winter-white;
 }
 
+.demo-form-link-splash {
+    @extend .demo-form-link;
+    margin: 0 0 0 0;
+}
+
+//session pages
+.session-container {
+    @extend .splash-container;
+    padding: 0;
+}
+
 //session form logo
 .horizontal-logo-div {
     width: 200px;
@@ -43,7 +60,7 @@
     width: auto;
 }
 
-
+//session form
 .session-form-container {
     @include flex-space-between(column);
     padding: 60px 30px;
@@ -91,7 +108,7 @@
     width: 500px;
     align-items: flex-end;
     justify-content: flex-end;
-    margin: 60px 0 0 0;
+    margin: 30px 0 0 0;
 }
 
 .session-form-submit {
@@ -111,6 +128,7 @@
     background-color: $night-king-blue;
 }
 
+//modified to make affordance more attractive than other link options
 .demo-form-link {
     @extend .session-form-submit;
     line-height: 40px;
@@ -118,26 +136,18 @@
     background-color: $night-king-blue;
 }
 
-.demo-form-link-placeholder {
-    @extend .demo-form-link;
-    margin: 0 0 0 0;
-}
-
 .session-form-submit-valid:hover, .demo-form-link:hover {
     background-color: $night-king-blue-hover;
 }
 
+//loading message during autoLogin() runtime
 .demo-loading {
     @extend .demo-form-link;
     background-color: $cersei-green;
     margin: 0 0 0 0;
 }
 
-.session-errors-list {
-    margin: 10px;
-    @include flex-center(column);
-}
-
+//session errors appearing above form inputs
 .session-error {
     color: $melisandre-red;
     font-size: $detail;
@@ -148,14 +158,16 @@
     width: 75%;
 }
 
+//session errors appearing above form
 .session-error-header {
     @extend .session-error;
     width: 100%;
     text-align: center;
     font-size: $text;
-    margin: 0 0 0 0;
+    margin: 0 0 30px 0;
 }
 
+//links to other session pages (login, demo, signup)
 .session-link {
     @extend .demo-form-link;
     margin: 10px;

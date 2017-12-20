@@ -34,12 +34,6 @@ main {
     @include background-gradient($lannister-gold, $login-gradient);
 }
 
-.session-container {
-    width: 100%;
-    @include flex-center(column);
-    padding: 30px 0px 30px 0px;
-}
-
 .app-container {
     @include flex(row);
     flex: auto;

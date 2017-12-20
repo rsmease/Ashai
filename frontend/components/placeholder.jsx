@@ -13,7 +13,7 @@ class PlaceHolder extends React.Component {
 
   render() {
     return (
-      <div className="session-container">
+      <div className="splash-container">
         <div className="splash-div">
           <img src={"https://i.imgur.com/WcrVoLW.png"} />
           <h1>Ashai</h1>
@@ -21,7 +21,7 @@ class PlaceHolder extends React.Component {
             <Link to="/login" className="login-link session-link">Log In</Link>
             <Link to="/signup"
               className="signup-link session-link">Sign Up</Link>
-            <Link className="demo-form-link-placeholder"
+            <Link className="demo-form-link-splash"
               to="/demo">Demo Login</Link>
           </div>
         </div>

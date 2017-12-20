@@ -17,12 +17,12 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
     this.demoStart = false;
     this.removeAllErrors = this.props.removeAllErrors.bind(this);
-    this.historyLength = 0;
+    this.currentPath = undefined;
   }
 
   componentWillMount() {
     document.title = `Ashai${this.getTitle()}`;
-    this.historyLength = this.props.history.length;
+    this.currentPath = this.props.history.location.pathname;
   }
 
   //autostart demo login after router change
@@ -30,8 +30,8 @@ class SessionForm extends React.Component {
     //track changes in history and remove errors
     //required to remove errors unique to each version of the session form
     //activated when a user switches between session forms
-    if (this.props.history.length != this.historyLength) {
-      this.historyLength = this.props.history.length;
+    if (this.props.history.location.pathname !== this.currentPath) {
+      this.currentPath = this.props.history.location.pathname;
       document.title = `Ashai${this.getTitle()}`;
       this.removeAllErrors();
     }
@@ -79,7 +79,7 @@ class SessionForm extends React.Component {
   }
 
   //show loading message to user
-  toggleDemoLoad() {
+  showDemoLoad() {
     if (this.props.match.path === "/demo") {
       return <Link
         className="demo-loading disabled-a"
@@ -114,19 +114,21 @@ class SessionForm extends React.Component {
     _type();
   }
 
-
   //render session errors to user
-  showErrors() {
+
+
+  filteredErrors(labelName) {
+    return this.props.errors.session.filter((error) => (
+      error.toLowerCase().includes(labelName)
+    ));
+  }
+
+  showErrors(labelName, displayClass) {
     if (this.props.errors.session.length > 0) {
       return (
-        <ul className="session-errors-list">
-          {this.props.errors.session.map((error, i) => (
-            <li className="session-error"
-              key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
+        this.filteredErrors(labelName).map((error, i) => (
+          <span key={i} className={displayClass}>{error}</span>
+        ))
       );
     }
   }
@@ -165,13 +167,17 @@ class SessionForm extends React.Component {
         <div className="session-form-container">
           <h2 className="session-form-header">{this.getTitle().slice(3)}</h2>
 
-          {this.showErrors()}
-          {this.toggleDemoLoad()}
+          {this.showErrors("invalid", "session-error-header")}
+          {this.showDemoLoad()}
 
           <form className="session-form">
             {
               this.props.match.path === "/signup" ?
-                <label>NAME</label> : undefined
+                <label>NAME </label> : undefined
+            }
+            {
+              this.props.match.path === "/signup" ?
+                this.showErrors("name can't", "session-error") : undefined
             }
             {
               this.props.match.path === "/signup" ?
@@ -184,6 +190,7 @@ class SessionForm extends React.Component {
             }
 
             <label>EMAIL ADDRESS</label>
+            {this.showErrors("email can't", "session-error")}
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
               type="email"
@@ -191,6 +198,7 @@ class SessionForm extends React.Component {
               onChange={this.handleInput('email')}
             />
             <label>PASSWORD</label>
+            {this.showErrors("password is", "session-error")}
             <input
               onKeyUp={(e) => this.handleKeyUp(e)}
               type="password"
@@ -202,7 +210,7 @@ class SessionForm extends React.Component {
               <button className={
                 this.validLogin === true ? "session-form-submit-valid" :
                   "session-form-submit"}
-                onClick={this.handleSubmit}>Log In</button>
+                onClick={this.handleSubmit}>{this.getTitle().slice(3)}</button>
             </div>
           </form>
         </div>

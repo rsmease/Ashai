@@ -4,7 +4,7 @@ import { Link, Router, withRouter } from 'react-router-dom';
 
 class SessionFooter extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   getAlternateOption() {
@@ -12,14 +12,16 @@ class SessionFooter extends React.Component {
       return (
         <div className="splash-links">
           <p>New User?</p>
-          <Link to="/signup" className="session-link">Sign Up</Link>
+          <Link to="/signup"
+            className="session-link">Sign Up</Link>
         </div >
       );
     } else if (this.props.match.path === "/signup") {
       return (
         <div className="splash-links">
           <p>Already Have an Account?</p>
-          <Link to="/login" className="session-link">Log In</Link>
+          <Link to="/login"
+            className="session-link">Log In</Link>
         </div >
       );
     }

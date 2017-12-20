@@ -16,15 +16,25 @@ class SessionForm extends React.Component {
     this.loginSpeed = 100;
     this.demoLogin = this.demoLogin.bind(this);
     this.demoStart = false;
+    this.removeAllErrors = this.props.removeAllErrors.bind(this);
+    this.historyLength = 0;
   }
 
   componentWillMount() {
     document.title = `Ashai${this.getTitle()}`;
-    this.props.removeAllErrors();
+    this.historyLength = this.props.history.length;
   }
 
   //autostart demo login after router change
   componentDidUpdate() {
+    //track changes in history and remove errors
+    //required to remove errors unique to each version of the session form
+    //activated when a user switches between session forms
+    if (this.props.history.length != this.historyLength) {
+      this.historyLength = this.props.history.length;
+      document.title = `Ashai${this.getTitle()}`;
+      this.removeAllErrors();
+    }
     if (this.props.match.path === "/demo" && this.demoStart === false) {
       this.demoStart = true;
       this.demoLogin();
@@ -49,7 +59,7 @@ class SessionForm extends React.Component {
   toggleDemoButton() {
     if (this.props.match.path !== "/demo") {
       return <Link
-        className="session-form-link"
+        className="demo-form-link"
         to="/demo">View Demo</Link>;
     }
   }
@@ -130,7 +140,9 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     //pseudo-event (e is undefined) with demo login
-    if (e) { e.preventDefault() };
+    if (e) {
+      e.preventDefault();
+    }
 
     if (this.props.match.path === "/signup") {
       this.props.createNewUser(this.state);

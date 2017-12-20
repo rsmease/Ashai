@@ -111,72 +111,45 @@
     background-color: $night-king-blue;
 }
 
-.session-form-link {
+.demo-form-link {
     @extend .session-form-submit;
     line-height: 40px;
     width: 120px;
     background-color: $night-king-blue;
 }
 
-.session-form-submit-valid:hover, .session-form-link:hover {
+.demo-form-link-placeholder {
+    @extend .demo-form-link;
+    margin: 0 0 0 0;
+}
+
+.session-form-submit-valid:hover, .demo-form-link:hover {
     background-color: $night-king-blue-hover;
 }
 
 .demo-loading {
-    @extend .session-form-link;
+    @extend .demo-form-link;
     background-color: $cersei-green;
     margin: 0 0 0 0;
 }
 
 .session-errors-list {
-    background-color: rgba(255, 133, 133, .3);
+    margin: 10px;
     @include flex-center(column);
-    border-radius: 2px;
 }
 
 .session-error {
     color: $melisandre-red;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: $text;
     margin: 5px;
 }
 
-.errors-fixed-container-signup {
-    width: 75%;
-    height: 20px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.errors-fixed-container-login {
-    width: 75%;
-    height: 15px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
 .session-link {
+    @extend .demo-form-link;
     margin: 10px;
     border: 1px solid $winter-white;
-    border-radius: 3px;
-    color: $winter-white;
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
+    background: none;
     width: 80px;
 }
 

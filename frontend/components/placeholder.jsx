@@ -21,7 +21,7 @@ class PlaceHolder extends React.Component {
             <Link to="/login" className="login-link session-link">Log In</Link>
             <Link to="/signup"
               className="signup-link session-link">Sign Up</Link>
-            <Link className="session-form-submit session-demo"
+            <Link className="demo-form-link-placeholder"
               to="/demo">Demo Login</Link>
           </div>
         </div>

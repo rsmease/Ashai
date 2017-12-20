@@ -33,16 +33,16 @@ class Sidebar extends React.Component {
   }
 
   renderTeams() {
-    return(
+    return (
       <div className="sidebar-list-container">
         {
           this.props.currentUser.teams.map(
             team =>
-            <TeamSidebarIndex
-              key={Math.random()}
-              currentUser={this.props.currentUser}
-              team={team}
-              requestToDeleteTeam={this.props.requestToDeleteTeam} />
+              <TeamSidebarIndex
+                key={Math.random()}
+                currentUser={this.props.currentUser}
+                team={team}
+                requestToDeleteTeam={this.props.requestToDeleteTeam} />
           )
         }
       </div>
@@ -50,16 +50,16 @@ class Sidebar extends React.Component {
   }
 
   renderProjects() {
-    return(
+    return (
       <div className="sidebar-list-container">
         {
           this.props.currentUser.projects.map(
             project =>
-            <ProjectSidebarIndex
-              key={Math.random()}
-              currentUser={this.props.currentUser}
-              project={project}
-              requestToDeleteProject={this.props.requestToDeleteProject} />
+              <ProjectSidebarIndex
+                key={Math.random()}
+                currentUser={this.props.currentUser}
+                project={project}
+                requestToDeleteProject={this.props.requestToDeleteProject} />
           )
         }
       </div>
@@ -83,7 +83,7 @@ class Sidebar extends React.Component {
   }
 
 
-  render () {
+  render() {
     return (
       <div className="sidebar">
         <MiniHorizontalLogoNamed />
@@ -92,51 +92,59 @@ class Sidebar extends React.Component {
           <div className="sidebar-section">
             <div className="header-with-add-button">
               <h3 className="sidebar-header-primary">My Teams</h3>
-                <a className="sidebar-new-project-button"
-                  onClick={this.openNewTeamModal}>+</a>
+              <a className="sidebar-new-project-button"
+                onClick={this.openNewTeamModal}>+</a>
             </div>
             {this.renderTeams()}
             <Modal
               isOpen={this.state.newTeamModalOpen}
               onRequestClose={this.closeNewTeamModal}
               overlayClassName={
-                {base: "root-modal-container",
+                {
+                  base: "root-modal-container",
                   afterOpen: "root-modal-container",
-                  beforeClose: "root-modal-container"}
+                  beforeClose: "root-modal-container"
                 }
+              }
               className={
-                { base: "override-content-default",
+                {
+                  base: "override-content-default",
                   afterOpen: "override-content-default",
-                  beforeClose: "override-content-default"}
-                }>
+                  beforeClose: "override-content-default"
+                }
+              }>
               <NewTeamModalContainer
-                closeNewTeamModal={this.closeNewTeamModal}/>
+                closeNewTeamModal={this.closeNewTeamModal} />
             </Modal>
           </div>
 
           <div className="sidebar-section">
             <div className="header-with-add-button">
               <h3 className="sidebar-header-primary">My Projects</h3>
-                <a className="sidebar-new-project-button"
-                  onClick={this.openNewProjectModal}>+</a>
+              <a className="sidebar-new-project-button"
+                onClick={this.openNewProjectModal}>+</a>
             </div>
             {this.renderProjects()}
             <Modal
               isOpen={this.state.newProjectModalOpen}
               onRequestClose={this.closeNewProjectModal}
               overlayClassName={
-                {base: "root-modal-container",
+                {
+                  base: "root-modal-container",
                   afterOpen: "root-modal-container",
-                  beforeClose: "root-modal-container"}
+                  beforeClose: "root-modal-container"
                 }
+              }
               className={
-                { base: "override-content-default",
+                {
+                  base: "override-content-default",
                   afterOpen: "override-content-default",
-                  beforeClose: "override-content-default"}
-                }>
+                  beforeClose: "override-content-default"
+                }
+              }>
               <NewProjectModalContainer
-                closeNewProjectModal={this.closeNewProjectModal}/>
-          </Modal>
+                closeNewProjectModal={this.closeNewProjectModal} />
+            </Modal>
           </div>
 
         </div>

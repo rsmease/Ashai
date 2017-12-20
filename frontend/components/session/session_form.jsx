@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
-import SessionLogo from '../headers/horizontal_logo_named';
+import SessionLogo from './session_logo';
 import SessionFooter from './session_footer';
 
 class SessionForm extends React.Component {

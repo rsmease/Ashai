@@ -31,11 +31,6 @@
     color: $winter-white;
 }
 
-.demo-form-link-splash {
-    @extend .demo-form-link;
-    margin: 0 0 0 0;
-}
-
 //session pages
 .session-container {
     @extend .splash-container;
@@ -91,6 +86,7 @@
 
 .session-form input {
     border: 1px $targ-silver-light solid;
+    background-color: none;
     border-radius: 3px;
     font-size: $text;
     height: 40px;
@@ -101,6 +97,7 @@
 
 .session-form input:focus, .session-form input:active {
     border: 1px $targ-silver-dark solid;
+    background-color: none;
 }
 
 .submit-options {
@@ -135,6 +132,13 @@
     width: 120px;
     background-color: $night-king-blue;
 }
+
+.demo-form-link-splash {
+    @extend .demo-form-link;
+    margin: 0 0 0 0;
+}
+
+
 
 .session-form-submit-valid:hover, .demo-form-link:hover {
     background-color: $night-king-blue-hover;

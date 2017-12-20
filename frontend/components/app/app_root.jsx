@@ -3,13 +3,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
-//placeholder components
-import PlaceholderComponent from '../placeholder';
-
-//session form components
+//splash and session form components
+import Splash from '../session/splash';
 import SessionFormContainer from '../session/session_form_container';
-import SignupContainer from '../session/signup_container';
-import DemoContainer from '../session/demo_container';
+
+//main app components
 import SidebarContainer from '../sidebar/sidebar_container';
 import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
@@ -28,7 +26,7 @@ import {
 export default () => (
   <Switch>
 
-    <AuthRoute exact path="/" component={PlaceholderComponent} />
+    <AuthRoute exact path="/" component={Splash} />
     <AuthRoute path="/login" component={SessionFormContainer} />
     <AuthRoute path="/signup" component={SessionFormContainer} />
     <AuthRoute path="/demo" component={SessionFormContainer} />

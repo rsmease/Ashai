@@ -7,14 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 import Splash from '../session/splash';
 import SessionFormContainer from '../session/session_form_container';
 
-//main app components
-import SidebarContainer from '../sidebar/sidebar_container';
-import NavigationHeaderContainer from '../headers/navigation_header_container';
-import TaskHeaderContainer from '../headers/task_header_container';
-
-//modals
-import NewProjectModalContainer from '../modals/new_project_modal_container';
-
 import {
   MainAppViewCurrentUser,
   MainAppViewTeam,

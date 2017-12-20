@@ -87,11 +87,11 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <MiniHorizontalLogoNamed />
-        <div className="fixed-sidebar-container">
+        <div className="sidebar-indices-container">
 
           <div className="sidebar-section">
-            <div className="header-with-add-button">
-              <h3 className="sidebar-header-primary">My Teams</h3>
+            <div className="sidebar-index-header">
+              <h3 className="sidebar-title">My Teams</h3>
               <a className="sidebar-new-project-button"
                 onClick={this.openNewTeamModal}>+</a>
             </div>
@@ -119,8 +119,8 @@ class Sidebar extends React.Component {
           </div>
 
           <div className="sidebar-section">
-            <div className="header-with-add-button">
-              <h3 className="sidebar-header-primary">My Projects</h3>
+            <div className="sidebar-index-header">
+              <h3 className="sidebar-title">My Projects</h3>
               <a className="sidebar-new-project-button"
                 onClick={this.openNewProjectModal}>+</a>
             </div>

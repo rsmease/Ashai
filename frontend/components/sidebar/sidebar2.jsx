@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
 import SidebarLogo from './mini_logo';
+import SidebarIndexContainer from './sidebar_index_container';
 import Modal from 'react-modal';
-import NewProjectModalContainer from '../modals/new_project_modal_container';
-import NewTeamModalContainer from '../modals/new_team_modal_container';
 
-class Sidebar extends React.Compoent {
+
+class Sidebar extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -18,7 +18,7 @@ class Sidebar extends React.Compoent {
         return (
             <div className="sidebar">
                 <SidebarLogo />
-                <div className="fixed-sidebar-container">
+                <div className="sidebar-indices-container">
                     <SidebarIndexContainer group="team" />
                     <SidebarIndexContainer group="project" />
                 </div>

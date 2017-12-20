@@ -26,12 +26,15 @@ class SidebarIndex extends React.Component {
     render() {
         return (
             <section className="sidebar-section">
-                <header className="header-with-add-button">
-                    <h3 className="sidebar-header-primary">{`My #{this.props.group}s`}</h3>
+                <header className="sidebar-index-header">
+                    <h3 className="sidebar-title">{`My ${this.props.group}s`}</h3>
                     <a className="sidebar-new-project-button"
-                        onClick={() => console.log("RESPONSIVE BUTTON")}>+</a>
+                        onClick={() => console.log("RESPONSIVE BUTTON")}>
+                        MaterialDesign.MdAddCircleOutline</a>
                 </header>
             </section>
         );
     }
 }
+
+export default withRouter(SidebarIndex);

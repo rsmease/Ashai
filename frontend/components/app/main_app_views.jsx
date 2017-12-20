@@ -3,6 +3,7 @@ import * as SessionActions from '../../actions/session_actions';
 
 //sidebar
 import SidebarContainer from '../sidebar/sidebar_container';
+import Sidebar from '../sidebar/sidebar2';
 
 //headers
 import NavigationHeaderContainer from '../headers/navigation_header_container';
@@ -21,7 +22,7 @@ import ProjectTaskIndexContainer from
 
 export const MainAppViewCurrentUser = () => (
   <div className="app-container">
-    <SidebarContainer />
+    <Sidebar />
     <div className="task-with-header">
       <NavigationHeaderContainer />
       <HomeHeaderContainer />

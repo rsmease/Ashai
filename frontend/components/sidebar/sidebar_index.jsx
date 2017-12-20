@@ -1,6 +1,12 @@
+//utils
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
+
+//modals
+import Modal from 'react-modal';
+import NewTeamModalContainer from '../modals/new_team_modal_container';
+
 
 import SidebarMemberIndex from './sidebar_member_index';
 
@@ -11,6 +17,39 @@ class SidebarIndex extends React.Component {
             modalOpen: false
         };
 
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
+    }
+
+    openModal() {
+        this.setState({ modalOpen: true });
+    }
+
+    closeModal() {
+        this.setState({ modalOpen: false });
+    }
+
+    showModal() {
+        return <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
+            overlayClassName={
+                {
+                    base: "root-modal-container",
+                    afterOpen: "root-modal-container",
+                    beforeClose: "root-modal-container"
+                }
+            }
+            className={
+                {
+                    base: "override-content-default",
+                    afterOpen: "override-content-default",
+                    beforeClose: "override-content-default"
+                }
+            }>
+            <NewTeamModalContainer
+                closeNewTeamModal={this.closeModal} />
+        </Modal>;
     }
 
     // handleDelete(e) {
@@ -28,9 +67,10 @@ class SidebarIndex extends React.Component {
             <section className="sidebar-section">
                 <header className="sidebar-index-header">
                     <h3 className="sidebar-title">{`My ${this.props.group}s`}</h3>
-                    <a className="sidebar-new-project-button"
-                        onClick={() => console.log("RESPONSIVE BUTTON")}>
-                        MaterialDesign.MdAddCircleOutline</a>
+                    <MaterialDesign.MdAddCircleOutline
+                        className="sidebar-new-group-button"
+                        onClick={this.openModal} />
+                    {this.showModal()}
                 </header>
             </section>
         );

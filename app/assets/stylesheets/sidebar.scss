@@ -149,17 +149,20 @@
 }
 
 .sidebar-index-header {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-width: 90%;
+    @include flex-space-between(row);
+    width: 218px;
+    height: 40px;
     border-bottom: 1px solid $targ-silver-dark;
     margin-left: 15px;
-    min-height: 35px;
+}
+
+.sidebar-new-group-button {
+    color: $targ-silver-dark;
+    font-size: $add-button;
+}
+
+.sidebar-new-group-button:hover {
+    color: $winter-white;
 }
 
 .sidebar-new-project-button {

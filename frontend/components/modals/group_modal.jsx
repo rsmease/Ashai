@@ -14,7 +14,7 @@ class GroupModal extends React.Component {
     }
 
     capitalize(string) {
-        return string.split(" ").map(word => word.substring(0, 1).toUpperCase + word.substring(1)).join("");
+        return string.split(" ").map(word => word.substring(0, 1).toUpperCase() + word.substring(1)).join(" ");
     }
 
     getTitle() {
@@ -47,16 +47,21 @@ class GroupModal extends React.Component {
         }
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        this.modalAction();
+    }
+
     modalAction() {
         switch (this.props.modalAction) {
             case "new":
-                this.props.createNewGroup(this.state);
+                this.props.createNewGroup(this.state).then(this.props.closeModal);
                 break;
             case "edit":
-                this.props.requestUpdateToGroup(this.state);
+                this.props.requestUpdateToGroup(this.state).then(this.props.closeModal);
                 break;
             case "delete":
-                this.props.requestToDeleteGroup(this.state.id);
+                this.props.requestToDeleteGroup(this.state.id).then(this.props.closeModal);
                 break;
             default:
                 console.log("Modal Action not set properly");
@@ -70,10 +75,6 @@ class GroupModal extends React.Component {
         };
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        this.modalAction().then(this.props.closeModal);
-    }
 
     handleKeyUp(e) {
         if (this.state.name.length > 0) {
@@ -128,7 +129,7 @@ class GroupModal extends React.Component {
                             <button className={
                                 this.validGroup === true ? "modal-form-submit-valid" :
                                     "modal-form-submit"}
-                                onClick={this.handleSubmit}>{this.getSubmitAction}</button>
+                                onClick={this.handleSubmit}>{this.getSubmitAction()}</button>
                         </div>
                     </form>
                 </div>

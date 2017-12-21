@@ -5,7 +5,7 @@ import * as MaterialDesign from 'react-icons/lib/md';
 
 //modals
 import Modal from 'react-modal';
-import NewTeamModalContainer from '../modals/new_team_modal_container';
+import GroupModalContainer from '../modals/group_modal_container';
 
 
 import SidebarMemberIndex from './sidebar_member_index';
@@ -47,8 +47,11 @@ class SidebarIndex extends React.Component {
                     beforeClose: "override-content-default"
                 }
             }>
-            <NewTeamModalContainer
-                closeNewTeamModal={this.closeModal} />
+            <GroupModalContainer
+                closeModal={this.closeModal}
+                targetGroup={undefined}
+                modalAction="new"
+                group={this.props.group} />
         </Modal>;
     }
 

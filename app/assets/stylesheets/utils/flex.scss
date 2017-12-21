@@ -40,3 +40,12 @@
     display: flex;
     flex-direction: $direction;
 }
+
+@mixin modal-position {
+    z-index: 200;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

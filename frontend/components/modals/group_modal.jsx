@@ -92,6 +92,24 @@ class GroupModal extends React.Component {
 
     //TODO: RENDER ERRORS;
 
+    filteredErrors(labelName) {
+        return this.props.errors.modal.filter((error) => (
+            error.toLowerCase().includes(labelName)
+        ));
+    }
+
+    showErrors(labelName, displayClass) {
+        if (this.props.errors.modal.length > 0) {
+            return (
+                this.filteredErrors(labelName).map((error, i) => (
+                    <span key={i} className={displayClass}>{error}</span>
+                ))
+            );
+        }
+    }
+
+    //TODO: adjust logo (no shake) for edit and delete functions
+
     render() {
         return (
             <div className="root-modal-container"
@@ -107,6 +125,7 @@ class GroupModal extends React.Component {
                     <form className="modal-form">
 
                         <label>NAME</label>
+                        {this.showErrors("name", "session-error")}
 
                         <input
                             onKeyUp={(e) => this.handleKeyUp(e)}
@@ -116,6 +135,7 @@ class GroupModal extends React.Component {
                         />
 
                         <label>DESCRIPTION</label>
+                        {this.showErrors("description", "session-error")}
                         <textarea
                             onKeyUp={(e) => this.handleKeyUp(e)}
                             type="textarea"

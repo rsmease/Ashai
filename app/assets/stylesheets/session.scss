@@ -60,13 +60,13 @@
     @include flex-space-between(column);
     padding: 60px 30px;
     border-radius: 4px;
-    background: $winter-white;
-    height: 440px;
+    background: $winter-white; // height: 440px;
     width: 540px;
 }
 
 .session-form-header {
     font-size: $header;
+    margin: 0 0 30px 0;
 }
 
 .session-form {
@@ -148,7 +148,7 @@
 .demo-loading {
     @extend .demo-form-link;
     background-color: $cersei-green;
-    margin: 0 0 0 0;
+    margin: 0 0 30px 0;
 }
 
 //session errors appearing above form inputs

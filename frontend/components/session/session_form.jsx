@@ -173,9 +173,9 @@ class SessionForm extends React.Component {
           <h2 className="session-form-header">{this.getTitle().slice(3)}</h2>
 
           {this.showDemoLoad()}
+          {this.showErrors("invalid", "session-error-header")}
 
           <form className="session-form">
-            {this.showErrors("invalid", "session-error-header")}
             {
               this.props.match.path === "/signup" ?
                 <label>NAME </label> : undefined

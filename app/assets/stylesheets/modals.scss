@@ -166,6 +166,17 @@
     background-color: $night-king-blue-button-hover;
 }
 
+.modal-cancel {
+    @extend .modal-form-submit;
+    background-color: $melisandre-red-button;
+    margin: 0 15px 0 0;
+}
+
+.modal-cancel:hover {
+    background-color: $melisandre-red-button-hover;
+}
+
+//TODO: remove
 .modal-form-container-delete {
     align-items: center;
     align-content: center;
@@ -177,6 +188,7 @@
     color: white;
 }
 
+//TODO: remove
 .modal-form-header-delete {
     margin-top: 30px;
     font-size: 24px;
@@ -186,12 +198,14 @@
     border-bottom: 3px solid $night-king-blue;
 }
 
+//TODO: remove
 .modal-form-warnings-container {
     background-color: rgba(255, 133, 133, .3);
     padding: 10px 20px 10px 20px;
     margin-top: 15px;
 }
 
+//TODO: remove
 .modal-form-warning {
     color: $melisandre-red;
     text-transform: uppercase;
@@ -199,6 +213,7 @@
     margin: 5px;
 }
 
+//TODO: remove
 .submit-options-delete {
     display: -webkit-box;
     display: -moz-box;
@@ -211,16 +226,7 @@
     margin-bottom: 30px;
 }
 
-.modal-cancel {
-    @extend .modal-form-submit;
-    background-color: $melisandre-red-button;
-    margin: 0 15px 0 0;
-}
-
-.modal-cancel:hover {
-    background-color: $melisandre-red-button-hover;
-}
-
+//TODO: remove
 .modal-cancel-centered {
     background-color: $melisandre-red;
     color: $winter-white;
@@ -234,19 +240,14 @@
     width: 80px;
 }
 
-.modal-cancel a {
-    color: $winter-white;
-}
 
-.modal-cancel-centered a {
-    color: $winter-white;
-}
-
+//TODO: remove
 .modal-cancel-delete {
     background-color: $night-king-blue;
     margin-right: 0px;
 }
 
+//TODO: remove
 .modal-form-delete {
     border: none;
     border-radius: 3px;
@@ -266,6 +267,7 @@
     transition: background-color 300ms ease-in;
 }
 
+//TODO: remove
 .modal-form-delete:hover {
     background-color: $melisandre-red;
 }

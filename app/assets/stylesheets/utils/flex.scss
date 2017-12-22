@@ -49,3 +49,24 @@
     right: 0;
     bottom: 0;
 }
+
+@mixin form-input-default {
+    border: 1px $targ-silver-light solid;
+    background-color: none;
+    border-radius: 3px;
+    font-size: $text;
+    height: 40px;
+    text-indent: 10px;
+    margin-bottom: 10px;
+    width: 75%;
+}
+
+@mixin form-label-default {
+    //occupy entire line and align left
+    display: block;
+    width: 75%;
+
+    color: $targ-silver-dark;
+    font-size: $detail;
+    margin-bottom: 10px;
+}

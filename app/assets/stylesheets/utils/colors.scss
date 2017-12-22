@@ -6,20 +6,27 @@ $targ-silver-dark: #9ca6af;
 
 $tarth-sapphire: #222b37;
 $nights-watch-black: #151b26;
+
 $modal-background: rgba(0, 0, 0, 0.5);
 $modal-background-transparent: transparent;
 
-
 $sansa-pink-light: #ff8585;
 $sansa-pink-dark: #ff5263;
-$melisandre-red: #ed4758;
 
-$lannister-gold: #fcbd01;
+$melisandre-red: rgba(237, 71, 88, 1);
 
-$cersei-green: #25e8c8;
+$melisandre-red-button: rgba(237, 71, 88, 0.9);
+$melisandre-red-button-hover: $melisandre-red;
 
-$night-king-blue: #14aaf5;
-$night-king-blue-hover: #24baf6;
+$lannister-gold: rgba(252, 189, 1, 1);
+
+$cersei-green: rgba(37, 232, 200, 1);
+
+$night-king-blue: rgba(20, 170, 245, 1);
+
+$night-king-blue-button: rgba(20, 170, 245, 0.9);
+$night-king-blue-button-hover: $night-king-blue;
+
 $viserion-blue: #32c1ff;
 
 $login-gradient: to top right, $sansa-pink-dark 10%, $sansa-pink-light 35%, $lannister-gold;

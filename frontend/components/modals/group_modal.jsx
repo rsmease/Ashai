@@ -142,7 +142,7 @@ class GroupModal extends React.Component {
                             value={this.state.description}
                             onChange={this.handleInput('description')}
                         />
-                        <div className="submit-options">
+                        <div className="modal-submit-options">
                             <button className="modal-cancel"
                                 onClick={this.handleClickOff}>
                                 Cancel</button>

@@ -109,7 +109,7 @@
 
 .session-form-submit-valid {
     @extend .session-form-submit;
-    background-color: $night-king-blue;
+    background-color: $night-king-blue-button;
 }
 
 //modified to make affordance more attractive than other link options
@@ -117,7 +117,7 @@
     @extend .session-form-submit;
     line-height: 40px;
     width: 120px;
-    background-color: $night-king-blue;
+    background-color: $night-king-blue-button;
 }
 
 .demo-form-link-splash {
@@ -128,7 +128,7 @@
 
 
 .session-form-submit-valid:hover, .demo-form-link:hover {
-    background-color: $night-king-blue-hover;
+    background-color: $night-king-blue-button-hover;
 }
 
 //loading message during autoLogin() runtime

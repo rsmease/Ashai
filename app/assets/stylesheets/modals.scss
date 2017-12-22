@@ -146,22 +146,24 @@
     height: 80px;
 }
 
+.modal-submit-options {
+    @extend .submit-options;
+    margin: 30px 0 15px 0;
+}
+
+
 .modal-form-submit {
-    border: none;
-    border-radius: 3px;
-    color: $winter-white;
-    background-color: $targ-silver-light;
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    width: 80px;
-    margin-right: 15%;
+    @extend .session-form-submit;
+    margin: 0;
 }
 
 .modal-form-submit-valid {
-    background-color: $night-king-blue;
+    @extend .modal-form-submit;
+    background-color: $night-king-blue-button;
+}
+
+.modal-form-submit-valid:hover {
+    background-color: $night-king-blue-button-hover;
 }
 
 .modal-form-container-delete {
@@ -210,17 +212,13 @@
 }
 
 .modal-cancel {
-    background-color: $melisandre-red;
-    color: $winter-white;
-    border: none;
-    border-radius: 3px;
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    width: 80px;
-    margin-right: 15px;
+    @extend .modal-form-submit;
+    background-color: $melisandre-red-button;
+    margin: 0 15px 0 0;
+}
+
+.modal-cancel:hover {
+    background-color: $melisandre-red-button-hover;
 }
 
 .modal-cancel-centered {

@@ -6,8 +6,7 @@ import * as MaterialDesign from 'react-icons/lib/md';
 //modals
 import Modal from 'react-modal';
 import GroupModalContainer from '../modals/group_modal_container';
-
-
+import SidebarGroupMembersIndex from './sidebar_group_members_index';
 import SidebarMemberIndex from './sidebar_member_index';
 
 class SidebarIndex extends React.Component {
@@ -51,30 +50,24 @@ class SidebarIndex extends React.Component {
                 closeModal={this.closeModal}
                 targetGroup={undefined}
                 modalAction="new"
-                group={this.props.group} />
+                groupType={this.props.groupType} />
         </Modal>;
     }
 
-    // handleDelete(e) {
-    //     if (this.props.group === "team") {
-    //         this.props.requestToDeleteTeam(this.props.team.id)
-    //             .then(this.closeDeleteModal())
-    //             .then(this.returnToHome(this.props.team.id));
-    //     } else if (this.props.group === "project") {
-
-    //     }
-    // }
 
     render() {
         return (
             <section className="sidebar-section">
                 <header className="sidebar-index-header">
-                    <h3 className="sidebar-title">{`My ${this.props.group}s`}</h3>
+                    <h3 className="sidebar-title">{`My ${this.props.groupType}s`}</h3>
                     <MaterialDesign.MdAddCircleOutline
                         className="sidebar-new-group-button"
                         onClick={this.openModal} />
                     {this.showModal()}
                 </header>
+                <SidebarGroupsIndex
+                    groups={this.props.currentUserGroups}
+                    groupType={this.props.groupType} />
             </section>
         );
     }

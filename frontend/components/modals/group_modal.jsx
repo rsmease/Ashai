@@ -18,7 +18,7 @@ class GroupModal extends React.Component {
     }
 
     getTitle() {
-        return this.capitalize(`${this.props.modalAction} ${this.props.group}`);
+        return this.capitalize(`${this.props.modalAction} ${this.props.groupType}`);
     }
 
     getSubmitAction() {

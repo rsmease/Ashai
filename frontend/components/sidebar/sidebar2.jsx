@@ -19,8 +19,8 @@ class Sidebar extends React.Component {
             <div className="sidebar">
                 <SidebarLogo />
                 <div className="sidebar-indices-container">
-                    <SidebarIndexContainer group="team" />
-                    <SidebarIndexContainer group="project" />
+                    <SidebarIndexContainer groupType="team" />
+                    <SidebarIndexContainer groupType="project" />
                 </div>
             </div>
         );

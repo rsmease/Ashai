@@ -15,23 +15,23 @@ import {
 import SidebarIndex from './sidebar_index';
 
 const mapStateToProps = (state, ownProps) => {
-    if (ownProps.group === "team") {
+    if (ownProps.groupType === "team") {
         return {
-            group: ownProps.group,
+            groupType: ownProps.groupType,
             currentUser: state.session.currentUser,
-            teams: state.entities.teams
+            currentUserGroups: state.session.currentUser.teams
         };
     } else {
         return {
-            group: ownProps.group,
+            groupType: ownProps.groupType,
             currentUser: state.session.currentUser,
-            projects: state.entities.projects
+            currentUserGroups: state.session.currentUser.projects
         };
     }
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    if (ownProps.group === "team") {
+    if (ownProps.groupType === "team") {
         return {
             requestToDeleteTeam: teamId =>
                 dispatch(requestToDeleteTeam(teamId)),

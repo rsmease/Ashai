@@ -22,16 +22,18 @@ import GroupModal from './group_modal';
 //modalAction: create, update or delete
 //targetGroup: existing team/project to be updated/delete by modal
 const mapStateToProps = (state, ownProps) => {
-    if (ownProps.group === "team") {
+    if (ownProps.groupType === "team") {
         return {
+            groupType: ownProps.groupType,
             currentUser: state.session.currentUser,
             errors: state.errors,
             targetGroup: ownProps.targetGroup,
             modalAction: ownProps.modalAction,
             closeModal: ownProps.closeModal
         };
-    } else if (ownProps.group === "project") {
+    } else if (ownProps.groupType === "project") {
         return {
+            groupType: ownProps.groupType,
             currentUser: state.session.currentUser,
             errors: state.errors,
             targetGroup: ownProps.targetGroup,
@@ -42,14 +44,14 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    if (ownProps.group === "team") {
+    if (ownProps.groupType === "team") {
         return {
             removeAllModalErrors: () => dispatch(removeAllTeamModalErrors()),
             createNewGroup: formTeam => dispatch(createNewTeam(formTeam)),
             requestUpdateToGroup: formTeam => dispatch(requestUpdateToTeam(formTeam)),
             requestToDeleteGroup: teamId => dispatch(requestToDeleteTeam(teamId))
         };
-    } else if (ownProps.group === "project") {
+    } else if (ownProps.groupType === "project") {
         return {
             removeAllModalErrors: () => dispatch(removeAllProjectModalErrors()),
             createNewGroup: formProject => dispatch(createNewProject(formProject)),

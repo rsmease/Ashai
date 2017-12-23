@@ -1,7 +1,11 @@
+//utils
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
+
+//components
 import GroupMembersIndex from './group_members_index';
+import SidebarOwnerToolsContainer from './sidebar_owner_tools_container';
 
 class SidebarGroupIndexItem extends React.Component {
     constructor(props) {
@@ -20,9 +24,9 @@ class SidebarGroupIndexItem extends React.Component {
 
     showOwnerTools() {
         if (this.props.userIsOwner) {
-            return <SidebarOwnerTools
+            return <SidebarOwnerToolsContainer
                 group={this.props.group}
-                groupType={this.props.groupType} />
+                groupType={this.props.groupType} />;
         }
     }
 

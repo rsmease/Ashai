@@ -15,7 +15,7 @@ class NewProjectModal extends React.Component {
     this.handleClickOff = this.handleClickOff.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     document.title = "Ashai - New Project";
     this.props.removeAllProjectModalErrors();
   }
@@ -29,7 +29,7 @@ class NewProjectModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewProject(this.state)
-    .then(this.props.closeNewProjectModal);
+      .then(this.props.closeNewProjectModal);
   }
 
   handleKeyUp(e) {
@@ -40,7 +40,7 @@ class NewProjectModal extends React.Component {
 
   renderErrors() {
     if (this.props.errors.modal.length > 0) {
-      return(
+      return (
         <div className="session-errors-list">
           {this.props.errors.modal.map((error, i) => (
             <p className="session-error"
@@ -55,8 +55,8 @@ class NewProjectModal extends React.Component {
 
   handleClickOff(e) {
     if (e.target.className === "root-modal-container" ||
-        e.target.className === "modal-close" ||
-        e.target.className === "modal-cancel") {
+      e.target.className === "modal-close" ||
+      e.target.className === "modal-cancel") {
       e.preventDefault();
       this.props.closeNewProjectModal();
     }
@@ -66,7 +66,7 @@ class NewProjectModal extends React.Component {
     return (
       <div className="root-modal-container"
         onClick={this.handleClickOff}>
-        <img className="new-modal-logo"
+        <img className="modal-logo-shake"
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
           <div className="modal-header-container">
@@ -86,7 +86,7 @@ class NewProjectModal extends React.Component {
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
-              />
+            />
             <br></br>
 
             <label>DESCRIPTION</label>
@@ -96,16 +96,16 @@ class NewProjectModal extends React.Component {
               type="textarea"
               value={this.state.description}
               onChange={this.handleInput('description')}
-              />
+            />
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
                 onClick={this.handleClickOff}>
                 Cancel</button>
               <button className={
-                  this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
+                this.validNewProject === true ? "modal-form-submit modal-form-submit-valid" :
                   "modal-form-submit"}
-                  onClick={this.handleSubmit}>Create</button>
+                onClick={this.handleSubmit}>Create</button>
             </div>
           </form>
         </div>

@@ -60,7 +60,7 @@ class SidebarIndex extends React.Component {
                 <header className="sidebar-index-header">
                     <h3 className="sidebar-title">{`My ${this.props.groupType}s`}</h3>
                     <MaterialDesign.MdAddCircleOutline
-                        className="sidebar-new-group-button"
+                        className="sidebar-new-button"
                         onClick={this.openModal} />
                     {this.showModal()}
                 </header>

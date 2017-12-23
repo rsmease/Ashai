@@ -1,6 +1,10 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Link, Router } from 'react-router-dom';
+import * as MaterialDesign from 'react-icons/lib/md';
+
+
+//components
 import GroupMembersIndexItem from './group_members_index_item';
 import AddMembersSearchContainer from
     '../searches/add_members_search_container';
@@ -33,8 +37,9 @@ class GroupMembersIndex extends React.Component {
                             member={member} />
                     ))
                 }
-                <a className="sidebar-new-member-button"
-                    onClick={this.openModal}>+</a>
+                <MaterialDesign.MdAddCircleOutline
+                    className="sidebar-new-button"
+                    onClick={this.openModal} />
                 <Modal
                     isOpen={this.state.modalOpen}
                     onRequestClose={this.closeModal}

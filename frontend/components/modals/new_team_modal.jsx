@@ -13,7 +13,7 @@ class NewTeamModal extends React.Component {
     this.handleClickOff = this.handleClickOff.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     document.title = "Ashai - New Team";
     this.props.removeAllTeamModalErrors();
   }
@@ -27,7 +27,7 @@ class NewTeamModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewTeam(this.state)
-    .then(this.props.closeNewTeamModal);
+      .then(this.props.closeNewTeamModal);
   }
 
   handleKeyUp(e) {
@@ -38,7 +38,7 @@ class NewTeamModal extends React.Component {
 
   handleClickOff(e) {
     if (e.target.className === "root-modal-container" ||
-        e.target.className === "modal-cancel") {
+      e.target.className === "modal-cancel") {
       e.preventDefault();
       this.props.closeNewTeamModal();
     }
@@ -46,7 +46,7 @@ class NewTeamModal extends React.Component {
 
   renderErrors() {
     if (this.props.errors.modal.length > 0) {
-      return(
+      return (
         <div className="session-errors-list">
           {this.props.errors.modal.map((error, i) => (
             <p className="session-error"
@@ -63,7 +63,7 @@ class NewTeamModal extends React.Component {
     return (
       <div className="root-modal-container"
         onClick={this.handleClickOff}>
-        <img className="new-modal-logo"
+        <img className="modal-logo-shake"
           onClick={this.stopPropagation}
           src="https://i.imgur.com/WcrVoLW.png" />
         <div className="modal-form-container">
@@ -84,7 +84,7 @@ class NewTeamModal extends React.Component {
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
-              />
+            />
             <br></br>
 
             <label>DESCRIPTION</label>
@@ -94,16 +94,16 @@ class NewTeamModal extends React.Component {
               type="textarea"
               value={this.state.description}
               onChange={this.handleInput('description')}
-              />
+            />
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
                 onClick={this.handleClickOff}>
                 Cancel</button>
               <button className={
-                  this.validNewTeam === true ? "modal-form-submit modal-form-submit-valid" :
+                this.validNewTeam === true ? "modal-form-submit modal-form-submit-valid" :
                   "modal-form-submit"}
-                  onClick={this.handleSubmit}>Create</button>
+                onClick={this.handleSubmit}>Create</button>
             </div>
           </form>
         </div>

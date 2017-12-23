@@ -49,10 +49,10 @@ class GroupModal extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.modalAction();
+        this.modalSubmitAction();
     }
 
-    modalAction() {
+    modalSubmitAction() {
         switch (this.props.modalAction) {
             case "new":
                 this.props.createNewGroup(this.state).then(this.props.closeModal);
@@ -67,6 +67,10 @@ class GroupModal extends React.Component {
                 console.log("Modal Action not set properly");
                 break;
         }
+    }
+
+    toggleLogoShake() {
+        return this.props.modalAction === "new" ? "modal-logo-shake" : "modal-logo";
     }
 
     handleInput(type) {
@@ -114,7 +118,7 @@ class GroupModal extends React.Component {
         return (
             <div className="root-modal-container"
                 onClick={this.handleClickOff}>
-                <img className="new-modal-logo"
+                <img className={this.toggleLogoShake()}
                     onClick={this.stopPropagation}
                     src="https://i.imgur.com/WcrVoLW.png" />
                 <div className="modal-form-container">
@@ -124,7 +128,7 @@ class GroupModal extends React.Component {
 
                     <form className="modal-form">
 
-                        <label>NAME_TEST</label>
+                        <label>NAME</label>
                         {this.showErrors("name", "session-error")}
 
                         <input

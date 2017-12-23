@@ -20,12 +20,17 @@
 }
 
 //shaking eggs for new group modal
-.new-modal-logo {
+.modal-logo {
     height: 100px;
     width: auto;
     margin: 0 25px 25px 25px;
+}
+
+.modal-logo-shake {
+    @extend .modal-logo;
     animation: shake 0.8s;
 }
+
 
 @keyframes shake {
     0% {

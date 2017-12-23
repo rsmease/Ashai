@@ -6,8 +6,7 @@ import * as MaterialDesign from 'react-icons/lib/md';
 //modals
 import Modal from 'react-modal';
 import GroupModalContainer from '../modals/group_modal_container';
-import SidebarGroupMembersIndex from './sidebar_group_members_index';
-import SidebarMemberIndex from './sidebar_member_index';
+import SidebarGroupIndex from './sidebar_group_index';
 
 class SidebarIndex extends React.Component {
     constructor(props) {
@@ -65,7 +64,7 @@ class SidebarIndex extends React.Component {
                         onClick={this.openModal} />
                     {this.showModal()}
                 </header>
-                <SidebarGroupsIndex
+                <SidebarGroupIndex
                     groups={this.props.currentUserGroups}
                     groupType={this.props.groupType} />
             </section>

@@ -65,6 +65,7 @@ class SidebarIndex extends React.Component {
                     {this.showModal()}
                 </header>
                 <SidebarGroupIndex
+                    currentUser={this.props.currentUser}
                     groups={this.props.currentUserGroups}
                     groupType={this.props.groupType} />
             </section>

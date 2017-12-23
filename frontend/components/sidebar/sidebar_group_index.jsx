@@ -10,11 +10,13 @@ class SidebarGroupIndex extends React.Component {
         };
     }
 
-    // showMembers() {
-    //     if (this.props.groupType === "team") {
-
-    //     }
-    // }
+    userIsOwner(group) {
+        if (this.props.groupType === "project") {
+            return this.props.currentUser.id === group.project_owner_id;
+        } else if (this.props.groupType === "team") {
+            return this.props.currentUser.id === group.team_owner_id;
+        }
+    }
 
     render() {
         return (
@@ -23,6 +25,7 @@ class SidebarGroupIndex extends React.Component {
                     this.props.groups.map((group) => (
                         <SidebarGroupIndexItem
                             key={Math.random()}
+                            userIsOwner={this.userIsOwner(group)}
                             group={group}
                             groupType={this.props.groupType} />
                     ))

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
+import GroupMembersIndex from './group_members_index';
 
 class SidebarGroupIndexItem extends React.Component {
     constructor(props) {
@@ -11,7 +12,17 @@ class SidebarGroupIndexItem extends React.Component {
 
     showMembers() {
         if (this.props.groupType === "team") {
-            console.log(`Now showing members for team ${this.props.group.name}`)
+            return <GroupMembersIndex
+                group={this.props.group}
+            />;
+        }
+    }
+
+    showOwnerTools() {
+        if (this.props.userIsOwner) {
+            return <SidebarOwnerTools
+                group={this.props.group}
+                groupType={this.props.groupType} />
         }
     }
 
@@ -24,6 +35,7 @@ class SidebarGroupIndexItem extends React.Component {
                     to={`/${this.props.groupType}s/${this.props.group.id}`}>
                     {this.props.group.name}
                 </Link>
+                {this.showOwnerTools()}
             </div>
         );
     }

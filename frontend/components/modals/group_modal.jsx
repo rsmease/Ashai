@@ -124,7 +124,7 @@ class GroupModal extends React.Component {
 
                     <form className="modal-form">
 
-                        <label>NAME</label>
+                        <label>NAME_TEST</label>
                         {this.showErrors("name", "session-error")}
 
                         <input

@@ -116,11 +116,11 @@ class TeamSidebarIndex extends React.Component {
 
     render() {
         return (
-            <div className="sidebar-link-list">
+            <div className="sidebar-group-index">
                 <TeamSidebarProfiles
                     team={this.props.team}
                     members={this.props.team.members} />
-                <div className="sidebar-link-list-item">
+                <div className="sidebar-group-index-item">
                     <Link
                         className="sidebar-link-project"
                         to={`/teams/${this.props.team.id}`}>

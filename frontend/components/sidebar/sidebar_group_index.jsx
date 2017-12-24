@@ -20,7 +20,7 @@ class SidebarGroupIndex extends React.Component {
 
     render() {
         return (
-            <div className="sidebar-link-list">
+            <div className="sidebar-group-index">
                 {
                     this.props.groups.map((group) => (
                         <SidebarGroupIndexItem

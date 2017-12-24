@@ -42,8 +42,8 @@ class ProjectSidebarIndex extends React.Component {
 
   handleDelete(e) {
     this.props.requestToDeleteProject(this.props.project.id)
-    .then(this.closeDeleteModal())
-    .then(this.returnToHome(this.props.project.id));
+      .then(this.closeDeleteModal())
+      .then(this.returnToHome(this.props.project.id));
   }
 
   returnToHome(deletedProjectId) {
@@ -58,23 +58,27 @@ class ProjectSidebarIndex extends React.Component {
       return <div className="sidebar-tools">
         <MaterialDesign.MdCreate
           className="sidebar-tool"
-          onClick={this.openEditProjectModal}/>
+          onClick={this.openEditProjectModal} />
         <Modal
           isOpen={this.state.editProjectModalOpen}
           onRequestClose={this.closeEditProjectModal}
           overlayClassName={
-            {base: "root-modal-container",
+            {
+              base: "root-modal-container",
               afterOpen: "root-modal-container",
-              beforeClose: "root-modal-container"}
+              beforeClose: "root-modal-container"
             }
+          }
           className={
-            { base: "override-content-default",
+            {
+              base: "override-content-default",
               afterOpen: "override-content-default",
-              beforeClose: "override-content-default"}
-            }>
+              beforeClose: "override-content-default"
+            }
+          }>
           <EditProjectModalContainer
             project={this.props.project}
-            closeEditProjectModal={this.closeEditProjectModal}/>
+            closeEditProjectModal={this.closeEditProjectModal} />
         </Modal>
         <MaterialDesign.MdDelete
           className="sidebar-tool"
@@ -84,20 +88,24 @@ class ProjectSidebarIndex extends React.Component {
           isOpen={this.state.deleteModalOpen}
           onRequestClose={this.closeDeleteModal}
           overlayClassName={
-            {base: "root-modal-container",
+            {
+              base: "root-modal-container",
               afterOpen: "root-modal-container",
-              beforeClose: "root-modal-container"}
+              beforeClose: "root-modal-container"
             }
+          }
           className={
-            { base: "override-content-default",
+            {
+              base: "override-content-default",
               afterOpen: "override-content-default",
-              beforeClose: "override-content-default"}
-            }>
+              beforeClose: "override-content-default"
+            }
+          }>
           <DeleteModal
             id={this.props.project.id}
             entity={"Project"}
             closeDeleteModal={this.closeDeleteModal}
-            onDelete={this.handleDelete}/>
+            onDelete={this.handleDelete} />
         </Modal>
       </div>;
     } else {

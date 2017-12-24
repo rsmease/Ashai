@@ -32,7 +32,7 @@ class SidebarGroupIndexItem extends React.Component {
 
     render() {
         return (
-            <div className="sidebar-link-list-item">
+            <div className="sidebar-group-index-item">
                 {this.showMembers()}
                 <Link
                     className="sidebar-link-project"

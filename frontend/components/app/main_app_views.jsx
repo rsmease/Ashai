@@ -2,8 +2,7 @@ import React from 'react';
 import * as SessionActions from '../../actions/session_actions';
 
 //sidebar
-import SidebarContainer from '../sidebar/sidebar_container';
-import Sidebar from '../sidebar/sidebar2';
+import Sidebar from '../sidebar/sidebar';
 
 //headers
 import NavigationHeaderContainer from '../headers/navigation_header_container';
@@ -33,7 +32,7 @@ export const MainAppViewCurrentUser = () => (
 
 export const MainAppViewTeam = () => (
   <div className="app-container">
-    <SidebarContainer />
+    <Sidebar />
     <div className="task-with-header">
       <NavigationHeaderContainer />
       <TeamHeaderContainer />
@@ -44,7 +43,7 @@ export const MainAppViewTeam = () => (
 
 export const MainAppViewUser = () => (
   <div className="app-container">
-    <SidebarContainer />
+    <Sidebar />
     <div className="task-with-header">
       <NavigationHeaderContainer />
       <UserHeaderContainer />

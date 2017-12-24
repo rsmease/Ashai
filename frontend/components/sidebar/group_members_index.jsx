@@ -39,7 +39,7 @@ class GroupMembersIndex extends React.Component {
                 }
                 <MaterialDesign.MdPersonAdd
                     title="Add a New Member"
-                    className="sidebar-new-member-button tool-tip"
+                    className="sidebar-new-member-button"
                     onClick={this.openModal} />
                 <Modal
                     isOpen={this.state.modalOpen}

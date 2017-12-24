@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
+import _ from 'lodash';
 
 //modals
 import Modal from 'react-modal';
@@ -17,6 +18,10 @@ class SidebarIndex extends React.Component {
 
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+    }
+
+    getTitle() {
+        return `My ${_.capitalize(this.props.groupType)}s`;
     }
 
     openModal() {
@@ -58,7 +63,7 @@ class SidebarIndex extends React.Component {
         return (
             <section className="sidebar-section">
                 <header className="sidebar-index-header">
-                    <h3 className="sidebar-title">{`My ${this.props.groupType}s`}</h3>
+                    <h3 className="sidebar-title">{this.getTitle()}</h3>
                     <MaterialDesign.MdAddCircleOutline
                         className="sidebar-new-button"
                         onClick={this.openModal} />

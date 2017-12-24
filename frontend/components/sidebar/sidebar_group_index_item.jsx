@@ -30,16 +30,22 @@ class SidebarGroupIndexItem extends React.Component {
         }
     }
 
+    toggleToolsDisplay() {
+        return this.props.userIsOwner ? "sidebar-group-links-owner" : "sidebar-group-links";
+    }
+
     render() {
         return (
             <div className="sidebar-group-index-item">
                 {this.showMembers()}
-                <Link
-                    className="sidebar-link-project"
-                    to={`/${this.props.groupType}s/${this.props.group.id}`}>
-                    {this.props.group.name}
-                </Link>
-                {this.showOwnerTools()}
+                <div className={this.toggleToolsDisplay()}>
+                    <Link
+                        className="sidebar-group-link"
+                        to={`/${this.props.groupType}s/${this.props.group.id}`}>
+                        {this.props.group.name}
+                    </Link>
+                    {this.showOwnerTools()}
+                </div>
             </div>
         );
     }

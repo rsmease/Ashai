@@ -110,7 +110,7 @@ class SidebarOwnerTools extends React.Component {
 
     render() {
         return (
-            <div className="sidebar-tools-team">
+            <div className="sidebar-tools">
                 <MaterialDesign.MdCreate
                     className="sidebar-tool"
                     onClick={this.openeditModal} />

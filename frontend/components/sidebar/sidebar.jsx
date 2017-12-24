@@ -87,7 +87,7 @@ class Sidebar extends React.Component {
     return (
       <div className="sidebar">
         <MiniHorizontalLogoNamed />
-        <div className="sidebar-indices-container">
+        <div className="sidebar-sections-container">
 
           <div className="sidebar-section">
             <div className="sidebar-index-header">

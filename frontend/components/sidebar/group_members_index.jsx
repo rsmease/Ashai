@@ -29,7 +29,7 @@ class GroupMembersIndex extends React.Component {
 
     render() {
         return (
-            <div className="sidebar-profiles">
+            <div className="sidebar-group-members-index">
                 {
                     this.props.group.members.slice(0, 5).map((member) => (
                         <GroupMembersIndexItem
@@ -37,8 +37,9 @@ class GroupMembersIndex extends React.Component {
                             member={member} />
                     ))
                 }
-                <MaterialDesign.MdAddCircleOutline
-                    className="sidebar-new-button"
+                <MaterialDesign.MdPersonAdd
+                    title="Add a New Member"
+                    className="sidebar-new-member-button tool-tip"
                     onClick={this.openModal} />
                 <Modal
                     isOpen={this.state.modalOpen}

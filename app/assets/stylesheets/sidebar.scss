@@ -8,7 +8,7 @@
     justify-content: flex-start;
 }
 
-.sidebar-indices-container {
+.sidebar-sections-container {
     @include flex-center(column);
     width: 100%;
 }
@@ -21,24 +21,12 @@
     width: 100%;
 }
 
-.sidebar-title {
-    font-size: $text-header;
-    text-transform: capitalize;
-    color: $targ-silver-dark;
-    padding: 0 0 5px 0;
-}
-
-.sidebar-list-container {
-    width: 100%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    margin-top: 15px;
+.sidebar-index-header {
+    @include flex-space-between(row);
+    width: 218px;
+    height: 40px;
+    border-bottom: 1px solid $targ-silver-dark;
+    margin: 0 0 10px 15px;
 }
 
 .sidebar-group-index {
@@ -48,53 +36,38 @@
     justify-content: flex-start;
 }
 
-// .sidebar-group-index-project {
-//     width: 100%;
-//     display: -webkit-box;
-//     display: -moz-box;
-//     display: -ms-flexbox;
-//     display: -webkit-flex;
-//     display: flex;
-//     align-items: flex-start;
-//     justify-content: flex-start;
-// }
-.sidebar-nav-link {
-    width: 100%;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 15px;
-    color: $winter-white;
-    font-size: 13px;
-    -webkit-transition: background-color 300ms ease-in;
-    -moz-transition: background-color 300ms ease-in;
-    -ms-transition: background-color 300ms ease-in;
-    -o-transition: background-color 300ms ease-in;
-    transition: background-color 300ms ease-in;
-}
-
 .sidebar-group-index-item {
     width: 244px;
-    margin: 10px 0;
-    color: $winter-white;
-    font-size: 13px;
     @include flex-space-between(column);
 }
 
-.sidebar-group-index-item:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    -webkit-transition: background-color 300ms ease-in;
-    -moz-transition: background-color 300ms ease-in;
-    -ms-transition: background-color 300ms ease-in;
-    -o-transition: background-color 300ms ease-in;
-    transition: background-color 300ms ease-in;
+.sidebar-group-links {
+    //padding, not margin, to preserve hover effect
+    padding: 10px 0;
+    width: 244px;
+    @include flex(row);
+    justify-content: flex-start;
+    align-content: flex-start;
 }
 
-.sidebar-group-index-item:hover>div {
-    -webkit-transition: opacity 300ms ease-in;
-    -moz-transition: opacity 300ms ease-in;
-    -ms-transition: opacity 300ms ease-in;
-    -o-transition: opacity 300ms ease-in;
-    transition: opacity 300ms ease-in;
+.sidebar-group-links-owner {
+    @extend .sidebar-group-links;
+    @include flex-space-between(row);
+}
+
+.sidebar-group-links:hover, .sidebar-group-links-owner:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    @include hover-ease(background-color)
+}
+
+.sidebar-group-link {
+    margin: 0 0 0 15px;
+    color: $winter-white;
+    font-size: 13px;
+}
+
+.sidebar-group-links:hover .sidebar-tools {
+    @include hover-ease(opacity);
     opacity: 1;
 }
 
@@ -104,23 +77,12 @@
     font-size: 13px;
 }
 
-.sidebar-nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.sidebar-profiles {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 100%;
-    flex-wrap: wrap;
-    margin-top: 15px;
-    padding-left: 15px;
-    height: 30px;
+.sidebar-group-members-index {
+    @include flex(row);
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin: 10px 0 5px 35px;
+    width: 244px;
 }
 
 .sidebar-profile-image {
@@ -133,112 +95,34 @@
     box-shadow: 0 0 3px 3px $night-king-blue
 }
 
-.sidebar-index-header {
-    @include flex-space-between(row);
-    width: 218px;
-    height: 40px;
-    border-bottom: 1px solid $targ-silver-dark;
-    margin-left: 15px;
-}
 
 .sidebar-new-button {
     color: $targ-silver-dark;
     font-size: $add-button;
+    @include spin(0deg);
 }
 
 .sidebar-new-button:hover {
     color: $winter-white;
-}
-
-.sidebar-new-project-button {
-    border-radius: 12px;
-    height: 18px;
-    width: 18px;
-    padding-left: 0.5px;
-    padding-bottom: 1px;
-    border: 1px solid $winter-white;
-    color: $winter-white;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sidebar-new-project-button:hover {
-    border: 3px solid $winter-white;
-    margin-bottom: 4px;
-    margin-right: 3px;
+    @include spin(90deg);
 }
 
 .sidebar-new-member-button {
-    border-radius: 12px;
-    height: 18px;
-    width: 18px;
-    padding-left: 0.5px;
-    padding-bottom: 1px;
-    margin-left: 3px;
-    margin-top: 3px;
-    border: 1px solid $winter-white;
-    color: $winter-white;
-    margin-bottom: 5px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0 0 0 5px;
+    color: $targ-silver-dark;
+    font-size: $add-button;
 }
 
 .sidebar-new-member-button:hover {
-    border: 3px solid $winter-white;
-
-    margin-bottom: 4px;
-    margin-left: 1px;
-}
-
-.sidebar-projects-list {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding-bottom: 15px;
-
-    border-bottom: 1px $targ-silver-dark solid;
+    color: $cersei-green;
+    @include hover-ease(color);
 }
 
 
 .sidebar-tools {
     opacity: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    margin-right: 15px;
-}
-
-.sidebar-tools-team {
-    margin-right: 30px;
-    opacity: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
+    @include flex-center(row);
+    margin: 0 20px 0 0;
 }
 
 .sidebar-tool {

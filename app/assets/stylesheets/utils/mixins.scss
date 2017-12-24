@@ -70,3 +70,24 @@
     font-size: $detail;
     margin-bottom: 10px;
 }
+
+@mixin hover-ease($property) {
+    -webkit-transition: $property 300ms ease-in;
+    -moz-transition: $property 300ms ease-in;
+    -ms-transition: $property 300ms ease-in;
+    -o-transition: $property 300ms ease-in;
+    transition: $property 300ms ease-in;
+}
+
+@mixin spin($degrees) {
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    transform: rotate($degrees);
+}

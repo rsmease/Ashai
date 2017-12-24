@@ -5,6 +5,7 @@ import * as SessionActions from '../../actions/session_actions';
 import Sidebar from '../sidebar/sidebar';
 
 //headers
+import RootHeader from '../headers/root_header';
 import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
 import HomeHeaderContainer from '../headers/home_header_container';
@@ -23,8 +24,7 @@ export const MainAppViewCurrentUser = () => (
   <div className="app-container">
     <Sidebar />
     <div className="task-with-header">
-      <NavigationHeaderContainer />
-      <HomeHeaderContainer />
+      <RootHeader />
       <TaskIndexContainer />
     </div>
   </div>
@@ -54,7 +54,7 @@ export const MainAppViewUser = () => (
 
 export const MainAppViewProject = () => (
   <div className="app-container">
-    <SidebarContainer />
+    <Sidebar />
     <div className="task-with-header">
       <NavigationHeaderContainer />
       <ProjectHeaderContainer />

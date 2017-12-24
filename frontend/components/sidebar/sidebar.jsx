@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Router } from 'react-router-dom';
-import SidebarLogo from './mini_logo';
+import SidebarLogo from './sidebar_logo';
 import SidebarIndexContainer from './sidebar_index_container';
 import Modal from 'react-modal';
 

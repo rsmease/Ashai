@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationHeaderContainer from './navigation_header_container';
+import GlobalHeaderContainer from './navigation_header2';
 
 class RootHeader extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ class RootHeader extends React.Component {
     render() {
         return (
             <div className="root-header">
-                <NavigationHeaderContainer />
+                <GlobalHeaderContainer />
             </div>
         );
     }

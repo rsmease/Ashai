@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     const defaults = {
-        closeModal: () => ownProps.closeModal()
+        // closeModal: () => ownProps.closeModal()
     };
     switch (ownProps.source) {
         case "global-header-left":

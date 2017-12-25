@@ -22,7 +22,6 @@ class HeaderActionIndex extends React.Component {
     }
 
     toggleDropdownFeatures() {
-        console.log("Dropdown is pinged for response.");
         switch (this.props.source) {
             case "global-header-left":
                 return <div className="nav-add-dropdown-wrapper">
@@ -48,7 +47,7 @@ class HeaderActionIndex extends React.Component {
     render() {
         return (
             <div>
-                TEST
+
                 {this.toggleDropdownFeatures()}
             </div>
         );

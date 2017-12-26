@@ -40,7 +40,7 @@
     @include spin(90deg);
 }
 
-.header-action-index-container {
+.header-action-button-container {
     position: relative;
     display: inline-block;
 }
@@ -53,7 +53,6 @@
     @include flex-center(column);
     z-index: 200;
 }
-
 
 .upgrade-button {
     @extend .session-form-submit;
@@ -307,13 +306,25 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.nav-add-dropdown-wrapper {
-    position: absolute;
-    top: 36px;
-    left: 273px;
-    width: 160px;
-    @include flex-center(column);
+// .nav-add-dropdown-wrapper {
+//     position: absolute;
+//     top: 36px;
+//     left: 273px;
+//     width: 160px;
+//     @include flex-center(column);
+//     z-index: 200;
+// }
+.action-index-container-hidden {
+    top: 13px;
+    left: -34px;
     z-index: 200;
+    display: none;
+    position: absolute;
+}
+
+.action-index-container-visible {
+    @extend .action-index-container-hidden;
+    @include flex-center(column);
 }
 
 .arrow-up {

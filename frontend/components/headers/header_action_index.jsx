@@ -1,24 +1,11 @@
 import React from 'react';
 import Modal from 'react-modal';
-import enhanceWithClickOutside from 'react-click-outside';
+import onClickOutside from 'react-onclickoutside';
 import HeaderActionIndexItem from './header_action_index_item';
 
 class HeaderActionIndex extends React.Component {
     constructor(props) {
         super(props);
-    }
-
-    showModalContent(modalAction) {
-        switch (modalAction) {
-            case "New Project":
-                return <GroupModalContainer
-                    closeModal={this.closeModal}
-                    targetGroup={undefined}
-                    modalAction="new"
-                    groupType="project" />;
-            default:
-                break;
-        }
     }
 
     togglePositionClass() {
@@ -30,9 +17,11 @@ class HeaderActionIndex extends React.Component {
         }
     }
 
-    handleClickOutside() {
-        console.log("Firing");
-        this.props.closeDropdown();
+    handleClickOutside(e) {
+        if (e.target.className === "arrow-up") {
+            console.log("Firing");
+            this.props.closeDropdown();
+        }
     }
 
     showIndexItems() {
@@ -57,7 +46,7 @@ class HeaderActionIndex extends React.Component {
 
     render() {
         return (
-            <div className="nav-add-dropdown-wrapper">
+            <div className="action-index-container-visible">
                 <div className="arrow-up"></div>
                 {this.showIndexItems()}
             </div>
@@ -65,4 +54,4 @@ class HeaderActionIndex extends React.Component {
     }
 }
 
-export default enhanceWithClickOutside(HeaderActionIndex);
+export default onClickOutside(HeaderActionIndex);

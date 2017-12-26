@@ -1,5 +1,6 @@
 import React from 'react';
 import * as MaterialDesign from 'react-icons/lib/md';
+import onClickOutside from 'react-onclickoutside';
 import { Router, Link, WithRouter } from 'react-router-dom';
 
 import HeaderActionIndexContainer from './header_action_index_container';
@@ -10,24 +11,28 @@ class HeaderActionButton extends React.Component {
         this.state = {
             dropdownOpen: false,
         };
-
-        this.openDropdown = this.openDropdown.bind(this);
-        this.closeDropdown = this.closeDropdown.bind(this);
+        this.toggleDropdown = this.toggleDropdown.bind(this);
     }
 
-    openDropdown() {
-        this.setState({ dropdownOpen: true });
+    toggleDropdown() {
+        this.setState({ dropdownOpen: !this.state.dropdownOpen });
     }
 
-    closeDropdown() {
-        this.setState({ dropdownOpen: false });
+    toggleDropdownClass() {
+        return this.state.dropdownOpen ? "action-index-container-visible" : "action-index-container-hidden";
+    }
+
+    handleClickOutside() {
+        if (this.state.dropdownOpen) {
+            this.toggleDropdown();
+        }
     }
 
     showAffordanceIcon() {
         if (this.props.source === "global-header-left") {
             return <MaterialDesign.MdAdd
                 className="global-left-action-button"
-                onClick={this.openDropdown} />;
+                onClick={this.toggleDropdown} />;
         } else if (this.props.source === "global-header-right") {
             return (
                 <div className="user-options-container">
@@ -41,13 +46,16 @@ class HeaderActionButton extends React.Component {
     }
 
     render() {
-        return (<div className="header-action-index-container">
+        return (<div className="header-action-button-container">
             {this.showAffordanceIcon()}
-            <HeaderActionIndexContainer
-                closeDropdown={this.closeDropdown}
-                source={this.props.source} />
+            <div className={this.toggleDropdownClass()}>
+                <HeaderActionIndexContainer
+                    dropDownOpen={this.dropDownOpen}
+                    closeDropdown={this.closeDropdown}
+                    source={this.props.source} />
+            </div>
         </div>);
     }
 }
 
-export default HeaderActionButton;
+export default onClickOutside(HeaderActionButton);

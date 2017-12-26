@@ -1,5 +1,5 @@
 import React from 'react';
-import GlobalHeaderContainer from './navigation_header2';
+import GlobalHeaderContainer from './global_header_container';
 
 class RootHeader extends React.Component {
     constructor(props) {

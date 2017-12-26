@@ -19,6 +19,19 @@ class GlobalHeader extends React.Component {
                     <HeaderActionButton
                         source="global-header-left" />
                 </div>
+                <NavBarSearchContainer />
+                <div className="right-links">
+                    <a href="https://www.stackoverflow.com"
+                        className="header-link" target="_blank">Help</a>
+                    <a href="https://www.linkedin.com/in/ryan-mease-140b473a/"
+                        className="upgrade-button"
+                        target="_blank">
+                        Upgrade</a>
+                    <HeaderActionButton
+                        source="global-header-right"
+                        currentUser={this.props.currentUser} />
+
+                </div>
             </div>
         );
     }

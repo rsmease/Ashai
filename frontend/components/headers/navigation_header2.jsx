@@ -14,13 +14,13 @@ class GlobalHeader extends React.Component {
     render() {
         return (
             <div className="global-header">
-                <div className="left-links">
+                <div className="global-header-section">
                     <Link to="/app" className="header-link">My Tasks</Link>
                     <HeaderActionButton
                         source="global-header-left" />
                 </div>
                 <NavBarSearchContainer />
-                <div className="right-links">
+                <div className="global-header-section">
                     <a href="https://www.stackoverflow.com"
                         className="header-link" target="_blank">Help</a>
                     <a href="https://www.linkedin.com/in/ryan-mease-140b473a/"
@@ -30,7 +30,6 @@ class GlobalHeader extends React.Component {
                     <HeaderActionButton
                         source="global-header-right"
                         currentUser={this.props.currentUser} />
-
                 </div>
             </div>
         );

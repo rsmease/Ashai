@@ -26,14 +26,13 @@ class HeaderActionButton extends React.Component {
 
     showAffordanceIcon() {
         if (this.props.source === "global-header-left") {
-            return <MaterialDesign.MdAddCircle
-                className="add-task-header-button"
+            return <MaterialDesign.MdAdd
+                className="global-left-action-button"
                 onClick={this.openModal} />;
         } else if (this.props.source === "global-header-right") {
             return (
                 <div className="user-options-panel-hover">
-                    <a className="header-link
-                        name-link"> {this.props.currentUser.name} </a>
+                    <a className="header-link"> {this.props.currentUser.name} </a>
                     <img
                         src={this.props.currentUser.profile_image_url}
                         className="nav-header-profile"></img>

@@ -14,6 +14,31 @@
     @include flex-space-around(row);
 }
 
+.global-header-section {
+    @include flex-center(row);
+}
+
+.header-link {
+    color: $nights-watch-black;
+    font-size: $text;
+    margin: 0 15px;
+}
+
+.header-link:hover {
+    color: $night-king-blue;
+}
+
+.global-left-action-button {
+    border-radius: 50%;
+    color: $winter-white;
+    font-size: $add-button;
+    @include background-gradient($lannister-gold, $add-button-gradient);
+}
+
+.global-left-action-button:hover {
+    @include spin(90deg);
+}
+
 //stateless container for TaskHeaderPrimary and TaskHeaderSecondary
 //TO BE REMOVED
 .task-header {
@@ -25,115 +50,15 @@
     color: $tarth-sapphire;
 }
 
-//TaskHeaderPrimary: holds core links, help tab, upgrade button, user profile edit panel
-.task-header-primary {
-    height: 40px;
-    border-top: 1px solid $targ-silver-light;
-    background-color: $winter-white;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.left-links {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: 280px;
-    width: 33%;
-    margin-left: 15px;
-}
-
-.add-task-header-container {
-    background: $melisandre-red;
-    background: -webkit-linear-gradient($add-task-gradient);
-    background: -o-linear-gradient($add-task-gradient);
-    background: -moz-linear-gradient($add-task-gradient);
-    background: linear-gradient($add-task-gradient);
-
-    border-radius: 12px;
-    height: 24px;
-    width: 24px;
-    margin-right: 15px;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    align-content: center;
-}
-
-.add-task-header-container:hover {
-    -webkit-box-shadow: 0 0 5px 1px $melisandre-red;
-    -moz-box-shadow: 0 0 5px 1px $melisandre-red;
-    box-shadow: 0 0 5px 1px $melisandre-red;
-}
-
-.add-task-header-button {
-    color: $winter-white;
-    font-size: 20px;
-    border-radius: 12px;
-    background: transparent;
-    border: none;
-    margin-bottom: 10%;
-}
-
-.header-link {
-    text-decoration: none;
-    color: $nights-watch-black;
-    font-size: 13px;
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-.header-link:hover {
-    color: $viserion-blue;
-}
-
-.right-links {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    min-width: 280px;
-    width: 33%;
-    margin-right: 15px;
-}
-
 .upgrade-button {
-    border-radius: 3px;
-    color: $winter-white;
-    background-color: $lannister-gold;
-    font-size: 13px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    text-decoration: none;
-    width: 80px;
-
-    -webkit-transition: background-color 300ms ease-in;
-    -moz-transition: background-color 300ms ease-in;
-    -ms-transition: background-color 300ms ease-in;
-    -o-transition: background-color 300ms ease-in;
-    transition: background-color 300ms ease-in;
+    @extend .session-form-submit;
+    height: 30px;
+    line-height: 30px;
+    background-color: $lannister-gold-button;
 }
 
 .upgrade-button:hover {
-    background-color: #ffe01b;
+    background-color: $lannister-gold-button-hover;
 }
 
 .toggle-user-options-panel {
@@ -394,10 +319,10 @@
 .nav-add-item-container:hover {
     color: $winter-white;
     background: $melisandre-red;
-    background: -webkit-linear-gradient($add-task-gradient);
-    background: -o-linear-gradient($add-task-gradient);
-    background: -moz-linear-gradient($add-task-gradient);
-    background: linear-gradient($add-task-gradient);
+    background: -webkit-linear-gradient($add-button-gradient);
+    background: -o-linear-gradient($add-button-gradient);
+    background: -moz-linear-gradient($add-button-gradient);
+    background: linear-gradient($add-button-gradient);
     -webkit-transition: all 300ms ease-in;
     -moz-transition: all 300ms ease-in;
     -ms-transition: all 300ms ease-in;

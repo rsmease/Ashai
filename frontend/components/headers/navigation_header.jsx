@@ -30,9 +30,9 @@ class NavigationHeader extends React.Component {
 
   openUserOptions(e) {
     if (this.state.toggleClicked === false &&
-        e.target.className === "user-options-panel-hover" ||
-        e.target.className === "header-link name-link" ||
-        e.target.className === "nav-header-profile") {
+      e.target.className === "user-options-panel-hover" ||
+      e.target.className === "header-link name-link" ||
+      e.target.className === "nav-header-profile") {
       this.setState({ toggleClicked: true });
     }
   }
@@ -45,24 +45,28 @@ class NavigationHeader extends React.Component {
     return (<div className="add-task-header-container">
       <button className="add-task-header-button"
         onClick={this.openAddDropdown}>+</button>
-        <Modal
-          isOpen={this.state.addDropdownModalOpen}
-          onRequestClose={this.closeAddDropdown}
-          overlayClassName={
-            {base: "root-modal-container-invisible",
-              afterOpen: "root-modal-container-invisible",
-              beforeClose: "root-modal-container-invisible"}
-            }
-          className={
-            { base: "override-content-default",
-              afterOpen: "override-content-default",
-              beforeClose: "override-content-default"}
-            }>
-            <HeaderAddDropdownContainer
-              closeAddDropdown={this.closeAddDropdown}
-              currentUser={this.props.currentUser}/>
-        </Modal>
-      </div>);
+      <Modal
+        isOpen={this.state.addDropdownModalOpen}
+        onRequestClose={this.closeAddDropdown}
+        overlayClassName={
+          {
+            base: "root-modal-container-invisible",
+            afterOpen: "root-modal-container-invisible",
+            beforeClose: "root-modal-container-invisible"
+          }
+        }
+        className={
+          {
+            base: "override-content-default",
+            afterOpen: "override-content-default",
+            beforeClose: "override-content-default"
+          }
+        }>
+        <HeaderAddDropdownContainer
+          closeAddDropdown={this.closeAddDropdown}
+          currentUser={this.props.currentUser} />
+      </Modal>
+    </div>);
   }
 
   render() {
@@ -70,8 +74,8 @@ class NavigationHeader extends React.Component {
       this.state.toggleClicked === true ? "nav-user-options-container-visible" :
         "nav-user-options-container";
     return (
-      <div className="task-header-primary">
-        <div className="left-links">
+      <div className="global-header">
+        <div className="global-header-left">
           <Link to="/app" className="header-link">My Tasks</Link>
           {this.renderAddButtion()}
         </div>
@@ -86,8 +90,7 @@ class NavigationHeader extends React.Component {
           <div className="toggle-user-options-panel"
             onClick={this.openUserOptions}>
             <div className="user-options-panel-hover">
-              <a className="header-link
-                name-link"> {this.props.currentUser.name} </a>
+              <a className="header-link"> {this.props.currentUser.name} </a>
               <img
                 src={this.props.currentUser.profile_image_url}
                 className="nav-header-profile"></img>
@@ -95,7 +98,7 @@ class NavigationHeader extends React.Component {
             <div className={userOptionsViewState}>
               <UserOptionsIndex
                 logout={this.props.logout}
-                closeUserOptions={this.closeUserOptions}/>
+                closeUserOptions={this.closeUserOptions} />
             </div>
           </div>
         </div>

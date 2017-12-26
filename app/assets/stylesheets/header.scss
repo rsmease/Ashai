@@ -9,9 +9,10 @@
 
 .global-header {
     height: 40px;
+    padding: 0 30px;
     border-top: 1px solid $targ-silver-light;
     background-color: $winter-white;
-    @include flex-space-around(row);
+    @include flex-space-between(row);
 }
 
 .global-header-section {
@@ -21,7 +22,7 @@
 .header-link {
     color: $nights-watch-black;
     font-size: $text;
-    margin: 0 15px;
+    margin: 0 15px 0 0;
 }
 
 .header-link:hover {
@@ -39,16 +40,20 @@
     @include spin(90deg);
 }
 
-//stateless container for TaskHeaderPrimary and TaskHeaderSecondary
-//TO BE REMOVED
-.task-header {
-    background-color: $winter-white;
-    width: 100%;
+.header-action-index-container {
+    position: relative;
+    display: inline-block;
 }
 
-.task-header h1 {
-    color: $tarth-sapphire;
+.global-header-left-dropdown {
+    position: absolute;
+    top: 30px;
+    left: 268px;
+    width: 160px;
+    @include flex-center(column);
+    z-index: 200;
 }
+
 
 .upgrade-button {
     @extend .session-form-submit;
@@ -61,6 +66,20 @@
     background-color: $lannister-gold-button-hover;
 }
 
+.user-options-container {
+    @include flex-center(row);
+}
+
+.global-header-profile-image {
+    @extend .sidebar-profile-image;
+    margin: 0;
+    max-height: 30px;
+}
+
+.global-header-profile-image:hover {
+    box-shadow: 0 0 3px 3px $night-king-blue;
+}
+
 .toggle-user-options-panel {
     display: -webkit-box;
     display: -moz-box;
@@ -70,6 +89,17 @@
     align-items: center;
     justify-content: center;
     position: relative;
+}
+
+//stateless container for TaskHeaderPrimary and TaskHeaderSecondary
+//TO BE REMOVED
+.task-header {
+    background-color: $winter-white;
+    width: 100%;
+}
+
+.task-header h1 {
+    color: $tarth-sapphire;
 }
 
 .user-options-panel-hover {
@@ -106,7 +136,6 @@
 .nav-user-options-container-visible {
     display: flex;
 }
-
 
 .nav-user-options {
     display: -webkit-box;
@@ -283,15 +312,8 @@
     top: 36px;
     left: 273px;
     width: 160px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 175;
+    @include flex-center(column);
+    z-index: 200;
 }
 
 .arrow-up {

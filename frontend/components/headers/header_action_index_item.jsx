@@ -24,7 +24,7 @@ class HeaderActionIndexItem extends React.Component {
 
     closeModal() {
         this.setState({ modalOpen: false });
-        this.props.closeIndexModal();
+        this.props.closeDropdown();
     }
 
     toggleAction() {

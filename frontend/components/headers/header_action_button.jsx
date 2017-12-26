@@ -1,5 +1,4 @@
 import React from 'react';
-import Modal from 'react-modal';
 import * as MaterialDesign from 'react-icons/lib/md';
 import { Router, Link, WithRouter } from 'react-router-dom';
 
@@ -9,62 +8,44 @@ class HeaderActionButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            modalOpen: false,
+            dropdownOpen: false,
         };
 
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        this.openDropdown = this.openDropdown.bind(this);
+        this.closeDropdown = this.closeDropdown.bind(this);
     }
 
-    openModal() {
-        this.setState({ modalOpen: true });
+    openDropdown() {
+        this.setState({ dropdownOpen: true });
     }
 
-    closeModal() {
-        this.setState({ modalOpen: false });
+    closeDropdown() {
+        this.setState({ dropdownOpen: false });
     }
 
     showAffordanceIcon() {
         if (this.props.source === "global-header-left") {
             return <MaterialDesign.MdAdd
                 className="global-left-action-button"
-                onClick={this.openModal} />;
+                onClick={this.openDropdown} />;
         } else if (this.props.source === "global-header-right") {
             return (
-                <div className="user-options-panel-hover">
+                <div className="user-options-container">
                     <a className="header-link"> {this.props.currentUser.name} </a>
                     <img
                         src={this.props.currentUser.profile_image_url}
-                        className="nav-header-profile"></img>
+                        className="global-header-profile-image"></img>
                 </div>
             );
         }
     }
 
     render() {
-        return (<div className="add-task-header-container">
+        return (<div className="header-action-index-container">
             {this.showAffordanceIcon()}
-            <Modal
-                isOpen={this.state.modalOpen}
-                onRequestClose={this.closeModal}
-                overlayClassName={
-                    {
-                        base: "root-modal-container-invisible",
-                        afterOpen: "root-modal-container-invisible",
-                        beforeClose: "root-modal-container-invisible"
-                    }
-                }
-                className={
-                    {
-                        base: "override-content-default",
-                        afterOpen: "override-content-default",
-                        beforeClose: "override-content-default"
-                    }
-                }>
-                <HeaderActionIndexContainer
-                    closeIndexModal={this.closeModal}
-                    source={this.props.source} />
-            </Modal>
+            <HeaderActionIndexContainer
+                closeDropdown={this.closeDropdown}
+                source={this.props.source} />
         </div>);
     }
 }

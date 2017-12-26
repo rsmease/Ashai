@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import enhanceWithClickOutside from 'react-click-outside';
 import HeaderActionIndexItem from './header_action_index_item';
 
 class HeaderActionIndex extends React.Component {
@@ -20,17 +21,31 @@ class HeaderActionIndex extends React.Component {
         }
     }
 
+    togglePositionClass() {
+        switch (this.props.source) {
+            case "global-header-left":
+                return "global-header-left-dropdown";
+            default:
+                break;
+        }
+    }
+
+    handleClickOutside() {
+        console.log("Firing");
+        this.props.closeDropdown();
+    }
+
     showIndexItems() {
         switch (this.props.source) {
             case "global-header-left":
                 return <div className="nav-add-dropdown">
                     <HeaderActionIndexItem
-                        closeIndexModal={this.props.closeIndexModal}
+                        closeDropdown={this.props.closeDropdown}
                         actionTitle="New Task"
                         modalAction={false}
                         otherAction={() => console.log("This feature is in development.")} />
                     <HeaderActionIndexItem
-                        closeIndexModal={this.props.closeIndexModal}
+                        closeDropdown={this.props.closeDropdown}
                         actionTitle="New Project"
                         modalAction={true}
                         otherAction="" />
@@ -50,4 +65,4 @@ class HeaderActionIndex extends React.Component {
     }
 }
 
-export default HeaderActionIndex;
+export default enhanceWithClickOutside(HeaderActionIndex);

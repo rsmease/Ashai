@@ -6,10 +6,8 @@
 }
 
 .root-modal-container-invisible {
-    @include flex-center(column);
-    overflow: scroll;
+    @extend .root-modal-container;
     background-color: $modal-background-transparent;
-    @include modal-position;
 }
 
 .override-content-default {

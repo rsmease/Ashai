@@ -8,6 +8,22 @@
     justify-content: flex-start;
 }
 
+.sidebar-logo-container {
+    @include flex-center(row);
+    padding: 15px 0 0 0;
+    width: 100%;
+}
+
+.sidebar-logo {
+    height: 36px;
+    width: auto;
+    margin: 0 15px 0 0;
+}
+
+.sidebar-logo-container>h1 {
+    font-size: $small-header;
+}
+
 .sidebar-sections-container {
     @include flex-center(column);
     width: 100%;

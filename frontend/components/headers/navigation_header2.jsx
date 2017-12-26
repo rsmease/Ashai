@@ -13,7 +13,7 @@ class GlobalHeader extends React.Component {
 
     render() {
         return (
-            <div className="task-header-primary">
+            <div className="global-header">
                 <div className="left-links">
                     <Link to="/app" className="header-link">My Tasks</Link>
                     <HeaderActionButton

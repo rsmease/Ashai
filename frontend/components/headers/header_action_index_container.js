@@ -36,11 +36,13 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     const defaults = {
-        // closeModal: () => ownProps.closeModal()
+        closeIndexModal: () => ownProps.closeIndexModal()
     };
     switch (ownProps.source) {
         case "global-header-left":
-            return _.merge({}, defaults, {});
+            return _.merge({}, defaults, {
+                createNewProject: formProject => dispatch(createNewProject(formProject))
+            });
         case "global-header-right":
             return _.merge({}, defaults, {
                 logout: () => dispatch(logout())

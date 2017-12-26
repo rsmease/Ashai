@@ -5,50 +5,46 @@ import HeaderActionIndexItem from './header_action_index_item';
 class HeaderActionIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modalOpen: false,
-        };
-
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
-        this.setState({ modalOpen: true });
+    showModalContent(modalAction) {
+        switch (modalAction) {
+            case "New Project":
+                return <GroupModalContainer
+                    closeModal={this.closeModal}
+                    targetGroup={undefined}
+                    modalAction="new"
+                    groupType="project" />;
+            default:
+                break;
+        }
     }
 
-    closeModal() {
-        this.setState({ modalOpen: false });
-    }
-
-    toggleDropdownFeatures() {
+    showIndexItems() {
         switch (this.props.source) {
             case "global-header-left":
-                return <div className="nav-add-dropdown-wrapper">
-                    <div className="arrow-up"></div>
-                    <div className="nav-add-dropdown">
-                        <HeaderActionIndexItem
-                            action={() => console.log("This feature is in development.")}
-                            actionName="New Task" />
-                        <HeaderActionIndexItem
-                            action={this.openModal()}
-                            actionName="New Project" />
-                    </div>
+                return <div className="nav-add-dropdown">
+                    <HeaderActionIndexItem
+                        closeIndexModal={this.props.closeIndexModal}
+                        actionTitle="New Task"
+                        modalAction={false}
+                        otherAction={() => console.log("This feature is in development.")} />
+                    <HeaderActionIndexItem
+                        closeIndexModal={this.props.closeIndexModal}
+                        actionTitle="New Project"
+                        modalAction={true}
+                        otherAction="" />
                 </div>;
-            case "global-header-right":
-                return undefined;
-            case "local-header":
-                return undefined;
             default:
-                return undefined;
+                break;
         }
     }
 
     render() {
         return (
-            <div>
-
-                {this.toggleDropdownFeatures()}
+            <div className="nav-add-dropdown-wrapper">
+                <div className="arrow-up"></div>
+                {this.showIndexItems()}
             </div>
         );
     }

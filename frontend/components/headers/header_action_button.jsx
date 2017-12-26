@@ -53,7 +53,7 @@ class HeaderActionButton extends React.Component {
                     }
                 }>
                 <HeaderActionIndexContainer
-                    closeModal={this.closeModal}
+                    closeIndexModal={this.closeModal}
                     source={this.props.source} />
             </Modal>
         </div>);

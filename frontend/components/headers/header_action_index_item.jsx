@@ -13,7 +13,7 @@ class HeaderActionIndexItem extends React.Component {
         this.state = {
             modalOpen: false
         };
-
+        this.toggleAction = this.toggleAction.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -23,12 +23,11 @@ class HeaderActionIndexItem extends React.Component {
     }
 
     closeModal() {
-        console.log("firing this function");
         this.setState({ modalOpen: false });
     }
 
     toggleAction() {
-        return this.props.modalAction ? this.openModal : this.props.otherAction;
+        return this.props.modalAction ? this.openModal() : this.props.otherAction();
     }
 
     showModalContent() {

@@ -87,6 +87,7 @@ class GroupModal extends React.Component {
         if (e.target.className === "root-modal-container" ||
             e.target.className === "modal-cancel" ||
             e.target.className === "modal-delete-cancel") {
+            console.log(this.props);
             e.preventDefault();
             this.props.closeModal();
         }

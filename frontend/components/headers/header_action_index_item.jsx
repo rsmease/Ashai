@@ -23,6 +23,7 @@ class HeaderActionIndexItem extends React.Component {
     }
 
     closeModal() {
+        console.log("firing this function");
         this.setState({ modalOpen: false });
     }
 
@@ -58,7 +59,7 @@ class HeaderActionIndexItem extends React.Component {
 
     render() {
         return (<div className="nav-add-item-container"
-            onClick={this.toggleAction()}>
+            onClick={this.toggleAction}>
             {this.showAffordance()}
             <p className="nav-add-title">{this.props.actionTitle}</p>
             <Modal

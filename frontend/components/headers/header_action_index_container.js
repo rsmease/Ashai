@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     const defaults = {
-        closeDropdown: () => ownProps.closeDropdown()
+        toggleDropdown: () => ownProps.toggleDropdown()
     };
     switch (ownProps.source) {
         case "global-header-left":

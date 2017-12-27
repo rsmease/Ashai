@@ -29,12 +29,12 @@ class HeaderActionIndex extends React.Component {
             case "global-header-left":
                 return <div className="nav-add-dropdown">
                     <HeaderActionIndexItem
-                        closeDropdown={this.props.closeDropdown}
+                        toggleDropdown={this.props.toggleDropdown}
                         actionTitle="New Task"
                         modalAction={false}
                         otherAction={() => console.log("This feature is in development.")} />
                     <HeaderActionIndexItem
-                        closeDropdown={this.props.closeDropdown}
+                        toggleDropdown={this.props.toggleDropdown}
                         actionTitle="New Project"
                         modalAction={true}
                         otherAction="" />

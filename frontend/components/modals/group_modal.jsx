@@ -92,8 +92,6 @@ class GroupModal extends React.Component {
         }
     }
 
-    //TODO: RENDER ERRORS;
-
     filteredErrors(labelName) {
         return this.props.errors.modal.filter((error) => (
             error.toLowerCase().includes(labelName)

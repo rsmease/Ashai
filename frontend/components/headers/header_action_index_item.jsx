@@ -24,7 +24,6 @@ class HeaderActionIndexItem extends React.Component {
 
     closeModal() {
         this.setState({ modalOpen: false });
-        this.props.closeDropdown();
     }
 
     toggleAction() {
@@ -64,6 +63,7 @@ class HeaderActionIndexItem extends React.Component {
             <p className="nav-add-title">{this.props.actionTitle}</p>
             <Modal
                 isOpen={this.state.modalOpen}
+                onAfterOpen={this.props.toggleDropdown}
                 onRequestClose={this.closeModal}
                 overlayClassName={
                     {

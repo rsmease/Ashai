@@ -7,6 +7,7 @@
     width: calc(100% - 244px);
 }
 
+//navigation header, consisent on all pages
 .global-header {
     height: 40px;
     padding: 0 30px;
@@ -45,13 +46,47 @@
     display: inline-block;
 }
 
-.global-header-left-dropdown {
-    position: absolute;
-    top: 30px;
-    left: 268px;
-    width: 160px;
+.arrow-up-gold {
+    @include arrow-up($lannister-gold);
+}
+
+.global-header-left-action-index {
     @include flex-center(column);
-    z-index: 200;
+    overflow: scroll;
+    background-color: $winter-white;
+    width: 160px;
+    border-radius: 4px;
+    border-top: 3px solid $lannister-gold;
+    @include float-shadow;
+}
+
+.global-header-left-action-index-item {
+    @include flex(row);
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    width: 160px;
+    cursor: pointer;
+}
+
+.global-header-left-action-index-item:hover {
+    @include background-gradient($melisandre-red, $add-button-gradient);
+    @include hover-ease(background);
+}
+
+.global-header-left-action-index-item:hover>.action-index-item-title, .global-header-left-action-index-item:hover>.action-index-item-icon {
+    color: $winter-white;
+}
+
+.action-index-item-icon {
+    color: $targ-silver-dark;
+    font-size: $text-header;
+    margin: 0 0 0 15px;
+}
+
+.action-index-item-title {
+    @extend .action-index-item-icon;
+    font-size: $text;
 }
 
 .upgrade-button {
@@ -288,23 +323,7 @@
     box-shadow: 0 0 3px 3px $night-king-blue
 }
 
-.nav-add-dropdown {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    overflow: scroll;
-    z-index: 175;
-    background-color: $winter-white;
-    width: 160px;
-    border-radius: 4px;
-    border-top: 3px solid $lannister-gold;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
+
 
 // .nav-add-dropdown-wrapper {
 //     position: absolute;
@@ -325,15 +344,6 @@
 .action-index-container-visible {
     @extend .action-index-container-hidden;
     @include flex-center(column);
-}
-
-.arrow-up {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-
-    border-bottom: 10px solid $lannister-gold;
 }
 
 .nav-add-item-container {

@@ -35,7 +35,8 @@ class HeaderActionButton extends React.Component {
                 onClick={this.toggleDropdown} />;
         } else if (this.props.source === "global-header-right") {
             return (
-                <div className="user-options-container">
+                <div className="user-options-container"
+                    onClick={this.toggleDropdown}>
                     <a className="header-link"> {this.props.currentUser.name} </a>
                     <img
                         src={this.props.currentUser.profile_image_url}

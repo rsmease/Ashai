@@ -19,14 +19,7 @@ class HeaderActionButton extends React.Component {
     }
 
     toggleDropdownClass() {
-        switch (this.props.source) {
-            case "global-header-left":
-                return this.state.dropdownOpen ? "action-index-container-visible" : "action-index-container-hidden";
-            case "global-header-right":
-                return this.state.dropdownOpen ? "global-header-right-action-index-container-visible" : "global-header-right-action-index-container-hidden";
-            default:
-                break;
-        }
+        return this.state.dropdownOpen ? "action-index-container-visible" : "action-index-container-hidden";
     }
 
     handleClickOutside() {

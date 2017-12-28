@@ -13,7 +13,18 @@ class HeaderActionIndex extends React.Component {
             case "global-header-left":
                 return "global-header-left-action-index";
             default:
-                return "global-header-left-action-index";
+                return "global-header-right-action-index";
+        }
+    }
+
+    toggleArrowClass() {
+        switch (this.props.source) {
+            case "global-header-left":
+                return "arrow-up-gold";
+            case "global-header-right":
+                return "arrow-up-blue";
+            default:
+                return "arrow-up-blue";
         }
     }
 
@@ -41,7 +52,7 @@ class HeaderActionIndex extends React.Component {
                         otherAction="" />
                 </div>;
             case "global-header-right":
-                return <div className="nav-user-options">
+                return <div className={this.toggleDisplayClass()}>
                     <HeaderActionIndexItem
                         source={this.props.source}
                         toggleDropdown={this.props.toggleDropdown}
@@ -63,7 +74,7 @@ class HeaderActionIndex extends React.Component {
     render() {
         return (
             <div className="action-index-container-visible">
-                <div className="arrow-up-gold"></div>
+                <div className={this.toggleArrowClass()}></div>
                 {this.showIndexItems()}
             </div>
         );

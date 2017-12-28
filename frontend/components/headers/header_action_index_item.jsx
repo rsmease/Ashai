@@ -34,8 +34,10 @@ class HeaderActionIndexItem extends React.Component {
         switch (this.props.source) {
             case "global-header-left":
                 return "global-header-left-action-index-item";
+            case "global-header-right":
+                return "global-header-right-action-index-item";
             default:
-                return "global-header-left-action-index-item";
+                return "";
         }
     }
 

@@ -19,7 +19,14 @@ class HeaderActionButton extends React.Component {
     }
 
     toggleDropdownClass() {
-        return this.state.dropdownOpen ? "action-index-container-visible" : "action-index-container-hidden";
+        switch (this.props.source) {
+            case "global-header-left":
+                return this.state.dropdownOpen ? "action-index-container-visible" : "action-index-container-hidden";
+            case "global-header-right":
+                return this.state.dropdownOpen ? "global-header-right-action-index-container-visible" : "global-header-right-action-index-container-hidden";
+            default:
+                break;
+        }
     }
 
     handleClickOutside() {
@@ -31,11 +38,11 @@ class HeaderActionButton extends React.Component {
     showAffordanceIcon() {
         if (this.props.source === "global-header-left") {
             return <MaterialDesign.MdAdd
-                className="global-left-action-button"
+                className="global-header-left-action-button"
                 onClick={this.toggleDropdown} />;
         } else if (this.props.source === "global-header-right") {
             return (
-                <div className="user-options-container"
+                <div className="global-header-right-action-button"
                     onClick={this.toggleDropdown}>
                     <a className="header-link"> {this.props.currentUser.name} </a>
                     <img

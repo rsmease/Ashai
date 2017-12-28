@@ -30,16 +30,51 @@
     color: $night-king-blue;
 }
 
-.global-left-action-button {
+//global left (defaults) for header dropdown styling
+.global-header-left-action-button {
     border-radius: 50%;
     color: $winter-white;
     font-size: $add-button;
     @include background-gradient($lannister-gold, $add-button-gradient);
 }
 
-.global-left-action-button:hover {
+.global-header-left-action-button:hover {
     @include spin(90deg);
 }
+
+.global-header-right-action-button {
+    @include flex-center(row);
+}
+
+//toggle dropdown visiblity
+.action-index-container-hidden {
+    top: 13px;
+    left: -34px;
+    z-index: 200;
+    display: none;
+    position: absolute;
+}
+
+.global-header-right-action-index-container-hidden {
+    top: 20px;
+    right: 13px;
+    z-index: 200;
+    display: none;
+    position: absolute;
+}
+
+.action-index-container-visible {
+    @extend .action-index-container-hidden;
+    @include flex-center(column);
+}
+
+.global-header-right-action-index-container-visible {
+    @extend .action-index-container-hidden;
+    @include flex(column);
+    align-items: flex-end;
+    justify-content: center;
+}
+
 
 .header-action-button-container {
     position: relative;
@@ -50,6 +85,10 @@
     @include arrow-up($lannister-gold);
 }
 
+.arrow-up-blue {
+    @include arrow-up($night-king-blue);
+}
+
 .global-header-left-action-index {
     @include flex-center(column);
     overflow: scroll;
@@ -58,6 +97,12 @@
     border-radius: 4px;
     border-top: 3px solid $lannister-gold;
     @include float-shadow;
+}
+
+.global-header-right-action-index {
+    @extend .global-header-left-action-index;
+    width: 200px;
+    border-top: 3px solid $night-king-blue;
 }
 
 .global-header-left-action-index-item {
@@ -71,10 +116,27 @@
 
 .global-header-left-action-index-item:hover {
     @include background-gradient($melisandre-red, $add-button-gradient);
-    @include hover-ease(background);
 }
 
-.global-header-left-action-index-item:hover>.action-index-item-title, .global-header-left-action-index-item:hover>.action-index-item-icon {
+.global-header-right-action-index-item {
+    @include flex(row);
+    align-items: center;
+    justify-content: flex-start;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+    background-color: $winter-white;
+}
+
+.global-header-right-action-index-item:hover {
+    background-color: $night-king-blue;
+    @include hover-ease(background-color);
+}
+
+
+.global-header-left-action-index-item:hover>.action-index-item-title,
+.global-header-right-action-index-item:hover>.action-index-item-title, .global-header-left-action-index-item:hover>.action-index-item-icon,
+.global-header-right-action-index-item:hover>.action-index-item-icon, {
     color: $winter-white;
 }
 
@@ -100,9 +162,6 @@
     background-color: $lannister-gold-button-hover;
 }
 
-.user-options-container {
-    @include flex-center(row);
-}
 
 .global-header-profile-image {
     @extend .sidebar-profile-image;
@@ -112,6 +171,11 @@
 
 .global-header-profile-image:hover {
     box-shadow: 0 0 3px 3px $night-king-blue;
+}
+
+//deprecrated
+.user-options-container {
+    @include flex-center(row);
 }
 
 .toggle-user-options-panel {
@@ -333,19 +397,6 @@
 //     @include flex-center(column);
 //     z-index: 200;
 // }
-.action-index-container-hidden {
-    top: 13px;
-    left: -34px;
-    z-index: 200;
-    display: none;
-    position: absolute;
-}
-
-.action-index-container-visible {
-    @extend .action-index-container-hidden;
-    @include flex-center(column);
-}
-
 .nav-add-item-container {
     display: -webkit-box;
     display: -moz-box;

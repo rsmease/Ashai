@@ -28,21 +28,32 @@ class HeaderActionButton extends React.Component {
         }
     }
 
+    toggleAffordanceIconPosition() {
+        return this.state.dropdownOpen ? "-active" : "";
+    }
+
     showAffordanceIcon() {
-        if (this.props.source === "global-header-left") {
-            return <MaterialDesign.MdAdd
-                className="global-header-left-action-button"
-                onClick={this.toggleDropdown} />;
-        } else if (this.props.source === "global-header-right") {
-            return (
-                <div className="global-header-right-action-button"
-                    onClick={this.toggleDropdown}>
-                    <a className="header-link"> {this.props.currentUser.name} </a>
-                    <img
-                        src={this.props.currentUser.profile_image_url}
-                        className="global-header-profile-image"></img>
-                </div>
-            );
+        switch (this.props.source) {
+            case "global-header-left":
+                return <MaterialDesign.MdAdd
+                    className="global-header-left-action-button"
+                    onClick={this.toggleDropdown} />;
+            case "global-header-right":
+                return (
+                    <div className="global-header-right-action-button"
+                        onClick={this.toggleDropdown}>
+                        <a className="header-link"> {this.props.currentUser.name} </a>
+                        <img
+                            src={this.props.currentUser.profile_image_url}
+                            className="global-header-profile-image"></img>
+                    </div>
+                );
+            case "local-header":
+                return <MaterialDesign.MdChevronRight
+                    className={`local-header-action-button${this.toggleAffordanceIconPosition()}`}
+                    onClick={this.toggleDropdown} />;
+            default:
+                break;
         }
     }
 

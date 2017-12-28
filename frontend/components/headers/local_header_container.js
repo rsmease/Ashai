@@ -1,14 +1,61 @@
+//utils
 import React from 'react';
-
-import LocalHeader from './local_header';
 import {
     connect
 } from 'react-redux';
 
-const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.session.currentUser,
-    location: ownProps.location
+//actions
+import {
+    requestProject
+} from '../../actions/project_actions';
+import {
+    requestTeam
+} from '../../actions/team_actions';
+import {
+    requestUser
+} from '../../actions/user_actions';
+
+//components
+import LocalHeader from './local_header';
+
+const mapStateToProps = (state, ownProps) => {
+
+    let entityType;
+    let entityId;
+    let entities;
+
+    if (ownProps.location === "app") {
+        entityType = "user";
+        entityId = state.session.currentUser.id;
+    } else {
+        entityType = ownProps.location.split("/")[0].slice(0, -1);
+        entityId = parseInt(ownProps.location.split("/")[1]);
+    }
+
+    switch (entityType) {
+        case "team":
+            entities = state.entities.teams;
+            break;
+        case "project":
+            entities = state.entities.projects;
+            break;
+        default:
+            entities = state.entities.users;
+    }
+
+    return {
+        currentUser: state.session.currentUser,
+        entityType: entityType,
+        entityId: entityId,
+        entities: entities
+    };
+
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    requestProject: projectId => dispatch(requestProject(projectId)),
+    requestTeam: teamId => dispatch(requestTeam(teamId)),
+    requestUser: userId => dispatch(requestUser(userId))
 });
 
-
-export default connect(mapStateToProps, null)(LocalHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(LocalHeader);

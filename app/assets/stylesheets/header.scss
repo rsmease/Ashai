@@ -182,6 +182,35 @@
     @include flex-center(row);
 }
 
+.local-header-title {
+    font-size: $small-header;
+    font-weight: 800;
+}
+
+.local-header-profile-image {
+    @extend .sidebar-profile-image;
+    max-height: 30px;
+}
+
+.local-header-profile-image:hover {
+    box-shadow: 0 0 3px 3px $night-king-blue
+}
+
+.local-header-action-button {
+    color: $targ-silver-dark;
+    font-size: $add-button;
+    @include spin(90deg);
+}
+
+.local-header-action-button:hover {
+    color: $cersei-green;
+}
+
+.local-header-action-button-active {
+    @extend .local-header-action-button;
+    @include spin(-90deg);
+    color: $cersei-green;
+}
 
 //stateless container for TaskHeaderPrimary and TaskHeaderSecondary
 //TO BE REMOVED

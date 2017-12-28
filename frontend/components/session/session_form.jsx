@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
   componentWillMount() {
     document.title = `Ashai${this.getTitle()}`;
     this.currentPath = this.props.history.location.pathname;
-    console.log("firing")
     if (this.props.match.path === "/demo" && this.demoStart === false) {
       this.demoStart = true;
       this.demoLogin();

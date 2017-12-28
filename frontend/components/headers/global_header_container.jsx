@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GlobalHeader from './navigation_header2';
+import GlobalHeader from './global_header';
 import {
     connect
 } from 'react-redux';

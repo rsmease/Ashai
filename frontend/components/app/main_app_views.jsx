@@ -6,7 +6,6 @@ import Sidebar from '../sidebar/sidebar';
 
 //headers
 import RootHeader from '../headers/root_header';
-import NavigationHeaderContainer from '../headers/navigation_header_container';
 import TaskHeaderContainer from '../headers/task_header_container';
 import HomeHeaderContainer from '../headers/home_header_container';
 import UserHeaderContainer from '../headers/user_header_container';
@@ -34,7 +33,7 @@ export const MainAppViewTeam = () => (
   <div className="app-container">
     <Sidebar />
     <div className="task-with-header">
-      <NavigationHeaderContainer />
+      <RootHeader />
       <TeamHeaderContainer />
       <TeamIndexContainer />
     </div>
@@ -45,7 +44,7 @@ export const MainAppViewUser = () => (
   <div className="app-container">
     <Sidebar />
     <div className="task-with-header">
-      <NavigationHeaderContainer />
+      <RootHeader />
       <UserHeaderContainer />
       <TaskIndexContainer />
     </div>
@@ -56,7 +55,7 @@ export const MainAppViewProject = () => (
   <div className="app-container">
     <Sidebar />
     <div className="task-with-header">
-      <NavigationHeaderContainer />
+      <RootHeader />
       <ProjectHeaderContainer />
       <ProjectTaskIndexContainer />
     </div>

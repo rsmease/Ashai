@@ -7,8 +7,6 @@ class TeamIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.teamMembersWithoutCurrentUser =
-    //   this.teamMembersWithoutCurrentUser.bind(this);
   }
 
   componentDidMount() {

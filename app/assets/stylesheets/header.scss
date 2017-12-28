@@ -172,6 +172,16 @@
     box-shadow: 0 0 3px 3px $night-king-blue;
 }
 
+//local header 
+.local-header {
+    height: 65px;
+    border-top: 1px solid $targ-silver-light;
+    border-bottom: 1px solid $targ-silver-light;
+    background-color: $winter-white;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    @include flex-center(row);
+}
+
 
 //stateless container for TaskHeaderPrimary and TaskHeaderSecondary
 //TO BE REMOVED

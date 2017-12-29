@@ -1,21 +1,16 @@
+//utils
 import React from 'react';
 import Modal from 'react-modal';
+import _ from 'lodash';
 import onClickOutside from 'react-onclickoutside';
+
+//components
 import HeaderActionIndexItem from './header_action_index_item';
 
 class HeaderActionIndex extends React.Component {
     constructor(props) {
         super(props);
     }
-
-    // toggleDisplayClass() {
-    //     switch (this.props.source) {
-    //         case "global-header-left":
-    //             return "global-header-left-action-index";
-    //         default:
-    //             return "global-header-right-action-index";
-    //     }
-    // }
 
     toggleArrowClass() {
         switch (this.props.source) {
@@ -64,6 +59,42 @@ class HeaderActionIndex extends React.Component {
                         modalAction={false}
                         otherAction={this.props.logout} />
                 </div>;
+            case "local-header":
+                if (this.props.currentUserIsOwner) {
+                    return <div className={`${this.props.source}-action-index`}>
+                        <HeaderActionIndexItem
+                            source={this.props.source}
+                            toggleDropdown={this.props.toggleDropdown}
+                            actionTitle={"Manage " + _.capitalize(this.props.entityType) + " Settings"}
+                            targetGroup={this.props.targetGroup}
+                            modalAction={true}
+                            otherAction="" />
+                        <HeaderActionIndexItem
+                            source={this.props.source}
+                            toggleDropdown={this.props.toggleDropdown}
+                            targetGroup={this.props.targetGroup}
+                            actionTitle={"Transfer " + _.capitalize(this.props.entityType) + " Ownership"}
+                            modalAction={false}
+                            otherAction={() => console.log("This feature is in development.")} />
+                        <HeaderActionIndexItem
+                            source={this.props.source}
+                            toggleDropdown={this.props.toggleDropdown}
+                            targetGroup={this.props.targetGroup}
+                            actionTitle={"Delete " + _.capitalize(this.props.entityType)}
+                            modalAction={true}
+                            otherAction="" />
+                    </div>;
+                } else {
+                    return <div className={`${this.props.source}-action-index`}>
+                        <HeaderActionIndexItem
+                            source={this.props.source}
+                            toggleDropdown={this.props.toggleDropdown}
+                            actionTitle={"Leave " + _.capitalize(this.props.entityType)}
+                            currentGroup={this.props.currentGroup}
+                            modalAction={false}
+                            otherAction={() => console.log("This feature is in development.")} />
+                    </div>;
+                }
             default:
                 break;
         }

@@ -6,11 +6,6 @@ import Sidebar from '../sidebar/sidebar';
 
 //headers
 import RootHeader from '../headers/root_header';
-import TaskHeaderContainer from '../headers/task_header_container';
-import HomeHeaderContainer from '../headers/home_header_container';
-import UserHeaderContainer from '../headers/user_header_container';
-import TeamHeaderContainer from '../headers/team_header_container';
-import ProjectHeaderContainer from '../headers/project_header_container';
 
 //core indices
 import TeamIndexContainer from '../teams/team_index_container';
@@ -34,7 +29,6 @@ export const MainAppViewTeam = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <TeamHeaderContainer />
       <TeamIndexContainer />
     </div>
   </div>
@@ -45,7 +39,6 @@ export const MainAppViewUser = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <UserHeaderContainer />
       <TaskIndexContainer />
     </div>
   </div>
@@ -56,7 +49,6 @@ export const MainAppViewProject = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <ProjectHeaderContainer />
       <ProjectTaskIndexContainer />
     </div>
   </div>

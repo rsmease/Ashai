@@ -182,6 +182,12 @@
     @include flex-center(row);
 }
 
+.local-header-title-container {
+    @include flex-center(row);
+    height: 65px;
+    border-bottom: 3px solid $night-king-blue;
+}
+
 .local-header-title {
     font-size: $small-header;
     font-weight: 800;
@@ -210,6 +216,25 @@
     @extend .local-header-action-button;
     @include spin(-90deg);
     color: $cersei-green;
+}
+
+.local-header-action-index-alignment-container {
+    @extend .global-header-right-action-index-alignment-container;
+    top: 0px;
+    left: -178px;
+}
+
+.local-header-action-index {
+    @extend .global-header-right-action-index;
+}
+
+.local-header-action-index-item,
+.local-header-action-index-item-dangerous {
+    @extend .global-header-right-action-index-item;
+}
+
+.local-header-action-index-item-dangerous:hover {
+    background-color: $melisandre-red;
 }
 
 //stateless container for TaskHeaderPrimary and TaskHeaderSecondary

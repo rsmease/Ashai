@@ -22,7 +22,6 @@ class LocalHeader extends React.Component {
     //load local entity unless it exists in current state
     componentWillReceiveProps(nextProps) {
         if (nextProps.entities[nextProps.entityId] === undefined) {
-            console.log("pinging server");
             switch (nextProps.entityType) {
                 case "team":
                     this.props.requestTeam(nextProps.entityId);
@@ -36,6 +35,19 @@ class LocalHeader extends React.Component {
             }
         }
         this.setState({ currentTarget: nextProps.entities[nextProps.entityId] });
+    }
+
+    currentUserIsOwner() {
+        if (this.state.currentTarget) {
+            switch (this.props.entityType) {
+                case "team":
+                    return this.state.currentTarget.team_owner_id === this.props.currentUser.id;
+                case "project":
+                    return this.state.currentTarget.project_owner_id === this.props.currentUser.id;
+                default:
+                    return false;
+            }
+        }
     }
 
     showIcon() {
@@ -54,15 +66,27 @@ class LocalHeader extends React.Component {
         }
     }
 
+    showActionButton() {
+        if (this.props.entityType !== "user" && this.state.currentTarget) {
+            return <HeaderActionButton
+                source="local-header"
+                currentUser={this.props.currentUser}
+                currentUserIsOwner={this.currentUserIsOwner()}
+                entityType={this.props.entityType}
+                targetGroup={this.state.currentTarget}
+            />;
+        }
+    }
+
     render() {
         return (
             <div className="local-header">
                 {this.showIcon()}
-                <h1 className="local-header-title">
-                    {this.showTitle()}</h1>
-                <HeaderActionButton
-                    source="local-header"
-                    currentUser={this.props.currentUser} />
+                <div className="local-header-title-container">
+                    <h1 className="local-header-title">
+                        {this.showTitle()}</h1>
+                </div>
+                {this.showActionButton()}
             </div>
         );
     }

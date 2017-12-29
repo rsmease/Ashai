@@ -1,4 +1,5 @@
 //utils
+import _ from 'lodash'
 import React from 'react';
 import Modal from 'react-modal';
 import * as MaterialDesign from 'react-icons/lib/md';
@@ -31,13 +32,10 @@ class HeaderActionIndexItem extends React.Component {
     }
 
     toggleDisplayClass() {
-        switch (this.props.source) {
-            case "global-header-left":
-                return "global-header-left-action-index-item";
-            case "global-header-right":
-                return "global-header-right-action-index-item";
-            default:
-                return "";
+        if (this.props.actionTitle.includes("Delete")) {
+            return `${this.props.source}-action-index-item-dangerous`;
+        } else {
+            return `${this.props.source}-action-index-item`;
         }
     }
 
@@ -55,6 +53,18 @@ class HeaderActionIndexItem extends React.Component {
                     targetGroup={undefined}
                     modalAction="new"
                     groupType="project" />);
+            case "Manage " + _.capitalize(this.props.entityType) + " Settings":
+                return (<GroupModalContainer
+                    closeModal={this.closeModal}
+                    targetGroup={this.props.targetGroup}
+                    modalAction="edit"
+                    groupType={this.props.entityType} />);
+            case "Delete " + _.capitalize(this.props.entityType):
+                return (<GroupModalContainer
+                    closeModal={this.closeModal}
+                    targetGroup={this.props.targetGroup}
+                    modalAction="delete"
+                    groupType={this.props.entityType} />);
         }
     }
 

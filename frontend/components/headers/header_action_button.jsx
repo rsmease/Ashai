@@ -62,6 +62,10 @@ class HeaderActionButton extends React.Component {
             {this.showAffordanceIcon()}
             <div className={this.toggleDropdownClass()}>
                 <HeaderActionIndexContainer
+                    targetGroup={this.props.targetGroup}
+                    entityType={this.props.entityType}
+                    currentUserIsOwner={this.props.currentUserIsOwner}
+                    currentUser={this.props.currentUser}
                     toggleDropdown={this.toggleDropdown}
                     source={this.props.source} />
             </div>

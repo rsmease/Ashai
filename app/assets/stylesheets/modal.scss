@@ -29,7 +29,6 @@
     animation: shake 0.8s;
 }
 
-
 @keyframes shake {
     0% {
         transform: translate(1px, 1px) rotate(0deg);
@@ -94,10 +93,10 @@
     margin-bottom: 20px;
 }
 
-.modal-header-profile {
+.modal-header-profile-image {
     border-radius: 50%;
-    max-height: 30px;
-    margin-right: 15px;
+    max-height: 40px;
+    margin: -2px 0px 0px 335px;
 }
 
 .modal-form-header {
@@ -105,22 +104,6 @@
     font-size: $small-header;
     color: $nights-watch-black;
     border-bottom: 3px solid $night-king-blue;
-}
-
-//TODO: remove
-.modal-edit-header {
-    padding-bottom: 13px;
-}
-
-//TODO: remove
-.modal-upper-header {
-    margin-bottom: 15px;
-}
-
-//TODO: remove
-.modal-lower-header {
-    margin-top: 0px;
-    color: $cersei-green
 }
 
 .modal-form {

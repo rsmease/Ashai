@@ -16,6 +16,7 @@
     @include flex-space-between(row);
 }
 
+//variant position for 'fixed' effect on screen resize
 .global-header-section {
     @include flex-center(row);
     flex: 1;
@@ -30,7 +31,6 @@
     @extend .global-header-left-section;
     justify-content: flex-end;
 }
-
 
 .header-link {
     color: $nights-watch-black;

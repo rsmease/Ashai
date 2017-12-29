@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, Router, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-class ProfileSettingsModal extends React.Component {
+class UserModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ class ProfileSettingsModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.requestUpdateToUser(this.state)
-      .then(this.props.closeEditUserModal);
+      .then(this.props.closeModal);
   }
 
   handleClickOff(e) {
@@ -41,51 +41,46 @@ class ProfileSettingsModal extends React.Component {
     }
   }
 
-  renderErrors() {
+  filteredErrors(labelName) {
+    return this.props.errors.modal.filter((error) => (
+      error.toLowerCase().includes(labelName)
+    ));
+  }
+
+  showErrors(labelName, displayClass) {
     if (this.props.errors.modal.length > 0) {
       return (
-        <div className="session-errors-list">
-          {this.props.errors.modal.map((error, i) => (
-            <p className="session-error"
-              key={`error-${i}`}>
-              {error}
-            </p>
-          ))}
-        </div>
+        this.filteredErrors(labelName).map((error, i) => (
+          <span key={i} className={displayClass}>{error}</span>
+        ))
       );
     }
   }
-
+  //TODO: fix modal-header-profile class
   render() {
     return (
       <div className="root-modal-container"
         onClick={this.handleClickOff}>
         <div className="modal-form-container">
-          <div className="modal-header-container-user-update">
-            <h2 className="modal-form-header
-              modal-edit-header">Update Profile</h2>
+          <div className="modal-header-container">
+            <h2 className="modal-form-header">Update Profile</h2>
             <img
               src={this.props.currentUser.profile_image_url}
-              className="modal-header-profile"></img>
-          </div>
-          <br></br>
-          <div className="errors-fixed-container-login">
-            {this.renderErrors()}
+              className="modal-header-profile-image"></img>
           </div>
           <form className="modal-form">
 
             <label>NAME</label>
-            <br></br>
+            {this.showErrors("name", "session-error")}
 
             <input
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
             />
-            <br></br>
 
             <label>EMAIL</label>
-            <br></br>
+            {this.showErrors("email", "session-error")}
 
             <input
               type="text"
@@ -95,28 +90,27 @@ class ProfileSettingsModal extends React.Component {
             <br></br>
 
             <label>PROFILE IMAGE URL</label>
-            <br></br>
+            {this.showErrors("image", "session-error")}
 
             <input
               type="text"
               value={this.state.profile_image_url}
               onChange={this.handleInput('profile_image_url')}
             />
-            <br></br>
 
             <label>BIO</label>
-            <br></br>
+            {this.showErrors("bio", "session-error")}
             <textarea
               type="textarea"
               value={this.state.bio}
               onChange={this.handleInput('bio')}
             />
-            <br></br>
-            <div className="submit-options">
+
+            <div className="modal-submit-options">
               <button className="modal-cancel"
                 onClick={this.handleClickOff}>
                 Cancel</button>
-              <button className="modal-form-submit modal-form-submit-valid"
+              <button className="modal-form-submit-valid"
                 onClick={this.handleSubmit}>Update</button>
             </div>
           </form>
@@ -126,4 +120,4 @@ class ProfileSettingsModal extends React.Component {
   }
 }
 
-export default withRouter(ProfileSettingsModal);
+export default withRouter(UserModal);

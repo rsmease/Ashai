@@ -7,8 +7,8 @@ import { Router, Link, WithRouter } from 'react-router-dom';
 
 //components 
 import GroupModalContainer from '../modals/group_modal_container';
-import ProfileSettingsModalContainer
-    from '../modals/profile_settings_modal_container';
+import UserModalContainer
+    from '../modals/user_modal_container';
 
 class HeaderActionIndexItem extends React.Component {
     constructor(props) {
@@ -42,7 +42,6 @@ class HeaderActionIndexItem extends React.Component {
     }
 
     showModalContent() {
-        console.log(this.props)
         switch (this.props.actionTitle) {
             case "New Project":
                 return (<GroupModalContainer
@@ -51,7 +50,7 @@ class HeaderActionIndexItem extends React.Component {
                     modalAction="new"
                     groupType="project" />);
             case "My Profile Settings...":
-                return (<ProfileSettingsModalContainer
+                return (<UserModalContainer
                     closeModal={this.closeModal} />);
             case "Manage " + _.capitalize(this.props.entityType) + " Settings":
                 return (<GroupModalContainer

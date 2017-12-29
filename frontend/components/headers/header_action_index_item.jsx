@@ -17,6 +17,7 @@ class HeaderActionIndexItem extends React.Component {
             modalOpen: false
         };
 
+        this.toggleAction = this.toggleAction.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -31,6 +32,10 @@ class HeaderActionIndexItem extends React.Component {
             this.setState({ modalOpen: true });
         }
 
+    }
+
+    toggleAction(e) {
+        return this.props.modalAction ? this.openModal(e) : this.props.otherAction();
     }
 
     closeModal() {
@@ -86,7 +91,7 @@ class HeaderActionIndexItem extends React.Component {
 
     render() {
         return (<div className={this.toggleDisplayClass()}
-            onClick={this.openModal}>
+            onClick={this.toggleAction}>
             {this.showAffordance()}
             <p className="action-index-item-title">{this.props.actionTitle}</p>
             <Modal

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Router, Redirect, withRouter } from 'react-router-dom';
 
-class EditUserModal extends React.Component {
+class ProfileSettingsModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,8 +15,8 @@ class EditUserModal extends React.Component {
     this.handleClickOff = this.handleClickOff.bind(this);
   }
 
-  componentWillMount () {
-    document.title = "Ashai - Edit User";
+  componentWillMount() {
+    document.title = "Ashai - Edit My Profile";
     this.props.removeAllUserModalErrors();
   }
 
@@ -29,21 +29,21 @@ class EditUserModal extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.requestUpdateToUser(this.state)
-    .then(this.props.closeEditUserModal);
+      .then(this.props.closeEditUserModal);
   }
 
   handleClickOff(e) {
     e.preventDefault();
     if (e.target.className === "root-modal-container" ||
-        e.target.className === "modal-cancel") {
+      e.target.className === "modal-cancel") {
       e.preventDefault();
-      this.props.closeEditUserModal();
+      this.props.closeModal();
     }
   }
 
   renderErrors() {
     if (this.props.errors.modal.length > 0) {
-      return(
+      return (
         <div className="session-errors-list">
           {this.props.errors.modal.map((error, i) => (
             <p className="session-error"
@@ -81,18 +81,18 @@ class EditUserModal extends React.Component {
               type="text"
               value={this.state.name}
               onChange={this.handleInput('name')}
-              />
+            />
             <br></br>
 
-              <label>EMAIL</label>
-              <br></br>
+            <label>EMAIL</label>
+            <br></br>
 
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.handleInput('email')}
-                />
-              <br></br>
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.handleInput('email')}
+            />
+            <br></br>
 
             <label>PROFILE IMAGE URL</label>
             <br></br>
@@ -101,7 +101,7 @@ class EditUserModal extends React.Component {
               type="text"
               value={this.state.profile_image_url}
               onChange={this.handleInput('profile_image_url')}
-              />
+            />
             <br></br>
 
             <label>BIO</label>
@@ -110,14 +110,14 @@ class EditUserModal extends React.Component {
               type="textarea"
               value={this.state.bio}
               onChange={this.handleInput('bio')}
-              />
+            />
             <br></br>
             <div className="submit-options">
               <button className="modal-cancel"
                 onClick={this.handleClickOff}>
                 Cancel</button>
               <button className="modal-form-submit modal-form-submit-valid"
-                  onClick={this.handleSubmit}>Update</button>
+                onClick={this.handleSubmit}>Update</button>
             </div>
           </form>
         </div>
@@ -126,4 +126,4 @@ class EditUserModal extends React.Component {
   }
 }
 
-export default withRouter(EditUserModal);
+export default withRouter(ProfileSettingsModal);

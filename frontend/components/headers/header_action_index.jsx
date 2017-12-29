@@ -65,6 +65,7 @@ class HeaderActionIndex extends React.Component {
                         <HeaderActionIndexItem
                             source={this.props.source}
                             toggleDropdown={this.props.toggleDropdown}
+                            entityType={this.props.entityType}
                             actionTitle={"Manage " + _.capitalize(this.props.entityType) + " Settings"}
                             targetGroup={this.props.targetGroup}
                             modalAction={true}
@@ -73,6 +74,7 @@ class HeaderActionIndex extends React.Component {
                             source={this.props.source}
                             toggleDropdown={this.props.toggleDropdown}
                             targetGroup={this.props.targetGroup}
+                            entityType={this.props.entityType}
                             actionTitle={"Transfer " + _.capitalize(this.props.entityType) + " Ownership"}
                             modalAction={false}
                             otherAction={() => console.log("This feature is in development.")} />
@@ -80,6 +82,7 @@ class HeaderActionIndex extends React.Component {
                             source={this.props.source}
                             toggleDropdown={this.props.toggleDropdown}
                             targetGroup={this.props.targetGroup}
+                            entityType={this.props.entityType}
                             actionTitle={"Delete " + _.capitalize(this.props.entityType)}
                             modalAction={true}
                             otherAction="" />

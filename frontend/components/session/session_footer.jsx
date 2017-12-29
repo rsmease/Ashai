@@ -31,15 +31,17 @@ class SessionFooter extends React.Component {
     return (
       <div className="footer">
         {this.getAlternateOption()}
-        <ul>
-          <li><a href="https://github.com/rsmease"
+        <div className="splash-redirects">
+          <a
+            href="https://github.com/rsmease"
             target="_blank">
-            Github</a></li>
-          <li>-</li>
-          <li><a href="https://www.linkedin.com/in/ryan-mease-140b473a/"
+            Github</a>
+          <p>      -      </p>
+          <a
+            href="https://www.linkedin.com/in/ryan-mease-140b473a/"
             target="_blank">
-            LinkedIn</a></li>
-        </ul>
+            LinkedIn</a>
+        </div>
       </div>
     );
   }

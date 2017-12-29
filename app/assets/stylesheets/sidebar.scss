@@ -6,6 +6,8 @@
     @include flex(column);
     align-items: center;
     justify-content: flex-start;
+    box-shadow: 1px 0px 3px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 .sidebar-logo-container {

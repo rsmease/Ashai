@@ -11,15 +11,27 @@ class LocalHeader extends React.Component {
         };
     }
 
-    //trigger home header render;
-    //header must have currentUser, so it will not receive new props when routing to '/app'
+    //load local entity unless it exists in current state
+    //necessary when first loading entities to state
     componentWillMount() {
-        if (this.props.match.url === '/app') {
-            this.setState({ currentTarget: this.props.currentUser });
+        if (this.props.entities[this.props.entityId] === undefined) {
+            switch (this.props.entityType) {
+                case "team":
+                    this.props.requestTeam(this.props.entityId);
+                    break;
+                case "project":
+                    this.props.requestProject(this.props.entityId);
+                    break;
+                default:
+                    this.props.requestUser(this.props.entityId);
+                    break;
+            }
         }
+        this.setState({ currentTarget: this.props.entities[this.props.entityId] });
     }
 
     //load local entity unless it exists in current state
+    //necessary when jumping between local entities that are already loaded to state  
     componentWillReceiveProps(nextProps) {
         if (nextProps.entities[nextProps.entityId] === undefined) {
             switch (nextProps.entityType) {
@@ -37,6 +49,7 @@ class LocalHeader extends React.Component {
         this.setState({ currentTarget: nextProps.entities[nextProps.entityId] });
     }
 
+    //cascade to header action index; different actions for owner
     currentUserIsOwner() {
         if (this.state.currentTarget) {
             switch (this.props.entityType) {
@@ -56,6 +69,8 @@ class LocalHeader extends React.Component {
                 src={this.state.currentTarget.profile_image_url} />;
         }
     }
+
+    //showName and showTitle are separated so that you don't see just " 's" during page load of users
     showName() {
         return this.state.currentTarget ? this.state.currentTarget.name : "";
     }

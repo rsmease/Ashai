@@ -21,6 +21,7 @@
 }
 
 .splash-links {
+    margin: 5px 0 0 0;
     width: 300px;
     flex-wrap: wrap;
     @include flex-center(row)
@@ -29,6 +30,19 @@
 .splash-links p {
     font-size: 16px;
     color: $winter-white;
+}
+
+.splash-redirects {
+    @include flex-center(row);
+    margin: 30px 0 0 0;
+}
+
+.splash-redirects>p, .splash-redirects>a {
+    color: $winter-white;
+}
+
+.splash-redirects>p {
+    margin: 0 15px;
 }
 
 //session pages

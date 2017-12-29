@@ -39,18 +39,18 @@ class NavBarSearch extends React.Component {
   }
 
   removePlaceholderVal() {
-    this.setState({ placeholderVal: ''});
+    this.setState({ placeholderVal: '' });
   }
 
   render() {
     return (
-      <div className="search-bar-container">
+      <div className="global-header-section">
         <div className="search-field">
-          <MaterialDesign.MdSearch/>
+          <MaterialDesign.MdSearch />
           <input onChange={this.handleChange} type="text"
-           placeholder={this.state.placeholderVal}
-           value={this.state.searchVal}
-           onFocus={this.removePlaceholderVal}>
+            placeholder={this.state.placeholderVal}
+            value={this.state.searchVal}
+            onFocus={this.removePlaceholderVal}>
           </input>
           <ResultsIndex
             parent={"NavBar"}
@@ -62,7 +62,7 @@ class NavBarSearch extends React.Component {
               Object.values(this.props.teamSearchResults)}
             currentUser={this.props.currentUser}
             searchVal={this.state.searchVal}
-            clearState={this.clearState}/>
+            clearState={this.clearState} />
         </div>
       </div>
     );

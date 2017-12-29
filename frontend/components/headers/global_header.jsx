@@ -13,13 +13,13 @@ class GlobalHeader extends React.Component {
     render() {
         return (
             <div className="global-header">
-                <div className="global-header-section">
+                <div className="global-header-left-section">
                     <Link to="/app" className="header-link">My Tasks</Link>
                     <HeaderActionButton
                         source="global-header-left" />
                 </div>
                 <NavBarSearchContainer />
-                <div className="global-header-section">
+                <div className="global-header-right-section">
                     <a href="https://www.stackoverflow.com"
                         className="header-link" target="_blank">Help</a>
                     <a href="https://www.linkedin.com/in/ryan-mease-140b473a/"

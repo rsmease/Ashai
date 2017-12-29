@@ -18,7 +18,19 @@
 
 .global-header-section {
     @include flex-center(row);
+    flex: 1;
 }
+
+.global-header-left-section {
+    @extend .global-header-section;
+    justify-content: flex-start;
+}
+
+.global-header-right-section {
+    @extend .global-header-left-section;
+    justify-content: flex-end;
+}
+
 
 .header-link {
     color: $nights-watch-black;

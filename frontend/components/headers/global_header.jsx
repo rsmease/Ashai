@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link, Router, Redirect } from 'react-router-dom';
 
-import UserOptionsIndex from './user_options_index';
 import HeaderActionButton from './header_action_button';
 import NavBarSearchContainer from '../searches/nav_bar_search_container';
 

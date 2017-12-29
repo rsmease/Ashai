@@ -16,21 +16,25 @@ class HeaderActionIndexItem extends React.Component {
         this.state = {
             modalOpen: false
         };
-        this.toggleAction = this.toggleAction.bind(this);
+
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
 
-    openModal() {
-        this.setState({ modalOpen: true });
+    //precision logic required beacuse this modal is nested inside of the enclosing div
+    //enclosing div has onCLick={this.openModal}, which can be triggered when trying to clickoff 
+    //of the modal, since it is a child element of this same div
+    openModal(e) {
+        if (!(e.target.className === "root-modal-container" ||
+            e.target.className === "modal-cancel")) {
+            e.preventDefault();
+            this.setState({ modalOpen: true });
+        }
+
     }
 
     closeModal() {
         this.setState({ modalOpen: false });
-    }
-
-    toggleAction() {
-        return this.props.modalAction ? this.openModal() : this.props.otherAction();
     }
 
     toggleDisplayClass() {
@@ -82,7 +86,7 @@ class HeaderActionIndexItem extends React.Component {
 
     render() {
         return (<div className={this.toggleDisplayClass()}
-            onClick={this.toggleAction}>
+            onClick={this.openModal}>
             {this.showAffordance()}
             <p className="action-index-item-title">{this.props.actionTitle}</p>
             <Modal

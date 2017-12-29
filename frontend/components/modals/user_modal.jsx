@@ -56,7 +56,7 @@ class UserModal extends React.Component {
       );
     }
   }
-  //TODO: fix modal-header-profile class
+
   render() {
     return (
       <div className="root-modal-container"

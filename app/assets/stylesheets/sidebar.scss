@@ -23,8 +23,18 @@
 }
 
 .sidebar-logo-container>h1 {
+    display: inline-block;
     font-size: $small-header;
 }
+
+.sidebar-logo-container>h1:after {
+    @include expanding-bottom-border($winter-white, 1px);
+}
+
+.sidebar-logo-container>h1:hover:after {
+    @include expanding-bottom-border-after-hover;
+}
+
 
 .sidebar-sections-container {
     @include flex-center(column);

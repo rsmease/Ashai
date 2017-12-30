@@ -41,6 +41,18 @@
     color: $winter-white;
 }
 
+.splash-links>a {
+    display: inline-block;
+}
+
+.splash-redirects>a:after {
+    @include expanding-bottom-border($winter-white, 1px);
+}
+
+.splash-redirects>a:hover:after {
+    @include expanding-bottom-border-after-hover;
+}
+
 .splash-redirects>p {
     margin: 0 15px;
 }

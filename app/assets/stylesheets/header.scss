@@ -33,14 +33,24 @@
 }
 
 .header-link {
+    display: inline-block;
     color: $nights-watch-black;
     font-size: $text;
     margin: 0 15px 0 0;
 }
 
+.header-link:after {
+    @include expanding-bottom-border($night-king-blue, 1px);
+}
+
 .header-link:hover {
     color: $night-king-blue;
 }
+
+.header-link:hover:after {
+    @include expanding-bottom-border-after-hover;
+}
+
 
 //global left (defaults) for header dropdown styling
 .global-header-left-action-button {

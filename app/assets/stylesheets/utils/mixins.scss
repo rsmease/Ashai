@@ -103,3 +103,20 @@
 @mixin float-shadow {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
+@mixin expanding-bottom-border($color, $thickness) {
+    content: '';
+    display: block;
+    width: 100%;
+    height: $thickness;
+    background: $color;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+@mixin expanding-bottom-border-after-hover {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}

@@ -1,12 +1,17 @@
+//utils
 import {
     connect
 } from 'react-redux';
 import {
-    requestTeam
-} from '../../actions/team_actions';
-import {
     withRouter
 } from 'react-router-dom';
+
+//actions
+import {
+    requestTeam
+} from '../../actions/team_actions';
+
+//components
 import TeamIndex from './team_index';
 
 

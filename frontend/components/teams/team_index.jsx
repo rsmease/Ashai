@@ -1,12 +1,13 @@
+//utils
 import React from 'react';
-import { Link, Router, withRouter } from 'react-router-dom';
-import TeamIndexItem from './team_index_item';
+import { withRouter } from 'react-router-dom';
 
+//components
+import TeamIndexItem from './team_index_item';
 
 class TeamIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   componentDidMount() {

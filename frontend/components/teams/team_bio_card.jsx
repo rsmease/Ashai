@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Router, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class TeamBioCard extends React.Component {
   constructor(props) {
@@ -12,8 +12,7 @@ class TeamBioCard extends React.Component {
       backgroundImage: `url(${this.props.member.profile_image_url})`
     };
 
-
-    return(
+    return (
       <div className="team-index-bio-card" style={backgroundImage}>
         <div className="team-index-bio-card-modal">
           <Link className="team-index-bio-card-link"
@@ -22,9 +21,9 @@ class TeamBioCard extends React.Component {
               {this.props.member.name}
               <div className="team-index-bio-about-me">Bio</div>
             </h4>
-          <p className="team-index-bio-card-bio">
-            {this.props.member.bio}
-          </p>
+            <p className="team-index-bio-card-bio">
+              {this.props.member.bio}
+            </p>
           </Link>
         </div>
       </div>

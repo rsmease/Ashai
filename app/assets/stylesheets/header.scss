@@ -34,9 +34,10 @@
 
 .header-link {
     display: inline-block;
-    color: $nights-watch-black;
+    color: $tarth-sapphire;
     font-size: $text;
     margin: 0 15px 0 0;
+    @include hover-ease(color);
 }
 
 .header-link:after {
@@ -44,7 +45,7 @@
 }
 
 .header-link:hover {
-    color: $night-king-blue;
+    color: $night-king-blue-button-hover;
 }
 
 .header-link:hover:after {

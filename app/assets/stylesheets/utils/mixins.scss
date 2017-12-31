@@ -120,3 +120,9 @@
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
 }
+
+@mixin card-defaults {
+    background: $winter-white;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+}

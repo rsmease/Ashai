@@ -24,40 +24,44 @@ class ProjectDetail extends React.Component {
   }
 
   render() {
-    return(
-      <div className="project-detail-wrapper">
-        <div className="project-members">
-          <h4 className="project-description-title">Members</h4>
+    return (
+      <div className="project-detail">
+        <div className="project-members-detail">
+          <h4 className="project-detail-title">Members</h4>
           <ProjectMembersIndex
             currentUser={this.props.currentUser}
             members={this.props.project.members}
-            project={this.props.project}/>
-            <div>
-                <MaterialDesign.MdPersonAdd
-                  className="project-new-member-button"
-                  onClick={this.openAddMembersModal}/>
-            </div>
+            project={this.props.project} />
+          <div>
+            <MaterialDesign.MdPersonAdd
+              className="project-new-member-button"
+              onClick={this.openAddMembersModal} />
+          </div>
           <Modal
             isOpen={this.state.addMembersModalOpen}
             onRequestClose={this.closeAddMembersModal}
             overlayClassName={
-              {base: "root-modal-container-invisible",
+              {
+                base: "root-modal-container-invisible",
                 afterOpen: "root-modal-container-invisible",
-                beforeClose: "root-modal-container-invisible"}
+                beforeClose: "root-modal-container-invisible"
               }
+            }
             className={
-              { base: "override-content-default",
+              {
+                base: "override-content-default",
                 afterOpen: "override-content-default",
-                beforeClose: "override-content-default"}
-              }>
-              <AddMembersSearchContainer
-                closeAddMembersModal={this.closeAddMembersModal}
-                parent={"ProjectDetail"}
-                group={this.props.project}/>
-            </Modal>
+                beforeClose: "override-content-default"
+              }
+            }>
+            <AddMembersSearchContainer
+              closeAddMembersModal={this.closeAddMembersModal}
+              parent={"ProjectDetail"}
+              group={this.props.project} />
+          </Modal>
         </div>
         <div className="project-description">
-          <h4 className="project-description-title">Description</h4>
+          <h4 className="project-detail-title">Description</h4>
           <p>{this.props.project.description}</p>
         </div>
       </div>

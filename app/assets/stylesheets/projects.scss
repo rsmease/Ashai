@@ -1,59 +1,83 @@
 // Place all the styles related to the API::Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project-detail {
+    margin: 35px;
+    z-index: 1;
+    @include flex-center(column);
+}
+
+.project-members-detail {
+    @include flex-center(column);
+    @include card-defaults;
+    width: 244px;
+}
+
+.project-members-index {
+    @include flex-center(row);
+    flex-wrap: wrap;
+    margin: 15px 15px 5px 15px;
+}
+
+.project-detail-title {
+    font-size: $text-header;
+    font-weight: bold;
+    margin: 30px 0 0 0;
+}
+
+
+.project-detail-profile-image {
+    border-radius: 50%;
+    max-height: 64px;
+    margin: 5px;
+}
+
+.project-detail-profile-image:hover {
+    box-shadow: 0 0 3px 3px $night-king-blue
+}
+
+.project-description {
+    @extend .project-members-detail;
+    margin: 10px 0 0 0;
+}
+
+.project-description>p {
+    margin: 15px 30px 30px 30px;
+    font-size: $text;
+    text-align: center;
+}
 
 .project-new-member-button {
-  border: 1px solid $targ-silver-dark;
-  border-radius: 50%;
-  height: 36px;
-  width: 36px;
-  padding: 12px;
-  color: $targ-silver-dark;
-  margin-bottom: 30px;
-  margin-right: 10px;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-transition: all 200ms ease-in;
-  -moz-transition: all 200ms ease-in;
-  -ms-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
+    border: 1px solid $targ-silver-dark;
+    color: $targ-silver-dark;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    padding: 12px;
+    margin: 0 0 30px 0;
+    @include flex-center(row);
+    @include hover-ease(all);
 }
 
 .project-new-member-button:hover {
-  border: 1px solid $cersei-green;
-  background-color: $cersei-green;
-  color: $winter-white;
+    border: 1px solid $cersei-green;
+    background-color: $cersei-green;
+    color: $winter-white;
 }
 
 .view-members-results-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: column;
-  overflow: scroll;
-  max-height: 300px;
-  z-index: 300;
-  background-color: $winter-white;
-  width: 300;
-  border-radius: 4px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    @include flex(column);
+    justify-content: flex-start;
+    overflow: scroll;
+    max-height: 300px;
+    z-index: 300;
+    background-color: $winter-white;
+    width: 300;
+    border-radius: 4px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .group-members-view-container {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  margin-top: 30px;
+    @include flex(row);
+    margin-top: 30px;
 }

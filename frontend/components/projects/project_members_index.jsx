@@ -9,14 +9,14 @@ class ProjectMembersIndex extends React.Component {
 
   render() {
     return (
-      <div className="project-members-wrapper">
+      <div className="project-members-index">
         {
           this.props.members.map(
             member => <Link to={`/users/${member.id}`}
-            key={Math.random()}>
-            <img className="project-member-image"
-              key={Math.random()}
-              src={member.profile_image_url}/>
+              key={Math.random()}>
+              <img className="project-detail-profile-image"
+                key={Math.random()}
+                src={member.profile_image_url} />
             </Link>
           )
         }

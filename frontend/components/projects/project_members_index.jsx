@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, Router } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 class ProjectMembersIndex extends React.Component {
   constructor(props) {

@@ -1,6 +1,5 @@
 //utils
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 //components
 import TeamIndexItem from './team_index_item';
@@ -17,11 +16,10 @@ class TeamIndex extends React.Component {
   componentWillReceiveProps(newProps) {
     if (this.props.currentTeamId !== newProps.currentTeamId) {
       this.props.requestTeam(newProps.currentTeamId);
-
     }
   }
 
-  renderTeamCards() {
+  showTeamCards() {
     if (this.props.team) {
       return (<div className="team-index-container">
         {
@@ -44,10 +42,10 @@ class TeamIndex extends React.Component {
   render() {
     return (
       <div>
-        {this.renderTeamCards()}
+        {this.showTeamCards()}
       </div>
     );
   }
 }
 
-export default withRouter(TeamIndex);
+export default TeamIndex;

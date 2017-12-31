@@ -10,17 +10,17 @@ class ProjectDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addMembersModalOpen: false
+      modalOpen: false
     };
-    this.openAddMembersModal = this.openAddMembersModal.bind(this);
-    this.closeAddMembersModal = this.closeAddMembersModal.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
-  openAddMembersModal() {
-    this.setState({ addMembersModalOpen: true });
+  openModal() {
+    this.setState({ modalOpen: true });
   }
-  closeAddMembersModal() {
-    this.setState({ addMembersModalOpen: false });
+  closeModal() {
+    this.setState({ modalOpen: false });
   }
 
   render() {
@@ -29,17 +29,15 @@ class ProjectDetail extends React.Component {
         <div className="project-members-detail">
           <h4 className="project-detail-title">Members</h4>
           <ProjectMembersIndex
-            currentUser={this.props.currentUser}
-            members={this.props.project.members}
-            project={this.props.project} />
+            members={this.props.project.members} />
           <div>
             <MaterialDesign.MdPersonAdd
               className="project-new-member-button"
-              onClick={this.openAddMembersModal} />
+              onClick={this.openModal} />
           </div>
           <Modal
-            isOpen={this.state.addMembersModalOpen}
-            onRequestClose={this.closeAddMembersModal}
+            isOpen={this.state.modalOpen}
+            onRequestClose={this.closeModal}
             overlayClassName={
               {
                 base: "root-modal-container-invisible",
@@ -55,7 +53,7 @@ class ProjectDetail extends React.Component {
               }
             }>
             <AddMembersSearchContainer
-              closeAddMembersModal={this.closeAddMembersModal}
+              closeModal={this.closeModal}
               parent={"ProjectDetail"}
               group={this.props.project} />
           </Modal>

@@ -3,7 +3,7 @@ import React from 'react';
 import { Link, Router, Redirect } from 'react-router-dom';
 
 import HeaderActionButton from './header_action_button';
-import NavBarSearchContainer from '../searches/nav_bar_search_container';
+import SearchBarContainer from '../searches/search_bar_container';
 
 class GlobalHeader extends React.Component {
     constructor(props) {
@@ -18,7 +18,8 @@ class GlobalHeader extends React.Component {
                     <HeaderActionButton
                         source="global-header-left" />
                 </div>
-                <NavBarSearchContainer />
+                <SearchBarContainer
+                    source="global-header" />
                 <div className="global-header-right-section">
                     <a href="https://www.stackoverflow.com"
                         className="header-link" target="_blank">Help</a>

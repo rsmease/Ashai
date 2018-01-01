@@ -4,7 +4,7 @@ import { Link, Router, withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
 
 //components
-import GroupMembersIndex from './group_members_index';
+import SidebarGroupMembersIndex from './sidebar_group_members_index';
 import SidebarOwnerToolsContainer from './sidebar_owner_tools_container';
 
 class SidebarGroupIndexItem extends React.Component {
@@ -16,7 +16,7 @@ class SidebarGroupIndexItem extends React.Component {
 
     showMembers() {
         if (this.props.groupType === "team") {
-            return <GroupMembersIndex
+            return <SidebarGroupMembersIndex
                 group={this.props.group}
             />;
         }

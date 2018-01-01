@@ -5,12 +5,12 @@ import * as MaterialDesign from 'react-icons/lib/md';
 
 
 //components
-import GroupMembersIndexItem from './group_members_index_item';
+import SidebarGroupMembersIndexItem from './sidebar_group_members_index_item';
 import AddMembersSearchContainer from
     '../searches/add_members_search_container';
 
 
-class GroupMembersIndex extends React.Component {
+class SidebarGroupMembersIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -32,7 +32,7 @@ class GroupMembersIndex extends React.Component {
             <div className="sidebar-group-members-index">
                 {
                     this.props.group.members.slice(0, 5).map((member) => (
-                        <GroupMembersIndexItem
+                        <SidebarGroupMembersIndexItem
                             key={Math.random()}
                             member={member} />
                     ))
@@ -68,4 +68,4 @@ class GroupMembersIndex extends React.Component {
     }
 }
 
-export default GroupMembersIndex;
+export default SidebarGroupMembersIndex;

@@ -14,29 +14,9 @@ import {
     searchTeams
 } from '../../actions/search_actions';
 
-const mapStateToProps = (state, ownProps) => {
-    let defaults = {
-        currentUser: state.session.currentUser,
-        userSearchResults: state.entities.searches.users
-    };
-    switch (ownProps.source) {
-        case "global-header":
-            return _.merge({}, defaults, {
-                projectSearchResults: state.entities.searches.projects,
-                teamSearchResults: state.entities.searches.teams
-            });
-        case "sidebar-group-members-index":
-            return _.merge({}, defaults, {
-                group: ownProps.group
-            });
-        case "project-members-index":
-            return _.merge({}, defaults, {
-                group: ownProps.group
-            });
-        default:
-            return defaults;
-    }
-};
+const mapStateToProps = (state, ownProps) => ({
+    currentUser: state.session.currentUser
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     let defaults = {

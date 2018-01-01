@@ -59,6 +59,10 @@ textarea:active {
     background-image: none;
 }
 
+input {
+    border: none;
+}
+
 // submit buttons on forms without valid input
 .disabled-a {
     pointer-events: none;

@@ -1,9 +1,12 @@
+//utils
 import React from 'react';
-import ResultsIndex from './results_index';
 import OnClickOutside from 'react-onclickoutside';
 import * as MaterialDesign from 'react-icons/lib/md';
 
-class NavBarSearch extends React.Component {
+//components
+import ResultsIndexContainer from './results_index_container';
+
+class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -67,17 +70,9 @@ class NavBarSearch extends React.Component {
                         onFocus={this.removePlaceholderVal}
                         placeholder={this.state.placeholderVal}>
                     </input>
-                    <ResultsIndex
-                        parent={"NavBar"}
-                        firstTime={this.state.firstTime}
-                        userSearchResults={Object.values(this.props.userSearchResults)}
-                        projectSearchResults={
-                            Object.values(this.props.projectSearchResults)}
-                        teamSearchResults={
-                            Object.values(this.props.teamSearchResults)}
-                        currentUser={this.props.currentUser}
-                        searchVal={this.state.searchVal}
-                        clearState={this.clearState} />
+                    <ResultsIndexContainer
+                        source={this.props.source}
+                        searchVal={this.state.searchVal} />
                 </div>
             </div>
         );
@@ -86,4 +81,4 @@ class NavBarSearch extends React.Component {
 
 }
 
-export default OnClickOutside(NavBarSearch);
+export default OnClickOutside(SearchBar);

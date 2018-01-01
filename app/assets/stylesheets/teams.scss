@@ -34,6 +34,18 @@
     color: $nights-watch-black;
 }
 
+.team-index-card-link:hover {
+    color: $night-king-blue;
+}
+
+.team-index-card-link:after {
+    @include expanding-bottom-border($night-king-blue, 1px);
+}
+
+.team-index-card-link:hover:after {
+    @include expanding-bottom-border-after-hover;
+}
+
 .popup-card-container {
     position: relative;
     display: inline-block;
@@ -43,8 +55,8 @@
     visibility: hidden;
     position: absolute;
     z-index: 1;
-    left: -140px;
-    top: -93px;
+    left: -115px;
+    top: -92px;
 }
 
 .popup-card-container:hover>.popup-card-alignment-container {
@@ -64,18 +76,31 @@
     height: 300px;
     width: 350px;
     border-radius: 3px;
-    @include flex-center(column);
+    @include flex-space-between(column);
+}
+
+//also serves as popup-card-upper-alignment-container
+.popup-card-profile-link {
+    width: 350px;
+    height: 170px;
+    @include flex(row);
+    justify-content: flex-end;
 }
 
 .popup-card-profile-link-icon {
     color: $winter-white;
     @include hover-ease(color);
     font-size: $sub-header;
-    margin: 0 0 120px 285px;
+    margin: 10px 10px 0 0;
 }
 
 .popup-card-profile-link-icon:hover {
     color: $night-king-blue;
+}
+
+.popup-card-lower-alignment-container {
+    height: 130px;
+    @include flex-center(column);
 }
 
 .popup-card-title-container {
@@ -100,7 +125,7 @@
 
 .popup-card-bio {
     color: $winter-white;
-    margin: 15px 0 0 0;
     font-size: $detail;
     width: 330px;
+    margin: 10px 0 0 0;
 }

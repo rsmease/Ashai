@@ -81,7 +81,7 @@
 .popup-card-title-container {
     background-color: rgba(0, 0, 0, 0.6);
     width: 330px;
-    height: 30px;
+    height: 40px;
     padding: 0px 10px;
     @include flex-space-between(row);
 }
@@ -96,4 +96,11 @@
     color: $cersei-green;
     font-size: $detail;
     font-style: italic;
+}
+
+.popup-card-bio {
+    color: $winter-white;
+    margin: 15px 0 0 0;
+    font-size: $detail;
+    width: 330px;
 }

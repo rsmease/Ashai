@@ -2,8 +2,8 @@
 import React from 'react';
 
 //components
+import ResultsIndexItem from './results_index_item';
 import SearchIndexHeader from './search_index_header';
-import ResultsIndexUserItem from './results_index_user_item';
 import ResultsIndexProjectItem from './results_index_project_item';
 import ResultsIndexTeamItem from './results_index_team_item';
 import SearchIndexSubheader from './search_index_subheader';
@@ -14,19 +14,15 @@ class ResultsIndex extends React.Component {
         super(props);
     }
 
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps);
-    }
-
     showUsers(limit) {
         return (
             <ul>
                 {this.props.userSearchResults.slice(0, limit).map(
                     (user) =>
-                        (<ResultsIndexUserItem
-                            currentUser={this.props.currentUser}
+                        (<ResultsIndexItem
                             key={Math.random()}
-                            user={user}
+                            resultType={"user"}
+                            currentTarget={user}
                             clearState={this.props.clearState}
                             searchVal={this.props.searchVal} />)
                 )}
@@ -39,10 +35,10 @@ class ResultsIndex extends React.Component {
             <ul>
                 {this.props.projectSearchResults.slice(0, limit).map(
                     (project) =>
-                        (<ResultsIndexProjectItem
-                            currentUser={this.props.currentUser}
+                        (<ResultsIndexItem
+                            resultType={"project"}
                             key={Math.random()}
-                            project={project}
+                            currentTarget={project}
                             clearState={this.props.clearState}
                             searchVal={this.props.searchVal} />)
                 )}
@@ -55,10 +51,10 @@ class ResultsIndex extends React.Component {
             <ul>
                 {this.props.teamSearchResults.slice(0, limit).map(
                     (team) =>
-                        (<ResultsIndexTeamItem
-                            currentUser={this.props.currentUser}
+                        (<ResultsIndexItem
+                            resultType={"team"}
                             key={Math.random()}
-                            team={team}
+                            currentTarget={team}
                             clearState={this.props.clearState}
                             searchVal={this.props.searchVal} />)
                 )}

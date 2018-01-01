@@ -1,17 +1,15 @@
 .team-index-container {
     @include flex-space-around(row);
     flex-flow: row wrap;
-    padding: 35px 20px 0px 25px;
 }
 
 .team-index-card {
     width: 350px;
-    height: 300px;
-    margin: 0 0 35px 0;
-    @include flex-center(column);
-
-    background: $winter-white;
-    border-radius: 4px;
+    height: 240px;
+    padding: 30px 0px;
+    margin: 35px;
+    @include flex-space-around(column);
+    @include card-defaults;
 
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
@@ -24,103 +22,78 @@
 .team-index-card-title {
     color: $night-king-blue;
     font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: $small-header;
 }
 
-.team-index-card-image {
+.team-index-card-profile-image {
     border-radius: 50%;
     max-height: 120px;
 }
 
-.team-index-card-image:hover {
-    box-shadow: 0 0 10px 3px $night-king-blue
-}
-
 .team-index-card-link {
-    margin-top: 35px;
     color: $nights-watch-black;
 }
 
-.team-index-card-link:hover {
-    color: $night-king-blue
-}
-
-.bio-card-hover-container {
+.popup-card-container {
     position: relative;
-    height: 120px;
-    width: 120px;
-    border-radius: 50%;
-    @include flex-center(column);
-}
-
-.bio-card-container {
-    position: absolute;
-    opacity: 0;
-    bottom: -96px;
-}
-
-.bio-card-hover-container:hover>.bio-card-container {
-    z-index: 150;
-    opacity: 1;
-    @include hover-ease(opacity);
-}
-
-.team-index-bio-card {
-    height: 300px;
-    width: 400px;
-    border-radius: 4px;
-    background-position: center;
-    background-size: cover;
-
-    @include flex(column);
-    align-items: flex-start;
-    justify-content: center;
-
-    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
-}
-
-.team-index-bio-card-modal {
-    background-color: rgba(0, 0, 0, 0.5);
-    @include flex(column);
-    align-items: flex-start;
-    justify-content: flex-end;
-
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-}
-
-.team-index-bio-card-title {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    width: 385px;
-    color: $winter-white;
-    font-weight: bold;
-    font-size: 24px;
-    padding-left: 15px;
-}
-
-.team-index-bio-card-bio {
-    color: $winter-white;
-    font-size: 11px;
-    margin: 15px;
     display: inline-block;
 }
 
-.team-index-bio-about-me {
-    margin-right: 15px;
-    color: $cersei-green;
-    font-style: italic;
-    font-size: 11px;
-    float: right;
-    margin-top: 10px;
+.popup-card-alignment-container {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: -140px;
+    top: -93px;
 }
 
-.team-index-bio-card-link {
-    @include flex(column);
-    align-items: flex-start;
-    justify-content: flex-end;
+.popup-card-container:hover>.popup-card-alignment-container {
+    visibility: visible;
+}
+
+.popup-card {
     height: 300px;
+    width: 350px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+.popup-card-fade-background {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 300px;
+    width: 350px;
+    border-radius: 3px;
+    @include flex-center(column);
+}
+
+.popup-card-profile-link-icon {
+    color: $winter-white;
+    @include hover-ease(color);
+    font-size: $sub-header;
+    margin: 0 0 120px 285px;
+}
+
+.popup-card-profile-link-icon:hover {
+    color: $night-king-blue;
+}
+
+.popup-card-title-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 330px;
+    height: 30px;
+    padding: 0px 10px;
+    @include flex-space-between(row);
+}
+
+.popup-card-title {
+    font-size: $small-header;
+    color: $winter-white;
+    font-weight: bold;
+}
+
+.popup-card-type {
+    color: $cersei-green;
+    font-size: $detail;
+    font-style: italic;
 }

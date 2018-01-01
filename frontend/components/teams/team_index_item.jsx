@@ -12,14 +12,14 @@ class TeamIndexItem extends React.Component {
 
   render() {
     return (
-      <div className="team-index-card w3-animate-opacity">
+      <div className="team-index-card">
         <h4 className="team-index-card-title">
           {this.props.member.name}
         </h4>
-        <div className="bio-card-hover-container">
-          <img className="team-index-card-image"
+        <div className="popup-card-container">
+          <img className="team-index-card-profile-image"
             src={this.props.member.profile_image_url} />
-          <div className="bio-card-container">
+          <div className="popup-card-alignment-container">
             <TeamBioCard member={this.props.member} />
           </div>
         </div>

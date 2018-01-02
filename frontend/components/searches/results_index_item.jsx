@@ -78,7 +78,7 @@ class ResultsIndexItem extends React.Component {
         switch (this.props.resultType) {
             case "non-member":
                 return (<MaterialDesign.MdPersonAdd
-                    className="member-add-button"
+                    className="add-member-button"
                     onClick={this.handleAddMember} />);
             default:
                 break;

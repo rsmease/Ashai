@@ -174,165 +174,21 @@
     justify-content: center;
 }
 
-
-
-
-
-//to be refactor
-.results-index-right-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-}
-
-
-
-
-.add-members-form-sidebar {
-    align-items: center;
-    align-content: center;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    background: $winter-white;
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    flex-direction: column;
-    box-shadow: none;
-    overflow: visible;
-    padding-left: 50px;
-    padding-right: 50px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    position: absolute;
-    top: 118px;
-    left: 244px;
-
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
-}
-
-.add-members-form-project-detail {
-    align-items: center;
-    align-content: center;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    background: $winter-white;
-    display: flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    flex-direction: column;
-    box-shadow: none;
-    overflow: visible;
-    padding-left: 50px;
-    padding-right: 50px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    position: absolute;
-    top: 118px;
-    right: 259px;
-
-    transform: translateY(-100%);
-    -webkit-transform: translateY(-100%);
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
-}
-
-@keyframes slide-in {
-    100% {
-        transform: translateY(0%);
-    }
-}
-
-@-webkit-keyframes slide-in {
-    100% {
-        -webkit-transform: translateY(0%);
-    }
-}
-
-.add-members-header-primary {
-    font-size: 30px;
-    color: $night-king-blue;
-    font-weight: bold;
-    margin: 15px;
-    margin-bottom: 0px;
-}
-
-
-.add-members-header-secondary {
-    font-size: 24px;
-    color: $nights-watch-black;
-    font-weight: bold;
-    margin: 15px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
-
-.add-members-results-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    overflow: scroll;
-    background-color: $winter-white;
-    position: absolute;
-    top: 30px;
-    left: calc(-150px + 50%);
-    width: 300;
-    border-radius: 4px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-
-
-.add-members-item-container {
-    width: 300px;
-}
-
-.member-action-div {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-.member-add-button {
+.add-member-button {
     color: $targ-silver-dark;
-    font-size: 24px;
+    background-color: $winter-white;
     padding: 7px;
-    background: $winter-white;
-    margin-right: 15px;
+    font-size: 24px;
     border-radius: 50%;
 }
 
-.member-add-button:hover {
-    background-color: $cersei-green;
+.add-member-button:hover {
     color: $winter-white;
-    -webkit-transition: all 300ms ease-in;
-    -moz-transition: all 300ms ease-in;
-    -ms-transition: all 300ms ease-in;
-    -o-transition: all 300ms ease-in;
-    transition: all 300ms ease-in;
+    background-color: $cersei-green;
+    @include hover-ease(all);
 }
 
-//new add members items 
+
 .add-member-button-container {
     position: relative;
     display: inline-block;

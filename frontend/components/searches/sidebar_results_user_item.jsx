@@ -14,14 +14,14 @@ class SidebarResultsUserItem extends React.Component {
   renderActionButton() {
     if (this.props.parent === "TransferOwnership") {
       return <MaterialDesign.MdSwapHoriz
-        className="member-add-button"
+        className="add-member-button"
         onClick={this.handleTransferOwnership} />;
     } else if (this.userIsMember()) {
       return <div></div>;
     } else {
       return <div>
         <MaterialDesign.MdPersonAdd
-          className="member-add-button"
+          className="add-member-button"
           onClick={this.handleAddMember} />
       </div>;
     }

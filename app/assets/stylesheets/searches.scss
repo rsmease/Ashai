@@ -1,4 +1,4 @@
-.search-field {
+.global-header-search-field {
     height: 30px;
     width: 100%;
     border: 1px solid $targ-silver-light;
@@ -13,8 +13,13 @@
     color: $targ-silver-dark;
 }
 
+.sidebar-group-members-index-search-field {
+    @extend .global-header-search-field;
+    width: 80%;
+}
+
 //colors the search icon
-.search-field input {
+.global-header-search-field input {
     width: 80%;
     font-size: $text;
     margin: 0 0 0 10px;
@@ -22,28 +27,8 @@
     caret-color: $cersei-green;
 }
 
-.search-field input:focus {
+.global-header-search-field input:focus {
     color: $nights-watch-black;
-}
-
-
-.nav-search-results {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    z-index: 300;
-    background-color: $winter-white;
-    position: absolute;
-    top: 30px;
-    left: calc(-250px + 50%);
-    width: 500px;
-    border-radius: 4px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .results-index-item-container {
@@ -287,23 +272,6 @@
     margin-bottom: 0px;
 }
 
-.sidebar-members-search-container {
-    height: 40px;
-    z-index: 200;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 80%;
-    min-width: 300px;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    align-content: center;
-}
-
 .add-members-results-container {
     display: -webkit-box;
     display: -moz-box;
@@ -314,7 +282,6 @@
     justify-content: center;
     flex-direction: column;
     overflow: scroll;
-    z-index: 300;
     background-color: $winter-white;
     position: absolute;
     top: 30px;
@@ -369,4 +336,31 @@
     -ms-transition: all 300ms ease-in;
     -o-transition: all 300ms ease-in;
     transition: all 300ms ease-in;
+}
+
+//new add members items 
+.add-member-button-container {
+    z-index: 3;
+    position: relative;
+    display: inline-block;
+}
+
+.add-member-container-hidden {
+    display: none;
+    position: absolute;
+}
+
+.add-member-container-visible {
+    @extend .add-member-container-hidden;
+    display: flex;
+}
+
+.sidebar-add-member-alignment-container {
+    @include flex-center(column);
+    @include card-defaults;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    left: 57px;
+    top: -33px;
 }

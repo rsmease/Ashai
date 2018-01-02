@@ -19,6 +19,15 @@ class SearchBar extends React.Component {
         this.removePlaceholderVal = this.removePlaceholderVal.bind(this);
     }
 
+    showHeader() {
+        switch (this.props.source) {
+            case "sidebar-group-members-index":
+                return <h1>Add Members</h1>
+            default:
+                break;
+        }
+    }
+
     handleChange(e) {
         e.preventDefault();
         const newVal = e.target.value;
@@ -30,10 +39,12 @@ class SearchBar extends React.Component {
                     this.props.searchTeams(this.state.searchVal);
                 });
                 break;
-            default:
+            case "sidebar-group-members-index":
                 this.setState({ searchVal: newVal, firstTime: false }, () => {
-                    this.props.searchTeams(this.state.searchVal);
+                    this.props.searchUsers(this.state.searchVal);
                 });
+                break;
+            default:
                 break;
         }
     }
@@ -55,13 +66,21 @@ class SearchBar extends React.Component {
     }
 
     toggleDisplayClass() {
-        return `${this.props.source}-section`;
+        switch (this.props.source) {
+            case "global-header":
+                return "global-header-section";
+            case "sidebar-group-members-index":
+                return "sidebar-add-member-alignment-container";
+            default:
+                break;
+        }
     }
 
     render() {
         return (
             <div className={this.toggleDisplayClass()}>
-                <div className="search-field">
+                {this.showHeader()}
+                <div className={`${this.props.source}-search-field`}>
                     <MaterialDesign.MdSearch />
                     <input
                         type="text"
@@ -71,7 +90,9 @@ class SearchBar extends React.Component {
                         placeholder={this.state.placeholderVal}>
                     </input>
                     <ResultsIndexContainer
+                        group={this.props.group}
                         source={this.props.source}
+                        groupType={this.props.groupType}
                         searchVal={this.state.searchVal} />
                 </div>
             </div>

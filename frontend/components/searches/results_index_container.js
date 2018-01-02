@@ -4,6 +4,14 @@ import {
 } from 'react-redux';
 import _ from 'lodash';
 
+//actions
+import {
+    createNewTeamMembership
+} from '../../actions/team_actions';
+import {
+    createNewProjectMembership
+} from '../../actions/project_actions';
+
 //components
 import ResultsIndex from './results_index2';
 
@@ -21,15 +29,38 @@ const mapStateToProps = (state, ownProps) => {
             });
         case "sidebar-group-members-index":
             return _.merge({}, defaults, {
-                group: ownProps.group
+                group: ownProps.group,
+                groupType: ownProps.groupType
             });
         case "project-members-index":
             return _.merge({}, defaults, {
-                group: ownProps.group
+                group: ownProps.group,
+                groupType: ownProps.groupType
             });
         default:
             return defaults;
     }
 };
 
-export default connect(mapStateToProps, null)(ResultsIndex);
+const mapDispatchToProps = (dispatch, ownProps) => {
+    switch (ownProps.source) {
+        case "sidebar-group-members-index":
+            if (ownProps.groupType === "team") {
+                return {
+                    createNewMembership: (teamMembershipRequest) =>
+                        dispatch(createNewTeamMembership(teamMembershipRequest))
+                };
+            } else if (ownProps.groupType === "project") {
+                return {
+                    createNewMembership: (projectMembershipRequest) =>
+                        dispatch(createNewProjectMembership(projectMembershipRequest))
+                };
+            } else {
+                return {};
+            }
+        default:
+            return {};
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsIndex);

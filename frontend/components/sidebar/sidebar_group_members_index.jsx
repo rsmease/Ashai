@@ -1,14 +1,9 @@
+//utils
 import React from 'react';
-import Modal from 'react-modal';
-import { Link, Router } from 'react-router-dom';
-import * as MaterialDesign from 'react-icons/lib/md';
-
 
 //components
+import AddMemberButton from '../searches/add_member_button';
 import SidebarGroupMembersIndexItem from './sidebar_group_members_index_item';
-import AddMembersSearchContainer from
-    '../searches/add_members_search_container';
-
 
 class SidebarGroupMembersIndex extends React.Component {
     constructor(props) {
@@ -37,32 +32,10 @@ class SidebarGroupMembersIndex extends React.Component {
                             member={member} />
                     ))
                 }
-                <MaterialDesign.MdPersonAdd
-                    title="Add a New Member"
-                    className="sidebar-new-member-button"
-                    onClick={this.openModal} />
-                <Modal
-                    isOpen={this.state.modalOpen}
-                    onRequestClose={this.closeModal}
-                    overlayClassName={
-                        {
-                            base: "root-modal-container-invisible",
-                            afterOpen: "root-modal-container-invisible",
-                            beforeClose: "root-modal-container-invisible"
-                        }
-                    }
-                    className={
-                        {
-                            base: "override-content-default",
-                            afterOpen: "override-content-default",
-                            beforeClose: "override-content-default"
-                        }
-                    }>
-                    <AddMembersSearchContainer
-                        closeModal={this.closeModal}
-                        parent="Sidebar"
-                        group={this.props.group} />
-                </Modal>
+                <AddMemberButton
+                    group={this.props.group}
+                    groupType={this.props.groupType}
+                    source={"sidebar-group-members-index"} />
             </div>
         );
     }

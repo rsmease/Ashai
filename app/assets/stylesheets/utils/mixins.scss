@@ -42,7 +42,7 @@
 }
 
 @mixin modal-position {
-    z-index: 200;
+    z-index: 3;
     position: fixed;
     top: 0;
     left: 0;

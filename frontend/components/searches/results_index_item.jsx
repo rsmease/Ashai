@@ -9,9 +9,25 @@ class SearchIndexItem extends React.Component {
         super(props);
     }
 
+    handleAddMember() {
+        if (this.props.groupType === "team") {
+            this.props.createNewMembership(
+                { member_id: this.props.user.id, team_id: this.props.group.id }
+            );
+        } else {
+            this.props.createNewMembership(
+                { member_id: this.props.user.id, project_id: this.props.group.id }
+            );
+        }
+    }
+
     showLeftIcon() {
         switch (this.props.resultType) {
             case "user":
+                return (<img
+                    className="results-index-image"
+                    src={this.props.currentTarget.profile_image_url}></img>);
+            case "non-member":
                 return (<img
                     className="results-index-image"
                     src={this.props.currentTarget.profile_image_url}></img>);
@@ -29,6 +45,8 @@ class SearchIndexItem extends React.Component {
     toggleCustomResultInfo() {
         switch (this.props.resultType) {
             case "user":
+                return this.props.currentTarget.email;
+            case "non-member":
                 return this.props.currentTarget.email;
             case "project":
                 return this.props.currentTarget.description;
@@ -56,6 +74,17 @@ class SearchIndexItem extends React.Component {
         </div>);
     }
 
+    showRightIcon() {
+        switch (this.props.resultType) {
+            case "non-member":
+                return (<MaterialDesign.MdPersonAdd
+                    className="member-add-button"
+                    onClick={this.handleAddMember} />);
+            default:
+                break;
+        }
+    }
+
     render() {
         return (<li className="results-index-item-container">
             <Link className="search-result-clickable"
@@ -63,6 +92,7 @@ class SearchIndexItem extends React.Component {
                 onClick={this.props.clearState}>
                 {this.showLeftIcon()}
                 {this.showResultInfo()}
+                {this.showRightIcon()}
             </Link>
         </li>);
     }

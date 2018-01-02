@@ -18,6 +18,7 @@ class SidebarGroupIndexItem extends React.Component {
         if (this.props.groupType === "team") {
             return <SidebarGroupMembersIndex
                 group={this.props.group}
+                groupType={this.props.groupType}
             />;
         }
     }

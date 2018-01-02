@@ -1,5 +1,6 @@
 //utils
 import React from 'react';
+import _ from 'lodash';
 
 //components
 import ResultsIndexItem from './results_index_item';
@@ -23,8 +24,26 @@ class ResultsIndex extends React.Component {
                             key={Math.random()}
                             resultType={"user"}
                             currentTarget={user}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
+                )}
+            </ul>
+        );
+    }
+
+    showNonMembers(limit) {
+        let nonMembers = _.difference(this.props.userSearchResults, this.props.group.members);
+        return (
+            <ul>
+                {nonMembers.slice(0, limit).map(
+                    (nonMember) =>
+                        (<ResultsIndexItem
+                            key={Math.random()}
+                            resultType={"non-member"}
+                            currentTarget={nonMember}
+                            searchVal={this.props.searchVal}
                             clearState={this.props.clearState}
-                            searchVal={this.props.searchVal} />)
+                            createNewMembership={this.props.createNewMembership} />)
                 )}
             </ul>
         );
@@ -39,8 +58,8 @@ class ResultsIndex extends React.Component {
                             resultType={"project"}
                             key={Math.random()}
                             currentTarget={project}
-                            clearState={this.props.clearState}
-                            searchVal={this.props.searchVal} />)
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
                 )}
             </ul>
         );
@@ -55,8 +74,8 @@ class ResultsIndex extends React.Component {
                             resultType={"team"}
                             key={Math.random()}
                             currentTarget={team}
-                            clearState={this.props.clearState}
-                            searchVal={this.props.searchVal} />)
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
                 )}
             </ul>
         );
@@ -76,7 +95,12 @@ class ResultsIndex extends React.Component {
                     </div>
                 );
             case "sidebar-group-members-index":
-                return <div></div>;
+                return (<div className="nav-search-results">
+                    <ul>
+                        <SearchIndexHeader searchVal={this.props.searchVal} />
+                        {this.showNonMembers(5)}
+                    </ul>
+                </div>);
             case "project-members-index":
                 return <div></div>;
             default:

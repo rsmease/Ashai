@@ -15,14 +15,14 @@ class SidebarResultsUserItem extends React.Component {
     if (this.props.parent === "TransferOwnership") {
       return <MaterialDesign.MdSwapHoriz
         className="member-add-button"
-        onClick={this.handleTransferOwnership}/>;
+        onClick={this.handleTransferOwnership} />;
     } else if (this.userIsMember()) {
       return <div></div>;
     } else {
       return <div>
         <MaterialDesign.MdPersonAdd
           className="member-add-button"
-          onClick={this.handleAddMember}/>
+          onClick={this.handleAddMember} />
       </div>;
     }
   }
@@ -36,7 +36,7 @@ class SidebarResultsUserItem extends React.Component {
   }
 
   handleAddMember(e) {
-    if (this.props.group.project_owner_id === undefined ) {
+    if (this.props.group.project_owner_id === undefined) {
       this.props.createNewTeamMembership(
         { member_id: this.props.user.id, team_id: this.props.group.id }
       );
@@ -48,7 +48,7 @@ class SidebarResultsUserItem extends React.Component {
   }
 
   handleTransferOwnership(e) {
-    if (this.props.group.project_owner_id === undefined ) {
+    if (this.props.group.project_owner_id === undefined) {
       this.props.requestUpdateToTeam(
         { id: this.props.group.id, team_owner_id: this.props.user.id }
       ).then(this.props.closeTransferOwnershipModal);
@@ -61,9 +61,9 @@ class SidebarResultsUserItem extends React.Component {
 
 
   render() {
-    return(<div className="results-index-item-container
-    add-members-item-container">
-        <div className="search-result-unclickable">
+    return (<div className="results-index-item-container
+      add-members-item-container">
+        < div className = "result-index-item-unclickable" >
           <img
             className="results-index-image"
             src={this.props.user.profile_image_url}></img>
@@ -73,19 +73,19 @@ class SidebarResultsUserItem extends React.Component {
               highlightClassName="results-index-bold results-index-underline"
               searchWords={[this.props.searchVal]}
               autoEscape={true}
-              textToHighlight={this.props.user.name}/>
+              textToHighlight={this.props.user.name} />
             <Highlighter
               className="results-index-context"
               highlightClassName="results-index-bold"
               searchWords={[this.props.searchVal]}
               autoEscape={true}
-              textToHighlight={this.props.user.email}/>
+              textToHighlight={this.props.user.email} />
           </div>
           <div className="member-action-div">
             {this.renderActionButton()}
           </div>
-        </div>
-    </div>);
+        </div >
+    </div >);
   }
 }
 

@@ -10,17 +10,17 @@ class SearchIndexHeader extends React.Component {
 
 
   render() {
-    return(<div className="results-index-item-container results-index-header-wrapper">
-        <MaterialDesign.MdSearch className="results-index-header-search-icon"/>
-        <div className="results-index-header-container">
-          <h4 className="results-index-header-text">Results Matching </h4>
-          <Highlighter
-            className="results-index-header-text"
-            highlightClassName="results-index-header-text results-index-bold results-index-underline"
-            searchWords={[this.props.searchVal]}
-            autoEscape={true}
-            textToHighlight={this.props.searchVal}/>
-        </div>
+    return (<div className="results-index-header-container">
+      <MaterialDesign.MdSearch className="results-index-header-icon" />
+      <div className="results-index-header-grouping">
+        <h4 className="results-index-header-text">Results Matching</h4>
+        <Highlighter
+          className="results-index-header-text"
+          highlightClassName="results-index-header-text results-index-item-bold results-index-item-underline"
+          searchWords={[this.props.searchVal]}
+          autoEscape={true}
+          textToHighlight={this.props.searchVal} />
+      </div>
     </div>);
   }
 }

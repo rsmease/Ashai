@@ -59,6 +59,22 @@
     @include hover-ease(background-color);
 }
 
+.results-index-item-clickable {
+    @include flex(row);
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.results-index-item-unclickable {
+    @extend .results-index-item-clickable;
+    width: 300px;
+    justify-content: space-between;
+}
+
+.add-member-results-index-item-grouping {
+    @extend .results-index-item-clickable;
+}
+
 .results-index-item-profile-image {
     border-radius: 50%;
     max-height: 40px;
@@ -98,12 +114,6 @@
     color: $nights-watch-black;
 }
 
-.search-result-clickable {
-    @include flex(row);
-    align-items: center;
-    justify-content: flex-start;
-}
-
 .sidebar-group-members-index-results-index-item-container, .project-detail-results-index-item-container {
     @extend .global-header-results-index-item-container;
     width: 285px;
@@ -137,30 +147,38 @@
     color: $targ-silver-light;
 }
 
+.results-index-header-container {
+    @include flex(row);
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+    width: 335px;
+    padding: 0 15px 0 0;
+    border-top: 1px solid $targ-silver-light;
+}
 
+.results-index-header-icon {
+    @extend .results-index-item-icon;
+    color: $cersei-green;
+}
 
+.results-index-header-grouping {
+    @include flex(row);
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.results-index-item-grouping {
+    @include flex(column);
+    align-items: flex-start;
+    justify-content: center;
+}
 
 
 
 
 
 //to be refactor
-.results-index-header-wrapper:hover {
-    background-color: $winter-white;
-}
-
-.results-index-header-wrapper:hover .results-index-context {
-    color: $nights-watch-black
-}
-
-.results-index-header-wrapper:hover .results-index-name {
-    color: $nights-watch-black
-}
-
-.results-index-header-wrapper:hover .results-index-bold {
-    color: $nights-watch-black
-}
-
 .results-index-right-container {
     display: -webkit-box;
     display: -moz-box;
@@ -172,21 +190,6 @@
     flex-direction: column;
 }
 
-.results-index-header-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.results-index-header-search-icon {
-    font-size: 40px;
-    margin-left: 15px;
-    color: $cersei-green;
-}
 
 
 
@@ -293,18 +296,7 @@
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.search-result-unclickable {
-    display: inline-block;
-    width: 500px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 60px;
-}
+
 
 .add-members-item-container {
     width: 300px;

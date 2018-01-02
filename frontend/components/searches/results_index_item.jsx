@@ -58,7 +58,7 @@ class ResultsIndexItem extends React.Component {
     }
 
     showResultInfo() {
-        return (<div className="results-index-right-container">
+        return (<div className="results-index-item-grouping">
             <Highlighter
                 className="results-index-item-name"
                 highlightClassName="results-index-item-bold results-index-item-underline"
@@ -85,15 +85,29 @@ class ResultsIndexItem extends React.Component {
         }
     }
 
-    render() {
-        return (<li className={`${this.props.source}-results-index-item-container`}>
-            <Link className="search-result-clickable"
+    showContent() {
+        if (this.props.resultType !== "non-member") {
+            return (<Link className="results-index-item-clickable"
                 to={`/${this.props.resultType}s/${this.props.currentTarget.id}`}
                 onClick={this.props.clearState}>
                 {this.showLeftIcon()}
                 {this.showResultInfo()}
                 {this.showRightIcon()}
-            </Link>
+            </Link>);
+        } else {
+            return (<div className="results-index-item-unclickable">
+                <div className="add-member-results-index-item-grouping">
+                    {this.showLeftIcon()}
+                    {this.showResultInfo()}
+                </div>
+                {this.showRightIcon()}
+            </div>);
+        }
+    }
+
+    render() {
+        return (<li className={`${this.props.source}-results-index-item-container`}>
+            {this.showContent()}
         </li>);
     }
 }

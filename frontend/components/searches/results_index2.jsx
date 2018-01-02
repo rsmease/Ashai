@@ -24,6 +24,7 @@ class ResultsIndex extends React.Component {
                             key={Math.random()}
                             resultType={"user"}
                             currentTarget={user}
+                            source={this.props.source}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState} />)
                 )}
@@ -41,6 +42,7 @@ class ResultsIndex extends React.Component {
                             key={Math.random()}
                             resultType={"non-member"}
                             currentTarget={nonMember}
+                            source={this.props.source}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState}
                             createNewMembership={this.props.createNewMembership} />)
@@ -58,6 +60,7 @@ class ResultsIndex extends React.Component {
                             resultType={"project"}
                             key={Math.random()}
                             currentTarget={project}
+                            source={this.props.source}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState} />)
                 )}
@@ -74,6 +77,7 @@ class ResultsIndex extends React.Component {
                             resultType={"team"}
                             key={Math.random()}
                             currentTarget={team}
+                            source={this.props.source}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState} />)
                 )}
@@ -85,22 +89,17 @@ class ResultsIndex extends React.Component {
         switch (this.props.source) {
             case "global-header":
                 return (
-                    <div className="nav-search-results">
-                        <ul>
-                            <SearchIndexHeader searchVal={this.props.searchVal} />
-                            {this.showUsers(2)}
-                            {this.showProjects(2)}
-                            {this.showTeams(2)}
-                        </ul>
-                    </div>
-                );
-            case "sidebar-group-members-index":
-                return (<div className="nav-search-results">
                     <ul>
                         <SearchIndexHeader searchVal={this.props.searchVal} />
-                        {this.showNonMembers(5)}
+                        {this.showUsers(2)}
+                        {this.showProjects(2)}
+                        {this.showTeams(2)}
                     </ul>
-                </div>);
+                );
+            case "sidebar-group-members-index":
+                return (<ul>
+                    {this.showNonMembers(5)}
+                </ul>);
             case "project-members-index":
                 return <div></div>;
             default:
@@ -197,7 +196,7 @@ class ResultsIndex extends React.Component {
             );
         } else {
             return (
-                <div className="">
+                <div className={`${this.props.source}-results-alignment-container`}>
                     {this.showResults()}
                 </div>
             );

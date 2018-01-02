@@ -1,6 +1,6 @@
 .global-header-search-field {
     height: 30px;
-    width: 100%;
+    width: 400px;
     border: 1px solid $targ-silver-light;
     border-radius: 15px;
 
@@ -13,13 +13,13 @@
     color: $targ-silver-dark;
 }
 
-.sidebar-group-members-index-search-field {
+.sidebar-group-members-index-search-field, .project-detail-search-field {
     @extend .global-header-search-field;
-    width: 80%;
+    width: 240px;
 }
 
 //colors the search icon
-.global-header-search-field input {
+.global-header-search-field input, .sidebar-group-members-index-search-field input, .project-detail-search-field input {
     width: 80%;
     font-size: $text;
     margin: 0 0 0 10px;
@@ -27,62 +27,126 @@
     caret-color: $cersei-green;
 }
 
-.global-header-search-field input:focus {
+.global-header-search-field input:focus, .sidebar-group-members-index-search-field input:focus, .project-detail-search-field input:focus {
     color: $nights-watch-black;
 }
 
-.results-index-item-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+.global-header-results-alignment-container {
+    position: absolute;
+    @include card-defaults;
+    @include float-shadow;
+    @include flex-center(column);
+    top: 36px;
+    left: 34px;
+    z-index: 2;
+}
+
+.sidebar-group-members-index-results-alignment-container, .project-detail-results-alignment-container {
+    @extend .global-header-results-alignment-container;
+    top: 46px;
+    left: -22px;
+    z-index: 2;
+}
+
+.global-header-results-index-item-container {
+    @include flex(row);
     align-items: center;
     justify-content: flex-start;
     height: 60px;
+    width: 335px;
+    padding: 0 15px 0 0;
     border-top: 1px solid $targ-silver-light;
-    width: 500px;
+    @include hover-ease(background-color);
 }
 
-.results-index-item-container:hover {
+.results-index-item-profile-image {
+    border-radius: 50%;
+    max-height: 40px;
+    margin: 0 15px;
+}
+
+.results-index-item-icon {
+    font-size: 40px;
+    margin: 0 15px;
+    color: $targ-silver-dark;
+}
+
+.results-index-item-bold {
+    font-weight: 900;
+    background-color: inherit;
+}
+
+.results-index-item-underline {
+    text-decoration: underline;
+    text-decoration-color: $cersei-green;
+}
+
+.results-index-header-text {
+    margin-left: 15px;
+    font-size: 13px;
+    color: $nights-watch-black;
+}
+
+.results-index-item-name {
+    font-size: 13px;
+    color: $nights-watch-black;
+    margin-bottom: 2px;
+}
+
+.results-index-item-context {
+    font-size: 11px;
+    color: $nights-watch-black;
+}
+
+.search-result-clickable {
+    @include flex(row);
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar-group-members-index-results-index-item-container, .project-detail-results-index-item-container {
+    @extend .global-header-results-index-item-container;
+    width: 285px;
+}
+
+.global-header-results-index-item-container:hover,
+.sidebar-group-members-index-results-index-item-container:hover,
+.project-detail-results-index-item-container:hover {
     background-color: $night-king-blue;
-    -webkit-transition: background-color 300ms ease-in;
-    -moz-transition: background-color 300ms ease-in;
-    -ms-transition: background-color 300ms ease-in;
-    -o-transition: background-color 300ms ease-in;
-    transition: background-color 300ms ease-in;
 }
 
+.global-header-results-index-item-container:hover .results-index-item-context,
+.sidebar-group-members-index-results-index-item-container:hover .results-index-item-context,
+.project-detail-results-index-item-container:hover .result-index-item-context {
+    color: $winter-white;
+}
+
+.global-header-results-index-item-container:hover .results-index-item-name,
+.sidebar-group-members-index-results-index-item-container:hover .results-index-item-name,
+.project-detail-results-index-item-container:hover .result-index-item-name {
+    color: $winter-white;
+}
+
+.global-header-results-index-item-container:hover .results-index-item-bold,
+.sidebar-group-members-index-results-index-item-container:hover .results-index-item-bold,
+.project-detail-results-index-item-container:hover .result-index-item-bold {
+    color: $winter-white;
+}
+
+.global-header-results-index-item-container:hover .results-index-item-icon {
+    color: $targ-silver-light;
+}
+
+
+
+
+
+
+
+
+//to be refactor
 .results-index-header-wrapper:hover {
     background-color: $winter-white;
-}
-
-
-.results-index-item-container:hover .results-index-context {
-    color: $winter-white;
-    -webkit-transition: color 300ms ease-in;
-    -moz-transition: color 300ms ease-in;
-    -ms-transition: color 300ms ease-in;
-    -o-transition: color 300ms ease-in;
-    transition: color 300ms ease-in;
-}
-
-.results-index-item-container:hover .results-index-name {
-    color: $winter-white;
-    -webkit-transition: color 300ms ease-in;
-    -moz-transition: color 300ms ease-in;
-    -ms-transition: color 300ms ease-in;
-    -o-transition: color 300ms ease-in;
-    transition: color 300ms ease-in;
-}
-
-.results-index-item-container:hover .results-index-bold {
-    color: $winter-white;
-    -webkit-transition: color 300ms ease-in;
-    -moz-transition: color 300ms ease-in;
-    -ms-transition: color 300ms ease-in;
-    -o-transition: color 300ms ease-in;
-    transition: color 300ms ease-in;
 }
 
 .results-index-header-wrapper:hover .results-index-context {
@@ -95,22 +159,6 @@
 
 .results-index-header-wrapper:hover .results-index-bold {
     color: $nights-watch-black
-}
-
-.results-index-item-container:hover .results-index-subheader-icon {
-    color: $targ-silver-light;
-    -webkit-transition: color 300ms ease-in;
-    -moz-transition: color 300ms ease-in;
-    -ms-transition: color 300ms ease-in;
-    -o-transition: color 300ms ease-in;
-    transition: color 300ms ease-in;
-}
-
-.results-index-image {
-    border-radius: 50%;
-    max-height: 40px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
 .results-index-right-container {
@@ -140,53 +188,7 @@
     color: $cersei-green;
 }
 
-.results-index-subheader-icon {
-    font-size: 40px;
-    margin-left: 15px;
-    margin-right: 15px;
-    color: $targ-silver-dark;
-}
 
-.results-index-bold {
-    font-weight: 900;
-    background-color: inherit;
-}
-
-.results-index-underline {
-    text-decoration: underline;
-    text-decoration-color: $cersei-green;
-}
-
-.results-index-header-text {
-    margin-left: 15px;
-    font-size: 13px;
-    color: $nights-watch-black;
-}
-
-
-.results-index-name {
-    font-size: 13px;
-    color: $nights-watch-black;
-    margin-bottom: 2px;
-}
-
-.results-index-context {
-    font-size: 11px;
-    color: $nights-watch-black;
-}
-
-.search-result-clickable {
-    display: inline-block;
-    width: 500px;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 60px;
-}
 
 .add-members-form-sidebar {
     align-items: center;
@@ -340,7 +342,6 @@
 
 //new add members items 
 .add-member-button-container {
-    z-index: 3;
     position: relative;
     display: inline-block;
 }
@@ -358,9 +359,10 @@
 .sidebar-add-member-alignment-container {
     @include flex-center(column);
     @include card-defaults;
+    z-index: 1;
     width: 300px;
     height: 200px;
     position: absolute;
     left: 57px;
-    top: -33px;
+    top: -120px;
 }

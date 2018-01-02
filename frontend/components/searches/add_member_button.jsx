@@ -49,7 +49,9 @@ class AddMemberButton extends React.Component {
             {this.showAffordanceIcon()}
             <div className={this.toggleDropdownClass()}>
                 <SearchBarContainer
-                    source={this.props.source} />
+                    source={this.props.source}
+                    group={this.props.group}
+                    groupType={this.props.groupType} />
             </div>
         </div>);
     }

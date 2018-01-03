@@ -1,175 +1,123 @@
+//utils
 import React from 'react';
-import ResultsIndexUserItem from './results_index_user_item';
-import ResultsIndexProjectItem from './results_index_project_item';
-import ResultsIndexTeamItem from './results_index_team_item';
-import SidebarResultsUserItem from './sidebar_results_user_item';
-import SearchIndexHeader from './search_index_header';
-import SearchIndexSubheader from './search_index_subheader';
+
+//components
+import ResultsIndexItem from './results_index_item';
+import SearchIndexHeader from './results_index_header';
 
 
-class ResultsIndex extends React.Component  {
-  constructor(props) {
-    super(props);
-
-    this.renderFoundUsers = this.renderFoundUsers.bind(this);
-  }
-
-  renderFoundUsers() {
-      return (
-        <ul>
-          {this.props.userSearchResults.slice(0,2).map(
-            (user) =>
-            (<ResultsIndexUserItem
-              currentUser={this.props.currentUser}
-              key={Math.random()}
-              user={user}
-              clearState={this.props.clearState}
-              searchVal={this.props.searchVal}/>)
-            )}
-        </ul>
-      );
-  }
-
-  renderFoundProjects() {
-      return (
-        <ul>
-          {this.props.projectSearchResults.slice(0,2).map(
-            (project) =>
-            (<ResultsIndexProjectItem
-              currentUser={this.props.currentUser}
-              key={Math.random()}
-              project={project}
-              clearState={this.props.clearState}
-              searchVal={this.props.searchVal}/>)
-            )}
-        </ul>
-      );
-  }
-
-  renderFoundTeams() {
-    return (
-      <ul>
-        {this.props.teamSearchResults.slice(0,2).map(
-          (team) =>
-          (<ResultsIndexTeamItem
-            currentUser={this.props.currentUser}
-            key={Math.random()}
-            team={team}
-            clearState={this.props.clearState}
-            searchVal={this.props.searchVal}/>)
-          )}
-      </ul>
-    );
-  }
-
-  renderNavBarResults() {
-    return (
-      <div className="nav-search-results">
-      <ul>
-        <SearchIndexHeader searchVal={this.props.searchVal}/>
-        {this.renderFoundUsers()}
-        {this.renderFoundProjects()}
-        {this.renderFoundTeams()}
-      </ul>
-    </div>
-    );
-  }
-
-  renderSidebarResults() {
-    return (
-      <div className="add-members-results-container">
-        <ul className="add-members-results">
-          {this.props.userSearchResults.map(
-            (user) =>
-            (<SidebarResultsUserItem
-              createNewTeamMembership={this.props.createNewTeamMembership}
-              isOwner={this.props.isOwner}
-              currentUser={this.props.currentUser}
-              key={Math.random()}
-              user={user}
-              parent={this.props.parent}
-              group={this.props.group}
-              clearState={this.props.clearState}
-              searchVal={this.props.searchVal}/>)
-            )}
-          </ul>
-      </div>
-    );
-  }
-
-  renderTransferOwnershipResults() {
-    return (
-      <div className="view-members-results-container">
-        <ul className="add-members-results">
-          {this.props.group.members.map(
-            (user) =>
-            (<SidebarResultsUserItem
-              requestUpdateToTeam={this.props.requestUpdateToTeam}
-              closeTransferOwnershipModal=
-              {this.props.closeTransferOwnershipModal}
-              requestUpdateToProject={this.props.requestUpdateToProject}
-              parent={"TransferOwnership"}
-              searchVal={""}
-              key={Math.random()}
-              user={user}
-              group={this.props.group}/>)
-            )}
-          </ul>
-      </div>
-    );
-  }
-
-  renderProjectDetailResults() {
-    return (
-      <div className="add-members-results-container">
-        <ul className="add-members-results">
-          {this.props.userSearchResults.map(
-            (user) =>
-            (<SidebarResultsUserItem
-              createNewProjectMembership={this.props.createNewProjectMembership}
-              isOwner={this.props.isOwner}
-              currentUser={this.props.currentUser}
-              key={Math.random()}
-              user={user}
-              group={this.props.group}
-              clearState={this.props.clearState}
-              searchVal={this.props.searchVal}/>)
-            )}
-          </ul>
-      </div>
-    );
-  }
-
-  renderIndex() {
-    if (this.props.parent === "Sidebar") {
-      return this.renderSidebarResults();
-    } else if (this.props.parent === "NavBar") {
-      return this.renderNavBarResults();
-    } else if (this.props.parent === "ProjectDetail") {
-      return this.renderProjectDetailResults();
-    } else if (this.props.parent === "TransferOwnership") {
-      return this.renderTransferOwnershipResults();
+class ResultsIndex extends React.Component {
+    constructor(props) {
+        super(props);
     }
-  }
 
-
-  render() {
-    if (this.props.searchVal === "") {
-      return <div></div>;
-    } else if (this.props.parent === "TransferOwnership") {
-      return (
-        <div className="group-members-view-container">
-          {this.renderIndex()}
-        </div>
-      );
-    } else {
-      return (
-        <div className="">
-          {this.renderIndex()}
-        </div>
-      );
+    showUsers(limit) {
+        return (
+            <ul>
+                {this.props.userSearchResults.slice(0, limit).map(
+                    (user) =>
+                        (<ResultsIndexItem
+                            key={Math.random()}
+                            resultType={"user"}
+                            currentTarget={user}
+                            source={this.props.source}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
+                )}
+            </ul>
+        );
     }
-  }
+
+    showNonMembers(limit) {
+        let nonMembers = this.props.userSearchResults.filter(user => this.props.group.members_by_id.indexOf(user.id) === -1);
+        return (
+            <ul>
+                {nonMembers.slice(0, limit).map(
+                    (nonMember) =>
+                        (<ResultsIndexItem
+                            key={Math.random()}
+                            group={this.props.group}
+                            resultType={"non-member"}
+                            currentTarget={nonMember}
+                            source={this.props.source}
+                            groupType={this.props.groupType}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState}
+                            createNewMembership={this.props.createNewMembership} />)
+                )}
+            </ul>
+        );
+    }
+
+    showProjects(limit) {
+        return (
+            <ul>
+                {this.props.projectSearchResults.slice(0, limit).map(
+                    (project) =>
+                        (<ResultsIndexItem
+                            resultType={"project"}
+                            key={Math.random()}
+                            currentTarget={project}
+                            source={this.props.source}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
+                )}
+            </ul>
+        );
+    }
+
+    showTeams(limit) {
+        return (
+            <ul>
+                {this.props.teamSearchResults.slice(0, limit).map(
+                    (team) =>
+                        (<ResultsIndexItem
+                            resultType={"team"}
+                            key={Math.random()}
+                            currentTarget={team}
+                            source={this.props.source}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
+                )}
+            </ul>
+        );
+    }
+
+    showResults() {
+        switch (this.props.source) {
+            case "global-header":
+                return (
+                    <ul>
+                        <SearchIndexHeader searchVal={this.props.searchVal} />
+                        {this.showUsers(2)}
+                        {this.showProjects(2)}
+                        {this.showTeams(2)}
+                    </ul>
+                );
+            case "sidebar-group-members-index":
+                return (<ul>
+                    {this.showNonMembers(5)}
+                </ul>);
+            case "project-detail":
+                return (<ul>
+                    {this.showNonMembers(5)}
+                </ul>);
+            default:
+                return <div></div>;
+        }
+    }
+
+    render() {
+        if (this.props.searchVal === "") {
+            return <div></div>;
+        } else {
+            return (
+                <div className={`${this.props.source}-results-alignment-container`}>
+                    {this.showResults()}
+                </div>
+            );
+        }
+    }
 }
 
 export default ResultsIndex;

@@ -13,7 +13,7 @@ import {
 } from '../../actions/project_actions';
 
 //components
-import ResultsIndex from './results_index2';
+import ResultsIndex from './results_index';
 
 //map slices of state as arrays for limited rendering using Array.slice();
 const mapStateToProps = (state, ownProps) => {

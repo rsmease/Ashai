@@ -93,7 +93,8 @@ class SearchBar extends React.Component {
                         group={this.props.group}
                         source={this.props.source}
                         groupType={this.props.groupType}
-                        searchVal={this.state.searchVal} />
+                        searchVal={this.state.searchVal}
+                        clearState={this.clearState} />
                 </div>
             </div>
         );

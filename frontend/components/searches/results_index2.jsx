@@ -5,9 +5,6 @@ import _ from 'lodash';
 //components
 import ResultsIndexItem from './results_index_item';
 import SearchIndexHeader from './search_index_header';
-import ResultsIndexProjectItem from './results_index_project_item';
-import ResultsIndexTeamItem from './results_index_team_item';
-import SearchIndexSubheader from './search_index_subheader';
 
 
 class ResultsIndex extends React.Component {

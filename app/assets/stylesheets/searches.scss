@@ -37,7 +37,6 @@
     @include float-shadow;
     @include flex-center(column);
     top: 36px;
-    left: 34px;
     z-index: 2;
 }
 
@@ -53,7 +52,7 @@
     align-items: center;
     justify-content: flex-start;
     height: 60px;
-    width: 335px;
+    width: 400px;
     padding: 0 15px 0 0;
     border-top: 1px solid $targ-silver-light;
     @include hover-ease(background-color);
@@ -61,6 +60,8 @@
 
 .results-index-item-clickable {
     @include flex(row);
+    height: 60px;
+    width: 415px;
     align-items: center;
     justify-content: flex-start;
 }
@@ -82,7 +83,8 @@
 }
 
 .results-index-item-icon {
-    font-size: 40px;
+    height: 40px;
+    width: 40px;
     margin: 0 15px;
     color: $targ-silver-dark;
 }
@@ -152,9 +154,8 @@
     align-items: center;
     justify-content: flex-start;
     height: 60px;
-    width: 335px;
+    width: 400px;
     padding: 0 15px 0 0;
-    border-top: 1px solid $targ-silver-light;
 }
 
 .results-index-header-icon {

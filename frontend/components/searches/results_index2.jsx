@@ -30,16 +30,18 @@ class ResultsIndex extends React.Component {
     }
 
     showNonMembers(limit) {
-        let nonMembers = _.difference(this.props.userSearchResults, this.props.group.members);
+        let nonMembers = this.props.userSearchResults.filter(user => this.props.group.members_by_id.indexOf(user.id) === -1);
         return (
             <ul>
                 {nonMembers.slice(0, limit).map(
                     (nonMember) =>
                         (<ResultsIndexItem
                             key={Math.random()}
+                            group={this.props.group}
                             resultType={"non-member"}
                             currentTarget={nonMember}
                             source={this.props.source}
+                            groupType={this.props.groupType}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState}
                             createNewMembership={this.props.createNewMembership} />)

@@ -7,16 +7,18 @@ import * as MaterialDesign from 'react-icons/lib/md';
 class ResultsIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        this.handleAddMember = this.handleAddMember.bind(this);
     }
 
     handleAddMember() {
+        console.log(this.props);
         if (this.props.groupType === "team") {
             this.props.createNewMembership(
-                { member_id: this.props.user.id, team_id: this.props.group.id }
+                { member_id: this.props.currentTarget.id, team_id: this.props.group.id }
             );
         } else {
             this.props.createNewMembership(
-                { member_id: this.props.user.id, project_id: this.props.group.id }
+                { member_id: this.props.currentTarget.id, project_id: this.props.group.id }
             );
         }
     }

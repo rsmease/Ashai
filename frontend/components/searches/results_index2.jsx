@@ -1,6 +1,5 @@
 //utils
 import React from 'react';
-import _ from 'lodash';
 
 //components
 import ResultsIndexItem from './results_index_item';
@@ -99,100 +98,18 @@ class ResultsIndex extends React.Component {
                 return (<ul>
                     {this.showNonMembers(5)}
                 </ul>);
-            case "project-members-index":
-                return <div></div>;
+            case "project-detail":
+                return (<ul>
+                    {this.showNonMembers(5)}
+                </ul>);
             default:
                 return <div></div>;
         }
     }
 
-
-    // renderSidebarResults() {
-    //     return (
-    //         <div className="add-members-results-container">
-    //             <ul className="add-members-results">
-    //                 {this.props.userSearchResults.map(
-    //                     (user) =>
-    //                         (<SidebarResultsUserItem
-    //                             createNewTeamMembership={this.props.createNewTeamMembership}
-    //                             isOwner={this.props.isOwner}
-    //                             currentUser={this.props.currentUser}
-    //                             key={Math.random()}
-    //                             user={user}
-    //                             parent={this.props.parent}
-    //                             group={this.props.group}
-    //                             clearState={this.props.clearState}
-    //                             searchVal={this.props.searchVal} />)
-    //                 )}
-    //             </ul>
-    //         </div>
-    //     );
-    // }
-
-    // renderTransferOwnershipResults() {
-    //     return (
-    //         <div className="view-members-results-container">
-    //             <ul className="add-members-results">
-    //                 {this.props.group.members.map(
-    //                     (user) =>
-    //                         (<SidebarResultsUserItem
-    //                             requestUpdateToTeam={this.props.requestUpdateToTeam}
-    //                             closeTransferOwnershipModal=
-    //                             {this.props.closeTransferOwnershipModal}
-    //                             requestUpdateToProject={this.props.requestUpdateToProject}
-    //                             parent={"TransferOwnership"}
-    //                             searchVal={""}
-    //                             key={Math.random()}
-    //                             user={user}
-    //                             group={this.props.group} />)
-    //                 )}
-    //             </ul>
-    //         </div>
-    //     );
-    // }
-
-    // renderProjectDetailResults() {
-    //     return (
-    //         <div className="add-members-results-container">
-    //             <ul className="add-members-results">
-    //                 {this.props.userSearchResults.map(
-    //                     (user) =>
-    //                         (<SidebarResultsUserItem
-    //                             createNewProjectMembership={this.props.createNewProjectMembership}
-    //                             isOwner={this.props.isOwner}
-    //                             currentUser={this.props.currentUser}
-    //                             key={Math.random()}
-    //                             user={user}
-    //                             group={this.props.group}
-    //                             clearState={this.props.clearState}
-    //                             searchVal={this.props.searchVal} />)
-    //                 )}
-    //             </ul>
-    //         </div>
-    //     );
-    // }
-
-    renderIndex() {
-        if (this.props.parent === "Sidebar") {
-            return this.renderSidebarResults();
-        } else if (this.props.parent === "NavBar") {
-            return this.renderNavBarResults();
-        } else if (this.props.parent === "ProjectDetail") {
-            return this.renderProjectDetailResults();
-        } else if (this.props.parent === "TransferOwnership") {
-            return this.renderTransferOwnershipResults();
-        }
-    }
-
-
     render() {
         if (this.props.searchVal === "") {
             return <div></div>;
-        } else if (this.props.parent === "TransferOwnership") {
-            return (
-                <div className="group-members-view-container">
-                </div>
-            );
         } else {
             return (
                 <div className={`${this.props.source}-results-alignment-container`}>

@@ -71,6 +71,8 @@ class SearchBar extends React.Component {
                 return "global-header-section";
             case "sidebar-group-members-index":
                 return "sidebar-add-member-alignment-container";
+            case "project-detail":
+                return "project-detail-alignment-container";
             default:
                 break;
         }

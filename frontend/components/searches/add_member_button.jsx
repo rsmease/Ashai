@@ -37,7 +37,12 @@ class AddMemberButton extends React.Component {
             case "sidebar-group-members-index":
                 return (<MaterialDesign.MdPersonAdd
                     title="Add a New Member"
-                    className="sidebar-new-member-button"
+                    className="sidebar-add-member-button"
+                    onClick={this.toggleDropdown} />);
+            case "project-detail":
+                return (<MaterialDesign.MdPersonAdd
+                    title="Add a New Member"
+                    className="project-detail-add-member-button"
                     onClick={this.toggleDropdown} />);
             default:
                 break;

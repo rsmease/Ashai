@@ -206,6 +206,17 @@
     display: flex;
 }
 
+.sidebar-add-member-button {
+    margin: 0 0 0 5px;
+    color: $targ-silver-dark;
+    font-size: $add-button;
+}
+
+.sidebar-add-member-button:hover {
+    color: $cersei-green;
+    @include hover-ease(color);
+}
+
 .sidebar-add-member-alignment-container {
     @include flex-center(column);
     @include card-defaults;
@@ -215,4 +226,28 @@
     position: absolute;
     left: 57px;
     top: -120px;
+}
+
+.project-detail-add-member-button {
+    border: 1px solid $targ-silver-dark;
+    color: $targ-silver-dark;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    padding: 12px;
+    margin: 0 0 30px 0;
+    @include flex-center(row);
+    @include hover-ease(all);
+}
+
+.project-detail-add-member-button:hover {
+    border: 1px solid $cersei-green;
+    background-color: $cersei-green;
+    color: $winter-white;
+}
+
+.project-detail-alignment-container {
+    @extend .sidebar-add-member-alignment-container;
+    left: -392px;
+    top: -200px;
 }

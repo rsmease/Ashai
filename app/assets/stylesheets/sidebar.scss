@@ -135,18 +135,6 @@
     @include spin(90deg);
 }
 
-.sidebar-new-member-button {
-    margin: 0 0 0 5px;
-    color: $targ-silver-dark;
-    font-size: $add-button;
-}
-
-.sidebar-new-member-button:hover {
-    color: $cersei-green;
-    @include hover-ease(color);
-}
-
-
 .sidebar-tools {
     opacity: 0;
     @include flex-center(row);

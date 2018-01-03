@@ -47,24 +47,6 @@
     text-align: center;
 }
 
-.project-new-member-button {
-    border: 1px solid $targ-silver-dark;
-    color: $targ-silver-dark;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    padding: 12px;
-    margin: 0 0 30px 0;
-    @include flex-center(row);
-    @include hover-ease(all);
-}
-
-.project-new-member-button:hover {
-    border: 1px solid $cersei-green;
-    background-color: $cersei-green;
-    color: $winter-white;
-}
-
 .view-members-results-container {
     @include flex(column);
     justify-content: flex-start;

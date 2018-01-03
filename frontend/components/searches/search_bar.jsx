@@ -22,7 +22,9 @@ class SearchBar extends React.Component {
     showHeader() {
         switch (this.props.source) {
             case "sidebar-group-members-index":
-                return <h1>Add Members</h1>
+                return <h1 className="add-member-search-header">Add Members</h1>;
+            case "project-detail":
+                return <h1 className="add-member-search-header">Add Members</h1>;
             default:
                 break;
         }

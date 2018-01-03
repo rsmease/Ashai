@@ -11,7 +11,6 @@ class ResultsIndexItem extends React.Component {
     }
 
     handleAddMember() {
-        console.log(this.props);
         if (this.props.groupType === "team") {
             this.props.createNewMembership(
                 { member_id: this.props.currentTarget.id, team_id: this.props.group.id }

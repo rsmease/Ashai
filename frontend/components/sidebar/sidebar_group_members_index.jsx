@@ -8,18 +8,6 @@ import SidebarGroupMembersIndexItem from './sidebar_group_members_index_item';
 class SidebarGroupMembersIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            modalOpen: false
-        };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-    }
-
-    openModal() {
-        this.setState({ modalOpen: true });
-    }
-    closeModal() {
-        this.setState({ modalOpen: false });
     }
 
     render() {

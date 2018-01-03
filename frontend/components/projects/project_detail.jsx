@@ -17,6 +17,7 @@ class ProjectDetail extends React.Component {
     this.closeModal = this.closeModal.bind(this);
   }
 
+
   openModal() {
     this.setState({ modalOpen: true });
   }

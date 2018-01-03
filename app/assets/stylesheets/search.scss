@@ -37,6 +37,7 @@
     @include float-shadow;
     @include flex-center(column);
     top: 36px;
+    left: 0px;
     z-index: 2;
 }
 
@@ -226,6 +227,7 @@
     position: absolute;
     left: 57px;
     top: -120px;
+    border-top: 3px solid $cersei-green;
 }
 
 .project-detail-add-member-button {
@@ -250,4 +252,10 @@
     @extend .sidebar-add-member-alignment-container;
     left: -392px;
     top: -200px;
+}
+
+.add-member-search-header {
+    color: $nights-watch-black;
+    font-size: $small-header;
+    margin: 0 0 30px 0;
 }

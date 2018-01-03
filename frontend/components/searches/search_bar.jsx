@@ -44,6 +44,11 @@ class SearchBar extends React.Component {
                     this.props.searchUsers(this.state.searchVal);
                 });
                 break;
+            case "project-detail":
+                this.setState({ searchVal: newVal, firstTime: false }, () => {
+                    this.props.searchUsers(this.state.searchVal);
+                });
+                break;
             default:
                 break;
         }

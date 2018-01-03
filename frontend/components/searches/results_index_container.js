@@ -58,6 +58,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             } else {
                 return {};
             }
+        case "project-detail":
+            if (ownProps.groupType === "team") {
+                return {
+                    createNewMembership: (teamMembershipRequest) =>
+                        dispatch(createNewTeamMembership(teamMembershipRequest))
+                };
+            } else if (ownProps.groupType === "project") {
+                return {
+                    createNewMembership: (projectMembershipRequest) =>
+                        dispatch(createNewProjectMembership(projectMembershipRequest))
+                };
+            } else {
+                return {};
+            }
         default:
             return {};
     }

@@ -17,6 +17,7 @@ class SidebarGroupIndexItem extends React.Component {
     showMembers() {
         if (this.props.groupType === "team") {
             return <SidebarGroupMembersIndex
+                kye={Math.random()}
                 group={this.props.group}
                 groupType={this.props.groupType}
             />;
@@ -26,6 +27,7 @@ class SidebarGroupIndexItem extends React.Component {
     showOwnerTools() {
         if (this.props.userIsOwner) {
             return <SidebarOwnerToolsContainer
+                key={Math.random()}
                 group={this.props.group}
                 groupType={this.props.groupType} />;
         }

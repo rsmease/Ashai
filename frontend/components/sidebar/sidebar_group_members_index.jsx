@@ -21,6 +21,7 @@ class SidebarGroupMembersIndex extends React.Component {
                     ))
                 }
                 <AddMemberButton
+                    key={Math.random()}
                     group={this.props.group}
                     groupType={this.props.groupType}
                     source={"sidebar-group-members-index"} />

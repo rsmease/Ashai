@@ -1,6 +1,7 @@
 //utils
 import React from 'react';
 import Modal from 'react-modal';
+import { withRouter } from 'react-router-dom';
 import * as MaterialDesign from 'react-icons/lib/md';
 
 //components
@@ -11,7 +12,7 @@ class ProjectDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -46,4 +47,4 @@ class ProjectDetail extends React.Component {
   }
 }
 
-export default ProjectDetail;
+export default withRouter(ProjectDetail);

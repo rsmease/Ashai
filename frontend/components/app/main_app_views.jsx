@@ -10,8 +10,7 @@ import RootHeader from '../headers/root_header';
 //core indices
 import TeamIndexContainer from '../teams/team_index_container';
 import TaskIndexContainer from '../tasks/task_index_container';
-import ProjectTaskIndexContainer from
-  '../projects/project_task_index_container';
+import ProjectDetail from '../projects/project_detail';
 
 
 export const MainAppViewCurrentUser = () => (
@@ -49,7 +48,9 @@ export const MainAppViewProject = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <ProjectTaskIndexContainer groupType="project" />
+      <div className="project-view-container">
+        <TaskIndexContainer groupType="project" />
+      </div>
     </div>
   </div>
 );

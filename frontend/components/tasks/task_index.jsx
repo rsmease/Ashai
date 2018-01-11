@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link, Router, withRouter } from 'react-router-dom';
-import TaskIndexHeader from '../headers/task_index_header';
-import TaskIndexGutter from '../footers/task_index_gutter';
+import TaskIndexHeader from './task_index_header';
+import TaskIndexGutter from './task_index_gutter';
 
 class TaskIndex extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  // renderSideContent() {
+  //   if (!(this.props.projectId === undefined)) {
+  //     return <ProjectDetail project={this.props.project} />;
+  //   }
+  // }
 
   render() {
     return (

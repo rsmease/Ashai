@@ -1,46 +1,66 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+//utils
+import {
+    connect
+} from 'react-redux';
+import {
+    withRouter
+} from 'react-router-dom';
+import _ from 'lodash';
+
+//actions
+import {
+    requestUser
+} from '../../actions/user_actions';
+import {
+    requestProject
+} from '../../actions/project_actions';
+
+//components
 import TaskIndex from './task_index';
-import { requestUser } from '../../actions/user_actions';
-import { requestProject } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
 
-  let userId;
-  let projectId;
-  if (ownProps.match.path.params.userId) {
-    userId = ownProps.match.path.params.userId;
-    projectId = null;
-  } else {
-    projectId = ownProps.match.path.params.projectId;
-    userId = null;
-  }
+    let userId;
+    let projectId;
+    if (ownProps.match.path.params.userId) {
+        userId = ownProps.match.path.params.userId;
+        projectId = null;
+    } else {
+        projectId = ownProps.match.path.params.projectId;
+        userId = null;
+    }
 
-  //also need to pass the user and project by slicing state
+    const defaults = {
+        groupType: ownProps.groupType,
+        currentUser: state.session.currentUser
+    }
 
-  if (projectId === null) {
-    return {
-      userId: userId,
-      user: state.entitles.users[userId],
-      projectId: null,
-      project: null
-    };
-  } else {
-    return {
-      projectId: projectId,
-      project: state.entitles.project[projectId],
-      userId: null,
-      user: null
-    };
-  }
+    switch (ownProps.groupType) {
+        case "currentUser":
+            return _.merge({}, defaults, {
+                userId: state.session.currentUser.id,
+                user: state.session.currentUser
+            })
+        case "user":
+            return _.merge({}, defaults, {
+                userId: ownProps.match.path.params.userId,
+                user: state.entities.users[userId]
+            })
+        case "project":
+            return _.merge({}, defaults, {
+                projectId: ownProps.match.path.params.projectId,
+                project: state.entities.projects[projectId];
+            })
+        default:
+            return defaults;
+    }
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  requestProject: (projectId) => dispatch(requestProject(projectId)),
-  requestUser: (userId) => dispatch(requestUser(userId))
+    requestProject: (projectId) => dispatch(requestProject(projectId)),
+    requestUser: (userId) => dispatch(requestUser(userId))
 });
 
-//REMEMBER TO ADD THESE BACK SOON
 export default withRouter(
-  connect(null, null)(TaskIndex)
+    connect(mapStateToProps, mapDispatchToProps)(TaskIndex)
 );

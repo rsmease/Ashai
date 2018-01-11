@@ -7,25 +7,6 @@ class TaskIndex extends React.Component {
   constructor(props) {
     super(props);
   }
-  // renderTeamCards() {
-  //   if (this.props.team) {
-  //     return (<div className="team-index-container">
-  //       {
-  //         this.props.team.members.map(function(member) {
-  //           return <TeamIndexItem
-  //             key={Math.random()}
-  //             member={member}
-  //             />;
-  //         })
-  //       }
-  //     </div>);
-  //   } else {
-  //     return(
-  //       <div>
-  //       </div>
-  //     );
-  //   }
-  // }
 
   render() {
     return (

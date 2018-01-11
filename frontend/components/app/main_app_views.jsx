@@ -19,7 +19,7 @@ export const MainAppViewCurrentUser = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <TaskIndexContainer />
+      <TaskIndexContainer groupType="currentUser" />
     </div>
   </div>
 );
@@ -39,7 +39,7 @@ export const MainAppViewUser = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <TaskIndexContainer />
+      <TaskIndexContainer groupType="user" />
     </div>
   </div>
 );
@@ -49,7 +49,7 @@ export const MainAppViewProject = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <ProjectTaskIndexContainer />
+      <ProjectTaskIndexContainer groupType="project" />
     </div>
   </div>
 );

@@ -8,11 +8,12 @@ import createStore from './store/store';
 import Root from './components/root';
 
 //testing modules
-//...
+import { postTask } from './util/task_util';
 
 document.addEventListener('DOMContentLoaded', () => {
 
   window.store = createStore();
+  window.postTask = postTask;
 
   let store;
   if (window.currentUser) {

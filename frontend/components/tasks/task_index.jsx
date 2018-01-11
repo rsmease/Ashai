@@ -16,10 +16,10 @@ class TaskIndex extends React.Component {
 
   render() {
     return (
-      <div className="hot-fix-task">
-        <div className="task-index-placeholder">
+      <div className="panel-and-detail-container">
+        <div className="panel-container">
           <TaskIndexHeader />
-          <div className="task-panel">
+          <div className="task-index-and-gutter-container">
             <TaskIndexGutter />
             <div className="task-index-container"></div>
           </div>

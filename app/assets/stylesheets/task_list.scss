@@ -1,57 +1,25 @@
-.task-panel-container {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10px;
-    flex-direction: column;
-    margin-left: 15px;
+.panel-and-detail-container {
+    @include flex-space-around(row);
+    padding: 30px;
 }
 
-.hot-fix-task {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.panel-container {
+    @include flex-center(column);
+    width: 50%
 }
 
-.task-index-placeholder {
-    width: 80%;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 10px;
-}
-
-.task-list-header {
+.task-index-header {
     width: 100%;
     height: 50px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     border-radius: 3px 3px 0 0;
-
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+    @include flex(row);
     align-items: center;
     justify-content: flex-start;
     background: $winter-white;
 }
 
-.add-task-task-list {
+.add-task-button {
     border: 1px solid $night-king-blue;
     border-radius: 3px;
     color: $night-king-blue;
@@ -64,24 +32,16 @@
     margin-left: 30px;
 }
 
-.add-task-task-list:hover {
+.add-task-button:hover {
     border: 3px solid $night-king-blue;
     margin-left: 28px;
 }
 
-.task-panel {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100px;
+.task-index-and-gutter-container {
+    @include flex-center(row);
 }
 
-.task-list-gutter {
+.task-index-gutter {
     width: 25px;
     background-color: $lord-of-light-white;
     height: 100%;
@@ -92,25 +52,13 @@
 }
 
 .task-index-container {
+    @include flex(column);
+    justify-content: center;
+    align-items: flex-start;
     width: calc(100% - 25px);
     background: $winter-white;
     padding: 10px;
     height: 100%;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     border-bottom-right-radius: 3px;
-}
-
-.project-task-wrapper {
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.task-panel-team {
-    width: 100%;
-    min-width: 400px;
 }

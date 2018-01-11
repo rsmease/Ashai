@@ -31,16 +31,6 @@ class User < ApplicationRecord
 
   has_many :projects, through: :project_memberships, source: :project
 
-  has_many :tasks_assigned_to_user,
-    primary_key: :id,
-    foreign_key: :assignee_id,
-    class_name: 'Task'
-
-  has_many :tasks_user_has_assigned,
-    primary_key: :id,
-    foreign_key: :assigner_id,
-    class_name: 'Task'
-
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     return nil if user.nil?

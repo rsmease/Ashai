@@ -47,9 +47,7 @@ export const MainAppViewProject = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
-      <div className="project-view-container">
-        <TaskIndexContainer groupType="project" />
-      </div>
+      <TaskIndexContainer groupType="project" />
     </div>
   </div>
 );

@@ -1,5 +1,4 @@
 class Task < ApplicationRecord
-  validates :title, :assigner_id, :completion_status, presence: true
 
   belongs_to :assigner,
     primary_key: :id,

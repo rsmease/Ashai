@@ -1,1 +1,1 @@
-json.partial! "api/tasks/taks", task: @task
+json.partial! "api/tasks/task", task: @task

@@ -12,13 +12,11 @@ import { postTask } from './util/task_util';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  window.store = createStore();
-  window.postTask = postTask;
-
   let store;
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = createStore(preloadedState);
+    window.store = store;
     delete window.currentUser;
   } else {
     store = createStore();

@@ -25,23 +25,24 @@ const mapStateToProps = (state, ownProps) => {
         currentUser: state.session.currentUser
     };
 
+
     switch (ownProps.groupType) {
         case "currentUser":
             return _.merge({}, defaults, {
-                userId: state.session.currentUser.id,
-                user: state.session.currentUser
+                currentTargetId: state.session.currentUser.id,
+                currentTarget: state.session.currentUser
             });
         case "user":
-            let userId = ownProps.match.path.params.userId;
+            let currentTargetId = ownProps.match.path.params.userId;
             return _.merge({}, defaults, {
-                userId: userId,
-                user: state.entities.users[userId]
+                currentTargetId: currentTargetId,
+                currentTarget: state.entities.users[currentTargetId]
             });
         case "project":
-            let projectId = ownProps.match.path.params.projectId;
+            currentTargetId = ownProps.match.path.params.projectId;
             return _.merge({}, defaults, {
-                projectId: projectId,
-                project: state.entities.projects[projectId]
+                currentTargetId: currentTargetId,
+                currentTarget: state.entities.projects[currentTargetId]
             });
         default:
             return defaults;
@@ -54,5 +55,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(
-    connect(null, mapDispatchToProps)(TaskIndex)
+    connect(mapStateToProps, mapDispatchToProps)(TaskIndex)
 );

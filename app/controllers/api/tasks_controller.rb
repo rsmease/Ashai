@@ -7,8 +7,7 @@ class Api::TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.assigner_id = current_user.id
-    # @task.assignee_id = current_user.id if @task.assignee_id.nil?
-    @task.completion_status = true;
+    @task.completion_status = false;
 
     if @task.save
       render "api/tasks/show"
@@ -43,6 +42,6 @@ class Api::TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:completion_status, :assigner_id, :assignee_id, :title, :due_date, :description, :parent_task_id)
+    params.require(:task).permit(:assignee_id, :title, :due_date, :description, :parent_task_id)
   end
 end

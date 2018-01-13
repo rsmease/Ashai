@@ -8,7 +8,8 @@ class Task < ApplicationRecord
   belongs_to :assignee,
     primary_key: :id,
     foreign_key: :assignee_id,
-    class_name: 'User'
+    class_name: 'User',
+    optional: true
 
   
 end

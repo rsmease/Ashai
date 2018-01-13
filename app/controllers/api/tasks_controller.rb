@@ -7,7 +7,7 @@ class Api::TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     @task.assigner_id = current_user.id
-    @task.assignee_id = current_user.id if @task.assignee_id.nil?
+    # @task.assignee_id = current_user.id if @task.assignee_id.nil?
     @task.completion_status = true;
 
     if @task.save

@@ -11,5 +11,4 @@ class Task < ApplicationRecord
     class_name: 'User',
     optional: true
 
-  
 end

@@ -7,6 +7,7 @@ import { Link, Router, withRouter } from 'react-router-dom';
 import TaskIndexHeader from './task_index_header';
 import TaskIndexGutter from './task_index_gutter';
 import TaskIndexItem from './task_index_item';
+import AddTaskForm from './add_task_form';
 
 class TaskIndex extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class TaskIndex extends React.Component {
     };
   }
 
+  //display current tasks on initial load
   componentWillMount() {
     switch (this.props.groupType) {
       case "currentUser":
@@ -33,6 +35,26 @@ class TaskIndex extends React.Component {
     }
   }
 
+  //live update tasks when a new task is submitted
+  componentWillReceiveProps(nextProps) {
+    console.log("Component is receiving new props");
+    console.log(nextProps);
+    switch (this.props.groupType) {
+      case "currentUser":
+        this.setState({ currentTargetTasks: nextProps.currentTarget.tasks_assigned_to_user });
+        break;
+      case "user":
+        this.setState({ currentTargetTasks: nextProps.currentTarget.tasks_assigned_to_user });
+        break;
+      case "project":
+        //TODO: UPDATE TO REFLECT TASKS-ASSIGNED-TO-PROJECT  
+        this.setState({ currentTargetTasks: nextProps.currentUsr.tasks_assigned_to_user });
+        break;
+      default:
+        break;
+    }
+  }
+
   // renderSideContent() {
   //   if (!(this.props.projectId === undefined)) {
   //     return <ProjectDetail project={this.props.project} />;
@@ -42,6 +64,10 @@ class TaskIndex extends React.Component {
   showTasks() {
     return (
       <div className="task-index-container">
+        <AddTaskForm
+          createNewTask={this.props.createNewTask}
+          groupType={this.props.groupType}
+          currentTargetId={this.props.currentTargetId} />
         {
           this.state.currentTargetTasks.map(task => (
             <TaskIndexItem key={Math.random()} task={task} />

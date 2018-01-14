@@ -14,6 +14,10 @@ import {
 import {
     requestProject
 } from '../../actions/project_actions';
+import {
+    createNewTask,
+    requestUpdateToTask
+} from '../../actions/task_actions';
 
 //components
 import TaskIndex from './task_index';
@@ -51,7 +55,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
     requestProject: (projectId) => dispatch(requestProject(projectId)),
-    requestUser: (userId) => dispatch(requestUser(userId))
+    requestUser: (userId) => dispatch(requestUser(userId)),
+    createNewTask: (formTask) => dispatch(createNewTask(formTask)),
+    requestUpdateToTask: (formTask) => dispatch(requestUpdateToTask(formTask))
 });
 
 export default withRouter(

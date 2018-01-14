@@ -26,6 +26,7 @@ class AddTaskForm extends React.Component {
     handleKeyDown(e) {
         if (e.keyCode === 13 && this.state.title.length > 0) {
             this.props.createNewTask(this.state);
+            this.setState({ title: "" });
         }
     }
 
@@ -37,9 +38,9 @@ class AddTaskForm extends React.Component {
 
     render() {
         return (
-            <div className="task-index-item" id="add-task-form">
+            <div className="task-index-item task-index-item-hidden" id="add-task-form">
                 <div className="task-index-item-left-alignment-container">
-                    <MaterialDesign.MdCheckCircle className="complete-task-button" />
+                    <MaterialDesign.MdCheckCircle className="complete-task-button-add-task-form" />
                     <form className="task-index-item-title">
                         <input
                             className="task-index-item-title-input"

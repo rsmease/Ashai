@@ -54,12 +54,6 @@ class TaskIndexItem extends React.Component {
                     </form>
                 </div>
                 <div className="task-index-item-right-alignment-container">
-                    <SingleDatePicker
-                        date={this.state.due_date} // momentPropTypes.momentObj or null
-                        onDateChange={newDate => this.setState({ due_date: newDate })} // PropTypes.func.isRequired
-                        focused={this.state.focused} // PropTypes.bool
-                        onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
-                    />
                 </div>
             </div>
         );

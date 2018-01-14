@@ -77,10 +77,19 @@
     height: 0px;
 }
 
+.task-index-item-hidden {
+    height: 0px;
+    @include transition-ease(all);
+}
+
 .deleted-task>.task-index-item-left-alignment-container,
-.deleted-task>.task-index-item-right-alignment-container {
+.deleted-task>.task-index-item-right-alignment-container,
+.task-index-item-hidden>.task-index-item-left-alignment-container,
+.task-index-item-hidden>.task-index-item-right-alignment-container {
     display: none;
 }
+
+
 
 
 
@@ -106,9 +115,18 @@
     @include transition-ease(color);
 }
 
+.complete-task-button-add-task-form {
+    @extend .complete-task-button;
+}
+
 .complete-task-button:hover {
     color: $cersei-green;
 }
+
+.complete-task-button-add-task-form:hover {
+    color: $targ-silver-light;
+}
+
 
 .task-index-item-title {
     margin: 0 15px;

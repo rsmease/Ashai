@@ -39,13 +39,13 @@ const mapStateToProps = (state, ownProps) => {
                 currentTarget: state.session.currentUser
             });
         case "user":
-            let currentTargetId = ownProps.match.path.params.userId;
+            let currentTargetId = 1;
             return _.merge({}, defaults, {
                 currentTargetId: currentTargetId,
                 currentTarget: state.entities.users[currentTargetId]
             });
         case "project":
-            currentTargetId = ownProps.match.path.params.projectId;
+            currentTargetId = 1;
             return _.merge({}, defaults, {
                 currentTargetId: currentTargetId,
                 currentTarget: state.entities.projects[currentTargetId]

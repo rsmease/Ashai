@@ -37,8 +37,6 @@ class TaskIndex extends React.Component {
 
   //live update tasks when a new task is submitted
   componentWillReceiveProps(nextProps) {
-    console.log("Component is receiving new props");
-    console.log(nextProps);
     switch (this.props.groupType) {
       case "currentUser":
         this.setState({ currentTargetTasks: nextProps.currentTarget.tasks_assigned_to_user });

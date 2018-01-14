@@ -60,7 +60,12 @@ export default (state = _nullSession, action) => {
                     state.currentUser);
             return _.merge({}, state);
         case RECEIVE_TASK:
-            return state;
+            state.currentUser.tasks_assigned_to_user =
+                addUniqueToArray(
+                    action.task,
+                    state.currentUser.tasks_assigned_to_user,
+                    state.currentUser);
+            return _.merge({}, state);
         case REMOVE_PROJECT:
             state.currentUser.projects =
                 removeDeleted(action.projectId, state.currentUser.projects);
@@ -70,7 +75,9 @@ export default (state = _nullSession, action) => {
                 removeDeleted(action.teamId, state.currentUser.teams);
             return _.merge({}, state);
         case REMOVE_TASK:
-            return state;
+            state.currentUser.tasks_assigned_to_user =
+                removeDeleted(action.taskId, state.currentUser.tasks_assigned_to_user);
+            return _.merge({}, state);
         case LOGOUT_CURRENT_USER:
             return _nullSession;
         default:

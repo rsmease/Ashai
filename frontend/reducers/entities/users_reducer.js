@@ -1,11 +1,23 @@
+//utils
+import _ from 'lodash';
+
+//actions
 import {
     RECEIVE_ALL_USERS,
     RECEIVE_USER
 } from '../../actions/user_actions';
-import _ from 'lodash';
+
+import {
+    RECEIVE_TASK,
+    REMOVE_TASK
+} from '../../actions/task_actions';
+
+import {
+    addUniqueToArray,
+    removeDeleted
+} from '../selectors';
 
 export default (state = {}, action) => {
-    Object.freeze(state);
     switch (action.type) {
         case RECEIVE_USER:
             const receivedUser = action.user;
@@ -15,7 +27,22 @@ export default (state = {}, action) => {
         case RECEIVE_ALL_USERS:
             const users = action.users;
             return _.merge({}, state, users);
+        case RECEIVE_TASK:
+            let udpatedUserId = action.assigneeId;
+            console.log(state[udpatedUserId].tasks_assigned_to_user);
+            state[udpatedUserId].tasks_assigned_to_user =
+                addUniqueToArray(
+                    action.task,
+                    state[udpatedUserId].tasks_assigned_to_user,
+                    state[udpatedUserId]);
+            return _.merge({}, state);
+        case REMOVE_TASK:
+            let updatedUserId = action.assigneeId;
+            state[updatedUserId].tasks_assigned_to_user = removeDeleted(action.taskId, state[updatedUserId].tasks_assigned_to_user);
+            return _.merge({}, state);
         default:
             return state;
     }
 };
+// state[udpatedUserId].tasks_assigned_to_user =
+//     removeDeleted(action.taskId, state[updatedUserId].tasks_assigned_to_user);

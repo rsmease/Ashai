@@ -26,7 +26,6 @@ class TaskIndex extends React.Component {
   // }
 
   showTasks() {
-    console.log(this.props);
     if (this.props.currentTarget !== undefined) {
       return (
         <div className="task-index-container">

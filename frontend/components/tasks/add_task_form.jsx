@@ -43,7 +43,7 @@ class AddTaskForm extends React.Component {
                     <MaterialDesign.MdCheckCircle className="complete-task-button-add-task-form" />
                     <form className="task-index-item-title">
                         <input
-                            className="task-index-item-title-input"
+                            className="task-index-item-title-input add-task-form-input"
                             onKeyDown={(e) => this.handleKeyDown(e)}
                             type="text"
                             value={this.state.title}

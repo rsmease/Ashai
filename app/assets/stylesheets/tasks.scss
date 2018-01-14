@@ -89,14 +89,16 @@
     display: none;
 }
 
-
-
-
-
 .task-index-item:hover {
     border-top: 1px solid $targ-silver-light;
     border-bottom: 1px solid $targ-silver-light;
 }
+
+#add-task-form:hover {
+    border-top: 1px solid $night-king-blue;
+    border-bottom: 1px solid $night-king-blue;
+}
+
 
 .task-index-item-left-alignment-container {
     @include flex-center(row);
@@ -127,7 +129,6 @@
     color: $targ-silver-light;
 }
 
-
 .task-index-item-title {
     margin: 0 15px;
     font-size: $small-header;
@@ -141,6 +142,10 @@
     line-height: 40px;
     height: 38px;
     padding: 0 0 1px 0;
+}
+
+.add-task-form-input {
+    caret-color: $night-king-blue;
 }
 
 .due-date-selector {

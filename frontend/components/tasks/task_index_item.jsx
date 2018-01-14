@@ -25,12 +25,20 @@ class TaskIndexItem extends React.Component {
         };
     }
 
+    handleDelete() {
+        let currentIndexItem = document.getElementById(`task-${this.props.task.id}`);
+        currentIndexItem.classList.add("deleted-task");
+
+        let delayedDelete = () => (this.props.requestToDeleteTask(this.props.task.id));
+        setTimeout(delayedDelete, 100);
+    }
+
     render() {
         return (
-            <div className="task-index-item">
+            <div className="task-index-item" id={`task-${this.props.task.id}`}>
                 <div className="task-index-item-left-alignment-container">
                     <MaterialDesign.MdCheckCircle className="complete-task-button"
-                        onClick={() => this.props.requestToDeleteTask(this.props.task.id)} />
+                        onClick={() => this.handleDelete()} />
                     <form className="task-index-item-title">
                         <input
                             className="task-index-item-title-input"

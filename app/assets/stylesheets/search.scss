@@ -56,7 +56,7 @@
     width: 400px;
     padding: 0 15px 0 0;
     border-top: 1px solid $targ-silver-light;
-    @include hover-ease(background-color);
+    @include transition-ease(background-color);
 }
 
 .results-index-item-clickable {
@@ -188,7 +188,7 @@
 .add-member-button:hover {
     color: $winter-white;
     background-color: $cersei-green;
-    @include hover-ease(all);
+    @include transition-ease(all);
 }
 
 
@@ -215,7 +215,7 @@
 
 .sidebar-add-member-button:hover {
     color: $cersei-green;
-    @include hover-ease(color);
+    @include transition-ease(color);
 }
 
 .sidebar-add-member-alignment-container {
@@ -239,7 +239,7 @@
     padding: 12px;
     margin: 0 0 30px 0;
     @include flex-center(row);
-    @include hover-ease(all);
+    @include transition-ease(all);
 }
 
 .project-detail-add-member-button:hover {

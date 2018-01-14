@@ -37,7 +37,7 @@
     color: $tarth-sapphire;
     font-size: $text;
     margin: 0 15px 0 0;
-    @include hover-ease(color);
+    @include transition-ease(color);
 }
 
 .header-link:after {
@@ -154,7 +154,7 @@
 
 .global-header-right-action-index-item:hover {
     background-color: $night-king-blue;
-    @include hover-ease(background-color);
+    @include transition-ease(background-color);
 }
 
 .global-header-left-action-index-item:hover>.action-index-item-title,

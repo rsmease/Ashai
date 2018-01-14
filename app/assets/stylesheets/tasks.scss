@@ -64,11 +64,25 @@
 
 .task-index-item {
     @include flex-space-between(row);
+    @include transition-ease(all);
     border-top: 1px solid $winter-white;
     border-bottom: 1px solid $winter-white;
     width: 100%;
     height: 40px;
 }
+
+.deleted-task {
+    @extend .task-index-item;
+    background-color: $cerse-green-faded;
+    height: 0px;
+}
+
+.deleted-task>.task-index-item-left-alignment-container,
+.deleted-task>.task-index-item-right-alignment-container {
+    display: none;
+}
+
+
 
 .task-index-item:hover {
     border-top: 1px solid $targ-silver-light;
@@ -89,7 +103,7 @@
 .complete-task-button {
     font-size: $small-header;
     color: $targ-silver-light;
-    @include hover-ease(color);
+    @include transition-ease(color);
 }
 
 .complete-task-button:hover {

@@ -178,7 +178,7 @@
 
 .modal-delete-submit {
     @extend .modal-form-submit;
-    @include hover-ease(background-color);
+    @include transition-ease(background-color);
 }
 
 .modal-delete-submit:hover {

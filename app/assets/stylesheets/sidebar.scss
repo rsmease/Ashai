@@ -85,7 +85,7 @@
 
 .sidebar-group-links:hover, .sidebar-group-links-owner:hover {
     background-color: rgba(255, 255, 255, 0.3);
-    @include hover-ease(background-color)
+    @include transition-ease(background-color)
 }
 
 .sidebar-group-link {
@@ -95,7 +95,7 @@
 }
 
 .sidebar-group-links:hover .sidebar-tools {
-    @include hover-ease(opacity);
+    @include transition-ease(opacity);
     opacity: 1;
 }
 

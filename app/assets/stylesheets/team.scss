@@ -90,7 +90,7 @@
 
 .popup-card-profile-link-icon {
     color: $winter-white;
-    @include hover-ease(color);
+    @include transition-ease(color);
     font-size: $sub-header;
     margin: 10px 10px 0 0;
 }

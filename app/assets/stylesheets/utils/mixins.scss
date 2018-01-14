@@ -71,7 +71,7 @@
     margin-bottom: 10px;
 }
 
-@mixin hover-ease($property) {
+@mixin transition-ease($property) {
     -webkit-transition: $property 300ms ease-in;
     -moz-transition: $property 300ms ease-in;
     -ms-transition: $property 300ms ease-in;

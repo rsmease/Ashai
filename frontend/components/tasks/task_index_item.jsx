@@ -1,6 +1,9 @@
 import React from 'react';
 import * as MaterialDesign from 'react-icons/lib/md';
 import { Link, Router, withRouter } from 'react-router-dom';
+import 'react-dates/initialize';
+import { SingleDatePicker } from 'react-dates';
+
 
 
 class TaskIndexItem extends React.Component {
@@ -8,7 +11,8 @@ class TaskIndexItem extends React.Component {
         super(props);
         this.state = {
             title: this.props.task.title,
-            id: this.props.task.id
+            id: this.props.task.id,
+            due_date: null
         };
     }
 
@@ -30,7 +34,7 @@ class TaskIndexItem extends React.Component {
         currentIndexItem.classList.add("deleted-task");
 
         let delayedDelete = () => (this.props.requestToDeleteTask(this.props.task.id));
-        setTimeout(delayedDelete, 100);
+        setTimeout(delayedDelete, 400);
     }
 
     render() {
@@ -49,9 +53,13 @@ class TaskIndexItem extends React.Component {
                         />
                     </form>
                 </div>
-
                 <div className="task-index-item-right-alignment-container">
-                    <MaterialDesign.MdDateRange className="due-date-selector" />
+                    <SingleDatePicker
+                        date={this.state.due_date} // momentPropTypes.momentObj or null
+                        onDateChange={newDate => this.setState({ due_date: newDate })} // PropTypes.func.isRequired
+                        focused={this.state.focused} // PropTypes.bool
+                        onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                    />
                 </div>
             </div>
         );
@@ -59,3 +67,4 @@ class TaskIndexItem extends React.Component {
 }
 
 export default TaskIndexItem;
+{/* <MaterialDesign.MdDateRange className="due-date-selector" /> */ }

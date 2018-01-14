@@ -8,11 +8,16 @@ class TaskIndexItem extends React.Component {
         super(props);
     }
 
+    handleDelete(e) {
+
+    }
+
     render() {
         return (
             <div className="task-index-item">
                 <div className="task-index-item-left-alignment-container">
-                    <MaterialDesign.MdCheckCircle className="complete-task-button" />
+                    <MaterialDesign.MdCheckCircle className="complete-task-button"
+                        onClick={() => this.props.requestToDeleteTask(this.props.task.id)} />
                     <p className="task-index-item-title">
                         {this.props.task.title}
                     </p>

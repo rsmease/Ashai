@@ -70,7 +70,12 @@ class TaskIndex extends React.Component {
           currentTargetId={this.props.currentTargetId} />
         {
           this.state.currentTargetTasks.map(task => (
-            <TaskIndexItem key={Math.random()} task={task} />
+            <TaskIndexItem
+              task={task}
+              key={Math.random()}
+              requestUpdateToTask={this.props.requestUpdateToTask}
+              requestToDeleteTask={this.props.requestToDeleteTask}
+            />
           ))
         }
       </div>

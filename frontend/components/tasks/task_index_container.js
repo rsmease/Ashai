@@ -12,11 +12,13 @@ import {
     requestUser
 } from '../../actions/user_actions';
 import {
-    requestProject
+    requestProject,
+    requestToDeleteProject
 } from '../../actions/project_actions';
 import {
     createNewTask,
-    requestUpdateToTask
+    requestUpdateToTask,
+    requestToDeleteTask
 } from '../../actions/task_actions';
 
 //components
@@ -57,7 +59,8 @@ const mapDispatchToProps = (dispatch) => ({
     requestProject: (projectId) => dispatch(requestProject(projectId)),
     requestUser: (userId) => dispatch(requestUser(userId)),
     createNewTask: (formTask) => dispatch(createNewTask(formTask)),
-    requestUpdateToTask: (formTask) => dispatch(requestUpdateToTask(formTask))
+    requestUpdateToTask: (formTask) => dispatch(requestUpdateToTask(formTask)),
+    requestToDeleteTask: (taskId) => dispatch(requestToDeleteTask(taskId))
 });
 
 export default withRouter(

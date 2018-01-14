@@ -45,20 +45,18 @@
 .task-index-gutter {
     width: 25px;
     background-color: $lord-of-light-white;
-    height: 100%;
+    height: calc(100vh - 200px);
     border-bottom-left-radius: 3px;
-    padding-bottom: 10px;
-    padding-top: 10px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .task-index-container {
     @include flex(column);
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     width: calc(100% - 25px);
-    min-height: 100px;
     background: $winter-white;
+    min-height: calc(100vh - 200px);
     height: 100%;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     border-bottom-right-radius: 3px;
@@ -69,7 +67,7 @@
     border-top: 1px solid $winter-white;
     border-bottom: 1px solid $winter-white;
     width: 100%;
-    height: 50px;
+    height: 40px;
 }
 
 .task-index-item:hover {
@@ -100,13 +98,17 @@
 
 .task-index-item-title {
     margin: 0 15px;
-    font-size: $text;
+    font-size: $small-header;
     width: 100%;
     color: $nights-watch-black;
 }
 
 .task-index-item-title-input {
     width: 100%;
+    font-size: $text;
+    line-height: 40px;
+    height: 38px;
+    padding: 0 0 1px 0;
 }
 
 .due-date-selector {

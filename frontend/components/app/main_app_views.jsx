@@ -37,10 +37,10 @@ export const MainAppViewUser = () => (
     <Sidebar />
     <div className="task-with-header">
       <RootHeader />
+      <TaskIndexContainer groupType="user" />
     </div>
   </div>
 );
-{/* <TaskIndexContainer groupType="user" /> */ }
 
 export const MainAppViewProject = () => (
   <div className="app-container">

@@ -12,45 +12,11 @@ import AddTaskForm from './add_task_form';
 class TaskIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      currentTargetTasks: undefined
-    };
   }
 
   //display current tasks on initial load
-  componentWillMount() {
-    switch (this.props.groupType) {
-      case "currentUser":
-        this.setState({ currentTargetTasks: this.props.currentTarget.tasks_assigned_to_user });
-        break;
-      case "user":
-        this.setState({ currentTargetTasks: this.props.currentTarget.tasks_assigned_to_user });
-        break;
-      case "project":
-        //TODO: UPDATE TO REFLECT TASKS-ASSIGNED-TO-PROJECT  
-        this.setState({ currentTargetTasks: this.props.currentUsr.tasks_assigned_to_user });
-        break;
-      default:
-        break;
-    }
-  }
-
-  //live update tasks when a new task is submitted
-  componentWillReceiveProps(nextProps) {
-    switch (this.props.groupType) {
-      case "currentUser":
-        this.setState({ currentTargetTasks: nextProps.currentTarget.tasks_assigned_to_user });
-        break;
-      case "user":
-        this.setState({ currentTargetTasks: nextProps.currentTarget.tasks_assigned_to_user });
-        break;
-      case "project":
-        //TODO: UPDATE TO REFLECT TASKS-ASSIGNED-TO-PROJECT  
-        this.setState({ currentTargetTasks: nextProps.currentUsr.tasks_assigned_to_user });
-        break;
-      default:
-        break;
-    }
+  componentDidMount() {
+    this.props.requestUser(this.props.currentTargetId);
   }
 
   // renderSideContent() {
@@ -60,24 +26,37 @@ class TaskIndex extends React.Component {
   // }
 
   showTasks() {
-    return (
-      <div className="task-index-container">
-        <AddTaskForm
-          createNewTask={this.props.createNewTask}
-          groupType={this.props.groupType}
-          currentTargetId={this.props.currentTargetId} />
-        {
-          this.state.currentTargetTasks.map(task => (
-            <TaskIndexItem
-              task={task}
-              key={Math.random()}
-              requestUpdateToTask={this.props.requestUpdateToTask}
-              requestToDeleteTask={this.props.requestToDeleteTask}
-            />
-          ))
-        }
-      </div>
-    );
+    console.log(this.props);
+    if (this.props.currentTarget !== undefined) {
+      return (
+        <div className="task-index-container">
+          <AddTaskForm
+            createNewTask={this.props.createNewTask}
+            groupType={this.props.groupType}
+            currentTargetId={this.props.currentTargetId} />
+          {
+            this.props.currentTarget.tasks_assigned_to_user.map(task => (
+              <TaskIndexItem
+                task={task}
+                key={Math.random()}
+                currentTarget={this.props.currentTarget}
+                requestUpdateToTask={this.props.requestUpdateToTask}
+                requestToDeleteTask={this.props.requestToDeleteTask}
+              />
+            ))
+          }
+        </div>
+      );
+    } else {
+      return (
+        <div className="task-index-container">
+          <AddTaskForm
+            createNewTask={this.props.createNewTask}
+            groupType={this.props.groupType}
+            currentTargetId={this.props.currentTargetId} />
+        </div>
+      );
+    }
   }
 
   render() {

@@ -36,19 +36,20 @@ const mapStateToProps = (state, ownProps) => {
         case "currentUser":
             return _.merge({}, defaults, {
                 currentTargetId: state.session.currentUser.id,
-                currentTarget: state.session.currentUser
+                currentTarget: state.session.currentUser,
+                currentTargetTasks: state.session.currentUser.tasks_assigned_to_user
             });
         case "user":
-            let currentTargetId = 1;
+            let currentTargetId = ownProps.match.params.userId;
             return _.merge({}, defaults, {
                 currentTargetId: currentTargetId,
                 currentTarget: state.entities.users[currentTargetId]
             });
         case "project":
-            currentTargetId = 1;
+            currentTargetId = ownProps.match.params.projectId;
             return _.merge({}, defaults, {
                 currentTargetId: currentTargetId,
-                currentTarget: state.entities.projects[currentTargetId]
+                currentTarget: state.entities.projects[currentTargetId],
             });
         default:
             return defaults;

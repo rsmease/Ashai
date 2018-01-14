@@ -81,6 +81,7 @@
     @include flex-center(row);
     justify-content: flex-start;
     margin: 0 0 0 15px;
+    width: 100%;
 }
 
 .task-index-item-right-alignment-container {
@@ -100,7 +101,12 @@
 .task-index-item-title {
     margin: 0 15px;
     font-size: $text;
+    width: 100%;
     color: $nights-watch-black;
+}
+
+.task-index-item-title-input {
+    width: 100%;
 }
 
 .due-date-selector {

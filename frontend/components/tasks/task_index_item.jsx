@@ -6,10 +6,23 @@ import { Link, Router, withRouter } from 'react-router-dom';
 class TaskIndexItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            title: this.props.task.title,
+            id: this.props.task.id
+        };
     }
 
-    handleDelete(e) {
+    //currently only updates the title
+    handleKeyDown(e) {
+        if (e.keyCode === 13 && this.state.title.length > 0) {
+            this.props.requestUpdateToTask(this.state);
+        }
+    }
 
+    handleInput(type) {
+        return (e) => {
+            this.setState({ [type]: e.target.value });
+        };
     }
 
     render() {
@@ -18,9 +31,15 @@ class TaskIndexItem extends React.Component {
                 <div className="task-index-item-left-alignment-container">
                     <MaterialDesign.MdCheckCircle className="complete-task-button"
                         onClick={() => this.props.requestToDeleteTask(this.props.task.id)} />
-                    <p className="task-index-item-title">
-                        {this.props.task.title}
-                    </p>
+                    <form className="task-index-item-title">
+                        <input
+                            className="task-index-item-title-input"
+                            onKeyDown={(e) => this.handleKeyDown(e)}
+                            type="text"
+                            value={this.state.title}
+                            onChange={this.handleInput('title')}
+                        />
+                    </form>
                 </div>
 
                 <div className="task-index-item-right-alignment-container">

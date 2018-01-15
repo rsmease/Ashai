@@ -4,6 +4,16 @@ import {
     REMOVE_PROJECT
 } from '../../actions/project_actions';
 
+import {
+    RECEIVE_TASK,
+    REMOVE_TASK
+} from '../../actions/task_actions';
+
+import {
+    addUniqueToProjectTasks,
+    removeDeleted
+} from '../selectors';
+
 import _ from 'lodash';
 
 export default (state = {}, action) => {
@@ -21,6 +31,18 @@ export default (state = {}, action) => {
             let newState = _.merge({}, state);
             delete newState[action.projectId];
             return newState;
+        case RECEIVE_TASK:
+            let updatedProjectId = action.projectId;
+            state[updatedProjectId].tasks =
+                addUniqueToProjectTasks(
+                    action.task,
+                    state[updatedProjectId].tasks,
+                    state[updatedProjectId]);
+            return _.merge({}, state);
+        case REMOVE_TASK:
+            updatedProjectId = action.projectId;
+            state[updatedProjectId].tasks = removeDeleted(action.taskId, state[updatedProjectId].tasks);
+            return _.merge({}, state);
         default:
             return state;
     }

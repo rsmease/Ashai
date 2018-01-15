@@ -13,13 +13,15 @@ export const REMOVE_TASK = 'REMOVE_TASK';
 const receiveTask = (task) => ({
     type: RECEIVE_TASK,
     task: task,
-    assigneeId: task.assignee_id
+    assigneeId: task.assignee_id,
+    projectId: task.project_id
 });
 
 const removeTask = (task) => ({
     type: REMOVE_TASK,
     taskId: task.id,
-    assigneeId: task.assignee_id
+    assigneeId: task.assignee_id,
+    projectId: task.project_id
 });
 
 const receiveTaskFormErrors = (errors) => ({

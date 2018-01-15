@@ -29,7 +29,6 @@ export default (state = {}, action) => {
             return _.merge({}, state, users);
         case RECEIVE_TASK:
             let udpatedUserId = action.assigneeId;
-            console.log(state[udpatedUserId].tasks_assigned_to_user);
             state[udpatedUserId].tasks_assigned_to_user =
                 addUniqueToArray(
                     action.task,

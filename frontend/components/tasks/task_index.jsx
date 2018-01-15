@@ -18,7 +18,19 @@ class TaskIndex extends React.Component {
 
   //display current tasks on initial load
   componentDidMount() {
-    this.props.requestUser(this.props.currentTargetId);
+    switch (this.props.groupType) {
+      case "user":
+        this.props.requestUser(this.props.currentTargetId);
+        break;
+      case "currentUser":
+        this.props.requestUser(this.props.currentTargetId);
+        break;
+      case "project":
+        this.props.requestProject(this.props.currentTargetId);
+        break;
+      default:
+        break;
+    }
   }
 
   showDetail() {

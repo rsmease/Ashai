@@ -32,6 +32,7 @@ export default (state = {}, action) => {
             delete newState[action.projectId];
             return newState;
         case RECEIVE_TASK:
+            console.log(state);
             let updatedProjectId = action.projectId;
             state[updatedProjectId].tasks =
                 addUniqueToProjectTasks(

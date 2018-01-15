@@ -29,6 +29,9 @@ export default (state = {}, action) => {
             return _.merge({}, state, users);
         case RECEIVE_TASK:
             let udpatedUserId = action.assigneeId;
+            if (updatedUserId === undefined) {
+                return state;
+            }
             state[udpatedUserId].tasks_assigned_to_user =
                 addUniqueToArray(
                     action.task,
@@ -36,7 +39,11 @@ export default (state = {}, action) => {
                     state[udpatedUserId]);
             return _.merge({}, state);
         case REMOVE_TASK:
+            console.log(action);
             let updatedUserId = action.assigneeId;
+            if (updatedUserId === null) {
+                return state;
+            }
             state[updatedUserId].tasks_assigned_to_user = removeDeleted(action.taskId, state[updatedUserId].tasks_assigned_to_user);
             return _.merge({}, state);
         default:

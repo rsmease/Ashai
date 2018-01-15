@@ -18,6 +18,9 @@ class AddTaskForm extends React.Component {
             case "user":
                 this.setState({ assignee_id: this.props.currentTargetId });
                 break;
+            case "project":
+                this.setState({ project_id: this.props.currentTargetId });
+                break;
             default:
                 break;
         }

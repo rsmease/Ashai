@@ -32,15 +32,15 @@ class ProjectDetail extends React.Component {
         <div className="project-members-detail">
           <h4 className="project-detail-title">Members</h4>
           <ProjectMembersIndex
-            members={this.props.project.members} />
+            members={this.props.currentTarget.members} />
           <AddMemberButton
-            group={this.props.project}
+            group={this.props.currentTarget}
             groupType={"project"}
             source={"project-detail"} />
         </div>
         <div className="project-description">
           <h4 className="project-detail-title">Description</h4>
-          <p>{this.props.project.description}</p>
+          <p>{this.props.currentTarget.description}</p>
         </div>
       </div>
     );

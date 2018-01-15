@@ -63,6 +63,20 @@ class TaskIndex extends React.Component {
   }
 
   showProjectTasks() {
+    return (<div className="task-index-container">
+      {this.showAddTaskForm()}
+      {
+        this.props.currentTarget.tasks.map(task => {
+          return <TaskIndexItem
+            task={task}
+            key={Math.random()}
+            currentTarget={this.props.currentTarget}
+            requestUpdateToTask={this.props.requestUpdateToTask}
+            requestToDeleteTask={this.props.requestToDeleteTask}
+          />;
+        })
+      }
+    </div>);
   }
 
   showTasks() {

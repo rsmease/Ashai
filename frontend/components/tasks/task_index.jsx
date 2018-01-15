@@ -8,6 +8,8 @@ import TaskIndexHeader from './task_index_header';
 import TaskIndexGutter from './task_index_gutter';
 import TaskIndexItem from './task_index_item';
 import AddTaskForm from './add_task_form';
+import UserDetail from '../users/user_detail';
+import ProjectDetail from '../projects/project_detail';
 
 class TaskIndex extends React.Component {
   constructor(props) {
@@ -19,11 +21,20 @@ class TaskIndex extends React.Component {
     this.props.requestUser(this.props.currentTargetId);
   }
 
-  // renderSideContent() {
-  //   if (!(this.props.projectId === undefined)) {
-  //     return <ProjectDetail project={this.props.project} />;
-  //   }
-  // }
+  showDetail() {
+    if (this.props.currentTarget !== undefined) {
+      switch (this.props.groupType) {
+        case "user":
+          return <UserDetail currentTarget={this.props.currentTarget} />;
+        case "currentUser":
+          return <UserDetail currentTarget={this.props.currentTarget} />;
+        case "project":
+          return <ProjectDetail currentTarget={this.props.currentTarget} />;
+        default:
+          break;
+      }
+    }
+  }
 
   showTasks() {
     if (this.props.currentTarget !== undefined) {
@@ -68,6 +79,7 @@ class TaskIndex extends React.Component {
             {this.showTasks()}
           </div>
         </div>
+        {this.showDetail()}
       </div>
     );
   }

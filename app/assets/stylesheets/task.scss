@@ -1,11 +1,12 @@
 .panel-and-detail-container {
     @include flex-space-between(row);
+    align-items: flex-start;
     padding: 30px;
 }
 
 .panel-container {
     @include flex-center(column);
-    width: 50vw;
+    width: 100%;
 }
 
 .task-index-header {

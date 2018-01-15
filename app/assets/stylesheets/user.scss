@@ -1,0 +1,25 @@
+.user-detail {
+    @extend .project-detail;
+}
+
+.user-detail-title {
+    @extend .project-detail-title;
+}
+
+.user-description {
+    @extend .project-description;
+}
+
+.user-upper-detail {
+    @extend .project-members-detail;
+}
+
+.user-detail-profile-image {
+    @extend .sidebar-profile-image;
+    max-height: 128px;
+    margin: 30px 0;
+}
+
+.user-detail-profile-image:hover {
+    box-shadow: none;
+}

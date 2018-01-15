@@ -99,7 +99,6 @@
     border-bottom: 1px solid $night-king-blue;
 }
 
-
 .task-index-item-left-alignment-container {
     @include flex-center(row);
     justify-content: flex-start;
@@ -147,6 +146,11 @@
 .add-task-form-input {
     caret-color: $night-king-blue;
 }
+
+.task-index-item-profile-image {
+    @extend .sidebar-profile-image;
+}
+
 
 .due-date-selector {
     @extend .complete-task-button;

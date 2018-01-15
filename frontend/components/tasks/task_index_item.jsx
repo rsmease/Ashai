@@ -54,6 +54,8 @@ class TaskIndexItem extends React.Component {
                     </form>
                 </div>
                 <div className="task-index-item-right-alignment-container">
+                    <img className="task-index-item-profile-image"
+                        src={this.props.currentTarget.profile_image_url} />
                 </div>
             </div>
         );

@@ -34,15 +34,15 @@ class TaskIndex extends React.Component {
             groupType={this.props.groupType}
             currentTargetId={this.props.currentTargetId} />
           {
-            this.props.currentTarget.tasks_assigned_to_user.map(task => (
-              <TaskIndexItem
+            this.props.currentTarget.tasks_assigned_to_user.map(task => {
+              return <TaskIndexItem
                 task={task}
                 key={Math.random()}
                 currentTarget={this.props.currentTarget}
                 requestUpdateToTask={this.props.requestUpdateToTask}
                 requestToDeleteTask={this.props.requestToDeleteTask}
-              />
-            ))
+              />;
+            })
           }
         </div>
       );

@@ -53,7 +53,6 @@ class AddTaskForm extends React.Component {
                 </div>
 
                 <div className="task-index-item-right-alignment-container">
-                    <MaterialDesign.MdDateRange className="due-date-selector" />
                 </div>
             </div>
         );
@@ -61,3 +60,4 @@ class AddTaskForm extends React.Component {
 }
 
 export default AddTaskForm;
+{/* <MaterialDesign.MdDateRange className="due-date-selector" /> */ }

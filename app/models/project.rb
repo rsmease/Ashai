@@ -12,6 +12,11 @@ class Project < ApplicationRecord
     primary_key: :id
 
   has_many :members, through: :memberships
+  
+  has_many :tasks,
+    class_name: 'Task',
+    foreign_key: :project_id,
+    primary_key: :id
 
   def self.search_results(query)
     param = '%' + query.downcase + '%'

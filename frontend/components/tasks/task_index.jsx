@@ -36,34 +36,50 @@ class TaskIndex extends React.Component {
     }
   }
 
+  showAddTaskForm() {
+    return (
+      <AddTaskForm
+        createNewTask={this.props.createNewTask}
+        groupType={this.props.groupType}
+        currentTargetId={this.props.currentTargetId} />
+    );
+  }
+
+  showUserTasks() {
+    return (<div className="task-index-container">
+      {this.showAddTaskForm()}
+      {
+        this.props.currentTarget.tasks_assigned_to_user.map(task => {
+          return <TaskIndexItem
+            task={task}
+            key={Math.random()}
+            currentTarget={this.props.currentTarget}
+            requestUpdateToTask={this.props.requestUpdateToTask}
+            requestToDeleteTask={this.props.requestToDeleteTask}
+          />;
+        })
+      }
+    </div>);
+  }
+
+  showProjectTasks() {
+  }
+
   showTasks() {
     if (this.props.currentTarget !== undefined) {
-      return (
-        <div className="task-index-container">
-          <AddTaskForm
-            createNewTask={this.props.createNewTask}
-            groupType={this.props.groupType}
-            currentTargetId={this.props.currentTargetId} />
-          {
-            this.props.currentTarget.tasks_assigned_to_user.map(task => {
-              return <TaskIndexItem
-                task={task}
-                key={Math.random()}
-                currentTarget={this.props.currentTarget}
-                requestUpdateToTask={this.props.requestUpdateToTask}
-                requestToDeleteTask={this.props.requestToDeleteTask}
-              />;
-            })
-          }
-        </div>
-      );
+      switch (this.props.groupType) {
+        case "user":
+          return this.showUserTasks();
+        case "currentUser":
+          return this.showUserTasks();
+        case "project":
+          return this.showProjectTasks();
+        default:
+          break;
+      }
     } else {
       return (
         <div className="task-index-container">
-          <AddTaskForm
-            createNewTask={this.props.createNewTask}
-            groupType={this.props.groupType}
-            currentTargetId={this.props.currentTargetId} />
         </div>
       );
     }

@@ -39,6 +39,7 @@ class SearchBar extends React.Component {
                     this.props.searchUsers(this.state.searchVal);
                     this.props.searchProjects(this.state.searchVal);
                     this.props.searchTeams(this.state.searchVal);
+                    this.props.searchTasks(this.state.searchVal);
                 });
                 break;
             case "sidebar-group-members-index":

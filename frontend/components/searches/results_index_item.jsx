@@ -38,6 +38,9 @@ class ResultsIndexItem extends React.Component {
             case "team":
                 return (<MaterialDesign.MdGroup
                     className="results-index-item-icon" />);
+            case "task":
+                return (<MaterialDesign.MdCheckCircle
+                    className="results-index-item-icon" />);
             default:
                 break;
         }
@@ -53,9 +56,15 @@ class ResultsIndexItem extends React.Component {
                 return this.props.currentTarget.description;
             case "team":
                 return this.props.currentTarget.description;
+            case "task":
+                return this.props.currentTarget.description;
             default:
                 break;
         }
+    }
+
+    toggleTextToHighlight() {
+        return this.props.resultType === "task" ? this.props.currentTarget.title : this.props.currentTarget.name;
     }
 
     showResultInfo() {
@@ -65,7 +74,7 @@ class ResultsIndexItem extends React.Component {
                 highlightClassName="results-index-item-bold results-index-item-underline"
                 searchWords={[this.props.searchVal]}
                 autoEscape={true}
-                textToHighlight={this.props.currentTarget.name} />
+                textToHighlight={this.toggleTextToHighlight()} />
             <Highlighter
                 className="results-index-item-context"
                 highlightClassName="results-index-item-bold"

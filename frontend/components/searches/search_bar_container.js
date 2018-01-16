@@ -11,7 +11,8 @@ import SearchBar from './search_bar';
 import {
     searchUsers,
     searchProjects,
-    searchTeams
+    searchTeams,
+    searchTasks
 } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -44,7 +45,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         case "global-header":
             return _.merge({}, defaults, {
                 searchProjects: (query) => dispatch(searchProjects(query)),
-                searchTeams: (query) => dispatch(searchTeams(query))
+                searchTeams: (query) => dispatch(searchTeams(query)),
+                searchTasks: (query) => dispatch(searchTasks(query))
             });
         case "sidebar-group-members-index":
             return _.merge({}, defaults);

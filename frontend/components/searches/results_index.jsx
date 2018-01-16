@@ -83,6 +83,23 @@ class ResultsIndex extends React.Component {
         );
     }
 
+    showTasks(limit) {
+        return (
+            <ul>
+                {this.props.taskSearchResults.slice(0, limit).map(
+                    (task) =>
+                        (<ResultsIndexItem
+                            resultType={"task"}
+                            key={Math.random()}
+                            currentTarget={task}
+                            source={this.props.source}
+                            searchVal={this.props.searchVal}
+                            clearState={this.props.clearState} />)
+                )}
+            </ul>
+        );
+    }
+
     showResults() {
         switch (this.props.source) {
             case "global-header":
@@ -92,6 +109,7 @@ class ResultsIndex extends React.Component {
                         {this.showUsers(2)}
                         {this.showProjects(2)}
                         {this.showTeams(2)}
+                        {this.showTasks(2)}
                     </ul>
                 );
             case "sidebar-group-members-index":

@@ -25,7 +25,8 @@ const mapStateToProps = (state, ownProps) => {
         case "global-header":
             return _.merge({}, defaults, {
                 projectSearchResults: Object.values(state.entities.searches.projects),
-                teamSearchResults: Object.values(state.entities.searches.teams)
+                teamSearchResults: Object.values(state.entities.searches.teams),
+                taskSearchResults: Object.values(state.entities.searches.tasks)
             });
         case "sidebar-group-members-index":
             return _.merge({}, defaults, {

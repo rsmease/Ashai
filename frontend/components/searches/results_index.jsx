@@ -11,6 +11,12 @@ class ResultsIndex extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        if (this.props.requestAllUsers) {
+            this.props.requestAllUsers();
+        }
+    }
+
     showUsers(limit) {
         return (
             <ul>
@@ -83,6 +89,7 @@ class ResultsIndex extends React.Component {
         );
     }
 
+    //add assignee request
     showTasks(limit) {
         return (
             <ul>
@@ -92,6 +99,7 @@ class ResultsIndex extends React.Component {
                             resultType={"task"}
                             key={Math.random()}
                             currentTarget={task}
+                            users={this.props.users}
                             source={this.props.source}
                             searchVal={this.props.searchVal}
                             clearState={this.props.clearState} />)

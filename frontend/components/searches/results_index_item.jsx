@@ -8,6 +8,13 @@ class ResultsIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleAddMember = this.handleAddMember.bind(this);
+        this.currentTargetAssigneeName = undefined;
+    }
+
+    componentWillMount() {
+        if (this.props.resultType === "task") {
+            this.currentTargetAssigneeName = this.props.users[this.props.currentTarget.assignee_id].name
+        }
     }
 
     handleAddMember() {
@@ -46,6 +53,7 @@ class ResultsIndexItem extends React.Component {
         }
     }
 
+    //test display of assigneeName
     toggleCustomResultInfo() {
         switch (this.props.resultType) {
             case "user":
@@ -57,7 +65,8 @@ class ResultsIndexItem extends React.Component {
             case "team":
                 return this.props.currentTarget.description;
             case "task":
-                return this.props.currentTarget.description;
+                return this.currentTargetAssigneeName === undefined ?
+                    "" : `Task assigned to ${this.currentTargetAssigneeName}`;
             default:
                 break;
         }
@@ -95,10 +104,18 @@ class ResultsIndexItem extends React.Component {
         }
     }
 
+    toggleLinkTarget() {
+        return this.props.resultType === "task" ? `/users/${this.props.currentTarget.assignee_id}` : `/${this.props.resultType}s/${this.props.currentTarget.id}`;
+    }
+
     showContent() {
         if (this.props.resultType !== "non-member") {
+            // if (this.props.resultType === "task") {
+            //     console.log(this.props.currentTarget.title);
+            //     return (<div>TASK</div>);
+            // }
             return (<Link className="results-index-item-clickable"
-                to={`/${this.props.resultType}s/${this.props.currentTarget.id}`}
+                to={this.toggleLinkTarget()}
                 onClick={this.props.clearState}>
                 {this.showLeftIcon()}
                 {this.showResultInfo()}

@@ -60,6 +60,8 @@ class TaskIndex extends React.Component {
   showUserTasks() {
     return (<div className="task-index-container">
       {this.showAddTaskForm()}
+      {console.log(this.props.currentTarget)}
+      {console.log(this.props.currentTarget.tasks_assigned_to_user)}
       {
         this.props.currentTarget.tasks_assigned_to_user.map(task => {
           return <TaskIndexItem

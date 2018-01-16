@@ -11,6 +11,9 @@ import {
 import {
     createNewProjectMembership
 } from '../../actions/project_actions';
+import {
+    requestAllUsers
+} from '../../actions/user_actions';
 
 //components
 import ResultsIndex from './results_index';
@@ -26,7 +29,8 @@ const mapStateToProps = (state, ownProps) => {
             return _.merge({}, defaults, {
                 projectSearchResults: Object.values(state.entities.searches.projects),
                 teamSearchResults: Object.values(state.entities.searches.teams),
-                taskSearchResults: Object.values(state.entities.searches.tasks)
+                taskSearchResults: Object.values(state.entities.searches.tasks),
+                users: state.entities.users
             });
         case "sidebar-group-members-index":
             return _.merge({}, defaults, {
@@ -73,6 +77,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             } else {
                 return {};
             }
+        case "global-header":
+            return {
+                requestAllUsers: () => dispatch(requestAllUsers())
+            };
         default:
             return {};
     }

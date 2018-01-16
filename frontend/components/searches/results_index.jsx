@@ -12,7 +12,7 @@ class ResultsIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.requestAllUsers && this.props.users.size === 0) {
+        if (this.props.requestAllUsers) {
             this.props.requestAllUsers();
         }
     }

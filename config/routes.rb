@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :project_memberships, only: [:create, :show, :destroy]
 
     resources :tasks
+    resources :task_searches, only: [:index]
 
     resource :session, only: [ :new, :create, :destroy ]
   end

@@ -32,18 +32,25 @@ export default (state = {}, action) => {
             delete newState[action.projectId];
             return newState;
         case RECEIVE_TASK:
-            console.log(state);
-            let updatedProjectId = action.projectId;
-            state[updatedProjectId].tasks =
-                addUniqueToProjectTasks(
-                    action.task,
-                    state[updatedProjectId].tasks,
-                    state[updatedProjectId]);
-            return _.merge({}, state);
+            if (action.projectId === null) {
+                return _.merge({}, state);
+            } else {
+                let updatedProjectId = action.projectId;
+                state[updatedProjectId].tasks =
+                    addUniqueToProjectTasks(
+                        action.task,
+                        state[updatedProjectId].tasks,
+                        state[updatedProjectId]);
+                return _.merge({}, state);
+            }
         case REMOVE_TASK:
-            updatedProjectId = action.projectId;
-            state[updatedProjectId].tasks = removeDeleted(action.taskId, state[updatedProjectId].tasks);
-            return _.merge({}, state);
+            if (action.projectId === null) {
+                return _.merge({}, state);
+            } else {
+                let updatedProjectId = action.projectId;
+                state[updatedProjectId].tasks = removeDeleted(action.taskId, state[updatedProjectId].tasks);
+                return _.merge({}, state);
+            }
         default:
             return state;
     }

@@ -28,19 +28,18 @@ export default (state = {}, action) => {
             const users = action.users;
             return _.merge({}, state, users);
         case RECEIVE_TASK:
-            let udpatedUserId = action.assigneeId;
+            let updatedUserId = action.assigneeId;
             if (updatedUserId === undefined) {
-                return state;
+                return _.merge({}, state);
             }
-            state[udpatedUserId].tasks_assigned_to_user =
+            state[updatedUserId].tasks_assigned_to_user =
                 addUniqueToArray(
                     action.task,
-                    state[udpatedUserId].tasks_assigned_to_user,
-                    state[udpatedUserId]);
+                    state[updatedUserId].tasks_assigned_to_user,
+                    state[updatedUserId]);
             return _.merge({}, state);
         case REMOVE_TASK:
-            console.log(action);
-            let updatedUserId = action.assigneeId;
+            updatedUserId = action.assigneeId;
             if (updatedUserId === null) {
                 return state;
             }

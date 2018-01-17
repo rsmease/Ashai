@@ -54,6 +54,16 @@
 
 
 //global left (defaults) for header dropdown styling
+.reveal-sidebar {
+    @extend .close-sidebar-button;
+    color: $targ-silver-dark;
+    margin: 0 15px 0 0;
+}
+
+.reveal-sidebar-hidden {
+    display: none;
+}
+
 .global-header-left-action-button {
     border-radius: 50%;
     color: $winter-white;

@@ -9,14 +9,23 @@ class SidebarLogo extends React.Component {
 
   hideSidebar() {
     const sidebar = document.getElementById("sidebar");
+    const revealSidebar = document.getElementById("reveal-sidebar");
     sidebar.classList.add("sidebar-hidden");
+    revealSidebar.classList.remove("reveal-sidebar-hidden");
+  }
+
+  returnToHome() {
+    if (this.props.match.path !== "/app") {
+      this.props.history.push("/app");
+    }
   }
 
   render() {
+    console.log(this.props)
     return (
-      <div className="sidebar-logo-container"
-        onClick={() => this.props.history.push("/app")}>
-        <div className="sidebar-logo-with-title">
+      <div className="sidebar-logo-container">
+        <div className="sidebar-logo-with-title"
+          onClick={() => this.returnToHome()}>
           <img className="sidebar-logo"
             src="https://i.imgur.com/WcrVoLW.png" />
           <h1>Ashai</h1>

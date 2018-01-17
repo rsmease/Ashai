@@ -1,6 +1,7 @@
 //utils
 import React from 'react';
 import { Link, Router, Redirect } from 'react-router-dom';
+import * as MaterialDesign from 'react-icons/lib/md';
 
 import HeaderActionButton from './header_action_button';
 import SearchBarContainer from '../searches/search_bar_container';
@@ -10,10 +11,19 @@ class GlobalHeader extends React.Component {
         super(props);
     }
 
+    revealSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        const revealSidebar = document.getElementById("reveal-sidebar");
+        sidebar.classList.remove("sidebar-hidden");
+        revealSidebar.classList.add("reveal-sidebar-hidden");
+    }
+
     render() {
         return (
             <div className="global-header">
                 <div className="global-header-left-section">
+                    <MaterialDesign.MdMenu className="reveal-sidebar reveal-sidebar-hidden" id="reveal-sidebar"
+                        onClick={() => this.revealSidebar()} />
                     <Link to="/app" className="header-link">My Tasks</Link>
                     <HeaderActionButton
                         source="global-header-left" />

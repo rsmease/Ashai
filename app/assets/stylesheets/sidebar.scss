@@ -1,7 +1,6 @@
 .sidebar {
     background-color: $tarth-sapphire;
     width: 244px;
-    @include transition-ease(width);
     color: $winter-white;
     @include flex(column);
     align-items: center;

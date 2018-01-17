@@ -1,10 +1,10 @@
 //stateless container for TaskHeader + TaskList
 .task-with-header {
     background-color: $lord-of-light-white;
-    width: -moz-calc(100% - 244px);
-    width: -webkit-calc(100% - 244px);
-    width: -o-calc(100% - 244px);
-    width: calc(100% - 244px);
+    width: -moz-calc(100%);
+    width: -webkit-calc(100%);
+    width: -o-calc(100%);
+    width: calc(100%);
 }
 
 //navigation header, consisent on all pages

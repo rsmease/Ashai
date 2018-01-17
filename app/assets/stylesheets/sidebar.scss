@@ -1,8 +1,8 @@
 .sidebar {
     background-color: $tarth-sapphire;
     width: 244px;
+    @include transition-ease(width);
     color: $winter-white;
-
     @include flex(column);
     align-items: center;
     justify-content: flex-start;
@@ -10,19 +10,38 @@
     z-index: 1;
 }
 
+.sidebar-hidden {
+    width: 0px;
+}
+
+.sidebar-hidden>div {
+    display: none;
+}
+
 .sidebar-logo-container {
-    @include flex-center(row);
+    @include flex-space-between(row);
     padding: 15px 0 0 0;
     width: 100%;
 }
 
+.sidebar-logo-with-title {
+    @include flex-center(row);
+    margin: 0 0 0 15px;
+}
+
+.close-sidebar-button {
+    margin: 0 15px 15px 0;
+    color: $winter-white;
+    font-size: $add-button;
+}
+
 .sidebar-logo {
-    height: 36px;
+    height: $small-header;
     width: auto;
     margin: 0 15px 0 0;
 }
 
-.sidebar-logo-container>h1 {
+.sidebar-logo-with-title>h1 {
     display: inline-block;
     font-size: $small-header;
 }

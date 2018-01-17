@@ -25,11 +25,14 @@ const mapStateToProps = (state, ownProps) => {
     let entities;
 
     if (ownProps.location === "app") {
-        entityType = "user";
+        entityType = "currentUser";
         entityId = state.session.currentUser.id;
     } else {
         entityType = ownProps.location.split("/")[0].slice(0, -1);
         entityId = parseInt(ownProps.location.split("/")[1]);
+        if (entityId === state.session.currentUser.id) {
+            entityType = "currentUser";
+        }
     }
 
     switch (entityType) {

@@ -77,7 +77,11 @@ class LocalHeader extends React.Component {
 
     showTitle() {
         if (this.state.currentTarget) {
-            return this.props.entityType === "user" ? this.showName() + "'s Tasks" : this.showName();
+            if (this.props.entityType === "currentUser") {
+                return "My Tasks";
+            } else {
+                return this.props.entityType === "user" ? this.showName() + "'s Tasks" : this.showName();
+            }
         }
     }
 

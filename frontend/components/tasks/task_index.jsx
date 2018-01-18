@@ -10,6 +10,7 @@ import TaskIndexItem from './task_index_item';
 import AddTaskForm from './add_task_form';
 import UserDetail from '../users/user_detail';
 import ProjectDetail from '../projects/project_detail';
+import { requestProject } from '../../actions/project_actions';
 
 class TaskIndex extends React.Component {
   constructor(props) {
@@ -60,15 +61,15 @@ class TaskIndex extends React.Component {
   showUserTasks() {
     return (<div className="task-index-container">
       {this.showAddTaskForm()}
-      {console.log(this.props.currentTarget)}
-      {console.log(this.props.currentTarget.tasks_assigned_to_user)}
       {
         this.props.currentTarget.tasks_assigned_to_user.map(task => {
           return <TaskIndexItem
             task={task}
             key={Math.random()}
+            projects={this.props.projects}
             groupType={this.props.groupType}
             currentTarget={this.props.currentTarget}
+            requestProject={this.props.requestProject}
             requestUpdateToTask={this.props.requestUpdateToTask}
             requestToDeleteTask={this.props.requestToDeleteTask}
           />;
@@ -85,6 +86,7 @@ class TaskIndex extends React.Component {
           return <TaskIndexItem
             task={task}
             key={Math.random()}
+            users={this.props.users}
             groupType={this.props.groupType}
             currentTarget={this.props.currentTarget}
             requestUpdateToTask={this.props.requestUpdateToTask}

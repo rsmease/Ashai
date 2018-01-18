@@ -16,8 +16,9 @@ class TaskIndexItem extends React.Component {
         };
     }
 
-    componentWillMount() {
-        if (this.props.groupType === "project" && this.props.task.project_id) {
+    componentDidMount() {
+        if (this.props.task.project_id && !this.props.projects[this.props.task.project_id]) {
+            console.log("firing");
             this.props.requestProject(this.props.task.project_id);
         }
     }

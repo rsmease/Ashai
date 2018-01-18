@@ -27,7 +27,9 @@ import TaskIndex from './task_index';
 const mapStateToProps = (state, ownProps) => {
 
     const defaults = {
+        users: state.entities.users,
         groupType: ownProps.groupType,
+        projects: state.entities.projects,
         currentUser: state.session.currentUser
     };
 

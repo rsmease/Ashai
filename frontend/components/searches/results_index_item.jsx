@@ -110,10 +110,6 @@ class ResultsIndexItem extends React.Component {
 
     showContent() {
         if (this.props.resultType !== "non-member") {
-            // if (this.props.resultType === "task") {
-            //     console.log(this.props.currentTarget.title);
-            //     return (<div>TASK</div>);
-            // }
             return (<Link className="results-index-item-clickable"
                 to={this.toggleLinkTarget()}
                 onClick={this.props.clearState}>

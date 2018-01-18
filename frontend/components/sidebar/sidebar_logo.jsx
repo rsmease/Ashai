@@ -21,7 +21,6 @@ class SidebarLogo extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="sidebar-logo-container">
         <div className="sidebar-logo-with-title"

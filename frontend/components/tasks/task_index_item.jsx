@@ -16,6 +16,12 @@ class TaskIndexItem extends React.Component {
         };
     }
 
+    componentWillMount() {
+        if (this.props.groupType === "project" && this.props.task.project_id) {
+            this.props.requestProject(this.props.task.project_id);
+        }
+    }
+
     //currently only updates the title
     handleKeyDown(e) {
         if (e.keyCode === 13 && this.state.title.length > 0) {
@@ -37,6 +43,19 @@ class TaskIndexItem extends React.Component {
         setTimeout(delayedDelete, 400);
     }
 
+    showTaskProjectLink() {
+        if (this.props.groupType === "user") {
+            return undefined;
+        }
+    }
+
+    showAssigneeLink() {
+        if (this.props.groupType === "project") {
+            return <img className="task-index-item-profile-image"
+                src={this.props.currentTarget.profile_image_url} />;
+        }
+    }
+
     render() {
         return (
             <div className="task-index-item" id={`task-${this.props.task.id}`}>
@@ -54,8 +73,8 @@ class TaskIndexItem extends React.Component {
                     </form>
                 </div>
                 <div className="task-index-item-right-alignment-container">
-                    <img className="task-index-item-profile-image"
-                        src={this.props.currentTarget.profile_image_url} />
+                    {this.showTaskProjectLink()}
+                    {this.showTaskProjectLink()}
                 </div>
             </div>
         );

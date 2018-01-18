@@ -67,6 +67,7 @@ class TaskIndex extends React.Component {
           return <TaskIndexItem
             task={task}
             key={Math.random()}
+            groupType={this.props.groupType}
             currentTarget={this.props.currentTarget}
             requestUpdateToTask={this.props.requestUpdateToTask}
             requestToDeleteTask={this.props.requestToDeleteTask}
@@ -84,6 +85,7 @@ class TaskIndex extends React.Component {
           return <TaskIndexItem
             task={task}
             key={Math.random()}
+            groupType={this.props.groupType}
             currentTarget={this.props.currentTarget}
             requestUpdateToTask={this.props.requestUpdateToTask}
             requestToDeleteTask={this.props.requestToDeleteTask}

@@ -17,9 +17,12 @@ class TaskIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        if (this.props.task.project_id && !this.props.projects[this.props.task.project_id]) {
-            console.log("firing");
+        if (this.props.task.project_id && this.props.groupType !== "project"
+            && !this.props.projects[this.props.task.project_id]) {
             this.props.requestProject(this.props.task.project_id);
+        } else if (this.props.task.assignee_id && this.props.groupType === "project"
+            && !this.props.users[this.props.task.assignee_id]) {
+            this.props.requestUser(this.props.task.assignee_id);
         }
     }
 
@@ -44,16 +47,17 @@ class TaskIndexItem extends React.Component {
         setTimeout(delayedDelete, 400);
     }
 
-    showTaskProjectLink() {
-        if (this.props.groupType === "user") {
-            return undefined;
+    showProjectLink() {
+        if (this.props.groupType === "user" && this.props.projects[this.props.task.project_id]) {
+            return <Link to={`/projects/${this.props.task.project_id}`}
+                className="task-project-link">{this.props.projects[this.props.task.project_id].name}</Link>;
         }
     }
 
     showAssigneeLink() {
-        if (this.props.groupType === "project") {
-            return <img className="task-index-item-profile-image"
-                src={this.props.currentTarget.profile_image_url} />;
+        if (this.props.groupType === "project" && this.props.users[this.props.task.assignee_id]) {
+            return <Link to={`/users/${this.props.task.assignee_id}`}><img className="task-index-item-profile-image"
+                src={this.props.users[this.props.task.assignee_id].profile_image_url} /></Link>;
         }
     }
 
@@ -74,8 +78,8 @@ class TaskIndexItem extends React.Component {
                     </form>
                 </div>
                 <div className="task-index-item-right-alignment-container">
-                    {this.showTaskProjectLink()}
-                    {this.showTaskProjectLink()}
+                    {this.showProjectLink()}
+                    {this.showAssigneeLink()}
                 </div>
             </div>
         );

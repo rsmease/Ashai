@@ -88,6 +88,7 @@ class TaskIndex extends React.Component {
             key={Math.random()}
             users={this.props.users}
             groupType={this.props.groupType}
+            requestUser={this.props.requestUser}
             currentTarget={this.props.currentTarget}
             requestUpdateToTask={this.props.requestUpdateToTask}
             requestToDeleteTask={this.props.requestToDeleteTask}

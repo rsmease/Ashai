@@ -1,8 +1,9 @@
 import React from 'react';
-import * as MaterialDesign from 'react-icons/lib/md';
-import { Link, Router, withRouter } from 'react-router-dom';
 import 'react-dates/initialize';
 import { SingleDatePicker } from 'react-dates';
+import * as MaterialDesign from 'react-icons/lib/md';
+import { Link, Router, withRouter } from 'react-router-dom';
+
 
 
 
@@ -79,7 +80,14 @@ class TaskIndexItem extends React.Component {
                 </div>
                 <div className="task-index-item-right-alignment-container">
                     {this.showProjectLink()}
+                    <SingleDatePicker
+                        date={this.state.due_date} // momentPropTypes.momentObj or null
+                        onDateChange={date => this.setState({ due_date: date })} // PropTypes.func.isRequired
+                        focused={this.state.focused} // PropTypes.bool
+                        onFocusChange={({ focused }) => this.setState({ focused })} // PropTypes.func.isRequired
+                    />
                     {this.showAssigneeLink()}
+
                 </div>
             </div>
         );

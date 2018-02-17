@@ -16,12 +16,7 @@ class Sidebar extends React.Component {
     }
 
     toggleSidebarVisible() {
-        console.log('running')
         return this.props.sidebarVisible ? "sidebar" : "sidebar-hidden";
-    }
-
-    componentWillReceiveProps(nextProps) {
-        console.log("receiving new props");
     }
 
     render() {

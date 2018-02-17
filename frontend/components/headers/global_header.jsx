@@ -20,7 +20,8 @@ class GlobalHeader extends React.Component {
     }
 
     toggleRevealSidebarButton() {
-        this.props.revealSidebar ? "reveal-sidebar-hidden" : "reveal-sidebar"
+        console.log("running button")
+        return this.props.revealSidebar ? "reveal-sidebar-hidden" : "reveal-sidebar";
     }
 
     render() {

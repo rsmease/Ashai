@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import createStore from './store/store';
 import { requestOpenSidebar, requestCloseSidebar } from './actions/ui_actions';
+import { requestAllTeams } from './actions/team_actions'
 
 //root component
 import Root from './components/root';
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.requestOpenSidebar = requestOpenSidebar;
   window.requestCloseSidebar = requestCloseSidebar;
+  window.requestAllTeams = requestAllTeams;
 
   //render components
   const root = document.getElementById('root');

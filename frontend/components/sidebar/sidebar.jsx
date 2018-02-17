@@ -8,15 +8,21 @@ import Modal from 'react-modal';
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
+
     }
 
     componentWillMount() {
         document.title = "Ashai - Home";
     }
 
+    toggleSidebarVisible() {
+        console.log('running')
+        return this.props.sidebarVisible ? "reveal-hidden-sidebar" : "hidden-sidebar";
+    }
+
     render() {
         return (
-            <div className="sidebar" id="sidebar">
+            <div className={`sidebar ${this.toggleSidebarVisible()}`} id="sidebar">
                 <SidebarLogo />
                 <div className="sidebar-sections-container">
                     <SidebarIndexContainer groupType="team" />

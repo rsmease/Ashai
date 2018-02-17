@@ -2,7 +2,7 @@ import React from 'react';
 import * as SessionActions from '../../actions/session_actions';
 
 //sidebar
-import Sidebar from '../sidebar/sidebar';
+import SidebarContainer from '../sidebar/sidebar_container';
 
 //headers
 import RootHeader from '../headers/root_header';
@@ -14,7 +14,7 @@ import TaskIndexContainer from '../tasks/task_index_container';
 
 export const MainAppViewCurrentUser = () => (
   <div className="app-container">
-    <Sidebar />
+    <SidebarContainer />
     <div className="task-with-header">
       <RootHeader />
       <TaskIndexContainer groupType="currentUser" />
@@ -24,7 +24,7 @@ export const MainAppViewCurrentUser = () => (
 
 export const MainAppViewTeam = () => (
   <div className="app-container">
-    <Sidebar />
+    <SidebarContainer />
     <div className="task-with-header">
       <RootHeader />
       <TeamIndexContainer />
@@ -34,7 +34,7 @@ export const MainAppViewTeam = () => (
 
 export const MainAppViewUser = () => (
   <div className="app-container">
-    <Sidebar />
+    <SidebarContainer />
     <div className="task-with-header">
       <RootHeader />
       <TaskIndexContainer groupType="user" />
@@ -44,7 +44,7 @@ export const MainAppViewUser = () => (
 
 export const MainAppViewProject = () => (
   <div className="app-container">
-    <Sidebar />
+    <SidebarContainer />
     <div className="task-with-header">
       <RootHeader />
       <TaskIndexContainer groupType="project" />

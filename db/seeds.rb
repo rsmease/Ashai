@@ -35,9 +35,9 @@ varys_task1 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "
 varys_task2 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "Pick up more patchouli from market", completion_status: false)
 varys_task3 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "Meddle in court politics that seem interest", completion_status: false)
 
-tyrion_task1 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Shave head", completion_status: false)
-tyrion_task2 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Pick up more patchouli from market", completion_status: false)
-tyrion_task3 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Meddle in court politics that seem interest", completion_status: false)
+tyrion_task1 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Daily: Apply scar removal cream", completion_status: false)
+tyrion_task2 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Pick up more Sauvignon Blanc from BevMo", completion_status: false)
+tyrion_task3 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Practice Dornish by reading Dornish newspapers", completion_status: false)
 
 baelish = User.create(name: "Lord Baelish", email: "lfinger@winterfell.got", password: "lordbaelishcorgicorgi", profile_image_url: "https://i.imgur.com/UNrY92q.jpg", bio: "amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis")
 melisandre = User.create(name: "Melisandre", email: "melisandre@winterfell.got", password: "melisandrecorgicorgi", profile_image_url: "https://i.imgur.com/jO1PFgM.jpg", bio: "malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare")

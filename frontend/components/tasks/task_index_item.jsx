@@ -47,7 +47,7 @@ class TaskIndexItem extends React.Component {
     }
 
     showProjectLink() {
-        if (this.props.groupType === "user" && this.props.projects[this.props.task.project_id]) {
+        if (this.props.groupType === "user" || this.props.groupType === "currentUser" && this.props.projects[this.props.task.project_id]) {
             return <Link to={`/projects/${this.props.task.project_id}`}
                 className="task-project-link">{this.props.projects[this.props.task.project_id].name}</Link>;
         }

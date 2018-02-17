@@ -86,7 +86,8 @@ class LocalHeader extends React.Component {
     }
 
     showActionButton() {
-        if (this.props.entityType !== "user" && this.state.currentTarget) {
+        console.log(this.props.entityType);
+        if (this.props.entityType !== "user" && this.props.entityType !== "currentUser" && this.state.currentTarget) {
             return <HeaderActionButton
                 source="local-header"
                 currentUser={this.props.currentUser}

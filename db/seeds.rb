@@ -39,10 +39,10 @@ tyrion_task1 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title
 tyrion_task2 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Pick up more Sauvignon Blanc from BevMo", completion_status: false)
 tyrion_task3 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Practice Dornish by reading Dornish newspapers", completion_status: false)
 
-kahl_drogo_task1 = Task.create(assigner_id: kahl_drogo.id, assignee_id: kahl_drogo.id, title: "Grunt, growl and be general unpleasant to strangers", completion_status: false)
-kahl_drogo_task2 = Task.create(assigner_id: kahl_drogo.id, assignee_id: kahl_drogo.id, title: "Remove burdocks from ponytail", completion_status: false)
-kahl_drogo_task3 = Task.create(assigner_id: kahl_drogo.id, assignee_id: kahl_drogo.id, title: "Write memo on proposed settlement of khalars in Burbank", completion_status: kahl_drogo
-kahl_drogo_task4 = Task.create(assigner_id: kahl_drogo.id, assignee_id: kahl_drogo.id, title: "Send thank you note to Baelish for the lovely tea kettle", completion_status: kahl_drogo
+khal_drogo_task1 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Grunt, growl and be general unpleasant to strangers", completion_status: false)
+khal_drogo_task2 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Remove burdocks from ponytail", completion_status: false)
+khal_drogo_task3 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Write memo on proposed settlement of khalars in Burbank", completion_status: false)
+khal_drogo_task4 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Send thank you note to Baelish for the lovely tea kettle", completion_status: false)
 
 baelish = User.create(name: "Lord Baelish", email: "lfinger@winterfell.got", password: "lordbaelishcorgicorgi", profile_image_url: "https://i.imgur.com/UNrY92q.jpg", bio: "amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis")
 melisandre = User.create(name: "Melisandre", email: "melisandre@winterfell.got", password: "melisandrecorgicorgi", profile_image_url: "https://i.imgur.com/jO1PFgM.jpg", bio: "malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare")

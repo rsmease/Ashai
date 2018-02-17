@@ -16,6 +16,7 @@ class GlobalHeader extends React.Component {
         const revealSidebar = document.getElementById("reveal-sidebar");
         sidebar.classList.remove("sidebar-hidden");
         revealSidebar.classList.add("reveal-sidebar-hidden");
+        this.props.requestToOpenSidebar();
     }
 
     render() {

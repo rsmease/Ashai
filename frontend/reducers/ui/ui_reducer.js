@@ -4,19 +4,17 @@ import {
     OPEN_SIDEBAR
 } from '../../actions/ui_actions';
 
-export default (state = {
-    sidebarVisible: true
-}, action) => {
+export default (state = {}, action) => {
     switch (action.type) {
         case CLOSE_SIDEBAR:
-            return {
+            return _.merge({}, state, {
                 sidebarVisible: false
-            };
+            });
         case OPEN_SIDEBAR:
-            return {
+            return _.merge({}, state, {
                 sidebarVisible: true
-            };
+            });
         default:
-            return state;
+            return _.merge({}, state);
     }
 };

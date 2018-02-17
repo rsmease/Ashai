@@ -3,7 +3,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import createStore from './store/store';
-import { requestOpenSidebar, requestCloseSidebar } from './actions/ui_actions';
+import { requestToOpenSidebar, requestToCloseSidebar } from './actions/ui_actions';
 import { requestAllTeams } from './actions/team_actions'
 
 //root component
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = createStore();
   }
-  window.requestOpenSidebar = requestOpenSidebar;
-  window.requestCloseSidebar = requestCloseSidebar;
+  window.requestToOpenSidebar = requestToOpenSidebar;
+  window.requestToCloseSidebar = requestToCloseSidebar;
   window.requestAllTeams = requestAllTeams;
 
   //render components

@@ -23,7 +23,9 @@ class Sidebar extends React.Component {
     render() {
         return (
             <div className={`sidebar ${this.toggleSidebarVisible()}`} id="sidebar">
-                <SidebarLogo />
+                <SidebarLogo
+                    requestToOpenSidebar={this.props.requestToOpenSidebar}
+                    requestToCloseSidebar={this.props.requestToCloseSidebar} />
                 <div className="sidebar-sections-container">
                     <SidebarIndexContainer groupType="team" />
                     <SidebarIndexContainer groupType="project" />

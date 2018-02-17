@@ -4,8 +4,17 @@ import {
 
 import Sidebar from './sidebar';
 
+import {
+    requestToCloseSidebar,
+    requestToOpenSidebar
+} from '../../actions/ui_actions';
+
 const mapStateToProps = (state, ownProps) => ({
     sidebarVisible: state.ui.sidebarVisible
 });
 
-export default connect(mapStateToProps, null)(Sidebar);
+const mapDispatchToProps = (dispatch, ownProps) => ({
+    requestToCloseSidebar: () => dispatch(requestToCloseSidebar())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

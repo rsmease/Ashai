@@ -9,5 +9,5 @@ const openSidebar = () => ({
     type: OPEN_SIDEBAR
 });
 
-export const requestOpenSidebar = () => (dispatch) => dispatch(openSidebar());
-export const requestCloseSidebar = () => (dispatch) => dispatch(closeSidebar());
+export const requestToOpenSidebar = () => (dispatch) => dispatch(openSidebar());
+export const requestToCloseSidebar = () => (dispatch) => dispatch(closeSidebar());

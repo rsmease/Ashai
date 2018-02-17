@@ -20,15 +20,14 @@ class GlobalHeader extends React.Component {
     }
 
     toggleRevealSidebarButton() {
-        console.log("running button")
-        return this.props.revealSidebar ? "reveal-sidebar-hidden" : "reveal-sidebar";
+        return this.props.sidebarVisible ? "reveal-sidebar-hidden" : "reveal-sidebar";
     }
 
     render() {
         return (
             <div className="global-header">
                 <div className="global-header-left-section">
-                    <MaterialDesign.MdMenu className={this.toggleRevealSidebarButton()}
+                    <MaterialDesign.MdMenu className={`${this.toggleRevealSidebarButton()}`}
                         onClick={() => this.revealSidebar()} />
                     <Link to="/app" className="header-link">My Tasks</Link>
                     <HeaderActionButton

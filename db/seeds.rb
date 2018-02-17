@@ -31,6 +31,14 @@ dany_targaryen_task1 = Task.create(assigner_id: dany_targaryen.id, assignee_id: 
 dany_targaryen_task2 = Task.create(assigner_id: dany_targaryen.id, assignee_id: dany_targaryen.id, title: "Remind Drogon to brush his teeth", completion_status: false)
 dany_targaryen_task3 = Task.create(assigner_id: dany_targaryen.id, assignee_id: dany_targaryen.id, title: "Review architectural proposals for creation of new loft at Dragonstone", completion_status: false)
 
+varys_task1 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "Shave head", completion_status: false)
+varys_task2 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "Pick up more patchouli from market", completion_status: false)
+varys_task3 = Task.create(assigner_id: varys.id, assignee_id: varys.id, title: "Meddle in court politics that seem interest", completion_status: false)
+
+tyrion_task1 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Shave head", completion_status: false)
+tyrion_task2 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Pick up more patchouli from market", completion_status: false)
+tyrion_task3 = Task.create(assigner_id: tyrion.id, assignee_id: tyrion.id, title: "Meddle in court politics that seem interest", completion_status: false)
+
 baelish = User.create(name: "Lord Baelish", email: "lfinger@winterfell.got", password: "lordbaelishcorgicorgi", profile_image_url: "https://i.imgur.com/UNrY92q.jpg", bio: "amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis")
 melisandre = User.create(name: "Melisandre", email: "melisandre@winterfell.got", password: "melisandrecorgicorgi", profile_image_url: "https://i.imgur.com/jO1PFgM.jpg", bio: "malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare")
 sansa = User.create(name: "Sansa Stark", email: "sstark@winterfell.got", password: "sansastarkcorgicorgi", profile_image_url: "https://i.imgur.com/ogNploS.jpg", bio: "habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique")

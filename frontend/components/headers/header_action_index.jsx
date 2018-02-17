@@ -34,12 +34,6 @@ class HeaderActionIndex extends React.Component {
                     <HeaderActionIndexItem
                         source={this.props.source}
                         toggleDropdown={this.props.toggleDropdown}
-                        actionTitle="New Task"
-                        modalAction={false}
-                        otherAction={() => console.log("This feature is in development.")} />
-                    <HeaderActionIndexItem
-                        source={this.props.source}
-                        toggleDropdown={this.props.toggleDropdown}
                         actionTitle="New Project"
                         modalAction={true}
                         otherAction="" />

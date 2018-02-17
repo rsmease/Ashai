@@ -3,6 +3,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import ReactDOM from 'react-dom';
 import createStore from './store/store';
+import { requestOpenSidebar, requestCloseSidebar } from './actions/ui_actions';
 
 //root component
 import Root from './components/root';
@@ -21,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = createStore();
   }
+  window.requestOpenSidebar = requestOpenSidebar;
+  window.requestCloseSidebar = requestCloseSidebar;
 
   //render components
   const root = document.getElementById('root');

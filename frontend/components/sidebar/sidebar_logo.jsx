@@ -8,10 +8,10 @@ class SidebarLogo extends React.Component {
   }
 
   hideSidebar() {
-    const sidebar = document.getElementById("sidebar");
-    const revealSidebar = document.getElementById("reveal-sidebar");
-    sidebar.classList.add("sidebar-hidden");
-    revealSidebar.classList.remove("reveal-sidebar-hidden");
+    // const sidebar = document.getElementById("sidebar");
+    // const revealSidebar = document.getElementById("reveal-sidebar");
+    // sidebar.classList.add("sidebar-hidden");
+    // revealSidebar.classList.remove("reveal-sidebar-hidden");
     this.props.requestToCloseSidebar();
   }
 

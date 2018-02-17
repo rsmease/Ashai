@@ -8,7 +8,8 @@ import {
 import { requestToOpenSidebar } from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    sidebarVisible: state.ui.sidebarVisible
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 
-export default connect(mapStateToProps, numapDispatchToProps)(GlobalHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(GlobalHeader);

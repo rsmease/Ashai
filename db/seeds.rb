@@ -44,6 +44,22 @@ khal_drogo_task2 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_dro
 khal_drogo_task3 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Write memo on proposed settlement of khalars in Burbank", completion_status: false)
 khal_drogo_task4 = Task.create(assigner_id: khal_drogo.id, assignee_id: khal_drogo.id, title: "Send thank you note to Baelish for the lovely tea kettle", completion_status: false)
 
+grey_worm_task1 = Task.create(assigner_id: grey_worm.id, assignee_id: grey_worm.id, title: "Morning calisthetics", completion_status: false)
+grey_worm_task2 = Task.create(assigner_id: grey_worm.id, assignee_id: grey_worm.id, title: "Patrol main walkways", completion_status: false)
+grey_worm_task3 = Task.create(assigner_id: grey_worm.id, assignee_id: grey_worm.id, title: "Lead soldiers into battle", completion_status: false)
+
+jorah_mormont_task1 = Task.create(assigner_id: jorah_mormont.id, assignee_id: jorah_mormont.id, title: "Finish reading 'Men are from Mars, Queens are from Venus'", completion_status: false)
+jorah_mormont_task2 = Task.create(assigner_id: jorah_mormont.id, assignee_id: jorah_mormont.id, title: "Polish sword", completion_status: false)
+jorah_mormont_task3 = Task.create(assigner_id: jorah_mormont.id, assignee_id: jorah_mormont.id, title: "Meet with Varys regarding military parade planning", completion_status: false)
+
+drogon_task1 = Task.create(assigner_id: drogon.id, assignee_id: drogon.id, title: "Growl and breath fire", completion_status: false)
+drogon_task2 = Task.create(assigner_id: drogon.id, assignee_id: drogon.id, title: "Politely ask Viseryion to stop picking on me", completion_status: false)
+drogon_task3 = Task.create(assigner_id: drogon.id, assignee_id: drogon.id, title: "Share goat carcass with Dany", completion_status: false)
+
+ellaria_sand_task1 = Task.create(assigner_id: ellaria_sand.id, assignee_id: ellaria_sand.id, title: "Clean sand out of socks and blouses", completion_status: false)
+ellaria_sand_task2 = Task.create(assigner_id: ellaria_sand.id, assignee_id: ellaria_sand.id, title: "Renew subscription of Amazon Prime", completion_status: false)
+ellaria_sand_task3 = Task.create(assigner_id: ellaria_sand.id, assignee_id: ellaria_sand.id, title: "Daily: seaside jogging", completion_status: false)
+
 baelish = User.create(name: "Lord Baelish", email: "lfinger@winterfell.got", password: "lordbaelishcorgicorgi", profile_image_url: "https://i.imgur.com/UNrY92q.jpg", bio: "amet cursus sit amet dictum sit amet justo donec enim diam vulputate ut pharetra sit amet aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis")
 melisandre = User.create(name: "Melisandre", email: "melisandre@winterfell.got", password: "melisandrecorgicorgi", profile_image_url: "https://i.imgur.com/jO1PFgM.jpg", bio: "malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare")
 sansa = User.create(name: "Sansa Stark", email: "sstark@winterfell.got", password: "sansastarkcorgicorgi", profile_image_url: "https://i.imgur.com/ogNploS.jpg", bio: "habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique")
@@ -52,6 +68,14 @@ ned_stark = User.create(name: "Ned Stark", email: "nstark@winterfell.got", passw
 catelyn = User.create(name: "Catelyn Stark", email: "cstark@winterfell.got", password: "catelynstarkcorgicorgi", profile_image_url: "https://i.imgur.com/LX2Nk3C.jpg", bio: "purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque")
 robb = User.create(name: "Robb Stark", email: "rstark@winterfell.got", password: "robstarkcorgicorgi", profile_image_url: "https://i.imgur.com/GkqTAdI.jpg", bio: "malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus et malesuada fames ac")
 brienne = User.create(name: "Lady Brienne", email: "brienne@winterfell.got", password: "ladybriennecorgicorgi", profile_image_url: "https://i.imgur.com/3VpqlkY.jpg", bio: "lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
+
+baelish_task1 = Task.create(assigner_id: baelish.id, assignee_id: baelish.id, title: "Review exepense reports for project managers", completion_status: false)
+baelish_task2 = Task.create(assigner_id: baelish.id, assignee_id: baelish.id, title: "Meddle in various Stark endeavors", completion_status: false)
+baelish_task3 = Task.create(assigner_id: baelish.id, assignee_id: baelish.id, title: "Buy more styling cream on Amazon", completion_status: false)
+
+melisandre_task1 = Task.create(assigner_id: melisandre.id, assignee_id: melisandre.id, title: "Make predictions about the outcome of important battles", completion_status: false)
+melisandre_task2 = Task.create(assigner_id: melisandre.id, assignee_id: melisandre.id, title: "Report sales earnings for third quarter to Brienne", completion_status: false)
+melisandre_task3 = Task.create(assigner_id: melisandre.id, assignee_id: melisandre.id, title: "Speak with Baelish regarding the smell of his hair cream", completion_status: false)
 
 cersei = User.create(name: "Cersei Lannister", email: "cersei@kingslanding.got", password: "cerseilannistercorgicorgi", profile_image_url: "https://i.imgur.com/8fjPIqt.jpg", bio:"lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
 jaime = User.create(name: "Jamie Lannister", email: "jlannister@kingslanding.got", password: "jamielannistercorgicorgi", profile_image_url: "https://i.imgur.com/LmtOiEN.jpg", bio:"aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed")

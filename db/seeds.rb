@@ -141,15 +141,35 @@ qyburn_task1 = Task.create(assigner_id: qyburn.id, assignee_id: qyburn.id, title
 qyburn_task2 = Task.create(assigner_id: qyburn.id, assignee_id: qyburn.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
 qyburn_task3 = Task.create(assigner_id: qyburn.id, assignee_id: qyburn.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
 
-ramsay_bolton_task1 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Practice swordfighting with Arya", completion_status: false)
-qyburn_task2 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-qyburn_task3 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+ramsay_bolton_task1 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+ramsay_bolton_task2 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+ramsay_bolton_task3 = Task.create(assigner_id: ramsay_bolton.id, assignee_id: ramsay_bolton.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
 
 jeor_mormont = User.create(name: "Jeor Mormont", email: "jmormont@thewall.got", password: "ramsayboltoncorgicorgi", profile_image_url: "https://i.imgur.com/eG4JWMc.jpg", bio: "purus in massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque")
 sam_tarly = User.create(name: "Sam Tarly", email: "starly@thewall.got", password: "samtarlycorgicorgi", profile_image_url: "https://i.imgur.com/iJcz60e.jpg", bio: "habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique")
 alliser_thorne = User.create(name: "Alliser Thorne", email: "athorne@thewall.got", password: "allisterthornecorgicorgi", profile_image_url: "https://i.imgur.com/6M2IRgx.jpg", bio: "sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor")
 ygritte = User.create(name: "Ygritte", email: "ygritte@thewall.got", password: "ygrittecorgicorgi", profile_image_url: "https://i.imgur.com/4HmFSyj.jpg", bio: "at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere")
 aemon = User.create(name: "Maester Aemon", email: "maemon@thewall.got", password: "maesteraemoncorgicorgi", profile_image_url: "https://i.imgur.com/cLxmxDJ.jpg", bio: "lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
+
+jeor_mormont_task1 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+jeor_mormont_task2 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+jeor_mormont_task3 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+
+sam_tarly_task1 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+sam_tarly_task2 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+sam_tarly_task3 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+
+alliser_thorne_task1 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+alliser_thorne_task2 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+alliser_thorne_task3 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+
+ygritte_task1 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+ygritte_task2 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+ygritte_task3 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+
+aemon_task1 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
+aemon_task2 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+aemon_task3 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
 
 house_targaryen = Team.create(team_owner_id: jon_snow.id, name: "House Targaryen", description: "Welcome to House Targaryen");
 house_start = Team.create(team_owner_id: robb.id, name: "House Stark", description: "Welcome to House Stark")

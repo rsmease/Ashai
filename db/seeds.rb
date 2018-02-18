@@ -259,6 +259,8 @@ project_membership18 = ProjectMembership.create(member_id: robb.id, project_id: 
 
 bear_fur_task1 = Task.create(assigner_id: brienne.id, assignee_id: jon_snow.id, title: "Submit report on market trends in Dorne", completion_status: false, project_id: bear_fur.id);
 bear_fur_task2 = Task.create(assigner_id: brienne.id, assignee_id: jeor_mormont.id, title: "Meet with traders from the North", completion_status: false, project_id: bear_fur.id);
+bear_fur_task3 = Task.create(assigner_id: robb.id, assignee_id: brienne.id, title: "Trade on Beaver furs futures as a safeguard against bear fur market plummet", completion_status: false, project_id: bear_fur.id);
+bear_fur_task4 = Task.create(assigner_id: jeor_mormont.id, assignee_id: robb.id, title: "Research market competitiveness of polar bear fur", completion_status: false, project_id: bear_fur.id);
 
 project_membership19 = ProjectMembership.create(member_id: qyburn.id, project_id: onion_juice.id)
 project_membership20 = ProjectMembership.create(member_id: aemon.id, project_id: onion_juice.id)
@@ -268,6 +270,8 @@ project_membership22 = ProjectMembership.create(member_id: tyrion.id, project_id
 onion_juice_task1 = Task.create(assigner_id: aemon.id, assignee_id: qyburn.id, title: "Sample yellow onion skins", completion_status: false, project_id: onion_juice.id);
 onion_juice_task2 = Task.create(assigner_id: aemon.id, assignee_id: sam_tarly.id, title: "Publish last quarter's report in Vegetable Physiology Journal", completion_status: false, project_id: onion_juice.id);
 onion_juice_task3 = Task.create(assigner_id: tyrion.id, assignee_id: qyburn.id, title: "Gargle mouthwash, your breath is terrible", completion_status: false, project_id: onion_juice.id);
+onion_juice_task4 = Task.create(assigner_id: qyburn.id, assignee_id: tyrion.id, title: "Collect Qarthian variants of white onion when visiting Slaver's Bay", completion_status: false, project_id: onion_juice.id);
+onion_juice_task5 = Task.create(assigner_id: aemon.id, assignee_id: sam_tarly.id, title: "Test new findings against known data regarding red onion seeds", completion_status: false, project_id: onion_juice.id);
 
 project_membership23 = ProjectMembership.create(member_id: jon_snow.id, project_id: dragon_birthday.id)
 project_membership24 = ProjectMembership.create(member_id: dany_targaryen.id, project_id: dragon_birthday.id)
@@ -285,8 +289,8 @@ project_membership30 = ProjectMembership.create(member_id: jeor_mormont.id, proj
 project_membership31 = ProjectMembership.create(member_id: alliser_thorne.id, project_id: gazebo.id)
 project_membership32 = ProjectMembership.create(member_id: sam_tarly.id, project_id: gazebo.id)
 
-gazebo_task1 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
-gazebo_task2 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
-gazebo_task3 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
-gazebo_task4 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
-gazebo_task5 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
+gazebo_task1 = Task.create(assigner_id: jeor_mormont.id, assignee_id: alliser_thorne.id, title: "Explore possible spring sources for hot water supply", completion_status: false, project_id: gazebo.id);
+gazebo_task2 = Task.create(assigner_id: alliser_thorne.id, assignee_id: ygritte.id, title: "Purchase desalinification tools for purifying hottub water", completion_status: false, project_id: gazebo.id);
+gazebo_task3 = Task.create(assigner_id: aemon.id, assignee_id: sam_tarly.id, title: "Meet with architectural candidates to review proposals for gazebo build", completion_status: false, project_id: gazebo.id);
+gazebo_task4 = Task.create(assigner_id: aemon.id, assignee_id: ygritte.id, title: "Meet with Feng Shui consultant to discuss positioning of hot tub", completion_status: false, project_id: gazebo.id);
+gazebo_task5 = Task.create(assigner_id: jon_snow.id, assignee_id: aemon.id, title: "Draw up budget for 2018 expenditures related to hottub project", completion_status: false, project_id: gazebo.id);

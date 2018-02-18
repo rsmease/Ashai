@@ -85,6 +85,11 @@ arya_task1 = Task.create(assigner_id: arya.id, assignee_id: arya.id, title: "Pra
 arya_task2 = Task.create(assigner_id: arya.id, assignee_id: arya.id, title: "Hunt for fowl in the nearby woods", completion_status: false)
 arya_task3 = Task.create(assigner_id: arya.id, assignee_id: arya.id, title: "Perfect Jorah Mormont mask for future use", completion_status: false)
 
+ned_stark_task1 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.id, title: "Daily: trim nose hairs", completion_status: false)
+ned_stark_task2 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.id, title: "Advise council on recent movements of wildlings further south", completion_status: false)
+ned_stark_task3 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.id, title: "Purchase roses for Cat to celebrate 22nd anniversary", completion_status: false)
+
+
 cersei = User.create(name: "Cersei Lannister", email: "cersei@kingslanding.got", password: "cerseilannistercorgicorgi", profile_image_url: "https://i.imgur.com/8fjPIqt.jpg", bio:"lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
 jaime = User.create(name: "Jamie Lannister", email: "jlannister@kingslanding.got", password: "jamielannistercorgicorgi", profile_image_url: "https://i.imgur.com/LmtOiEN.jpg", bio:"aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed")
 tywin = User.create(name: "Tywin Lannister", email: "tlannister@kingslanding.got", password: "tywinlannistercorgicorgi", profile_image_url: "https://i.imgur.com/cdmDgGO.jpg", bio:"sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor")

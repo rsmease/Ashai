@@ -232,6 +232,8 @@ project_membership4 = ProjectMembership.create(member_id: catelyn.id, project_id
 wedding_task1 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake cakes", completion_status: false, project_id: robb_wedding.id);
 wedding_task2 = Task.create(assigner_id: jon_snow.id, assignee_id: ned_stark.id, title: "Return from dead", completion_status: false, project_id: robb_wedding.id);
 wedding_task3 = Task.create(assigner_id: jon_snow.id, assignee_id: catelyn.id, title: "Invite family", completion_status: false, project_id: robb_wedding.id);
+wedding_task4 = Task.create(assigner_id: jon_snow.id, assignee_id: ned_stark.id, title: "Meet with wedding planner to get good price on minstrel performance", completion_status: false, project_id: robb_wedding.id);
+wedding_task5 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Update wedding registry on Amazon", completion_status: false, project_id: robb_wedding.id);
 
 project_membership5 = ProjectMembership.create(member_id: baelish.id, project_id: jousting.id)
 project_membership6 = ProjectMembership.create(member_id: khal_drogo.id, project_id: jousting.id)
@@ -281,6 +283,8 @@ project_membership26 = ProjectMembership.create(member_id: sam_tarly.id, project
 dragon_birthday_task1 = Task.create(assigner_id: jon_snow.id, assignee_id: sam_tarly.id, title: "Find out what kind of meat Drogon wants in his cake", completion_status: false, project_id: dragon_birthday.id);
 dragon_birthday_task2 = Task.create(assigner_id: jon_snow.id, assignee_id: dany_targaryen.id, title: "Send invitations to other dragons", completion_status: false, project_id: dragon_birthday.id);
 dragon_birthday_task3 = Task.create(assigner_id: dany_targaryen.id, assignee_id: sansa.id, title: "Remove flammable objects from convention center", completion_status: false, project_id: dragon_birthday.id);
+dragon_birthday_task4 = Task.create(assigner_id: dany_targaryen.id, assignee_id: dany_targaryen.id, title: "Set up event on Facebook", completion_status: false, project_id: dragon_birthday.id);
+dragon_birthday_task5 = Task.create(assigner_id: dany_targaryen.id, assignee_id: jon_snow.id, title: "Pickup party hats, Solo cups from Costco", completion_status: false, project_id: dragon_birthday.id);
 
 project_membership27 = ProjectMembership.create(member_id: jon_snow.id, project_id: gazebo.id)
 project_membership28 = ProjectMembership.create(member_id: ygritte.id, project_id: gazebo.id)

@@ -89,6 +89,9 @@ ned_stark_task1 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.
 ned_stark_task2 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.id, title: "Advise council on recent movements of wildlings further south", completion_status: false)
 ned_stark_task3 = Task.create(assigner_id: ned_stark.id, assignee_id: ned_stark.id, title: "Purchase roses for Cat to celebrate 22nd anniversary", completion_status: false)
 
+catelyn_task1 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, title: "Daily: check on Bran", completion_status: false)
+catelyn_task2 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, title: "Take Sansa to the dentist", completion_status: false)
+catelyn_task3 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, title: "Purchase beard brush for Ned to celebrate 22nd anniversary", completion_status: false)
 
 cersei = User.create(name: "Cersei Lannister", email: "cersei@kingslanding.got", password: "cerseilannistercorgicorgi", profile_image_url: "https://i.imgur.com/8fjPIqt.jpg", bio:"lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
 jaime = User.create(name: "Jamie Lannister", email: "jlannister@kingslanding.got", password: "jamielannistercorgicorgi", profile_image_url: "https://i.imgur.com/LmtOiEN.jpg", bio:"aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed")

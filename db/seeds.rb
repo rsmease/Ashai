@@ -111,7 +111,9 @@ euron_greyjoy = User.create(name: "Euron Greyjoy", email: "egreyjoy@kingslanding
 qyburn = User.create(name: "Maester Qyburn", email: "qyburn@kingslanding.got", password: "maesterqyburncorgicorgi", profile_image_url: "https://i.imgur.com/191cQqG.jpg", bio: "posuere morbi leo urna molestie at elementum eu facilisis sed odio morbi quis commodo odio aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida hendrerit")
 ramsay_bolton = User.create(name: "Ramsay Bolton", email: "rbolton@kingslanding.got", password: "ramsayboltoncorgicorgi", profile_image_url: "https://i.imgur.com/kwskzVe.jpg", bio: "eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc id cursus metus aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus semper eget duis at tellus")
 
-cersei_task1 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Attend wedding ceremoney for Lord Mordal", completion_status: false) cersei_task2 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Learn how to make an iOS app to track enemies", completion_status: false) cersei_task3 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Request progress report on lethal glitter prototype from Qyburn", completion_status: false)
+cersei_task1 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Attend wedding ceremoney for Lord Mordal", completion_status: false)
+cersei_task2 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Learn how to make an iOS app to track enemies", completion_status: false)
+cersei_task3 = Task.create(assigner_id: cersei.id, assignee_id: cersei.id, title: "Request progress report on lethal glitter prototype from Qyburn", completion_status: false)
 
 jaime_task1 = Task.create(assigner_id: jaime.id, assignee_id: jaime.id, title: "Practice swordfighting with Bronn", completion_status: false)
 jaime_task2 = Task.create(assigner_id: jaime.id, assignee_id: jaime.id, title: "Daily: read digest of army movements", completion_status: false)
@@ -151,25 +153,26 @@ alliser_thorne = User.create(name: "Alliser Thorne", email: "athorne@thewall.got
 ygritte = User.create(name: "Ygritte", email: "ygritte@thewall.got", password: "ygrittecorgicorgi", profile_image_url: "https://i.imgur.com/4HmFSyj.jpg", bio: "at in tellus integer feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit amet porttitor eget dolor morbi non arcu risus quis varius quam quisque id diam vel quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere")
 aemon = User.create(name: "Maester Aemon", email: "maemon@thewall.got", password: "maesteraemoncorgicorgi", profile_image_url: "https://i.imgur.com/cLxmxDJ.jpg", bio: "lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
 
-jeor_mormont_task1 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
-jeor_mormont_task2 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-jeor_mormont_task3 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+jeor_mormont_task1 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Dye beard to hide gray hairs", completion_status: false)
+jeor_mormont_task2 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Deliver performance reviews to Manny, Wiegert, Bobson", completion_status: false)
+jeor_mormont_task3 = Task.create(assigner_id: jeor_mormont.id, assignee_id: jeor_mormont.id, title: "Read letter from Jorah", completion_status: false)
 
-sam_tarly_task1 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
-sam_tarly_task2 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-sam_tarly_task3 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+sam_tarly_task1 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Take notes on petrification of dragon bones", completion_status: false)
+sam_tarly_task2 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Learn Japanese with Duolingo", completion_status: false)
+sam_tarly_task3 = Task.create(assigner_id: sam_tarly.id, assignee_id: sam_tarly.id, title: "Daily: 30 minutes, elliptical", completion_status: false)
 
-alliser_thorne_task1 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
-alliser_thorne_task2 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-alliser_thorne_task3 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+alliser_thorne_task1 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Play chess with Aemon", completion_status: false)
+alliser_thorne_task2 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Submit report on rebuilding requirements near northwestern side of fort", completion_status: false)
+alliser_thorne_task3 = Task.create(assigner_id: alliser_thorne.id, assignee_id: alliser_thorne.id, title: "Take jazz dancing lessons", completion_status: false)
 
-ygritte_task1 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
-ygritte_task2 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-ygritte_task3 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+ygritte_task1 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Star in Horizon: Zero Dawn video game", completion_status: false)
+ygritte_task2 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Pick up more dates, turnips from the market", completion_status: false)
+ygritte_task3 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Plan for Priscilla's baby shower", completion_status: false)
+ygritte_task4 = Task.create(assigner_id: ygritte.id, assignee_id: ygritte.id, title: "Daily: practice archery before grounds get busy", completion_status: false)
 
-aemon_task1 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Practice swordfighting witramsay_bolton", completion_status: false)
-aemon_task2 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
-aemon_task3 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+aemon_task1 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Read Chapter 7 of Moby Dick", completion_status: false)
+aemon_task2 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Send homemade cookies to granddaughter", completion_status: false)
+aemon_task3 = Task.create(assigner_id: aemon.id, assignee_id: aemon.id, title: "Check on IRA returns", completion_status: false)
 
 house_targaryen = Team.create(team_owner_id: jon_snow.id, name: "House Targaryen", description: "Welcome to House Targaryen");
 house_start = Team.create(team_owner_id: robb.id, name: "House Stark", description: "Welcome to House Stark")

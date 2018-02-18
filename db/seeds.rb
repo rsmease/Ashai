@@ -285,4 +285,8 @@ project_membership30 = ProjectMembership.create(member_id: jeor_mormont.id, proj
 project_membership31 = ProjectMembership.create(member_id: alliser_thorne.id, project_id: gazebo.id)
 project_membership32 = ProjectMembership.create(member_id: sam_tarly.id, project_id: gazebo.id)
 
-wedding_task1 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: robb_wedding.id);
+gazebo_task1 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
+gazebo_task2 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
+gazebo_task3 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
+gazebo_task4 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);
+gazebo_task5 = Task.create(assigner_id: jon_snow.id, assignee_id: sansa.id, title: "Bake Cakes", completion_status: false, project_id: gazebo.id);

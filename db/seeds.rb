@@ -93,6 +93,14 @@ catelyn_task1 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, ti
 catelyn_task2 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, title: "Take Sansa to the dentist", completion_status: false)
 catelyn_task3 = Task.create(assigner_id: catelyn.id, assignee_id: catelyn.id, title: "Purchase beard brush for Ned to celebrate 22nd anniversary", completion_status: false)
 
+robb_task1 = Task.create(assigner_id: robb.id, assignee_id: robb.id, title: "Purchase engagement ring", completion_status: false)
+robb_task2 = Task.create(assigner_id: robb.id, assignee_id: robb.id, title: "Take rug to dry cleaner to remove stains left by the dog", completion_status: false)
+robb_task3 = Task.create(assigner_id: robb.id, assignee_id: robb.id, title: "Speak with mother regarding the out of pocket expenses from the hunting expedition", completion_status: false)
+
+brienne_task1 = Task.create(assigner_id: brienne.id, assignee_id: brienne.id, title: "Practice swordfighting with Arya", completion_status: false)
+brienne_task2 = Task.create(assigner_id: brienne.id, assignee_id: brienne.id, title: "Meet with Robb regarding tax on alcohol", completion_status: false)
+brienne_task3 = Task.create(assigner_id: brienne.id, assignee_id: brienne.id, title: "Remind Jaime to take that meeting with the High Sparrow", completion_status: false)
+
 cersei = User.create(name: "Cersei Lannister", email: "cersei@kingslanding.got", password: "cerseilannistercorgicorgi", profile_image_url: "https://i.imgur.com/8fjPIqt.jpg", bio:"lorem donec massa sapien faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget egestas purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu augue ut lectus arcu bibendum")
 jaime = User.create(name: "Jamie Lannister", email: "jlannister@kingslanding.got", password: "jamielannistercorgicorgi", profile_image_url: "https://i.imgur.com/LmtOiEN.jpg", bio:"aliquam id diam maecenas ultricies mi eget mauris pharetra et ultrices neque ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget mi proin sed")
 tywin = User.create(name: "Tywin Lannister", email: "tlannister@kingslanding.got", password: "tywinlannistercorgicorgi", profile_image_url: "https://i.imgur.com/cdmDgGO.jpg", bio:"sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor")

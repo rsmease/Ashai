@@ -6,6 +6,6 @@ Ashai is an individual project that I built using React/Redux, Rails and Postgre
 
 The project features a lot of detailed features: user authentication, modals galore, responsive search bars, a bunch of handmade animations and plenty of easter eggs for those who know where to look. 
 
-For more information, feel free to check out my [Wiki](https://github.com/rsmease/Ashai/wiki):
+For more information, feel free to check out my [Wiki](https://github.com/rsmease/Ashai/wiki).
 
 
